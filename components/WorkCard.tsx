@@ -10,6 +10,7 @@ interface WorkCardProps {
 
 const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
   const { lang } = useContext(LanguageContext);
+  const primaryLink = work.externalLinks?.[0] ?? (work.externalUrl ? { label: work.externalUrl.includes('youtube') ? 'YouTube' : 'Link', url: work.externalUrl } : null);
 
   return (
     <motion.div
@@ -50,15 +51,15 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
       
       <div className="pt-2 flex gap-2 items-center">
         <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-gray-300 group-hover:text-black transition-all">Details →</span>
-        {work.externalUrl && (
+        {primaryLink && (
           <a
-            href={work.externalUrl}
+            href={primaryLink.url}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 px-3 py-1 bg-[#C9A66B] text-white text-xs font-bold rounded hover:bg-[#b18c4e] transition-colors"
             onClick={e => e.stopPropagation()}
           >
-            {work.externalUrl.includes('youtube') ? 'YouTube' : 'Link'}
+            {primaryLink.label}
           </a>
         )}
       </div>

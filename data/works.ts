@@ -13,10 +13,14 @@ export const works: Work[] = [
       EN: 'Spatial audio installation themed "Distance" and "Echo". Precision 2ch simulation.',
       TW: '以「距離」與「殘響」為主題的立體音響裝置藝術。'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: '/images/distant-echo.avif',
     tags: ['Immersive', 'Performance', '2ch Spatial'],
     role: { JP: '音響演出 / システム構築', EN: 'Audio Direction', TW: '聲音演出' },
-    approach: { JP: '壁面反射を2chで再現し、スピーカーの存在を消すアプローチ。', EN: 'Eliminating speaker presence by recreating wall reflections.', TW: '消除揚聲器的存在感。' }
+    approach: { JP: '壁面反射を2chで再現し、スピーカーの存在を消すアプローチ。', EN: 'Eliminating speaker presence by recreating wall reflections.', TW: '消除揚聲器的存在感。' },
+    externalLinks: [
+      { label: 'Website', url: 'https://www.nakamurahiroyuki.info/distant-echo' },
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=Am1jq5AXBS4' }
+    ]
   },
   {
     id: 'look-up-at-the-stars',

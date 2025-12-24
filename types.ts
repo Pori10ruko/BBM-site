@@ -16,6 +16,7 @@ export interface Work {
   techStack?: string[];
   featuredInTech?: boolean; // 2ch技術ページに表示するかどうかのフラグ
   externalUrl?: string; // 外部リンク（YouTube等）
+  externalLinks?: Array<{ label: string; url: string }>; // 複数外部リンク
 }
 
 export interface NavItem {

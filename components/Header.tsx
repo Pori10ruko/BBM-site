@@ -15,7 +15,8 @@ const Header: React.FC = () => {
   const { lang, setLang } = useContext(LanguageContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logoFailed, setLogoFailed] = useState(false);
+  const [markFailed, setMarkFailed] = useState(false);
+  const [wordmarkFailed, setWordmarkFailed] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,23 +29,35 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'py-4 glass-header border-b border-black/5 shadow-sm' : 'py-8'}`}>
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link to="/" className="group flex items-center space-x-2">
-          {logoFailed ? (
-            <span className="text-3xl md:text-4xl font-display font-bold tracking-tighter text-black">BBM</span>
+          {/* Mobile: mark -> text */}
+          {!markFailed ? (
+            <img
+              src="/images/bbm-logo-mark.jpg"
+              alt="BBM"
+              className="h-9 w-auto md:hidden"
+              onError={() => setMarkFailed(true)}
+            />
           ) : (
-            <>
-              <img
-                src="/images/bbm-logo-mark.jpg"
-                alt="BBM"
-                className="h-9 w-auto md:hidden"
-                onError={() => setLogoFailed(true)}
-              />
-              <img
-                src="/images/bbm-logo-wordmark.jpg"
-                alt="BBM"
-                className="hidden md:block h-9 w-auto"
-                onError={() => setLogoFailed(true)}
-              />
-            </>
+            <span className="md:hidden text-3xl font-display font-bold tracking-tighter text-black">BBM</span>
+          )}
+
+          {/* Desktop: wordmark -> mark -> text */}
+          {!wordmarkFailed ? (
+            <img
+              src="/images/bbm-logo-wordmark.jpg"
+              alt="BBM"
+              className="hidden md:block h-9 w-auto"
+              onError={() => setWordmarkFailed(true)}
+            />
+          ) : !markFailed ? (
+            <img
+              src="/images/bbm-logo-mark.jpg"
+              alt="BBM"
+              className="hidden md:block h-9 w-auto"
+              onError={() => setMarkFailed(true)}
+            />
+          ) : (
+            <span className="hidden md:block text-4xl font-display font-bold tracking-tighter text-black">BBM</span>
           )}
         </Link>
 
