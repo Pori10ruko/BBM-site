@@ -36,7 +36,13 @@ const WorkModal: React.FC<WorkModalProps> = ({ work, onClose }) => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
             <div className="lg:col-span-5 relative bg-gray-50">
-              <img src={work.imageUrl} alt={work.title} className="absolute inset-0 w-full h-full object-cover grayscale" />
+              {work.imageUrl ? (
+                <img src={work.imageUrl} alt={work.title} className="absolute inset-0 w-full h-full object-cover grayscale" />
+              ) : (
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+                  <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-black/20">{work.title}</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
               <div className="absolute bottom-16 left-12 right-12">
                 <span className="text-[#C9A66B] font-bold tracking-[0.6em] text-[10px] uppercase mb-6 block">{work.category}</span>

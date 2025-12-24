@@ -262,7 +262,7 @@ export const works: Work[] = [
       EN: 'Sound direction for Kawasaki City 100th Anniversary event.',
       TW: '川崎市100週年活動的聲音演出。'
     },
-    imageUrl: '', // 画像が無いため空欄
+    imageUrl: '/images/venus-no-shukusai.jpg',
     tags: ['Event', 'Anniversary'],
     role: { JP: '音響演出', EN: 'Sound Direction', TW: '聲音演出' },
     approach: { JP: '詳細はリンク参照。', EN: 'See link for details.', TW: '詳情請參考連結。' },
@@ -280,7 +280,7 @@ export const works: Work[] = [
       EN: 'Logo design for BBM.',
       TW: 'BBM 標誌設計。'
     },
-    imageUrl: '', // 画像が無いため空欄
+    imageUrl: '/images/bbm-logo-mark.jpg',
     tags: ['Logo', 'Design'],
     role: { JP: 'デザイン', EN: 'Design', TW: '設計' },
     approach: { JP: 'ブランドイメージを象徴するロゴ。', EN: 'Logo symbolizing brand image.', TW: '象徵品牌形象的標誌。' },
