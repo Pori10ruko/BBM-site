@@ -42,8 +42,19 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
         </p>
       </div>
       
-      <div className="pt-2">
+      <div className="pt-2 flex gap-2 items-center">
         <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-gray-300 group-hover:text-black transition-all">Details →</span>
+        {work.externalUrl && (
+          <a
+            href={work.externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-3 py-1 bg-[#C9A66B] text-white text-xs font-bold rounded hover:bg-[#b18c4e] transition-colors"
+            onClick={e => e.stopPropagation()}
+          >
+            {work.externalUrl.includes('youtube') ? 'YouTube' : 'Link'}
+          </a>
+        )}
       </div>
     </motion.div>
   );

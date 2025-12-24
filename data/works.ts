@@ -19,20 +19,21 @@ export const works: Work[] = [
     approach: { JP: '壁面反射を2chで再現し、スピーカーの存在を消すアプローチ。', EN: 'Eliminating speaker presence by recreating wall reflections.', TW: '消除揚聲器的存在感。' }
   },
   {
-    id: 'piano-distance',
-    title: 'Piano Distance Concert',
-    client: 'Artistic Performance',
+    id: 'look-up-at-the-stars',
+    title: 'Look Up At The Stars',
+    client: 'Live Painting Concert',
     category: 'Performance',
     pillar: 'Art',
     description: {
-      JP: 'ピアノの生演奏と立体音響の融合。聴衆をピアノの内部にいるような感覚へ誘う。',
-      EN: 'Live piano merged with spatial audio, placing the audience inside the piano.',
-      TW: '鋼琴現場演奏與立體音響的融合。'
+      JP: 'ピアノとライブペインティングのコンサート。聴衆をピアノの内部にいるような感覚へ誘う。',
+      EN: 'Piano & Live Painting Concert. Placing the audience inside the piano.',
+      TW: '鋼琴與現場繪畫音樂會。'
     },
     imageUrl: 'https://images.unsplash.com/photo-1520527053377-4710dbf64b4c?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Live', 'Piano', 'Spatial Art'],
-    role: { JP: '立体音響演出', EN: 'Spatial Sound Design', TW: '立體音響演出' },
-    approach: { JP: '生楽器の響きを損なわず、空間的な奥行きを2chで拡張。', EN: 'Expanding depth via 2ch while preserving acoustic harmonics.', TW: '擴展空間深度。' }
+    tags: ['Concert', 'Live Painting', 'Piano', 'Spatial Art'],
+    role: { JP: '音響演出', EN: 'Audio Direction', TW: '聲音演出' },
+    approach: { JP: '生楽器の響きを損なわず、空間的な奥行きを2chで拡張。', EN: 'Expanding depth via 2ch while preserving acoustic harmonics.', TW: '擴展空間深度。' },
+    externalUrl: 'https://www.youtube.com/watch?v=（YouTube動画IDをここに）'
   },
   {
     id: 'una-venus',
@@ -229,5 +230,61 @@ export const works: Work[] = [
     tags: ['Art', 'Global', '2ch'],
     role: { JP: '立体音響システム設計', EN: 'System Design', TW: '系統設計' },
     approach: { JP: '2chのみで砂漠の広大さに匹敵する音響空間を構築。', EN: 'Building a space rivaling desert scales via 2ch alone.', TW: '構建宏大的 2ch 空間。' }
-  }
+  },
+  // --- Added from attachments ---
+  {
+    id: 'alone-together',
+    title: 'Alone Together',
+    client: 'Riyadh Art',
+    category: 'Installation',
+    pillar: 'Art',
+    description: {
+      JP: 'Riyadh Artでのインスタレーション作品。',
+      EN: 'Installation work for Riyadh Art.',
+      TW: 'Riyadh Art 的裝置藝術作品。'
+    },
+    imageUrl: '', // 画像が無いため空欄
+    tags: ['Installation', 'Art'],
+    role: { JP: 'サウンドデザイン', EN: 'Sound Design', TW: '聲音設計' },
+    approach: { JP: '詳細はリンク参照。', EN: 'See link for details.', TW: '詳情請參考連結。' },
+    techStack: [],
+    featuredInTech: false
+  },
+
+  {
+    id: 'venus-no-shukusai',
+    title: 'venusの祝祭',
+    client: '川崎市市制100周年',
+    category: 'Archive',
+    pillar: 'Art',
+    description: {
+      JP: '川崎市100周年記念イベントでの音響演出。',
+      EN: 'Sound direction for Kawasaki City 100th Anniversary event.',
+      TW: '川崎市100週年活動的聲音演出。'
+    },
+    imageUrl: '', // 画像が無いため空欄
+    tags: ['Event', 'Anniversary'],
+    role: { JP: '音響演出', EN: 'Sound Direction', TW: '聲音演出' },
+    approach: { JP: '詳細はリンク参照。', EN: 'See link for details.', TW: '詳情請參考連結。' },
+    techStack: [],
+    featuredInTech: false
+  },
+  {
+    id: 'bbm-logo',
+    title: 'BBM Logo',
+    client: 'BBM Collective',
+    category: 'Archive',
+    pillar: 'Art',
+    description: {
+      JP: 'BBMのロゴデザイン。',
+      EN: 'Logo design for BBM.',
+      TW: 'BBM 標誌設計。'
+    },
+    imageUrl: '', // 画像が無いため空欄
+    tags: ['Logo', 'Design'],
+    role: { JP: 'デザイン', EN: 'Design', TW: '設計' },
+    approach: { JP: 'ブランドイメージを象徴するロゴ。', EN: 'Logo symbolizing brand image.', TW: '象徵品牌形象的標誌。' },
+    techStack: [],
+    featuredInTech: false
+  },
 ];

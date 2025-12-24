@@ -64,6 +64,16 @@ const WorkModal: React.FC<WorkModalProps> = ({ work, onClose }) => {
               <section>
                 <h3 className="text-[10px] font-bold tracking-[0.6em] text-black/10 uppercase mb-8 border-b border-black/5 pb-4 italic">{labels.logic[lang]}</h3>
                 <p className="text-base text-gray-500 font-serif font-light leading-relaxed">{work.approach[lang]}</p>
+                {work.externalUrl && (
+                  <a
+                    href={work.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-8 px-6 py-2 bg-[#C9A66B] text-white font-bold rounded hover:bg-[#b18c4e] transition-colors"
+                  >
+                    {work.externalUrl.includes('youtube') ? 'YouTubeを見る' : '外部リンク'}
+                  </a>
+                )}
               </section>
             </div>
           </div>
