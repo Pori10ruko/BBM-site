@@ -82,10 +82,17 @@ export const works: Work[] = [
       EN: 'Reinterpreting classical masterpieces in spatial audio, capturing hall ambience in 2ch.',
       TW: '以立體音響重新詮釋古典名曲。'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: '/images/Classical Spatial Album.jpg',
     tags: ['Classical', 'Album', 'Binaural'],
     role: { JP: '立体音響録音 / 編集', EN: 'Spatial Recording / Editing', TW: '立體音響錄音' },
     approach: { JP: '伝統的な楽器の配置を尊重しつつ、現代的な空間制御で臨場感を付与。', EN: 'Respecting traditional placement while adding modern spatial control.', TW: '賦予現代化的空間感。' }
+    ,
+    externalLinks: [
+      {
+        label: 'Spatial Audio Eric Satie "Gymnopedie" Full',
+        url: 'https://www.youtube.com/watch?v=azl0h7vc4eE&feature=youtu.be'
+      }
+    ]
   },
   {
     id: 'tsuchiura-archive',
