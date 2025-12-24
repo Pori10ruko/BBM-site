@@ -98,7 +98,7 @@ export const works: Work[] = [
       EN: 'Archiving environmental sounds and history of Tsuchiura for the future.',
       TW: '將土浦市的環境音存檔的公共項目。'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1590272456521-1bbe160a18ce?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: '/images/TSAP.png',
     tags: ['Public', 'Archive', 'Community'],
     role: { JP: 'サウンドディレクション', EN: 'Sound Direction', TW: '聲音指導' },
     approach: { JP: '音を通じて地域への愛着を育むシビックプライドの形成。', EN: 'Fostering civic pride through the act of listening.', TW: '透過聲音建立自豪感。' }
