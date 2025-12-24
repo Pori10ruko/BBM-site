@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import Section from '../components/Section';
 import WorkCard from '../components/WorkCard';
@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 const Home: React.FC = () => {
   const { lang } = useContext(LanguageContext);
   const featuredWorks = works.slice(0, 3);
+  const [heroLogoSrc, setHeroLogoSrc] = useState('/images/bbm-logo-mark.jpg');
+  const [heroLogoFallbackTried, setHeroLogoFallbackTried] = useState(false);
 
   const t = {
     tagline: {
@@ -32,12 +34,22 @@ const Home: React.FC = () => {
           <h1 className="hero-title text-6xl md:text-[10rem] text-black mb-12">
             Beyond<br />Boundary Music
           </h1>
-          <img
-            src="/images/bbm-logo-mark.jpg"
-            alt="BBM"
-            className="mx-auto mb-12 w-40 md:w-56 h-auto"
-            loading="eager"
-          />
+          {heroLogoSrc && (
+            <img
+              src={heroLogoSrc}
+              alt="BBM"
+              className="mx-auto mb-12 w-40 md:w-56 h-auto"
+              loading="eager"
+              onError={() => {
+                if (!heroLogoFallbackTried && heroLogoSrc.endsWith('.jpg')) {
+                  setHeroLogoFallbackTried(true);
+                  setHeroLogoSrc('/images/bbm-logo-mark.png');
+                  return;
+                }
+                setHeroLogoSrc('');
+              }}
+            />
+          )}
           <p className="text-xl md:text-3xl text-gray-800 font-serif font-light leading-relaxed mb-16 max-w-4xl mx-auto">
             {t.tagline[lang]}
           </p>

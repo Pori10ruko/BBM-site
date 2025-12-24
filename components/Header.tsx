@@ -15,7 +15,8 @@ const Header: React.FC = () => {
   const { lang, setLang } = useContext(LanguageContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [markFailed, setMarkFailed] = useState(false);
+  const [markSrc, setMarkSrc] = useState('/images/bbm-logo-mark.jpg');
+  const [markFallbackTried, setMarkFallbackTried] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -29,24 +30,38 @@ const Header: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link to="/" className="group flex items-center space-x-2">
           {/* Mobile: mark -> text */}
-          {!markFailed ? (
+          {markSrc ? (
             <img
-              src="/images/bbm-logo-mark.jpg"
+              src={markSrc}
               alt="BBM"
               className="h-9 w-auto md:hidden"
-              onError={() => setMarkFailed(true)}
+              onError={() => {
+                if (!markFallbackTried && markSrc.endsWith('.jpg')) {
+                  setMarkFallbackTried(true);
+                  setMarkSrc('/images/bbm-logo-mark.png');
+                  return;
+                }
+                setMarkSrc('');
+              }}
             />
           ) : (
             <span className="md:hidden text-3xl font-display font-bold tracking-tighter text-black">BBM</span>
           )}
 
           {/* Desktop: mark -> text */}
-          {!markFailed ? (
+          {markSrc ? (
             <img
-              src="/images/bbm-logo-mark.jpg"
+              src={markSrc}
               alt="BBM"
               className="hidden md:block h-9 w-auto"
-              onError={() => setMarkFailed(true)}
+              onError={() => {
+                if (!markFallbackTried && markSrc.endsWith('.jpg')) {
+                  setMarkFallbackTried(true);
+                  setMarkSrc('/images/bbm-logo-mark.png');
+                  return;
+                }
+                setMarkSrc('');
+              }}
             />
           ) : (
             <span className="hidden md:block text-4xl font-display font-bold tracking-tighter text-black">BBM</span>
