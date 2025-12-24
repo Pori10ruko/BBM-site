@@ -8,7 +8,11 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const { lang } = useContext(LanguageContext);
-  const featuredWorks = works.slice(0, 3);
+  const featuredWorks = [
+    works.find(w => w.id === 'distant-echo'),
+    works.find(w => w.id === 'tsuchiura-archive'),
+    works.find(w => w.id === 'alone-together'),
+  ].filter(Boolean) as typeof works;
   const [heroLogoSrc, setHeroLogoSrc] = useState('/images/bbm-logo-mark.jpg');
   const [heroLogoFallbackTried, setHeroLogoFallbackTried] = useState(false);
 

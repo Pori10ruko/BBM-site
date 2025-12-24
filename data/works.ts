@@ -33,11 +33,10 @@ export const works: Work[] = [
       EN: 'Piano & Live Painting Concert. Placing the audience inside the piano.',
       TW: '鋼琴與現場繪畫音樂會。'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1520527053377-4710dbf64b4c?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: '/images/look up at the stars photo.jpg',
     tags: ['Concert', 'Live Painting', 'Piano', 'Spatial Art'],
     role: { JP: '音響演出', EN: 'Audio Direction', TW: '聲音演出' },
-    approach: { JP: '生楽器の響きを損なわず、空間的な奥行きを2chで拡張。', EN: 'Expanding depth via 2ch while preserving acoustic harmonics.', TW: '擴展空間深度。' },
-    externalUrl: 'https://www.youtube.com/watch?v=（YouTube動画IDをここに）'
+    approach: { JP: '生楽器の響きを損なわず、空間的な奥行きを2chで拡張。', EN: 'Expanding depth via 2ch while preserving acoustic harmonics.', TW: '擴展空間深度。' }
   },
   {
     id: 'una-venus',
@@ -247,7 +246,7 @@ export const works: Work[] = [
       EN: 'Installation work for Riyadh Art.',
       TW: 'Riyadh Art 的裝置藝術作品。'
     },
-    imageUrl: '', // 画像が無いため空欄
+    imageUrl: '/images/Random-International-Alone-Together.jpg',
     tags: ['Installation', 'Art'],
     role: { JP: 'サウンドデザイン', EN: 'Sound Design', TW: '聲音設計' },
     approach: { JP: '詳細はリンク参照。', EN: 'See link for details.', TW: '詳情請參考連結。' },
