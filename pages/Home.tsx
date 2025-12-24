@@ -32,6 +32,12 @@ const Home: React.FC = () => {
           <h1 className="hero-title text-6xl md:text-[10rem] text-black mb-12">
             Beyond<br />Boundary Music
           </h1>
+          <img
+            src="/images/bbm-logo-mark.jpg"
+            alt="BBM"
+            className="mx-auto mb-12 w-40 md:w-56 h-auto"
+            loading="eager"
+          />
           <p className="text-xl md:text-3xl text-gray-800 font-serif font-light leading-relaxed mb-16 max-w-4xl mx-auto">
             {t.tagline[lang]}
           </p>

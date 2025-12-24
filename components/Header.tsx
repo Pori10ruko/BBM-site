@@ -16,7 +16,6 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [markFailed, setMarkFailed] = useState(false);
-  const [wordmarkFailed, setWordmarkFailed] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -41,15 +40,8 @@ const Header: React.FC = () => {
             <span className="md:hidden text-3xl font-display font-bold tracking-tighter text-black">BBM</span>
           )}
 
-          {/* Desktop: wordmark -> mark -> text */}
-          {!wordmarkFailed ? (
-            <img
-              src="/images/bbm-logo-wordmark.jpg"
-              alt="BBM"
-              className="hidden md:block h-9 w-auto"
-              onError={() => setWordmarkFailed(true)}
-            />
-          ) : !markFailed ? (
+          {/* Desktop: mark -> text */}
+          {!markFailed ? (
             <img
               src="/images/bbm-logo-mark.jpg"
               alt="BBM"
