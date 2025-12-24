@@ -186,19 +186,23 @@ export const works: Work[] = [
   {
     id: 'seigetsuki',
     title: 'バーチャル霊園 清月記',
-    client: 'Seigetsuki',
+    client: '株式会社清月記',
     category: 'App',
     pillar: 'Technology',
     featuredInTech: true,
     description: {
-      JP: 'バイノーラル技術で静謐さと祈りの空間をスマートフォン越しに再現。',
-      EN: 'Recreating prayer space via binaural tech on smartphones.',
-      TW: '透過雙耳立體聲技術重現祈禱空間。'
+      JP: '株式会社清月記の「バーチャル霊園」アプリ。立体音響の音楽デザインを担当。',
+      EN: 'Virtual cemetery app by Seigetsuki Co., Ltd. Spatial audio music design.',
+      TW: '清月記的虛擬靈園 App。負責立體音響音樂設計。'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Mobile', 'Binaural'],
-    role: { JP: '空間音響設計', EN: 'Spatial Design', TW: '空間設計' },
-    approach: { JP: '2chイヤホン環境で極限の実在感を追求したUX設計。', EN: 'UX design for extreme presence in 2ch earphone environments.', TW: '極限提升真實感。' }
+    imageUrl: '/images/reien_photo.webp',
+    tags: ['Mobile', 'App', 'Spatial Audio'],
+    role: { JP: '立体音響の音楽デザイン', EN: 'Spatial Audio Music Design', TW: '立體音響音樂設計' },
+    approach: { JP: 'スマートフォン/イヤホン環境で、祈りの空間の静謐さを損なわない立体的な音楽設計。', EN: 'Designing spatial music that preserves a quiet prayer space on phone + headphones.', TW: '在手機與耳機環境中維持靜謐氛圍的立體音樂設計。' },
+    externalLinks: [
+      { label: 'App Store', url: 'https://apps.apple.com/jp/app/%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E9%9C%8A%E5%9C%92/id6744600215' },
+      { label: 'YouTube', url: 'https://www.youtube.com/shorts/5uV29nsJU7k' }
+    ]
   },
   {
     id: 'yuki-share',
