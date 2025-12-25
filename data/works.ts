@@ -14,9 +14,9 @@ export const works: Work[] = [
     category: 'Performance',
     pillar: 'Art',
     description: {
-      JP: '歴史ある東光寺の本堂を舞台に、市民と作り上げた「光のまゆ」と「土浦の音」を組み合わせた一日限りの展示・コンサート。2ch立体音響による空間演出。',
-      EN: 'A one-day exhibition and concert at the historic Tokoji Temple. Combining "cocoons of light" created with citizens and "sounds of Tsuchiura" with binaural spatial audio.',
-      TW: '以歷史悠久的東光寺本堂為舞台，結合與市民共同創作的「光之繭」與「土浦之音」，透過雙聲道立體音響呈現的一日限定展覽與音樂會。'
+      JP: '歴史ある東光寺の本堂を舞台に、過去と未来が交差する一日限りの祝祭。市民と共に紡いだ「光のまゆ」と、土浦の風景から採集した「音」が融合し、聴覚的な伽藍を立ち上げます。',
+      EN: 'A one-night festival where past and future intersect at Tokoji Temple. "Cocoons of light" woven with citizens and "sounds" collected from Tsuchiura fuse to erect an auditory cathedral.',
+      TW: '在歷史悠久的東光寺本堂，上演一場過去與未來交錯的一日限定慶典。與市民共同編織的「光之繭」融合從土浦採集的「聲音」，建構出聽覺的伽藍。'
     },
     imageUrl: '/images/tokoji1.png',
     tags: ['2025.02.23', 'Tsuchiura', 'Exhibition', 'Concert', '2ch Spatial'],
@@ -39,9 +39,9 @@ export const works: Work[] = [
     pillar: 'Art',
     featuredInTech: true,
     description: {
-      JP: '「距離」と「残響」をテーマにした立体音響インスタレーション。2chでの精密な空間シミュレート。Live Painting: Maria Noto (能登真理亜)',
-      EN: 'Spatial audio installation themed "Distance" and "Echo". Precision 2ch simulation. Live Painting: Maria Noto.',
-      TW: '以「距離」與「殘響」為主題的立體音響裝置藝術。Live Painting: Maria Noto (能登真理亜)。'
+      JP: '「距離」と「残響」の美学。ピアノの旋律が空間に描く不可視の軌跡を、独自の音響処理によって聴覚的な建築として再構築します。静寂の中に浮かび上がる音の粒子が、鑑賞者の記憶と共振する没入型ライブインスタレーション。 Live Painting: Maria Noto (能登真理亜)',
+      EN: 'The aesthetics of distance and reverberation. Piano melodies trace invisible trajectories, reconstructed as auditory architecture. An immersive live installation where sound particles emerging from silence resonate with memories. Live Painting: Maria Noto.',
+      TW: '「距離」與「殘響」的美學。鋼琴旋律在空間中描繪出的隱形軌跡，重建為聽覺的建築。從寂靜中浮現的聲音粒子，與觀賞者記憶共鳴的沉浸式現場裝置。 Live Painting: Maria Noto (能登真理亜)'
     },
     imageUrl: '/images/distant-echo.avif',
     tags: ['Immersive', 'Performance', '2ch Spatial'],
@@ -65,9 +65,9 @@ export const works: Work[] = [
     category: 'Installation',
     pillar: 'Art',
     description: {
-      JP: 'サウジアラビア「Noor Riyadh 2024」を経て、現在はマイアミ「Superblue Miami」にて展示中。物理とデジタルの境界を探る没入型インスタレーション。立体音響実装を担当。',
-      EN: 'After "Noor Riyadh 2024" in Saudi Arabia, it is currently on display at "Superblue Miami." An immersive installation exploring the boundary between physical and digital spaces. Responsible for spatial audio implementation.',
-      TW: '經沙烏地阿拉伯「Noor Riyadh 2024」展出後，目前正在邁阿密「Superblue Miami」展出。探討物理與數位邊界的沉浸式裝置藝術。負責立體音響實作。'
+      JP: '物理的な身体とデジタルな存在。その境界線上で揺れ動く人間の振る舞いを探求する、Random Internationalの代表作。私たちはその不可視な「気配」や「関係性」を音響によって具現化し、視覚を超えた没入体験を実装しました。(Riyadh Art 2024 / Superblue Miami)',
+      EN: 'Physical bodies versus digital existence. A signature work by Random International exploring human behavior on this boundary. We materialized the invisible "presence" through sound, implementing an immersive experience beyond vision.',
+      TW: '物理的身體與數位的存在。Random International 探索人類在此邊界上行為模式的代表作。我們透過音響具現化那些不可視的「氣息」，實作超越視覺的沉浸式體驗。'
     },
     imageUrl: '/images/Random-International-Alone-Together.jpg',
     tags: ['2024-25', 'Riyadh', 'Miami', 'Installation'],
@@ -94,9 +94,9 @@ export const works: Work[] = [
     category: 'Performance',
     pillar: 'Art',
     description: {
-      JP: '川崎市政100周年プレイベントとして開催された「Encount」にて音楽監督を担当。',
-      EN: 'Served as Music Director for "Encount," a pre-event for the 100th anniversary of Kawasaki City.',
-      TW: '擔任川崎市政100週年暖身活動「Encount」的音樂總監。'
+      JP: '都市の祝祭を彩る音のランドスケープ。川崎市政100周年の節目において、街の喧騒と音楽が調和する空間を演出。音楽監督として、都市空間そのものを一つの楽器として鳴らす試みを行いました。',
+      EN: 'A sound landscape coloring the city\'s celebration. For Kawasaki\'s 100th anniversary, we created a space where city bustle and music harmonize, attempting to play the urban space itself as an instrument.',
+      TW: '點綴都市慶典的聲音景觀。在川崎市政 100 週年的里程碑，演出一場城市的喧囂與音樂調和的空間。作為音樂總監，嘗試將都市空間本身作為一件樂器來演奏。'
     },
     imageUrl: '/images/encount.JPG',
     tags: ['2024.07', 'Kawasaki', 'Event'],
@@ -123,9 +123,9 @@ export const works: Work[] = [
     category: 'Performance',
     pillar: 'Art',
     description: {
-      JP: '立体音響とライブペインティングの融合。Live Painting: Maria Noto (能登真理亜)',
-      EN: 'A fusion of spatial audio and live painting. Live Painting: Maria Noto.',
-      TW: '立體音響與現場繪畫的融合。Live Painting: Maria Noto (能登真理亜)。'
+      JP: '星を見上げる行為—その根源的な感覚を、音と色彩の対話によって表現します。能登真理亜の描く生命力溢れる色彩と、全方位から包み込む音響空間がリアルタイムに交錯し、鑑賞者を無限の広がりへと誘います。',
+      EN: 'The act of looking up at the stars—expressing this primal sensation through a dialogue of sound and color. The vital colors by Maria Noto and the enveloping spatial audio intertwine, inviting viewers into an infinite expanse.',
+      TW: '仰望星空的行為——透過聲音與色彩的對話來表現這種根源性的感覺。能登真理亞充滿生命力的色彩與包覆的音響空間交錯，引領觀賞者進入無限的廣闊之中。'
     },
     imageUrl: '/images/look-up.jpg',
     tags: ['2023.12', 'Live Painting', '2ch Spatial'],
@@ -152,9 +152,9 @@ export const works: Work[] = [
     category: 'Performance',
     pillar: 'Art',
     description: {
-      JP: '2023年5月、川崎駅前にて開催されたエレクトリックオペラ。音楽・映像・演出：中村浩之、演奏：Beyond Boundary Chamber Orchestra。コロナ禍を経て、「痛み」と「希望」を共有する現代の祝祭として、かぐや姫や人魚姫など古今の物語をオマージュし再構築しました。',
-      EN: 'Held in front of Kawasaki Station in May 2023. Direction, Music, Video: Hiroyuki Nakamura. Performed by Beyond Boundary Chamber Orchestra. An electric opera that reinterprets classic tales like Princess Kaguya to share themes of pain and hope in the post-pandemic era.',
-      TW: '2023年5月於川崎站前舉辦的電氣歌劇。音樂、影像、導演：中村浩之，演奏：Beyond Boundary Chamber Orchestra。作為在後疫情時代共享「傷痛」與「希望」的現代慶典，向輝夜姬、人魚公主等古今故事致敬並重新建構。'
+      JP: 'コロナ禍を経て、「痛み」と「希望」を共有するための現代の神話。かぐや姫や人魚姫など古今の物語をオマージュし、エレクトロニクスとオーケストラが融合した「エレクトリックオペラ」として再構築された祝祭の記録。',
+      EN: 'A modern myth to share "pain" and "hope" after the pandemic. A record of a festival reconstructed as an "Electric Opera" fusing electronics and orchestra, paying homage to classic tales like Princess Kaguya.',
+      TW: '經歷疫情過後，為了共享「傷痛」與「希望」而生的現代神話。向輝夜姬、人魚公主等古今故事致敬，融合電子音樂與管弦樂團，重新建構為「電氣歌劇」的慶典紀錄。'
     },
     imageUrl: '/images/art.jpg',
     tags: ['2023.05', 'Opera', 'Kawasaki', 'Electric Opera'],

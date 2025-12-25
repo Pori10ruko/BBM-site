@@ -12,9 +12,17 @@ interface PillarDetailProps {
 
 const pillarContent = {
   Art: {
-    title: 'Artistic Essence',
+    title: {
+      JP: 'Depths of Expression / 表現の深淵',
+      EN: 'Depths of Expression / 表現の深淵',
+      TW: 'Depths of Expression / 表現の深淵'
+    },
     sub: '表現の深淵。',
-    desc: '音を単なる情報としてではなく、心象風景を描く「体験」として再定義。2chという普遍的な再生環境で、誰も到達したことのない没入感を創出します。',
+    desc: {
+      JP: '音は、物理的な振動を超えて記憶を呼び覚ます「鍵」となる。私たちは、緻密に計算された音響設計を「不可視な筆」として使い、空間そのものを変容させます。そこに立ち現れるのは、誰もが体験したことのない、静謐で濃密な没入の世界です。',
+      EN: 'Sound becomes a "key" that transcends physical vibration to awaken memories. Using meticulously calculated sound design as an "invisible brush," we transform space itself. What emerges is a serene and dense world of immersion unlike anything experienced before.',
+      TW: '聲音，是超越物理震動、喚醒記憶的「鑰匙」。我們將精密計算的音響設計化為「不可視之筆」，讓空間本身產生質變。由此浮現的，是前所未有、靜謐而濃密的沉浸世界。'
+    },
     color: '#C9A66B'
   },
   Public: {
@@ -46,13 +54,13 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
             <p className="font-bold tracking-[0.5em] uppercase text-[10px]" style={{ color: content.color }}>Pillar / {type}</p>
         </div>
         <h1 className="hero-title text-6xl md:text-9xl text-black mb-12 leading-none">
-          {content.title}
+          {typeof content.title === 'string' ? content.title : content.title[lang]}
         </h1>
         <p className="text-2xl md:text-4xl text-gray-800 font-serif font-light mb-8 italic">
           {content.sub}
         </p>
         <p className="text-base md:text-lg text-gray-500 font-serif font-light max-w-3xl leading-loose">
-          {content.desc}
+          {typeof content.desc === 'string' ? content.desc : content.desc[lang]}
         </p>
       </Section>
 
