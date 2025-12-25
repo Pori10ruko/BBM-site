@@ -31,35 +31,6 @@ export const works: Work[] = [
     ]
   },
   {
-    id: 'look-up-at-the-stars',
-    title: 'Look Up at the Stars',
-    titleLocalized: {
-      JP: 'Look Up at the Stars',
-      EN: 'Look Up at the Stars',
-      TW: 'Look Up at the Stars'
-    },
-    date: '2024',
-    client: 'Live Painting Concert',
-    category: 'Performance',
-    pillar: 'Art',
-    description: {
-      JP: '立体音響とライブペインティングの融合。Live Painting: Maria Noto (能登真理亜)',
-      EN: 'A fusion of spatial audio and live painting. Live Painting: Maria Noto.',
-      TW: '立體音響與現場繪畫的融合。Live Painting: Maria Noto (能登真理亜)。'
-    },
-    imageUrl: '/images/art.jpg',
-    tags: ['2024', 'Live Painting', '2ch Spatial'],
-    role: { JP: '立体音響演出', EN: 'Spatial Audio Direction', TW: '立體音響演出' },
-    approach: {
-      JP: 'ライブペインティングと同期する空間音響体験を2chで設計。',
-      EN: 'Designed a 2ch spatial audio experience synchronized with live painting.',
-      TW: '以雙聲道設計與現場繪畫同步的立體音響體驗。'
-    },
-    externalLinks: [
-      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=lI7Rq58b2Ys' }
-    ]
-  },
-  {
     id: 'distant-echo',
     title: 'Distant Echo',
     date: '2025.11.14',
@@ -89,17 +60,17 @@ export const works: Work[] = [
       EN: 'Alone Together (Random International)',
       TW: 'Alone Together (Random International)'
     },
-    date: '2024 - Present',
+    date: '2024-25',
     client: 'Random International',
     category: 'Installation',
     pillar: 'Art',
     description: {
-      JP: 'サウジアラビアの芸術祭「Noor Riyadh 2024」での展示を経て、現在はマイアミの「Superblue Miami」にて展示中。物理空間とデジタル空間における人間の振る舞いを探求する没入型インスタレーション。立体音響実装を担当。',
-      EN: 'Following its exhibition at "Noor Riyadh 2024" in Saudi Arabia, it is currently on display at "Superblue Miami." An immersive installation exploring human behavior across physical and digital spaces. Responsible for spatial audio implementation.',
-      TW: '繼沙烏地阿拉伯「Noor Riyadh 2024」藝術節展出後，目前正於邁阿密「Superblue Miami」展出。探討人類在物理空間與數位空間中行為模式的沉浸式裝置藝術。負責立體音響實作。'
+      JP: 'サウジアラビア「Noor Riyadh 2024」を経て、現在はマイアミ「Superblue Miami」にて展示中。物理とデジタルの境界を探る没入型インスタレーション。立体音響実装を担当。',
+      EN: 'After "Noor Riyadh 2024" in Saudi Arabia, it is currently on display at "Superblue Miami." An immersive installation exploring the boundary between physical and digital spaces. Responsible for spatial audio implementation.',
+      TW: '經沙烏地阿拉伯「Noor Riyadh 2024」展出後，目前正在邁阿密「Superblue Miami」展出。探討物理與數位邊界的沉浸式裝置藝術。負責立體音響實作。'
     },
     imageUrl: '/images/Random-International-Alone-Together.jpg',
-    tags: ['2024 - Present', 'Riyadh', 'Miami', 'Installation'],
+    tags: ['2024-25', 'Riyadh', 'Miami', 'Installation'],
     role: { JP: '立体音響実装', EN: 'Spatial Audio Implementation', TW: '立體音響實作' },
     approach: {
       JP: '空間と動線に合わせて、体験の質を損なわない音響実装を設計。',
@@ -111,35 +82,6 @@ export const works: Work[] = [
     ]
   },
   {
-    id: 'venus-festival',
-    title: 'VENUSの祝祭',
-    titleLocalized: {
-      JP: 'エレクトリックオペラ "VENUSの祝祭"',
-      EN: 'Electric Opera "Festival of VENUS"',
-      TW: '電氣歌劇 "VENUS的祝祭"'
-    },
-    date: '2023.05.26-27',
-    client: 'Beyond Boundary Chamber Orchestra',
-    category: 'Performance',
-    pillar: 'Art',
-    description: {
-      JP: '2023年5月、川崎駅前にて開催されたエレクトリックオペラ。音楽・映像・演出：中村浩之、演奏：Beyond Boundary Chamber Orchestra。コロナ禍を経て、「痛み」と「希望」を共有する現代の祝祭として、かぐや姫や人魚姫など古今の物語をオマージュし再構築しました。',
-      EN: 'Held in front of Kawasaki Station in May 2023. Direction, Music, Video: Hiroyuki Nakamura. Performed by Beyond Boundary Chamber Orchestra. An electric opera that reinterprets classic tales like Princess Kaguya to share themes of pain and hope in the post-pandemic era.',
-      TW: '2023年5月於川崎站前舉辦的電氣歌劇。音樂、影像、導演：中村浩之，演奏：Beyond Boundary Chamber Orchestra。作為在後疫情時代共享「傷痛」與「希望」的現代慶典，向輝夜姬、人魚公主等古今故事致敬並重新建構。'
-    },
-    imageUrl: '/images/art.jpg',
-    tags: ['2023.05', 'Opera', 'Kawasaki', 'Electric Opera'],
-    role: { JP: '音楽・映像・演出', EN: 'Direction / Music / Video', TW: '導演／音樂／影像' },
-    approach: {
-      JP: '古典的な物語のモチーフを現代の祝祭へ再構成し、都市空間で共有される体験として提示。',
-      EN: 'Reconstructing classic story motifs into a contemporary festival shared in the urban space.',
-      TW: '將經典故事母題重構為當代慶典，作為在城市空間中共享的體驗呈現。'
-    },
-    externalLinks: [
-      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=TWYuiozIxps' }
-    ]
-  },
-  {
     id: 'encount-kawasaki',
     title: 'Encount',
     titleLocalized: {
@@ -147,7 +89,7 @@ export const works: Work[] = [
       EN: 'Kawasaki City 100th Anniversary Pre-event "Encount"',
       TW: '川崎市政100週年暖身活動 "Encount"'
     },
-    date: '2024.07.20',
+    date: '2024.07',
     client: 'Kawasaki City',
     category: 'Performance',
     pillar: 'Art',
@@ -166,6 +108,64 @@ export const works: Work[] = [
     },
     externalLinks: [
       { label: 'Link', url: 'https://prtimes.jp/main/html/rd/p/000000002.000144544.html' }
+    ]
+  },
+  {
+    id: 'look-up-at-the-stars',
+    title: 'Look Up at the Stars',
+    titleLocalized: {
+      JP: 'Look Up at the Stars',
+      EN: 'Look Up at the Stars',
+      TW: 'Look Up at the Stars'
+    },
+    date: '2023.12',
+    client: 'Live Painting Concert',
+    category: 'Performance',
+    pillar: 'Art',
+    description: {
+      JP: '立体音響とライブペインティングの融合。Live Painting: Maria Noto (能登真理亜)',
+      EN: 'A fusion of spatial audio and live painting. Live Painting: Maria Noto.',
+      TW: '立體音響與現場繪畫的融合。Live Painting: Maria Noto (能登真理亜)。'
+    },
+    imageUrl: '/images/look-up.jpg',
+    tags: ['2023.12', 'Live Painting', '2ch Spatial'],
+    role: { JP: '立体音響演出', EN: 'Spatial Audio Direction', TW: '立體音響演出' },
+    approach: {
+      JP: 'ライブペインティングと同期する空間音響体験を2chで設計。',
+      EN: 'Designed a 2ch spatial audio experience synchronized with live painting.',
+      TW: '以雙聲道設計與現場繪畫同步的立體音響體驗。'
+    },
+    externalLinks: [
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=lI7Rq58b2Ys' }
+    ]
+  },
+  {
+    id: 'venus-festival',
+    title: 'VENUSの祝祭',
+    titleLocalized: {
+      JP: 'エレクトリックオペラ "VENUSの祝祭"',
+      EN: 'Electric Opera "Festival of VENUS"',
+      TW: '電氣歌劇 "VENUS的祝祭"'
+    },
+    date: '2023.05',
+    client: 'Beyond Boundary Chamber Orchestra',
+    category: 'Performance',
+    pillar: 'Art',
+    description: {
+      JP: '2023年5月、川崎駅前にて開催されたエレクトリックオペラ。音楽・映像・演出：中村浩之、演奏：Beyond Boundary Chamber Orchestra。コロナ禍を経て、「痛み」と「希望」を共有する現代の祝祭として、かぐや姫や人魚姫など古今の物語をオマージュし再構築しました。',
+      EN: 'Held in front of Kawasaki Station in May 2023. Direction, Music, Video: Hiroyuki Nakamura. Performed by Beyond Boundary Chamber Orchestra. An electric opera that reinterprets classic tales like Princess Kaguya to share themes of pain and hope in the post-pandemic era.',
+      TW: '2023年5月於川崎站前舉辦的電氣歌劇。音樂、影像、導演：中村浩之，演奏：Beyond Boundary Chamber Orchestra。作為在後疫情時代共享「傷痛」與「希望」的現代慶典，向輝夜姬、人魚公主等古今故事致敬並重新建構。'
+    },
+    imageUrl: '/images/art.jpg',
+    tags: ['2023.05', 'Opera', 'Kawasaki', 'Electric Opera'],
+    role: { JP: '音楽・映像・演出', EN: 'Direction / Music / Video', TW: '導演／音樂／影像' },
+    approach: {
+      JP: '古典的な物語のモチーフを現代の祝祭へ再構成し、都市空間で共有される体験として提示。',
+      EN: 'Reconstructing classic story motifs into a contemporary festival shared in the urban space.',
+      TW: '將經典故事母題重構為當代慶典，作為在城市空間中共享的體驗呈現。'
+    },
+    externalLinks: [
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=TWYuiozIxps' }
     ]
   },
   {
