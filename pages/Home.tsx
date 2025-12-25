@@ -57,13 +57,24 @@ const Home: React.FC = () => {
           <p className="text-xl md:text-3xl text-gray-800 font-serif font-light leading-relaxed mb-16 max-w-4xl mx-auto">
             {t.tagline[lang]}
           </p>
+
+          <div className="max-w-4xl mx-auto text-left text-base md:text-lg text-gray-700 font-serif leading-loose space-y-6 mb-16">
+            <p>
+              今現在、日本に限らず世界では政治的な問題、AI技術による問題、貧困による問題と様々な問題に直面しています。
+              その中で私たち表現者はどのように世界と関わっていくべきなのでしょうか。
+              bbmはこうした問題に対し、共に考えアプローチをしていくコミュニティです。
+            </p>
+            <p>
+              アート表現、パブリックな空間での表現、そして教育といった3つの柱で、ボランティア、クライアントワークを隔てなくアプローチを行なっています。
+            </p>
+          </div>
           
           <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
             <Link to="/works" className="group flex items-center space-x-4">
-              <span className="text-[12px] font-bold tracking-widest uppercase border-b-2 border-black/5 pb-1 group-hover:border-[#C9A66B] transition-all">Selected Archives</span>
+              <span className="text-[12px] font-bold tracking-widest border-b-2 border-black/5 pb-1 group-hover:border-[#C9A66B] transition-all">厳選されたアーカイブ：</span>
             </Link>
             <Link to="/spatial-2ch" className="group flex items-center space-x-4">
-              <span className="text-[12px] font-bold tracking-widest uppercase border-b-2 border-black/5 pb-1 group-hover:border-[#C9A66B] transition-all">2ch Spatial Technology</span>
+              <span className="text-[12px] font-bold tracking-widest border-b-2 border-black/5 pb-1 group-hover:border-[#C9A66B] transition-all">2ch / 立体音響技術</span>
             </Link>
           </div>
         </motion.div>
@@ -115,17 +126,6 @@ const Home: React.FC = () => {
                <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-gray-300 group-hover:text-black transition-colors">Learn More →</span>
             </Link>
           ))}
-        </div>
-      </Section>
-
-      {/* Dialogue Highlight */}
-      <Section className="py-48 text-center">
-        <div className="max-w-4xl mx-auto space-y-12">
-          <h2 className="text-3xl md:text-5xl font-serif font-light italic leading-tight text-gray-800">
-            "We are a community that explores<br />
-            <span className="text-black font-bold not-italic">the resonance of our era</span> together."
-          </h2>
-          <div className="w-20 h-[1px] bg-[#C9A66B] mx-auto"></div>
         </div>
       </Section>
 
