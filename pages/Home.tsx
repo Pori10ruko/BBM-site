@@ -273,11 +273,11 @@ const Home: React.FC = () => {
               rel="noopener noreferrer"
               className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
             >
-              <div className="relative h-[220px] bg-gray-100 overflow-hidden">
+              <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
                 <img
                   src="/images/yuki share .jpg"
                   alt=""
-                  className="w-full h-full object-cover grayscale transition-all duration-700 ease-in-out hover:grayscale-0 group-hover:grayscale-0"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/5" />
@@ -293,11 +293,11 @@ const Home: React.FC = () => {
 
             {seigetsukiWork && (
               <Link to={`/works/${seigetsukiWork.id}`} className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500">
-                <div className="relative h-[220px] bg-gray-100 overflow-hidden">
+                <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
                   <img
                     src={seigetsukiWork.imageUrl}
                     alt=""
-                    className="w-full h-full object-cover grayscale transition-all duration-700 ease-in-out hover:grayscale-0 group-hover:grayscale-0"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/5" />
@@ -367,14 +367,14 @@ const Home: React.FC = () => {
           href="https://tsuchiura-sound-achib.netlify.app/#events"
           target="_blank"
           rel="noopener noreferrer"
-          className="group block bg-white border border-black/5 shadow-sm overflow-hidden"
+          className="block bg-white border border-black/5 shadow-sm overflow-hidden"
         >
           <div className="grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden">
+            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
               <img
                 src="/images/tokoji1.png"
                 alt=""
-                className="w-full h-full object-cover grayscale transition-all duration-700 ease-in-out hover:grayscale-0 group-hover:grayscale-0"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black/5" />

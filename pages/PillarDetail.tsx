@@ -27,7 +27,11 @@ const pillarContent = {
   Public: {
     title: 'Public Resonance',
     sub: '社会の響き。',
-    desc: '公共空間における音の価値を再定義。都市の記憶や環境音をアーカイブし、地域社会と対話することで、場所のアイデンティティを次世代へ繋ぎます。',
+    desc: {
+      JP: '街の声を聴く。私たちは、その場所の喧騒も静寂も、あるがままに受け入れ、そこに暮らす人々との対話を通して新たな「風景」を紡ぎ出します。それは、公共空間そのものを、共鳴する一つの楽器へと変える試みです。',
+      EN: 'Listening to the voice of the city. We accept the noise and silence of the place as they are, weaving a new "scenery" through dialogue with the people who live there. It is an attempt to turn the public space itself into a resonant instrument.',
+      TW: '傾聽城市的聲音。我們如實接納當地的喧囂與靜寂，透過與生活在那裡的人們對話，編織出全新的「風景」。這是一場將公共空間本身轉化為共鳴樂器的嘗試。'
+    },
     color: '#4A5568'
   },
   Education: {
@@ -43,6 +47,17 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   const [selectedWork, setSelectedWork] = useState<Work | null>(null);
   const content = pillarContent[type];
   const filteredWorks = works.filter(w => w.pillar === type);
+
+  const getWork = (id: string) => works.find((w) => w.id === id);
+  const tsuchiuraWorks: Work[] = [
+    getWork('tsuchiura-archive'),
+    getWork('moonlight-concert'),
+    getWork('oiwata-elementary-special-class')
+  ].filter(Boolean) as Work[];
+  const kawasakiWorks: Work[] = [
+    getWork('encount-kawasaki'),
+    getWork('venus-festival')
+  ].filter(Boolean) as Work[];
 
   return (
     <div className="pt-40 pb-40">
@@ -62,21 +77,61 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
 
       {/* Relevant Works */}
       <Section className="py-20 border-t border-black/5">
-        <div className="flex items-baseline justify-between mb-20">
-            <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Selected Archives in {type}.</h2>
-            <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{filteredWorks.length} Projects</span>
-        </div>
-        
-        {filteredWorks.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {filteredWorks.map((work) => (
-              <WorkCard key={work.id} work={work} onClick={() => setSelectedWork(work)} />
-            ))}
+        {type === 'Public' ? (
+          <div className="space-y-24">
+            <div>
+              <div className="flex items-baseline justify-between mb-10">
+                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Tsuchiura City / 土浦市</h2>
+                <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{tsuchiuraWorks.length} Projects</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {tsuchiuraWorks.map((work) => (
+                  <WorkCard
+                    key={work.id}
+                    work={work}
+                    onClick={() => {
+                      if (work.id === 'tsuchiura-archive') {
+                        window.open('https://tsuchiura-sound-achib.netlify.app/', '_blank', 'noopener,noreferrer');
+                        return;
+                      }
+                      setSelectedWork(work);
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-baseline justify-between mb-10">
+                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Kawasaki City / 川崎市</h2>
+                <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{kawasakiWorks.length} Projects</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {kawasakiWorks.map((work) => (
+                  <WorkCard key={work.id} work={work} onClick={() => setSelectedWork(work)} />
+                ))}
+              </div>
+            </div>
           </div>
         ) : (
-          <div className="py-40 text-center border border-dashed border-black/10">
-            <p className="text-gray-400 font-serif italic text-sm">Now building archives...</p>
-          </div>
+          <>
+            <div className="flex items-baseline justify-between mb-20">
+              <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Selected Archives in {type}.</h2>
+              <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{filteredWorks.length} Projects</span>
+            </div>
+
+            {filteredWorks.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {filteredWorks.map((work) => (
+                  <WorkCard key={work.id} work={work} onClick={() => setSelectedWork(work)} />
+                ))}
+              </div>
+            ) : (
+              <div className="py-40 text-center border border-dashed border-black/10">
+                <p className="text-gray-400 font-serif italic text-sm">Now building archives...</p>
+              </div>
+            )}
+          </>
         )}
       </Section>
 

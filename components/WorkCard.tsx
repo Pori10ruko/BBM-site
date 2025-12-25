@@ -23,20 +23,20 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
       onClick={onClick}
       className="group relative cursor-pointer flex flex-col space-y-6"
     >
-      <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden bg-gray-100">
+      <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden bg-gray-100 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
         {work.imageUrl ? (
           <motion.img
             src={work.imageUrl}
             alt={title}
             loading="lazy"
-            className="w-full h-full object-cover grayscale opacity-80 transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+            className="w-full h-full object-cover"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-300">{title}</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+        <div className="absolute inset-0 bg-black/5 hover:bg-transparent transition-colors duration-500" />
       </div>
 
       <div className="space-y-3">

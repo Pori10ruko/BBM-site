@@ -170,7 +170,7 @@ export const works: Work[] = [
   },
   {
     id: 'tsuchiura-archive',
-    title: 'Tsuchiura Sound Archive',
+    title: '土浦Soundアーカイブプロジェクト',
     client: 'Public Project',
     category: 'Archive',
     pillar: 'Public',
@@ -182,23 +182,66 @@ export const works: Work[] = [
     imageUrl: '/images/TSAP.png',
     tags: ['Public', 'Archive', 'Community'],
     role: { JP: 'サウンドディレクション', EN: 'Sound Direction', TW: '聲音指導' },
-    approach: { JP: '音を通じて地域への愛着を育むシビックプライドの形成。', EN: 'Fostering civic pride through the act of listening.', TW: '透過聲音建立自豪感。' }
+    approach: { JP: '音を通じて地域への愛着を育むシビックプライドの形成。', EN: 'Fostering civic pride through the act of listening.', TW: '透過聲音建立自豪感。' },
+    externalLinks: [
+      { label: 'Website', url: 'https://tsuchiura-sound-achib.netlify.app/' }
+    ]
   },
   {
     id: 'moonlight-concert',
-    title: 'Tsuchiura Moonlight Concert',
+    title: 'Sound Kura Tsuchiura Moonlight Concert',
+    titleLocalized: {
+      JP: 'サウンド蔵つちうらムーンライトコンサート',
+      EN: 'Sound Kura Tsuchiura Moonlight Concert',
+      TW: 'Sound Kura Tsuchiura Moonlight Concert'
+    },
+    date: '2023 - Present',
     client: 'Tsuchiura City',
     category: 'Performance',
     pillar: 'Public',
     description: {
-      JP: '月明かりの下で開催された野外コンサート。自然の静寂と音楽を2ch音響で融合。',
-      EN: 'Outdoor concert under the moonlight. Merging nature\'s silence with music via 2ch.',
-      TW: '在月光下舉辦的戶外音樂會。'
+      JP: '土浦市の商店会と市民の手で作り上げる野外コンサート。BBMは企画・運営および演奏で参加し、街の賑わいと文化の醸成に貢献しています。',
+      EN: 'An outdoor concert shaped by Tsuchiura\'s shopping district association and citizens. BBM participates in planning, operations, and performance—contributing to the city\'s vibrancy and cultural growth.',
+      TW: '由土浦市商店街與市民共同打造的戶外音樂會。BBM 參與企劃、營運與演出，為城市的活力與文化養成帶來貢獻。'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Outdoor', 'Event', 'Public Art'],
-    role: { JP: '会場音響設計', EN: 'Venue Sound Design', TW: '場地音響設計' },
-    approach: { JP: '周囲の環境音を遮断せず、音楽の響きと溶け込ませる音場設計。', EN: 'Blending music with environmental sounds rather than isolating them.', TW: '融合自然環境音的設計。' }
+    imageUrl: '/images/moon_concert.jpg',
+    tags: ['Tsuchiura', 'Outdoor', 'Concert', 'Community'],
+    role: { JP: '企画・運営 / 演奏', EN: 'Planning / Operations / Performance', TW: '企劃／營運／演出' },
+    approach: {
+      JP: '市民と共に場を育て、街の空気と音楽が交差する一夜をデザイン。',
+      EN: 'Co-creating the event with citizens, designing a night where the city\'s atmosphere meets music.',
+      TW: '與市民共創活動，設計城市氛圍與音樂交會的一夜。'
+    },
+    externalLinks: [
+      { label: 'Facebook', url: 'https://www.facebook.com/groups/174464965653837/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/tsuchiura_moon/?hl=ja' }
+    ]
+  },
+  {
+    id: 'oiwata-elementary-special-class',
+    title: 'Oiwata Elementary School Special Class',
+    titleLocalized: {
+      JP: '土浦市立大岩田小学校 特別授業',
+      EN: 'Oiwata Elementary School Special Class',
+      TW: '大岩田小學 特別課程'
+    },
+    date: '2024',
+    client: 'Tsuchiura Oiwata Elementary School',
+    category: 'Education',
+    pillar: 'Public',
+    description: {
+      JP: '昨年に続き「キャリア講演会」として体育館で特別授業を実施。金管バンド部との共演に加え、全児童が足踏みや手拍子、文房具の音でアンサンブルに参加するワークショップを開催。「楽器以外の音」で奏でる喜びを共有し、終了後は即席サイン会が開かれるほどの熱狂に包まれました。',
+      EN: 'Following last year, we held a special class in the gym as a “career lecture.” Beyond performing with the brass band, every student joined an ensemble workshop using footsteps, claps, and the sounds of everyday stationery—sharing the joy of making music with “sounds beyond instruments.” The event ended in such excitement that an impromptu autograph session even took place.',
+      TW: '延續去年的「職涯講演會」，我們在體育館舉辦特別課程。除了與金管樂團共演，也透過工作坊讓全體學生用踏步、拍手與文具聲加入合奏，共享以「非樂器之聲」演奏的喜悅。活動熱烈到結束後甚至自發形成即席簽名會。'
+    },
+    imageUrl: '/images/school tsuchiura.JPG',
+    tags: ['Tsuchiura', 'School', 'Workshop', 'Community'],
+    role: { JP: '特別授業 / ワークショップ', EN: 'Special Class / Workshop', TW: '特別課程／工作坊' },
+    approach: {
+      JP: '身近な音を「表現」へ変換し、全員参加のアンサンブル体験を設計。',
+      EN: 'Turning everyday sounds into expression, designing an inclusive ensemble experience.',
+      TW: '將日常聲音轉化為表達，設計人人可參與的合奏體驗。'
+    }
   },
   {
     id: 'net-radio-spatial',
