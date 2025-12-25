@@ -10,6 +10,7 @@ interface WorkCardProps {
 
 const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
   const { lang } = useContext(LanguageContext);
+  const title = work.titleLocalized?.[lang] ?? work.title;
   const primaryLink = work.externalLinks?.[0] ?? (work.externalUrl ? { label: work.externalUrl.includes('youtube') ? 'YouTube' : 'Link', url: work.externalUrl } : null);
 
   return (
@@ -26,13 +27,13 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
         {work.imageUrl ? (
           <motion.img
             src={work.imageUrl}
-            alt={work.title}
+            alt={title}
             loading="lazy"
             className="w-full h-full object-cover grayscale opacity-80 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-300">{work.title}</span>
+            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-gray-300">{title}</span>
           </div>
         )}
         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
@@ -43,7 +44,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
           <span className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase">{work.category}</span>
           <span className="text-[9px] font-medium text-gray-400 tracking-wider uppercase">{work.client}</span>
         </div>
-        <h3 className="text-2xl font-serif font-bold text-black group-hover:text-[#C9A66B] transition-colors leading-tight">{work.title}</h3>
+        <h3 className="text-2xl font-serif font-bold text-black group-hover:text-[#C9A66B] transition-colors leading-tight">{title}</h3>
         <p className="text-xs text-gray-500 font-serif leading-relaxed line-clamp-2">
           {work.description[lang]}
         </p>

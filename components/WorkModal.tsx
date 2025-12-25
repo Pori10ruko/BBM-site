@@ -13,6 +13,8 @@ const WorkModal: React.FC<WorkModalProps> = ({ work, onClose }) => {
   const { lang } = useContext(LanguageContext);
   if (!work) return null;
 
+  const title = work.titleLocalized?.[lang] ?? work.title;
+
   const links = (work.externalLinks?.length ? work.externalLinks : work.externalUrl ? [{
     label: work.externalUrl.includes('youtube') ? 'YouTubeを見る' : '外部リンク',
     url: work.externalUrl
@@ -42,16 +44,16 @@ const WorkModal: React.FC<WorkModalProps> = ({ work, onClose }) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
             <div className="lg:col-span-5 relative bg-gray-50">
               {work.imageUrl ? (
-                <img src={work.imageUrl} alt={work.title} className="absolute inset-0 w-full h-full object-cover grayscale" />
+                <img src={work.imageUrl} alt={title} className="absolute inset-0 w-full h-full object-cover grayscale" />
               ) : (
                 <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-                  <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-black/20">{work.title}</span>
+                  <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-black/20">{title}</span>
                 </div>
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
               <div className="absolute bottom-16 left-12 right-12">
                 <span className="text-[#C9A66B] font-bold tracking-[0.6em] text-[10px] uppercase mb-6 block">{work.category}</span>
-                <h2 className="text-6xl font-display italic tracking-tighter leading-none">{work.title}</h2>
+                <h2 className="text-6xl font-display italic tracking-tighter leading-none">{title}</h2>
               </div>
             </div>
 

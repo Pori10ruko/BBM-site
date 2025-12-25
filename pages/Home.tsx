@@ -202,7 +202,7 @@ const Home: React.FC = () => {
             {t.tagline[lang]}
           </p>
 
-          <div className="max-w-3xl mx-auto text-left text-lg md:text-xl text-gray-700 font-serif leading-loose space-y-8 mb-16">
+          <div className="max-w-3xl mx-auto text-left text-sm md:text-lg text-gray-700 font-serif leading-relaxed md:leading-loose space-y-6 md:space-y-8 mb-16">
             <p>
               {t.philosophy[lang].p1}
             </p>
@@ -211,14 +211,7 @@ const Home: React.FC = () => {
             </p>
           </div>
           
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
-            <Link to="/works" className="group flex items-center space-x-4">
-              <span className="text-[12px] font-bold tracking-widest border-b-2 border-black/5 pb-1 group-hover:border-[#C9A66B] transition-all">厳選されたアーカイブ：</span>
-            </Link>
-            <Link to="/spatial-2ch" className="group flex items-center space-x-4">
-              <span className="text-[12px] font-bold tracking-widest border-b-2 border-black/5 pb-1 group-hover:border-[#C9A66B] transition-all">2ch / 立体音響技術</span>
-            </Link>
-          </div>
+
         </motion.div>
       </Section>
 
@@ -303,7 +296,7 @@ const Home: React.FC = () => {
                   <div className="absolute inset-0 bg-black/5" />
                 </div>
                 <div className="p-10">
-                  <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">App / Spatial Audio</p>
+                  <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.15 Release</p>
                   <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.seigetsukiTitle[lang]}</h3>
                   <p className="text-gray-600 font-serif leading-loose text-sm">
                     {seigetsukiWork.description?.[lang] ?? ''}

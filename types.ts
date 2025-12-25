@@ -5,6 +5,8 @@ export type Language = 'JP' | 'EN' | 'TW';
 export interface Work {
   id: string;
   title: string;
+  titleLocalized?: { [key in Language]: string };
+  date?: string;
   client: string;
   category: Category;
   pillar: Pillar; 

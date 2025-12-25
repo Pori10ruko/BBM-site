@@ -2,16 +2,46 @@ import { Work } from '../types';
 
 export const works: Work[] = [
   {
+    id: 'tokoji-light-sound',
+    title: 'Architecture of Sound and Light at Tokoji Temple',
+    titleLocalized: {
+      JP: '音と光の建築 at 東光寺',
+      EN: 'Architecture of Sound and Light at Tokoji Temple',
+      TW: '音與光的建築 at 東光寺'
+    },
+    date: '2025.02.23',
+    client: 'Tokoji Temple',
+    category: 'Performance',
+    pillar: 'Art',
+    description: {
+      JP: '歴史ある東光寺の本堂を舞台に、市民と作り上げた「光のまゆ」と「土浦の音」を組み合わせた一日限りの展示・コンサート。2ch立体音響による空間演出。',
+      EN: 'A one-day exhibition and concert at the historic Tokoji Temple. Combining "cocoons of light" created with citizens and "sounds of Tsuchiura" with binaural spatial audio.',
+      TW: '以歷史悠久的東光寺本堂為舞台，結合與市民共同創作的「光之繭」與「土浦之音」，透過雙聲道立體音響呈現的一日限定展覽與音樂會。'
+    },
+    imageUrl: '/images/tokoji1.png',
+    tags: ['2025.02.23', 'Tsuchiura', 'Exhibition', 'Concert', '2ch Spatial'],
+    role: { JP: '空間音響演出', EN: 'Spatial Audio Direction', TW: '立體音響演出' },
+    approach: {
+      JP: '展示とコンサートを横断する2ch立体音響の空間演出を設計。',
+      EN: 'Designed the 2ch spatial audio direction across both exhibition and concert.',
+      TW: '設計橫跨展覽與音樂會的雙聲道立體音響空間演出。'
+    },
+    externalLinks: [
+      { label: 'Link', url: 'https://tsuchiura-sound-achib.netlify.app/#events' }
+    ]
+  },
+  {
     id: 'distant-echo',
     title: 'Distant Echo',
+    date: '2025.11.14',
     client: 'BBM Collective',
     category: 'Installation',
     pillar: 'Art',
     featuredInTech: true,
     description: {
-      JP: '「距離」と「残響」をテーマにした立体音響インスタレーション。2chでの精密な空間シミュレート。',
-      EN: 'Spatial audio installation themed "Distance" and "Echo". Precision 2ch simulation.',
-      TW: '以「距離」與「殘響」為主題的立體音響裝置藝術。'
+      JP: '「距離」と「残響」をテーマにした立体音響インスタレーション。2chでの精密な空間シミュレート。Live Painting: Maria Noto (能登真理亜)',
+      EN: 'Spatial audio installation themed "Distance" and "Echo". Precision 2ch simulation. Live Painting: Maria Noto.',
+      TW: '以「距離」與「殘響」為主題的立體音響裝置藝術。Live Painting: Maria Noto (能登真理亜)。'
     },
     imageUrl: '/images/distant-echo.avif',
     tags: ['Immersive', 'Performance', '2ch Spatial'],
@@ -20,6 +50,93 @@ export const works: Work[] = [
     externalLinks: [
       { label: 'Website', url: 'https://www.nakamurahiroyuki.info/distant-echo' },
       { label: 'YouTube', url: 'https://www.youtube.com/watch?v=Am1jq5AXBS4' }
+    ]
+  },
+  {
+    id: 'alone-together',
+    title: 'Alone Together (Riyadh Art 2024)',
+    titleLocalized: {
+      JP: 'Alone Together (Riyadh Art 2024)',
+      EN: 'Alone Together (Riyadh Art 2024)',
+      TW: 'Alone Together (Riyadh Art 2024)'
+    },
+    date: '2024',
+    client: 'Riyadh Art',
+    category: 'Installation',
+    pillar: 'Art',
+    description: {
+      JP: 'サウジアラビアで開催された芸術祭「Riyadh Art 2024」における没入型インスタレーション。立体音響実装を担当。Live Painting: Maria Noto (能登真理亜)',
+      EN: 'An immersive installation at "Riyadh Art 2024" in Saudi Arabia. Responsible for spatial audio implementation. Live Painting: Maria Noto.',
+      TW: '於沙烏地阿拉伯「Riyadh Art 2024」藝術節展出的沉浸式裝置藝術。負責立體音響實作。Live Painting: Maria Noto (能登真理亜)。'
+    },
+    imageUrl: '/images/Random-International-Alone-Together.jpg',
+    tags: ['2024', 'Riyadh', 'Installation'],
+    role: { JP: '立体音響実装', EN: 'Spatial Audio Implementation', TW: '立體音響實作' },
+    approach: {
+      JP: '空間と動線に合わせて、体験の質を損なわない音響実装を設計。',
+      EN: 'Designing an audio implementation that preserves the experience across space and visitor flow.',
+      TW: '依空間與動線設計音響實作，確保體驗品質。'
+    },
+    externalLinks: [
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=lI7Rq58b2Ys' }
+    ]
+  },
+  {
+    id: 'venus-festival',
+    title: 'VENUSの祝祭',
+    titleLocalized: {
+      JP: 'エレクトリックオペラ "VENUSの祝祭"',
+      EN: 'Electric Opera "Festival of VENUS"',
+      TW: '電氣歌劇 "VENUS的祝祭"'
+    },
+    date: '2023.05.26-27',
+    client: 'Beyond Boundary Chamber Orchestra',
+    category: 'Performance',
+    pillar: 'Art',
+    description: {
+      JP: '2023年5月、川崎駅前にて開催されたエレクトリックオペラ。音楽・映像・演出：中村浩之、演奏：Beyond Boundary Chamber Orchestra。コロナ禍を経て、「痛み」と「希望」を共有する現代の祝祭として、かぐや姫や人魚姫など古今の物語をオマージュし再構築しました。',
+      EN: 'Held in front of Kawasaki Station in May 2023. Direction, Music, Video: Hiroyuki Nakamura. Performed by Beyond Boundary Chamber Orchestra. An electric opera that reinterprets classic tales like Princess Kaguya to share themes of pain and hope in the post-pandemic era.',
+      TW: '2023年5月於川崎站前舉辦的電氣歌劇。音樂、影像、導演：中村浩之，演奏：Beyond Boundary Chamber Orchestra。作為在後疫情時代共享「傷痛」與「希望」的現代慶典，向輝夜姬、人魚公主等古今故事致敬並重新建構。'
+    },
+    imageUrl: '/images/art.jpg',
+    tags: ['2023.05', 'Opera', 'Kawasaki', 'Electric Opera'],
+    role: { JP: '音楽・映像・演出', EN: 'Direction / Music / Video', TW: '導演／音樂／影像' },
+    approach: {
+      JP: '古典的な物語のモチーフを現代の祝祭へ再構成し、都市空間で共有される体験として提示。',
+      EN: 'Reconstructing classic story motifs into a contemporary festival shared in the urban space.',
+      TW: '將經典故事母題重構為當代慶典，作為在城市空間中共享的體驗呈現。'
+    },
+    externalLinks: [
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=TWYuiozIxps' }
+    ]
+  },
+  {
+    id: 'encount-kawasaki',
+    title: 'Encount',
+    titleLocalized: {
+      JP: '川崎市政100周年プレイベント "Encount"',
+      EN: 'Kawasaki City 100th Anniversary Pre-event "Encount"',
+      TW: '川崎市政100週年暖身活動 "Encount"'
+    },
+    date: '2024.07.20',
+    client: 'Kawasaki City',
+    category: 'Performance',
+    pillar: 'Art',
+    description: {
+      JP: '川崎市政100周年プレイベントとして開催された「Encount」にて音楽監督を担当。',
+      EN: 'Served as Music Director for "Encount," a pre-event for the 100th anniversary of Kawasaki City.',
+      TW: '擔任川崎市政100週年暖身活動「Encount」的音樂總監。'
+    },
+    imageUrl: '/images/encount.JPG',
+    tags: ['2024.07', 'Kawasaki', 'Event'],
+    role: { JP: '音楽監督', EN: 'Music Director', TW: '音樂總監' },
+    approach: {
+      JP: '都市の祝祭性を拡張するための音楽設計と、会場体験全体の統括。',
+      EN: 'Music design and overall direction to expand the city\'s celebratory experience.',
+      TW: '以音樂設計與整體統籌，拓展城市慶典的體驗。'
+    },
+    externalLinks: [
+      { label: 'Link', url: 'https://prtimes.jp/main/html/rd/p/000000002.000144544.html' }
     ]
   },
   {
@@ -37,62 +154,6 @@ export const works: Work[] = [
     tags: ['Concert', 'Live Painting', 'Piano', 'Spatial Art'],
     role: { JP: '音響演出', EN: 'Audio Direction', TW: '聲音演出' },
     approach: { JP: '生楽器の響きを損なわず、空間的な奥行きを2chで拡張。', EN: 'Expanding depth via 2ch while preserving acoustic harmonics.', TW: '擴展空間深度。' }
-  },
-  {
-    id: 'una-venus',
-    title: "un,a 'venus' (TR-860)",
-    client: 'un,a',
-    category: 'Archive',
-    pillar: 'Art',
-    featuredInTech: true,
-    description: {
-      JP: 'TR-860を使用した緻密な音響構成を、BBM独自の2chエンジンで再構築。',
-      EN: "Reconstructing TR-860 tracks with BBM's unique 2ch engine.",
-      TW: '重新構建 TR-860 音軌。'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Music', '2ch Spatial'],
-    role: { JP: 'スペーシャルミキシング', EN: 'Spatial Mixing', TW: '空間混音' },
-    approach: { JP: '電子音の鋭い定位と広がりを2chで両立させたアーカイブ表現。', EN: 'Balancing sharp localization and width in a 2ch archive.', TW: '兼顧定位感與空間展延。' }
-  },
-  {
-    id: 'release-page',
-    title: 'BBM Release Archives',
-    client: 'BBM Collective',
-    category: 'Release',
-    pillar: 'Art',
-    description: {
-      JP: 'BBMが手がける音源リリースのポータル。最新の立体音響作品の配信情報を集約。',
-      EN: 'Portal for BBM sound releases, aggregating latest spatial audio works.',
-      TW: 'BBM 音源發行入口網站。'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Label', 'Digital Release'],
-    role: { JP: 'キュレーション / マスタリング', EN: 'Curation / Mastering', TW: '策劃 / 母帶處理' },
-    approach: { JP: '配信プラットフォームに最適化された2ch立体音響マスタリングの提示。', EN: 'Presenting 2ch spatial mastering optimized for streaming.', TW: '針對串流平台優化的立體音響。' }
-  },
-  {
-    id: 'classical-album',
-    title: 'Classical Spatial Album',
-    client: 'Classical Label',
-    category: 'Album',
-    pillar: 'Art',
-    description: {
-      JP: 'クラシックの名曲を立体音響で再解釈。ホールの空気感をそのまま2chパッケージ化。',
-      EN: 'Reinterpreting classical masterpieces in spatial audio, capturing hall ambience in 2ch.',
-      TW: '以立體音響重新詮釋古典名曲。'
-    },
-    imageUrl: '/images/Classical Spatial Album.jpg',
-    tags: ['Classical', 'Album', 'Binaural'],
-    role: { JP: '立体音響録音 / 編集', EN: 'Spatial Recording / Editing', TW: '立體音響錄音' },
-    approach: { JP: '伝統的な楽器の配置を尊重しつつ、現代的な空間制御で臨場感を付与。', EN: 'Respecting traditional placement while adding modern spatial control.', TW: '賦予現代化的空間感。' }
-    ,
-    externalLinks: [
-      {
-        label: 'Spatial Audio Eric Satie "Gymnopedie" Full',
-        url: 'https://www.youtube.com/watch?v=azl0h7vc4eE&feature=youtu.be'
-      }
-    ]
   },
   {
     id: 'tsuchiura-archive',
@@ -250,61 +311,5 @@ export const works: Work[] = [
     tags: ['Art', 'Global', '2ch'],
     role: { JP: '立体音響システム設計', EN: 'System Design', TW: '系統設計' },
     approach: { JP: '2chのみで砂漠の広大さに匹敵する音響空間を構築。', EN: 'Building a space rivaling desert scales via 2ch alone.', TW: '構建宏大的 2ch 空間。' }
-  },
-  // --- Added from attachments ---
-  {
-    id: 'alone-together',
-    title: 'Alone Together',
-    client: 'Riyadh Art',
-    category: 'Installation',
-    pillar: 'Art',
-    description: {
-      JP: 'Riyadh Artでのインスタレーション作品。',
-      EN: 'Installation work for Riyadh Art.',
-      TW: 'Riyadh Art 的裝置藝術作品。'
-    },
-    imageUrl: '/images/Random-International-Alone-Together.jpg',
-    tags: ['Installation', 'Art'],
-    role: { JP: 'サウンドデザイン', EN: 'Sound Design', TW: '聲音設計' },
-    approach: { JP: '詳細はリンク参照。', EN: 'See link for details.', TW: '詳情請參考連結。' },
-    techStack: [],
-    featuredInTech: false
-  },
-
-  {
-    id: 'venus-no-shukusai',
-    title: 'venusの祝祭',
-    client: '川崎市市制100周年',
-    category: 'Archive',
-    pillar: 'Art',
-    description: {
-      JP: '川崎市100周年記念イベントでの音響演出。',
-      EN: 'Sound direction for Kawasaki City 100th Anniversary event.',
-      TW: '川崎市100週年活動的聲音演出。'
-    },
-    imageUrl: '/images/venus-no-shukusai.jpg',
-    tags: ['Event', 'Anniversary'],
-    role: { JP: '音響演出', EN: 'Sound Direction', TW: '聲音演出' },
-    approach: { JP: '詳細はリンク参照。', EN: 'See link for details.', TW: '詳情請參考連結。' },
-    techStack: [],
-    featuredInTech: false
-  },
-  {
-    id: 'bbm-logo',
-    title: 'BBM Logo',
-    client: 'BBM Collective',
-    category: 'Archive',
-    pillar: 'Art',
-    description: {
-      JP: 'BBMのロゴデザイン。',
-      EN: 'Logo design for BBM.',
-      TW: 'BBM 標誌設計。'
-    },
-    imageUrl: '/images/bbm-logo-mark.jpg',
-    tags: ['Logo', 'Design'],
-    role: { JP: 'デザイン', EN: 'Design', TW: '設計' },
-    approach: { JP: 'ブランドイメージを象徴するロゴ。', EN: 'Logo symbolizing brand image.', TW: '象徵品牌形象的標誌。' },
-    techStack: [],
-    featuredInTech: false
   },
 ];

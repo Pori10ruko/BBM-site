@@ -22,6 +22,8 @@ const WorkDetail: React.FC = () => {
     );
   }
 
+  const title = work.titleLocalized?.[lang] ?? work.title;
+
   const links = (work.externalLinks?.length
     ? work.externalLinks
     : work.externalUrl
@@ -48,16 +50,16 @@ const WorkDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 border border-black/5 bg-white rounded-[4px] shadow-2xl overflow-hidden">
           <div className="lg:col-span-5 relative bg-gray-50 min-h-[320px] lg:min-h-[720px]">
             {work.imageUrl ? (
-              <img src={work.imageUrl} alt={work.title} className="absolute inset-0 w-full h-full object-cover grayscale" />
+              <img src={work.imageUrl} alt={title} className="absolute inset-0 w-full h-full object-cover grayscale" />
             ) : (
               <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-                <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-black/20">{work.title}</span>
+                <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-black/20">{title}</span>
               </div>
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
             <div className="absolute bottom-12 left-10 right-10">
               <span className="text-[#C9A66B] font-bold tracking-[0.6em] text-[10px] uppercase mb-6 block">{work.category}</span>
-              <h1 className="text-5xl md:text-6xl font-display italic tracking-tighter leading-none">{work.title}</h1>
+              <h1 className="text-5xl md:text-6xl font-display italic tracking-tighter leading-none">{title}</h1>
             </div>
           </div>
 
