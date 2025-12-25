@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import BackgroundCanvas from './components/BackgroundCanvas';
 import Home from './pages/Home';
 import Works from './pages/Works';
+import WorkDetail from './pages/WorkDetail';
 import Services from './pages/Services';
 import Technology from './pages/Technology';
 import Contact from './pages/Contact';
@@ -63,6 +64,7 @@ const App: React.FC = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/works" element={<Works />} />
+                <Route path="/works/:id" element={<WorkDetail />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/spatial-2ch" element={<Spatial2ch />} />
                 <Route path="/technology" element={<Technology />} />

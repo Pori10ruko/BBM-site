@@ -4,15 +4,17 @@ import Section from '../components/Section';
 import WorkCard from '../components/WorkCard';
 import { LanguageContext } from '../App';
 import { works } from '../data/works';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const { lang } = useContext(LanguageContext);
+  const navigate = useNavigate();
   const featuredWorks = [
     works.find(w => w.id === 'distant-echo'),
     works.find(w => w.id === 'tsuchiura-archive'),
-    works.find(w => w.id === 'seigetsuki'),
+    works.find(w => w.id === 'tainan-lecture'),
   ].filter(Boolean) as typeof works;
+  const seigetsukiWork = works.find(w => w.id === 'seigetsuki');
   const [heroLogoSrc, setHeroLogoSrc] = useState('/images/bbm-logo-mark.jpg');
   const [heroLogoFallbackTried, setHeroLogoFallbackTried] = useState(false);
 
@@ -58,7 +60,7 @@ const Home: React.FC = () => {
             {t.tagline[lang]}
           </p>
 
-          <div className="max-w-4xl mx-auto text-left text-base md:text-lg text-gray-700 font-serif leading-loose space-y-6 mb-16">
+          <div className="max-w-3xl mx-auto text-left text-lg md:text-xl text-gray-700 font-serif leading-loose space-y-8 mb-16">
             <p>
               今現在、日本に限らず世界では政治的な問題、AI技術による問題、貧困による問題と様々な問題に直面しています。
               その中で私たち表現者はどのように世界と関わっていくべきなのでしょうか。
@@ -86,47 +88,193 @@ const Home: React.FC = () => {
             <div className="w-12 h-[1px] bg-[#C9A66B]" />
             <p className="text-[#C9A66B] font-bold tracking-[0.4em] uppercase text-[10px]">Four Missions</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { 
-              id: 'art', 
-              title: '01 Art', 
-              head: '表現の本質。', 
-              desc: '技術は手段であり、目的は体験を創ること。2chという環境で、かつてない没入感を実現します。作品リリースやアルバム制作を軸に。', 
-              path: '/pillar/art' 
+            {
+              id: 'art',
+              num: '01',
+              title: 'ART',
+              imageUrl: '/images/art.jpg',
+              desc: '表現者は常に新しい技術と共に歩んできました。テクノロジーの進化は、音楽の発展の歴史でもあります。私たちは独自の立体音響技術で、音楽体験を新しい次元へ引き上げます。',
+              path: '/pillar/art'
             },
-            { 
-              id: 'public', 
-              title: '02 Public', 
-              head: '都市の記憶。', 
-              desc: '公共空間における音の価値を再定義。地域社会と対話し、アーカイブやコンサートを通じて場所のアイデンティティを繋ぎます。', 
-              path: '/pillar/public' 
+            {
+              id: 'public',
+              num: '02',
+              title: 'PUBLIC',
+              imageUrl: '/images/public.jpg',
+              desc: '土浦市での地域プロジェクトや川崎市『Encount』など、自治体と連携しパブリックな空間における音の価値を再定義。地域社会と対話し、その場所ならではの音風景（サウンドスケープ）を創出しています。',
+              path: '/pillar/public'
             },
-            { 
-              id: 'education', 
-              title: '03 Education', 
-              head: '知の共有。', 
-              desc: 'コミュニティとしての学びの場。国内外の大学や学校での講義、若手への継承を通じて表現の土壌を耕します。', 
-              path: '/pillar/education' 
-            },
-            { 
-              id: 'tech', 
-              title: '04 Tech', 
-              head: '2ch立体音響。', 
-              desc: '汎用的な2ch環境における「立体の極地」を。独自のアルゴリズムによる空間の彫刻を、各プラットフォームへ。', 
-              path: '/spatial-2ch' 
+            {
+              id: 'education',
+              num: '03',
+              title: 'EDUCATION',
+              imageUrl: '/images/edu.jpg',
+              desc: '次世代のクリエイターへ、表現の武器を。国内外の大学での専門講義に加え、誰でも参加できる無料オンラインセミナーも定期開催。最先端の音響技術と理論を、より多くの人へ共有しています。',
+              path: '/pillar/education'
             }
           ].map((pillar) => (
-            <Link key={pillar.id} to={pillar.path} className="group bg-white p-10 border border-black/5 hover:border-[#C9A66B] transition-all duration-500">
-               <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase mb-8 block">{pillar.title}</span>
-               <h3 className="text-2xl font-display font-bold mb-6 group-hover:translate-x-1 transition-transform duration-500">{pillar.head}</h3>
-               <p className="text-gray-500 font-serif leading-loose text-xs mb-10">
-                 {pillar.desc}
-               </p>
-               <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-gray-300 group-hover:text-black transition-colors">Learn More →</span>
+            <Link
+              key={pillar.id}
+              to={pillar.path}
+              className="group bg-white border border-black/5 shadow-sm hover:shadow-md hover:border-[#C9A66B] transition-all duration-500 overflow-hidden"
+            >
+              <div className="relative h-[220px] bg-gray-100 overflow-hidden">
+                <img
+                  src={pillar.imageUrl}
+                  alt=""
+                  className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${pillar.id === 'art' || pillar.id === 'education' ? 'grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100' : ''}`}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+              </div>
+              <div className="p-10 text-center">
+                <div className="mb-10">
+                  <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase block">{pillar.num}</span>
+                  <h3 className="mt-4 text-4xl md:text-5xl font-display font-bold tracking-tight group-hover:translate-x-1 transition-transform duration-500">
+                    {pillar.title}
+                  </h3>
+                </div>
+                <p className="text-gray-700 font-serif leading-loose text-sm md:text-base max-w-[26rem] mx-auto mb-10">
+                  {pillar.desc}
+                </p>
+                <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-gray-300 group-hover:text-black transition-colors">Learn More →</span>
+              </div>
             </Link>
           ))}
         </div>
+
+        {/* NEWS */}
+        <div className="mt-16 pt-14 border-t border-black/5">
+          <div className="flex justify-between items-end mb-10">
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter">NEWS.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a
+              href="https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
+            >
+              <div className="relative h-[220px] bg-gray-100 overflow-hidden">
+                <img
+                  src="/images/yuki share .jpg"
+                  alt=""
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/5" />
+              </div>
+              <div className="p-10">
+                <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.20 Release</p>
+                <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">YUKI『Share』MV 立体音響制作に参加</h3>
+                <p className="text-gray-600 font-serif leading-loose text-sm">
+                  平野さん監督のMVにて、カトラリー／レストラン空間の立体音響制作として参加しました。劇場アニメ『この本を盗む者は』主題歌です。ぜひご覧ください。
+                </p>
+              </div>
+            </a>
+
+            {seigetsukiWork && (
+              <Link to={`/works/${seigetsukiWork.id}`} className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500">
+                <div className="relative h-[220px] bg-gray-100 overflow-hidden">
+                  <img
+                    src={seigetsukiWork.imageUrl}
+                    alt=""
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/5" />
+                </div>
+                <div className="p-10">
+                  <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">App / Spatial Audio</p>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{seigetsukiWork.title}</h3>
+                  <p className="text-gray-600 font-serif leading-loose text-sm">
+                    {seigetsukiWork.description?.JP ?? ''}
+                  </p>
+                </div>
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div className="mt-16 pt-14 border-t border-black/5">
+          <Link
+            to="/spatial-2ch"
+            className="group block bg-gray-950 text-white border border-white/10 hover:border-[#C9A66B] transition-all duration-500 p-10 md:p-14"
+          >
+            <div className="flex items-center justify-between gap-6 mb-8">
+              <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase">04 Technology</span>
+            </div>
+
+            <div className="h-[220px] bg-white/5 border border-white/10 overflow-hidden mb-10">
+              <img
+                src="/images/tech.jpg"
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <h3 className="text-3xl md:text-5xl font-display font-bold mb-10 tracking-tight group-hover:translate-x-1 transition-transform duration-500">
+              BBM Spatial Audio Tech
+            </h3>
+
+            <div className="max-w-4xl space-y-8">
+              <div>
+                <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">革新的な没入体験を、標準的な環境で</p>
+                <p className="text-white/80 font-serif leading-loose md:text-base text-sm">
+                  特別なサラウンドシステムは不要です。私たちが開発した独自の2ch立体音響アルゴリズムは、既存のスピーカーやステレオヘッドフォンだけで、驚異的な音響空間を実現します。
+                </p>
+              </div>
+              <div>
+                <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">ビジネスへの実装パートナーとして</p>
+                <p className="text-white/80 font-serif leading-loose md:text-base text-sm">
+                  この技術は、VR/ARコンテンツ、アプリ開発、そして空間インスタレーションにおける没入体験の「核」となります。
+                  BBMは単なる技術提供にとどまらず、実装パートナーとしてプロジェクトに伴走。御社のコンテンツに、他にはない音響体験という付加価値を創出します。
+                </p>
+              </div>
+            </div>
+            <div className="mt-10">
+              <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/70 group-hover:text-white transition-colors">Explore Technology →</span>
+            </div>
+          </Link>
+        </div>
+      </Section>
+
+      {/* Upcoming Event */}
+      <Section className="py-32">
+        <div className="flex justify-between items-end mb-12">
+          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">Upcoming Event</h2>
+        </div>
+        <a
+          href="https://tsuchiura-sound-achib.netlify.app/#events"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-white border border-black/5 shadow-sm overflow-hidden"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-5">
+            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden">
+              <img
+                src="/images/tokoji1.png"
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/5" />
+            </div>
+            <div className="md:col-span-3 p-10 md:p-14">
+              <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-5">2/23(月・祝) 夕刻</p>
+              <h3 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-6">音と光の建築 at 東光寺</h3>
+              <p className="text-gray-600 font-serif leading-loose text-sm md:text-base mb-8">
+                東光寺（茨城県土浦市大手町3-14）
+              </p>
+              <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
+                歴史ある東光寺の本堂を舞台に、市民の皆さんと共につくり上げた“光のまゆ”と、プロジェクトを通して集めた「土浦の音」を組み合わせ、2chスピーカーによるバイノーラル音響で空間全体を包み込む、一日限りの展示・コンサートとなります。
+              </p>
+            </div>
+          </div>
+        </a>
       </Section>
 
       {/* Selected Works Gallery */}
@@ -137,7 +285,18 @@ const Home: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {featuredWorks.map((work) => (
-            <WorkCard key={work.id} work={work} onClick={() => {}} />
+            <WorkCard
+              key={work.id}
+              work={work}
+              onClick={() => {
+                if (work.id === 'tainan-lecture') {
+                  const url = work.externalLinks?.[0]?.url;
+                  if (url) window.open(url, '_blank', 'noopener,noreferrer');
+                  return;
+                }
+                navigate(`/works/${work.id}`);
+              }}
+            />
           ))}
         </div>
       </Section>
@@ -149,14 +308,28 @@ const Home: React.FC = () => {
             <h3 className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase">Collective Leads</h3>
             <div className="space-y-16">
               <div>
-                <h4 className="text-3xl font-display font-bold mb-2">Hiroyuki Nakamura</h4>
+                <a
+                  href="https://www.nakamurahiroyuki.info/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <h4 className="text-3xl font-display font-bold mb-2 hover:text-[#C9A66B] transition-colors">NAKAMURA Hiroyuki</h4>
+                </a>
                 <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-4">Composer / Academic</p>
                 <p className="text-gray-400 font-serif text-sm leading-relaxed max-w-sm">
                   音響学とメディア表現の講師。BBMの芸術的ディレクションと理論構築を担う。
                 </p>
               </div>
               <div>
-                <h4 className="text-3xl font-display font-bold mb-2">Koichi Utsugi</h4>
+                <a
+                  href="https://www.instagram.com/utsugikoichi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <h4 className="text-3xl font-display font-bold mb-2 hover:text-[#C9A66B] transition-colors">Koichi Utsugi</h4>
+                </a>
                 <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-4">Spatial Audio Engineer</p>
                 <p className="text-gray-400 font-serif text-sm leading-relaxed max-w-sm">
                   独自の2ch立体音響アルゴリズムの開発者。グローバルな展示へのシステム実装を統括。

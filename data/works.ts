@@ -176,19 +176,25 @@ export const works: Work[] = [
   },
   {
     id: 'tainan-lecture',
-    title: 'Tainan University Lecture',
+    title: '台南大学 特別講義',
     client: 'National University of Tainan',
     category: 'Lecture',
     pillar: 'Education',
     description: {
-      JP: '台湾の国立台南大学での特別講義。最新の立体音響理論を学生たちへ。',
-      EN: 'Special lecture at National University of Tainan on spatial audio theory.',
-      TW: '國立臺南大學特別講座。'
+      JP: '台湾・国立台南大学にて、2ch立体音響技術と空間表現に関する特別講義／ワークショップを実施。',
+      EN: 'Special lecture and workshop on 2ch spatial audio and spatial expression in Tainan, Taiwan.',
+      TW: '在台灣台南舉辦 2ch 立體音響技術與空間表現的特別講座與工作坊。'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1523050353055-f11235302848?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: '/images/tainan lecture.jpg',
     tags: ['Taiwan', 'Academic', 'Global'],
     role: { JP: '特別講師', EN: 'Guest Lecturer', TW: '客座講師' },
-    approach: { JP: '学術的視点と実務的スキルの橋渡しを行う教育的アプローチ。', EN: 'Bridging academic theory and practical engineering skills.', TW: '學術與實作的橋樑。' }
+    approach: { JP: '学術的視点と実務的スキルの橋渡しを行う教育的アプローチ。', EN: 'Bridging academic theory and practical engineering skills.', TW: '學術與實作的橋樑。' },
+    externalLinks: [
+      {
+        label: 'Facebook',
+        url: 'https://www.facebook.com/photo?fbid=122221039964062649&set=a.122112593654062649'
+      }
+    ]
   },
   {
     id: 'seigetsuki',
