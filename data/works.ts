@@ -31,6 +31,35 @@ export const works: Work[] = [
     ]
   },
   {
+    id: 'look-up-at-the-stars',
+    title: 'Look Up at the Stars',
+    titleLocalized: {
+      JP: 'Look Up at the Stars',
+      EN: 'Look Up at the Stars',
+      TW: 'Look Up at the Stars'
+    },
+    date: '2024',
+    client: 'Live Painting Concert',
+    category: 'Performance',
+    pillar: 'Art',
+    description: {
+      JP: '立体音響とライブペインティングの融合。Live Painting: Maria Noto (能登真理亜)',
+      EN: 'A fusion of spatial audio and live painting. Live Painting: Maria Noto.',
+      TW: '立體音響與現場繪畫的融合。Live Painting: Maria Noto (能登真理亜)。'
+    },
+    imageUrl: '/images/art.jpg',
+    tags: ['2024', 'Live Painting', '2ch Spatial'],
+    role: { JP: '立体音響演出', EN: 'Spatial Audio Direction', TW: '立體音響演出' },
+    approach: {
+      JP: 'ライブペインティングと同期する空間音響体験を2chで設計。',
+      EN: 'Designed a 2ch spatial audio experience synchronized with live painting.',
+      TW: '以雙聲道設計與現場繪畫同步的立體音響體驗。'
+    },
+    externalLinks: [
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=lI7Rq58b2Ys' }
+    ]
+  },
+  {
     id: 'distant-echo',
     title: 'Distant Echo',
     date: '2025.11.14',
@@ -54,23 +83,23 @@ export const works: Work[] = [
   },
   {
     id: 'alone-together',
-    title: 'Alone Together (Riyadh Art 2024)',
+    title: 'Alone Together (Random International)',
     titleLocalized: {
-      JP: 'Alone Together (Riyadh Art 2024)',
-      EN: 'Alone Together (Riyadh Art 2024)',
-      TW: 'Alone Together (Riyadh Art 2024)'
+      JP: 'Alone Together (Random International)',
+      EN: 'Alone Together (Random International)',
+      TW: 'Alone Together (Random International)'
     },
-    date: '2024',
-    client: 'Riyadh Art',
+    date: '2024 - Present',
+    client: 'Random International',
     category: 'Installation',
     pillar: 'Art',
     description: {
-      JP: 'サウジアラビアで開催された芸術祭「Riyadh Art 2024」における没入型インスタレーション。立体音響実装を担当。Live Painting: Maria Noto (能登真理亜)',
-      EN: 'An immersive installation at "Riyadh Art 2024" in Saudi Arabia. Responsible for spatial audio implementation. Live Painting: Maria Noto.',
-      TW: '於沙烏地阿拉伯「Riyadh Art 2024」藝術節展出的沉浸式裝置藝術。負責立體音響實作。Live Painting: Maria Noto (能登真理亜)。'
+      JP: 'サウジアラビアの芸術祭「Noor Riyadh 2024」での展示を経て、現在はマイアミの「Superblue Miami」にて展示中。物理空間とデジタル空間における人間の振る舞いを探求する没入型インスタレーション。立体音響実装を担当。',
+      EN: 'Following its exhibition at "Noor Riyadh 2024" in Saudi Arabia, it is currently on display at "Superblue Miami." An immersive installation exploring human behavior across physical and digital spaces. Responsible for spatial audio implementation.',
+      TW: '繼沙烏地阿拉伯「Noor Riyadh 2024」藝術節展出後，目前正於邁阿密「Superblue Miami」展出。探討人類在物理空間與數位空間中行為模式的沉浸式裝置藝術。負責立體音響實作。'
     },
     imageUrl: '/images/Random-International-Alone-Together.jpg',
-    tags: ['2024', 'Riyadh', 'Installation'],
+    tags: ['2024 - Present', 'Riyadh', 'Miami', 'Installation'],
     role: { JP: '立体音響実装', EN: 'Spatial Audio Implementation', TW: '立體音響實作' },
     approach: {
       JP: '空間と動線に合わせて、体験の質を損なわない音響実装を設計。',
@@ -78,7 +107,7 @@ export const works: Work[] = [
       TW: '依空間與動線設計音響實作，確保體驗品質。'
     },
     externalLinks: [
-      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=lI7Rq58b2Ys' }
+      { label: 'Riyadh Art', url: 'https://riyadhart.sa/en/artworks/alone-together-2024/' }
     ]
   },
   {
@@ -138,22 +167,6 @@ export const works: Work[] = [
     externalLinks: [
       { label: 'Link', url: 'https://prtimes.jp/main/html/rd/p/000000002.000144544.html' }
     ]
-  },
-  {
-    id: 'look-up-at-the-stars',
-    title: 'Look Up At The Stars',
-    client: 'Live Painting Concert',
-    category: 'Performance',
-    pillar: 'Art',
-    description: {
-      JP: 'ピアノとライブペインティングのコンサート。聴衆をピアノの内部にいるような感覚へ誘う。',
-      EN: 'Piano & Live Painting Concert. Placing the audience inside the piano.',
-      TW: '鋼琴與現場繪畫音樂會。'
-    },
-    imageUrl: '/images/look up at the stars photo.jpg',
-    tags: ['Concert', 'Live Painting', 'Piano', 'Spatial Art'],
-    role: { JP: '音響演出', EN: 'Audio Direction', TW: '聲音演出' },
-    approach: { JP: '生楽器の響きを損なわず、空間的な奥行きを2chで拡張。', EN: 'Expanding depth via 2ch while preserving acoustic harmonics.', TW: '擴展空間深度。' }
   },
   {
     id: 'tsuchiura-archive',

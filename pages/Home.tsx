@@ -199,7 +199,14 @@ const Home: React.FC = () => {
             />
           )}
           <p className="text-xl md:text-3xl text-gray-800 font-serif font-light leading-relaxed mb-16 max-w-4xl mx-auto">
-            {t.tagline[lang]}
+            {lang === 'JP' ? (
+              <>
+                この時代に必要な表現を、共に
+                <span className="whitespace-nowrap">考える。</span>
+              </>
+            ) : (
+              t.tagline[lang]
+            )}
           </p>
 
           <div className="max-w-3xl mx-auto text-left text-sm md:text-lg text-gray-700 font-serif leading-relaxed md:leading-loose space-y-6 md:space-y-8 mb-16">
