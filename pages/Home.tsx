@@ -1,14 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Section from '../components/Section';
 import WorkCard from '../components/WorkCard';
 import { LanguageContext } from '../App';
 import { works } from '../data/works';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const { lang } = useContext(LanguageContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const featuredWorks = [
     works.find(w => w.id === 'distant-echo'),
     works.find(w => w.id === 'tsuchiura-archive'),
@@ -17,6 +18,16 @@ const Home: React.FC = () => {
   const seigetsukiWork = works.find(w => w.id === 'seigetsuki');
   const [heroLogoSrc, setHeroLogoSrc] = useState('/images/bbm-logo-mark.jpg');
   const [heroLogoFallbackTried, setHeroLogoFallbackTried] = useState(false);
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const targetId = location.hash.replace('#', '');
+    if (!targetId) return;
+    window.setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) el.scrollIntoView();
+    }, 0);
+  }, [location.hash]);
 
   const t = {
     tagline: {
@@ -117,6 +128,7 @@ const Home: React.FC = () => {
           ].map((pillar) => (
             <Link
               key={pillar.id}
+              id={pillar.id}
               to={pillar.path}
               className="group bg-white border border-black/5 shadow-sm hover:shadow-md hover:border-[#C9A66B] transition-all duration-500 overflow-hidden"
             >
@@ -200,6 +212,7 @@ const Home: React.FC = () => {
 
         <div className="mt-16 pt-14 border-t border-black/5">
           <Link
+            id="technology"
             to="/spatial-2ch"
             className="group block bg-gray-950 text-white border border-white/10 hover:border-[#C9A66B] transition-all duration-500 p-10 md:p-14"
           >
@@ -328,12 +341,17 @@ const Home: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <h4 className="text-3xl font-display font-bold mb-2 hover:text-[#C9A66B] transition-colors">Koichi Utsugi</h4>
+                  <h4 className="text-3xl font-display font-bold mb-2 hover:text-[#C9A66B] transition-colors">UTSUGI Koichi</h4>
                 </a>
                 <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-4">Spatial Audio Engineer</p>
                 <p className="text-gray-400 font-serif text-sm leading-relaxed max-w-sm">
                   独自の2ch立体音響アルゴリズムの開発者。グローバルな展示へのシステム実装を統括。
                 </p>
+              </div>
+
+              <div>
+                <h4 className="text-3xl font-display font-bold mb-2">TAGUCHI Mayumi</h4>
+                <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-4">Piano Teacher, Eurhythmics, Narrator</p>
               </div>
             </div>
           </div>

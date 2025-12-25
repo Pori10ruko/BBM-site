@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageContext } from '../App';
-import { NavItem, Language } from '../types';
+import { Language } from '../types';
 import { Link, useLocation } from 'react-router-dom';
 
-const navItems: NavItem[] = [
-  { label: { JP: 'アート', EN: 'Art', TW: '藝術' }, path: '/pillar/art' },
-  { label: { JP: 'パブリック', EN: 'Public', TW: '公共' }, path: '/pillar/public' },
-  { label: { JP: '教育', EN: 'Edu', TW: '教育' }, path: '/pillar/education' },
-  { label: { JP: '技術', EN: 'Tech', TW: '技術' }, path: '/spatial-2ch' },
-];
+const navItems = [
+  { label: 'ART', to: '/#art' },
+  { label: 'PUBLIC', to: '/#public' },
+  { label: 'EDUCATION', to: '/#education' },
+  { label: 'TECHNOLOGY', to: '/#technology' },
+  { label: 'CONTACT', to: '/contact' },
+] as const;
 
 const Header: React.FC = () => {
   const { lang, setLang } = useContext(LanguageContext);
@@ -72,13 +73,22 @@ const Header: React.FC = () => {
         <div className="hidden md:flex items-center space-x-10">
           <nav className="flex items-center space-x-8">
             {navItems.map((item) => (
+              (() => {
+                const isActive =
+                  item.to === '/contact'
+                    ? location.pathname === '/contact'
+                    : location.pathname === '/' && location.hash === item.to.replace('/', '');
+
+                return (
               <Link
-                key={item.path}
-                to={item.path}
-                className={`text-[12px] font-semibold tracking-widest uppercase transition-colors px-2 py-1 ${location.pathname === item.path ? 'text-black' : 'text-gray-400 hover:text-black'}`}
+                key={item.to}
+                to={item.to}
+                className={`text-[12px] font-semibold tracking-widest uppercase transition-colors px-2 py-1 ${isActive ? 'text-black' : 'text-gray-400 hover:text-black'}`}
               >
-                {item.label[lang]}
+                {item.label}
               </Link>
+                );
+              })()
             ))}
           </nav>
 
@@ -119,12 +129,12 @@ const Header: React.FC = () => {
           >
             {navItems.map((item) => (
               <Link 
-                key={item.path} 
-                to={item.path} 
+                key={item.to} 
+                to={item.to} 
                 onClick={() => setMobileMenuOpen(false)} 
                 className="text-4xl font-display font-bold text-black hover:text-[#C9A66B] transition-colors"
               >
-                {item.label[lang]}
+                {item.label}
               </Link>
             ))}
             <div className="flex space-x-6 pt-12">
