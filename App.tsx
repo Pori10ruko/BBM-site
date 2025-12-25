@@ -70,6 +70,9 @@ const App: React.FC = () => {
                 <Route path="/technology" element={<Technology />} />
                 <Route path="/contact" element={<Contact />} />
                 {/* Pillar pages */}
+                <Route path="/art" element={<PillarDetail type="Art" />} />
+                <Route path="/public" element={<PillarDetail type="Public" />} />
+                <Route path="/education" element={<PillarDetail type="Education" />} />
                 <Route path="/pillar/art" element={<PillarDetail type="Art" />} />
                 <Route path="/pillar/public" element={<PillarDetail type="Public" />} />
                 <Route path="/pillar/education" element={<PillarDetail type="Education" />} />

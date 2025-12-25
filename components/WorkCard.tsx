@@ -29,7 +29,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
             src={work.imageUrl}
             alt={title}
             loading="lazy"
-            className="w-full h-full object-cover grayscale opacity-80 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+            className="w-full h-full object-cover grayscale opacity-80 transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

@@ -17,11 +17,10 @@ const pillarContent = {
       EN: 'Depths of Expression / 表現の深淵',
       TW: 'Depths of Expression / 表現の深淵'
     },
-    sub: '表現の深淵。',
     desc: {
-      JP: '音は、物理的な振動を超えて記憶を呼び覚ます「鍵」となる。私たちは、緻密に計算された音響設計を「不可視な筆」として使い、空間そのものを変容させます。そこに立ち現れるのは、誰もが体験したことのない、静謐で濃密な没入の世界です。',
-      EN: 'Sound becomes a "key" that transcends physical vibration to awaken memories. Using meticulously calculated sound design as an "invisible brush," we transform space itself. What emerges is a serene and dense world of immersion unlike anything experienced before.',
-      TW: '聲音，是超越物理震動、喚醒記憶的「鑰匙」。我們將精密計算的音響設計化為「不可視之筆」，讓空間本身產生質變。由此浮現的，是前所未有、靜謐而濃密的沉浸世界。'
+      JP: '音を聴く、という行為を超えて。私たちは、空間そのものを一つの「楽器」として捉え直します。\n緻密な計算と感性が融合した音響設計により、心象風景が目の前に広がるような、かつてない没入体験を創出します。',
+      EN: 'Beyond the act of listening. We redefine the space itself as an "instrument."\nThrough sound design that fuses meticulous calculation with sensibility, we create an unprecedented immersive experience where imaginary landscapes unfold before your eyes.',
+      TW: '超越「聆聽」的行為。我們將空間本身重新定義為一種「樂器」。\n透過融合精密計算與感性的音響設計，創造前所未有的沉浸式體驗，彷彿心象風景就在眼前展開。'
     },
     color: '#C9A66B'
   },
@@ -56,10 +55,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
         <h1 className="hero-title text-6xl md:text-9xl text-black mb-12 leading-none">
           {typeof content.title === 'string' ? content.title : content.title[lang]}
         </h1>
-        <p className="text-2xl md:text-4xl text-gray-800 font-serif font-light mb-8 italic">
-          {content.sub}
-        </p>
-        <p className="text-base md:text-lg text-gray-500 font-serif font-light max-w-3xl leading-loose">
+        <p className="text-base md:text-lg text-gray-500 font-serif font-light max-w-3xl leading-loose whitespace-pre-line">
           {typeof content.desc === 'string' ? content.desc : content.desc[lang]}
         </p>
       </Section>

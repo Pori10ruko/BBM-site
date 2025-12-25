@@ -2,19 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const navItems = [
-  { label: 'ART', to: '/#art' },
-  { label: 'PUBLIC', to: '/#public' },
-  { label: 'EDUCATION', to: '/#education' },
-  { label: 'TECHNOLOGY', to: '/#technology' },
-  { label: 'CONTACT', to: '/contact' },
+  { label: 'ART', to: '/art', kind: 'link' },
+  { label: 'PUBLIC', to: '/public', kind: 'link' },
+  { label: 'EDUCATION', to: '/education', kind: 'link' },
+  { label: 'TECHNOLOGY', to: '/#technology', kind: 'anchor' },
+  { label: 'CONTACT', to: '/contact', kind: 'link' },
 ] as const;
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-20 px-6 border-t border-black/5 mt-20 bg-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-        <div className="md:col-span-2">
-          <Link to="/" className="text-3xl font-display italic tracking-tighter mb-4 block text-black">BBM</Link>
+    <footer className="relative py-20 px-6 border-t border-black/5 mt-20 bg-white text-black">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-12 md:gap-8">
+        <div className="md:flex-1 md:max-w-xl">
+          <Link to="/" className="inline-flex items-center mb-6">
+            <img
+              src="/images/bbm_logo.jpg"
+              alt="BBM"
+              className="w-28 h-auto"
+              loading="lazy"
+            />
+          </Link>
           <p className="text-gray-400 text-sm max-w-sm mb-8 leading-relaxed font-serif">
             Beyond Boundary Musicは、立体音響の社会実装と芸術表現を追求するクリエイティブ・コレクティブです。
           </p>
@@ -25,14 +32,20 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="space-y-6 md:col-span-2">
+        <div className="space-y-6 md:w-[280px]">
             <h4 className="text-[10px] font-bold tracking-[0.3em] text-black/20 uppercase">Navigation</h4>
             <ul className="space-y-3 font-serif">
               {navItems.map((item) => (
                 <li key={item.to}>
-                  <Link to={item.to} className="text-sm text-gray-500 hover:text-black">
-                    {item.label}
-                  </Link>
+                  {item.kind === 'anchor' ? (
+                    <a href={item.to} className="text-sm text-gray-500 hover:text-black">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link to={item.to} className="text-sm text-gray-500 hover:text-black">
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

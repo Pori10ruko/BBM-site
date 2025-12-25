@@ -5,9 +5,9 @@ import { Language } from '../types';
 import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
-  { label: 'ART', to: '/#art' },
-  { label: 'PUBLIC', to: '/#public' },
-  { label: 'EDUCATION', to: '/#education' },
+  { label: 'ART', to: '/art' },
+  { label: 'PUBLIC', to: '/public' },
+  { label: 'EDUCATION', to: '/education' },
   { label: 'TECHNOLOGY', to: '/#technology' },
   { label: 'CONTACT', to: '/contact' },
 ] as const;
@@ -77,7 +77,9 @@ const Header: React.FC = () => {
                 const isActive =
                   item.to === '/contact'
                     ? location.pathname === '/contact'
-                    : location.pathname === '/' && location.hash === item.to.replace('/', '');
+                    : item.to === '/#technology'
+                      ? location.pathname === '/' && location.hash === '#technology'
+                      : location.pathname === item.to;
 
                 return (
               <Link
