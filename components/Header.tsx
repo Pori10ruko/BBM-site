@@ -5,10 +5,10 @@ import { Language } from '../types';
 import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
+  { label: 'TECHNOLOGY', to: '/#technology' },
   { label: 'ART', to: '/art' },
   { label: 'PUBLIC', to: '/public' },
   { label: 'EDUCATION', to: '/education' },
-  { label: 'TECHNOLOGY', to: '/#technology' },
   { label: 'CONTACT', to: '/contact' },
 ] as const;
 

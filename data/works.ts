@@ -323,6 +323,7 @@ export const works: Work[] = [
     client: 'Showa Music University',
     category: 'Education',
     pillar: 'Education',
+    link: 'https://www.tosei-showa-music.ac.jp/calendar/20241114_002572.html?fbclid=IwY2xjawLnG-FleHRuA2FlbQIxMABicmlkETFzdU9uVUNrR2xmUk01T2s2AR6sQHh1yR4vtsR2grZBBwlAeTL5hdL0NjQEuibHZQBtH8ARYpfwoEuJp31ufw_aem__QWZpxTr8XXn3Gr2m2ucBg',
     description: {
       JP: '昭和音楽大学ユリホールにて行われた教員・研究員研究発表に出演。「Voices in the Void」において電子音響と映像を担当し、学術的な場での実践研究を発表しました。',
       EN: 'Performed at the faculty/researcher presentation at Showa Music University Yuri Hall. For “Voices in the Void,” we handled electroacoustic sound and visuals, presenting practice-based research in an academic setting.',

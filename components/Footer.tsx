@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const navItems = [
+  { label: 'TECHNOLOGY', to: '/#technology', kind: 'anchor' },
   { label: 'ART', to: '/art', kind: 'link' },
   { label: 'PUBLIC', to: '/public', kind: 'link' },
   { label: 'EDUCATION', to: '/education', kind: 'link' },
-  { label: 'TECHNOLOGY', to: '/#technology', kind: 'anchor' },
   { label: 'CONTACT', to: '/contact', kind: 'link' },
 ] as const;
 

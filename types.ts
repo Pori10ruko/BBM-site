@@ -17,6 +17,7 @@ export interface Work {
   approach: { [key in Language]: string };
   techStack?: string[];
   featuredInTech?: boolean; // 2ch技術ページに表示するかどうかのフラグ
+  link?: string; // カードクリック時に開く外部リンク
   externalUrl?: string; // 外部リンク（YouTube等）
   externalLinks?: Array<{ label: string; url: string }>; // 複数外部リンク
 }

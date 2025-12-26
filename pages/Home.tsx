@@ -37,7 +37,7 @@ const Home: React.FC = () => {
     },
     philosophy: {
       JP: {
-        p1: '今現在、日本に限らず世界では政治的な問題、AI技術による問題、貧困による問題と様々な問題に直面しています。その中で私たち表現者はどのように世界と関わっていくべきなのでしょうか。bbmはこうした問題に対し、共に考えアプローチをしていくコミュニティです。',
+        p1: '今現在、日本に限らず世界では政治的な問題、AI技術による問題、貧困による問題と様々な問題に直面しています。その中で私たち音楽家 / 表現者はどのように世界と関わっていくべきなのでしょうか。bbmはこうした問題に対し、共に考えアプローチをしていくコミュニティです。',
         p2: 'アート表現、パブリックな空間での表現、そして教育といった3つの柱で、ボランティア、クライアントワークを隔てなくアプローチを行なっています。'
       },
       EN: {
@@ -222,6 +222,43 @@ const Home: React.FC = () => {
         </motion.div>
       </Section>
 
+      {/* Technology Section */}
+      <Section className="py-32">
+        <Link
+          id="technology"
+          to="/spatial-2ch"
+          className="group block bg-gray-950 text-white border border-white/10 hover:border-[#C9A66B] transition-all duration-500 p-10 md:p-14"
+        >
+          <div className="flex items-center justify-between gap-6 mb-8">
+            <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase">04 Technology</span>
+          </div>
+
+          <div className="h-[220px] bg-white/5 border border-white/10 overflow-hidden mb-10">
+            <img src="/images/tech.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+          </div>
+
+          <h3 className="text-3xl md:text-5xl font-display font-bold mb-10 tracking-tight group-hover:translate-x-1 transition-transform duration-500">
+            BBM Spatial Audio Tech
+          </h3>
+
+          <div className="max-w-4xl space-y-8">
+            <div>
+              <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">{t.technology[lang].h1}</p>
+              <p className="text-white/80 font-serif leading-loose md:text-base text-sm">{t.technology[lang].p1}</p>
+            </div>
+            <div>
+              <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">{t.technology[lang].h2}</p>
+              <p className="text-white/80 font-serif leading-loose md:text-base text-sm">{t.technology[lang].p2}</p>
+            </div>
+          </div>
+          <div className="mt-10">
+            <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/70 group-hover:text-white transition-colors">
+              Explore Technology →
+            </span>
+          </div>
+        </Link>
+      </Section>
+
       {/* Four Pillars - Clickable Navigation */}
       <Section className="py-40 bg-gray-50/50">
         <div className="flex items-center space-x-4 mb-16">
@@ -240,7 +277,7 @@ const Home: React.FC = () => {
                 <img
                   src={pillar.imageUrl}
                   alt=""
-                  className="w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
+                  className="w-full h-full object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700 ease-in-out"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
@@ -260,101 +297,49 @@ const Home: React.FC = () => {
             </Link>
           ))}
         </div>
+      </Section>
 
-        {/* NEWS */}
-        <div className="mt-16 pt-14 border-t border-black/5">
-          <div className="flex justify-between items-end mb-10">
-            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter">NEWS.</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <a
-              href="https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl"
-              target="_blank"
-              rel="noopener noreferrer"
+      {/* NEWS */}
+      <Section className="pt-10 pb-32">
+        <div className="flex justify-between items-end mb-10">
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter">NEWS.</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a
+            href="https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
+          >
+            <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
+              <img src="/images/yuki share .jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-black/5" />
+            </div>
+            <div className="p-10">
+              <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.20 Release</p>
+              <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.yukiTitle[lang]}</h3>
+              <p className="text-gray-600 font-serif leading-loose text-sm">
+                平野さん監督のMVにて、カトラリー／レストラン空間の立体音響制作として参加しました。劇場アニメ『この本を盗む者は』主題歌です。ぜひご覧ください。
+              </p>
+            </div>
+          </a>
+
+          {seigetsukiWork && (
+            <Link
+              to={`/works/${seigetsukiWork.id}`}
               className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
             >
               <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
-                <img
-                  src="/images/yuki share .jpg"
-                  alt=""
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                <img src={seigetsukiWork.imageUrl} alt="" className="w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-black/5" />
               </div>
               <div className="p-10">
-                <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.20 Release</p>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.yukiTitle[lang]}</h3>
-                <p className="text-gray-600 font-serif leading-loose text-sm">
-                  平野さん監督のMVにて、カトラリー／レストラン空間の立体音響制作として参加しました。劇場アニメ『この本を盗む者は』主題歌です。ぜひご覧ください。
-                </p>
+                <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.15 Release</p>
+                <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.seigetsukiTitle[lang]}</h3>
+                <p className="text-gray-600 font-serif leading-loose text-sm">{seigetsukiWork.description?.[lang] ?? ''}</p>
               </div>
-            </a>
-
-            {seigetsukiWork && (
-              <Link to={`/works/${seigetsukiWork.id}`} className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500">
-                <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
-                  <img
-                    src={seigetsukiWork.imageUrl}
-                    alt=""
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/5" />
-                </div>
-                <div className="p-10">
-                  <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.15 Release</p>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.seigetsukiTitle[lang]}</h3>
-                  <p className="text-gray-600 font-serif leading-loose text-sm">
-                    {seigetsukiWork.description?.[lang] ?? ''}
-                  </p>
-                </div>
-              </Link>
-            )}
-          </div>
-        </div>
-
-        <div className="mt-16 pt-14 border-t border-black/5">
-          <Link
-            id="technology"
-            to="/spatial-2ch"
-            className="group block bg-gray-950 text-white border border-white/10 hover:border-[#C9A66B] transition-all duration-500 p-10 md:p-14"
-          >
-            <div className="flex items-center justify-between gap-6 mb-8">
-              <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase">04 Technology</span>
-            </div>
-
-            <div className="h-[220px] bg-white/5 border border-white/10 overflow-hidden mb-10">
-              <img
-                src="/images/tech.jpg"
-                alt=""
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-
-            <h3 className="text-3xl md:text-5xl font-display font-bold mb-10 tracking-tight group-hover:translate-x-1 transition-transform duration-500">
-              BBM Spatial Audio Tech
-            </h3>
-
-            <div className="max-w-4xl space-y-8">
-              <div>
-                <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">{t.technology[lang].h1}</p>
-                <p className="text-white/80 font-serif leading-loose md:text-base text-sm">
-                  {t.technology[lang].p1}
-                </p>
-              </div>
-              <div>
-                <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">{t.technology[lang].h2}</p>
-                <p className="text-white/80 font-serif leading-loose md:text-base text-sm">
-                  {t.technology[lang].p2}
-                </p>
-              </div>
-            </div>
-            <div className="mt-10">
-              <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/70 group-hover:text-white transition-colors">Explore Technology →</span>
-            </div>
-          </Link>
+            </Link>
+          )}
         </div>
       </Section>
 

@@ -13,6 +13,14 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
   const title = work.titleLocalized?.[lang] ?? work.title;
   const primaryLink = work.externalLinks?.[0] ?? (work.externalUrl ? { label: work.externalUrl.includes('youtube') ? 'YouTube' : 'Link', url: work.externalUrl } : null);
 
+  const handleCardClick = () => {
+    if (work.link) {
+      window.open(work.link, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    onClick();
+  };
+
   return (
     <motion.div
       layout
@@ -20,16 +28,16 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      onClick={onClick}
+      onClick={handleCardClick}
       className="group relative cursor-pointer flex flex-col space-y-6"
     >
-      <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden bg-gray-100 grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
+      <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden bg-gray-100">
         {work.imageUrl ? (
           <motion.img
             src={work.imageUrl}
             alt={title}
             loading="lazy"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700 ease-in-out"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
