@@ -29,30 +29,28 @@ const Technology: React.FC = () => {
           <h1 className="text-6xl md:text-8xl font-display font-bold tracking-tighter text-black mb-6">TECHNOLOGY</h1>
           <p className="text-lg md:text-2xl font-serif text-gray-800">2ch Spatial Audio / 空間を拡張する独自技術</p>
         </div>
-
         {/* Hero Section (Main Experience) */}
-        <div className="border-t border-black/5 pt-16 mb-24">
-          <div className="space-y-4 mb-10">
-            <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter text-black">First, Experience Our Sound.</h2>
-            <p className="text-gray-600 font-serif leading-loose md:text-base text-sm max-w-4xl">
-              ぜひ、ヘッドフォンで聴いてください。私たちの技術は、単なる左右のステレオではありません。上下、奥行き、そして無限に広がる空間そのものを体感していただけるはずです。これが、私たちが提示する『音』です。
-            </p>
-          </div>
-
-          <div className="relative w-full aspect-video bg-gray-50 border border-black/5 overflow-hidden">
-            <iframe
-              title="First, Experience Our Sound"
-              src="https://www.youtube.com/embed/ULXKPccZk50"
-              className="absolute inset-0 w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
+        <div className="mb-16">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter text-black">First, Experience Our Sound.</h2>
+              <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
+                ぜひ、ヘッドフォンで聴いてください。私たちの技術は、単なる左右のステレオではありません。上下、奥行き、そして無限に広がる空間そのものを体感していただけるはずです。これが、私たちが提示する『音』です。
+              </p>
+            </div>
+            <div className="relative w-full aspect-video bg-gray-50 border border-black/5 overflow-hidden">
+              <iframe
+                title="First, Experience Our Sound"
+                src="https://www.youtube.com/embed/ULXKPccZk50"
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
           </div>
         </div>
-
-        {/* Philosophy Section */}
         <div className="border-t border-black/5 pt-16 mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-4">
@@ -192,17 +190,15 @@ const Technology: React.FC = () => {
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white border border-black/5 p-6">
-                <div className="scale-[0.6] origin-top-left w-[166.67%]">
-                  <iframe
-                    title="Standard / Dolby Atmos (Reference)"
-                    width="100%"
-                    height="450"
-                    scrolling="no"
-                    frameBorder="0"
-                    allow="autoplay"
-                    src={soundcloudCredits.standardPlayerUrl}
-                  />
-                </div>
+                <iframe
+                  title="Standard / Dolby Atmos (Reference)"
+                  width="100%"
+                  className="w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                  scrolling="no"
+                  frameBorder="0"
+                  allow="autoplay"
+                  src={soundcloudCredits.standardPlayerUrl}
+                />
                 <p className="mt-2 text-[10px] text-gray-400 font-serif">
                   <a href={soundcloudCredits.profileUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
                     NAKAMURA Hiroyuki
@@ -215,17 +211,15 @@ const Technology: React.FC = () => {
               </div>
 
               <div className="bg-white border border-black/5 p-6">
-                <div className="scale-[0.6] origin-top-left w-[166.67%]">
-                  <iframe
-                    title="BBM Proprietary (Reference)"
-                    width="100%"
-                    height="450"
-                    scrolling="no"
-                    frameBorder="0"
-                    allow="autoplay"
-                    src={soundcloudCredits.proprietaryPlayerUrl}
-                  />
-                </div>
+                <iframe
+                  title="BBM Proprietary (Reference)"
+                  width="100%"
+                  className="w-full h-40 sm:h-56 md:h-72 lg:h-96"
+                  scrolling="no"
+                  frameBorder="0"
+                  allow="autoplay"
+                  src={soundcloudCredits.proprietaryPlayerUrl}
+                />
                 <p className="mt-2 text-[10px] text-gray-400 font-serif">
                   <a href={soundcloudCredits.profileUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
                     NAKAMURA Hiroyuki

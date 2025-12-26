@@ -21,28 +21,28 @@ const Services: React.FC = () => {
   };
 
   return (
-    <div className="pt-32 pb-20">
-      <Section className="py-0 mb-32 pt-20">
+    <div className="pt-28 sm:pt-32 pb-16 md:pb-20">
+      <Section className="py-0 mb-16 md:mb-32 pt-12 md:pt-20">
         <p className="text-[#C9A66B] font-bold tracking-[0.4em] uppercase text-xs mb-6">Our Edge</p>
-        <h1 className="text-6xl md:text-8xl font-display italic tracking-tighter mb-12 text-black">{content.title[lang]}</h1>
-        <p className="text-2xl md:text-4xl text-black font-serif font-light max-w-4xl leading-tight mb-8">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-display italic tracking-tighter mb-8 md:mb-12 text-black">{content.title[lang]}</h1>
+        <p className="text-xl sm:text-2xl md:text-4xl text-black font-serif font-light max-w-4xl leading-tight mb-6 md:mb-8">
             {content.intro[lang]}
         </p>
-        <p className="text-lg text-gray-500 font-serif font-light max-w-3xl leading-relaxed italic">
+        <p className="text-base sm:text-lg text-gray-500 font-serif font-light max-w-3xl leading-relaxed italic">
             {content.desc[lang]}
         </p>
       </Section>
 
-      <Section className="py-0 grid grid-cols-1 md:grid-cols-2 gap-20">
-        <div className="space-y-32">
+      <Section className="py-0 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+        <div className="space-y-16 md:space-y-32">
             <div>
-                <h2 className="text-4xl font-serif font-light mb-6 text-black border-l-2 border-[#C9A66B] pl-6">01. 2ch Spatial Sound</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light mb-4 md:mb-6 text-black border-l-2 border-[#C9A66B] pl-6">01. 2ch Spatial Sound</h2>
                 <p className="text-gray-500 leading-loose font-serif font-light">
                     公共空間、商業施設における2chスピーカー配置での立体音響設計。独自のアルゴリズムで、最小限の機材で最大の空間演出を可能にします。
                 </p>
             </div>
             <div>
-                <h2 className="text-4xl font-serif font-light mb-6 text-black border-l-2 border-[#C9A66B] pl-6">02. Binaural Experience</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light mb-4 md:mb-6 text-black border-l-2 border-[#C9A66B] pl-6">02. Binaural Experience</h2>
                 <p className="text-gray-500 leading-loose font-serif font-light">
                     イヤホンで聴いた際に「そこにいる」と感じさせる、高精細なバイノーラル制作。ポッドキャスト、音楽、VRコンテンツへ。
                 </p>

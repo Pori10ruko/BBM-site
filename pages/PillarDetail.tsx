@@ -82,14 +82,14 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   ].filter(Boolean) as Work[];
 
   return (
-    <div className="pt-40 pb-40">
+    <div className="pt-28 sm:pt-32 md:pt-40 pb-24 md:pb-40">
       {/* Header */}
-      <Section className="mb-32">
+      <Section className="mb-16 md:mb-32">
         <div className="flex items-center space-x-6 mb-12">
             <div className="w-16 h-[1px]" style={{ backgroundColor: content.color }} />
             <p className="font-bold tracking-[0.5em] uppercase text-[10px]" style={{ color: content.color }}>Pillar / {type}</p>
         </div>
-        <h1 className="hero-title text-6xl md:text-9xl text-black mb-12 leading-none">
+        <h1 className="hero-title text-4xl sm:text-6xl md:text-9xl text-black mb-8 md:mb-12 leading-none">
           {pageTitle}
         </h1>
         <p className="text-xs md:text-sm font-bold tracking-[0.25em] text-gray-400 mb-10 whitespace-pre-line">
@@ -166,7 +166,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
           </div>
         ) : (
           <>
-            <div className="flex items-baseline justify-between mb-20">
+            <div className="flex items-baseline justify-between mb-10 md:mb-20">
               <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Selected Archives in {type}.</h2>
               <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{filteredWorks.length} Projects</span>
             </div>
@@ -178,7 +178,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
                 ))}
               </div>
             ) : (
-              <div className="py-40 text-center border border-dashed border-black/10">
+              <div className="py-20 md:py-40 text-center border border-dashed border-black/10">
                 <p className="text-gray-400 font-serif italic text-sm">Now building archives...</p>
               </div>
             )}

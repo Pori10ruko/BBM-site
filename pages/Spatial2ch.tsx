@@ -15,16 +15,16 @@ const Spatial2ch: React.FC = () => {
   const techWorks = works.filter(w => w.featuredInTech);
 
   return (
-    <div className="pt-40 pb-40">
-      <Section className="mb-32 text-center md:text-left">
+    <div className="pt-28 sm:pt-32 md:pt-40 pb-24 md:pb-40">
+      <Section className="mb-16 md:mb-32 text-center md:text-left">
         <div className="flex items-center justify-center md:justify-start space-x-6 mb-12">
             <div className="w-12 h-[1px] bg-[#C9A66B]" />
             <p className="text-[#C9A66B] font-bold tracking-[0.5em] uppercase text-[10px]">Acoustic Specialization</p>
         </div>
-        <h1 className="hero-title text-6xl md:text-9xl text-black mb-16 leading-tight">
+        <h1 className="hero-title text-4xl sm:text-6xl md:text-9xl text-black mb-10 md:mb-16 leading-tight">
           Spatial Audio<br />via 2ch.
         </h1>
-        <p className="text-xl md:text-3xl text-gray-800 font-serif font-light max-w-4xl leading-relaxed">
+        <p className="text-base sm:text-xl md:text-3xl text-gray-800 font-serif font-light max-w-4xl leading-relaxed">
           {lang === 'JP' ? '汎用性を犠牲にせず、最も深い没入感を。2つのスピーカーで「空間を彫刻する」技術。' : 
            'Achieving deep immersion without sacrificing versatility. Sculpting space through just two speakers.'}
         </p>
@@ -61,7 +61,7 @@ const Spatial2ch: React.FC = () => {
 
       {/* Technical Archives */}
       <Section className="py-32 border-t border-black/5">
-        <div className="flex items-baseline justify-between mb-20">
+        <div className="flex items-baseline justify-between mb-10 md:mb-20">
             <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Technology Archives.</h2>
             <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{techWorks.length} Core Projects</span>
         </div>
@@ -72,10 +72,10 @@ const Spatial2ch: React.FC = () => {
         </div>
       </Section>
 
-      <Section className="py-40 text-center">
+      <Section className="py-20 md:py-40 text-center">
          <h3 className="text-[11px] font-bold tracking-[0.6em] text-gray-400 uppercase mb-12">Dialogue</h3>
          <Link to="/contact" className="group inline-flex flex-col items-center">
-            <span className="text-4xl md:text-7xl font-display font-bold mb-6 transition-transform group-hover:-translate-y-2">Discuss your Vision.</span>
+            <span className="text-2xl sm:text-4xl md:text-7xl font-display font-bold mb-6 transition-transform group-hover:-translate-y-2">Discuss your Vision.</span>
             <div className="w-24 h-[1px] bg-[#C9A66B] group-hover:w-48 transition-all duration-700"></div>
          </Link>
       </Section>

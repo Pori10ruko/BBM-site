@@ -28,7 +28,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'py-4 glass-header border-b border-black/5 shadow-sm' : 'py-8'}`}>
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-wrap justify-between items-center">
         <Link to="/" className="group flex items-center space-x-2">
           {/* Mobile: mark -> text */}
           {markSrc ? (
@@ -69,8 +69,8 @@ const Header: React.FC = () => {
           )}
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-10">
+        {/* Desktop Navigation (lg+) */}
+        <div className="hidden lg:flex items-center space-x-10">
           <nav className="flex items-center space-x-8">
             {navItems.map((item) => (
               (() => {
@@ -98,6 +98,48 @@ const Header: React.FC = () => {
 
           {/* Language Switcher */}
           <div className="flex items-center space-x-4">
+            {(['JP', 'EN', 'TW'] as Language[]).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`text-[10px] font-bold tracking-widest transition-all px-1 ${lang === l ? 'text-black border-b border-[#C9A66B]' : 'text-gray-300 hover:text-black'}`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Tablet Navigation (md.. <lg) */}
+        <div className="hidden md:flex lg:hidden w-full items-center gap-4 mt-4">
+          <nav className="flex-1 overflow-x-auto">
+            <div className="flex items-center gap-3 min-w-max pr-2">
+              {navItems.map((item) => (
+                (() => {
+                  const isActive =
+                    item.to === '/contact'
+                      ? location.pathname === '/contact'
+                      : item.to === '/technology'
+                        ? location.pathname === '/technology' || location.pathname === '/spatial-2ch'
+                        : location.pathname === item.to;
+
+                  return (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className={`text-xs font-semibold tracking-widest uppercase transition-colors px-1 py-1 ${isActive ? 'text-black' : 'text-gray-400 hover:text-black'}`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })()
+              ))}
+            </div>
+          </nav>
+
+          <div className="w-[1px] h-4 bg-black/10" />
+
+          <div className="flex items-center gap-3 shrink-0">
             {(['JP', 'EN', 'TW'] as Language[]).map((l) => (
               <button
                 key={l}

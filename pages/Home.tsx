@@ -179,7 +179,7 @@ const Home: React.FC = () => {
           className="max-w-6xl"
         >
           <span className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-8 block">Collective / Label / Research</span>
-          <h1 className="hero-title text-6xl md:text-[10rem] text-black mb-12">
+          <h1 className="hero-title text-3xl sm:text-5xl md:text-[10rem] text-black mb-12">
             Beyond<br />Boundary Music
           </h1>
           {heroLogoSrc && (
@@ -260,7 +260,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Four Pillars - Clickable Navigation */}
-      <Section className="py-40 bg-gray-50/50">
+      <Section className="py-20 md:py-40 bg-gray-50/50">
         <div className="flex items-center space-x-4 mb-16">
             <div className="w-12 h-[1px] bg-[#C9A66B]" />
             <p className="text-[#C9A66B] font-bold tracking-[0.4em] uppercase text-[10px]">Four Missions</p>
@@ -277,12 +277,12 @@ const Home: React.FC = () => {
                 <img
                   src={pillar.imageUrl}
                   alt=""
-                  className="w-full h-full object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                  className="w-full h-full object-cover grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:group-hover:grayscale-0 transition-all duration-700 ease-in-out"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
               </div>
-              <div className="p-10 text-center">
+              <div className="p-6 md:p-10 text-center">
                 <div className="mb-10">
                   <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase block">{pillar.num}</span>
                   <h3 className="mt-4 text-4xl md:text-5xl font-display font-bold tracking-tight group-hover:translate-x-1 transition-transform duration-500">
@@ -300,7 +300,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* NEWS */}
-      <Section className="pt-10 pb-32">
+      <Section className="pt-10 pb-20 md:pb-32">
         <div className="flex justify-between items-end mb-10">
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter">NEWS.</h2>
         </div>
@@ -311,11 +311,11 @@ const Home: React.FC = () => {
             rel="noopener noreferrer"
             className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
           >
-            <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
+            <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:hover:grayscale-0 transition-all duration-700 ease-in-out">
               <img src="/images/yuki share .jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-black/5" />
             </div>
-            <div className="p-10">
+            <div className="p-6 md:p-10">
               <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.20 Release</p>
               <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.yukiTitle[lang]}</h3>
               <p className="text-gray-600 font-serif leading-loose text-sm">
@@ -329,11 +329,11 @@ const Home: React.FC = () => {
               to={`/works/${seigetsukiWork.id}`}
               className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
             >
-              <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
+              <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:hover:grayscale-0 transition-all duration-700 ease-in-out">
                 <img src={seigetsukiWork.imageUrl} alt="" className="w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-black/5" />
               </div>
-              <div className="p-10">
+              <div className="p-6 md:p-10">
                 <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.15 Release</p>
                 <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.seigetsukiTitle[lang]}</h3>
                 <p className="text-gray-600 font-serif leading-loose text-sm">{seigetsukiWork.description?.[lang] ?? ''}</p>
@@ -344,7 +344,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Upcoming Event */}
-      <Section className="py-32">
+      <Section className="py-20 md:py-32">
         <div className="flex justify-between items-end mb-12">
           <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">Upcoming Event</h2>
         </div>
@@ -355,7 +355,7 @@ const Home: React.FC = () => {
           className="block bg-white border border-black/5 shadow-sm overflow-hidden"
         >
           <div className="grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
+            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:hover:grayscale-0 transition-all duration-700 ease-in-out">
               <img
                 src="/images/tokoji1.png"
                 alt=""
@@ -403,7 +403,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Leads / Community */}
-      <Section className="py-40 bg-black text-white rounded-sm mx-6 md:mx-12 mb-20">
+      <Section className="py-20 md:py-40 bg-black text-white rounded-sm mx-6 md:mx-12 mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 md:p-12">
           <div className="space-y-12">
             <h3 className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase">Collective Leads</h3>

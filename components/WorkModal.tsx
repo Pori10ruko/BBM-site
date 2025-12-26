@@ -47,7 +47,7 @@ const WorkModal: React.FC<WorkModalProps> = ({ work, onClose }) => {
                 <img
                   src={work.imageUrl}
                   alt={title}
-                  className="absolute inset-0 w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
+                  className="absolute inset-0 w-full h-full object-cover grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:hover:grayscale-0 transition-all duration-700 ease-in-out"
                 />
               ) : (
                 <div className="absolute inset-0 w-full h-full flex items-center justify-center">
@@ -57,16 +57,16 @@ const WorkModal: React.FC<WorkModalProps> = ({ work, onClose }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
               <div className="absolute bottom-16 left-12 right-12">
                 <span className="text-[#C9A66B] font-bold tracking-[0.6em] text-[10px] uppercase mb-6 block">{work.category}</span>
-                <h2 className="text-6xl font-display italic tracking-tighter leading-none">{title}</h2>
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-display italic tracking-tighter leading-none">{title}</h2>
               </div>
             </div>
 
-            <div className="lg:col-span-7 p-12 md:p-24 space-y-20 flex flex-col justify-center">
+            <div className="lg:col-span-7 p-8 sm:p-12 md:p-24 space-y-10 md:space-y-20 flex flex-col justify-center">
               <section>
                 <h3 className="text-[10px] font-bold tracking-[0.6em] text-black/10 uppercase mb-8 border-b border-black/5 pb-4 italic">{labels.narrative[lang]}</h3>
-                <p className="text-2xl font-serif font-light leading-relaxed text-gray-800">{work.description[lang]}</p>
+                <p className="text-base sm:text-xl md:text-2xl font-serif font-light leading-relaxed text-gray-800">{work.description[lang]}</p>
               </section>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
                 <section>
                   <h3 className="text-[10px] font-bold tracking-[0.6em] text-black/10 uppercase mb-6 border-b border-black/5 pb-4">{labels.role[lang]}</h3>
                   <p className="text-lg font-serif font-light text-[#C9A66B] italic">{work.role[lang]}</p>

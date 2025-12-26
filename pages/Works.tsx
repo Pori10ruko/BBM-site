@@ -17,13 +17,13 @@ const Works: React.FC = () => {
     : works.filter(w => w.category === activeCategory);
 
   return (
-    <div className="pt-48 pb-40">
-      <Section className="py-0 mb-32">
+    <div className="pt-28 sm:pt-32 md:pt-40 lg:pt-48 pb-24 md:pb-40">
+      <Section className="py-0 mb-16 md:mb-32">
         <div className="flex items-center space-x-6 mb-10">
             <div className="w-16 h-[1px] bg-[#C9A66B]" />
             <p className="text-[#C9A66B] font-bold tracking-[0.5em] uppercase text-[10px]">Archives</p>
         </div>
-        <h1 className="text-8xl md:text-[12rem] font-display italic tracking-tighter mb-20 leading-none text-black">WORKS</h1>
+        <h1 className="text-4xl sm:text-6xl md:text-[12rem] font-display italic tracking-tighter mb-10 md:mb-20 leading-none text-black">WORKS</h1>
         
         {/* Filter */}
         <div className="flex flex-wrap gap-8 md:gap-16 border-b border-black/5 pb-10 mb-24">
