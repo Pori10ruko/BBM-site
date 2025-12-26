@@ -110,7 +110,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   ].filter(Boolean) as Work[];
 
   return (
-    <div className="pb-24 md:pb-40">
+    <div className="pb-16 md:pb-24">
       {/* Header */}
       <Section className="mb-16 md:mb-32">
         <div className="flex items-center space-x-6 mb-12">

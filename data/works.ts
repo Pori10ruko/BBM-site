@@ -600,6 +600,11 @@ export const works: Work[] = [
   {
     id: 'yuki-share',
     title: 'Yuki Share',
+    titleLocalized: {
+      JP: 'Yuki Share',
+      EN: 'Yuki Share',
+      TW: 'Yuki Share'
+    },
     date: '2024',
     client: 'Yuki Share',
     category: 'Client Works',

@@ -12,7 +12,7 @@ const WorkDetail: React.FC = () => {
 
   if (!work) {
     return (
-      <div className="pb-24 md:pb-40">
+      <div className="pb-16 md:pb-24">
         <Section className="py-0">
           <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-gray-300 mb-8">Not Found</p>
           <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tighter mb-8">Work not found.</h1>
@@ -41,7 +41,7 @@ const WorkDetail: React.FC = () => {
   };
 
   return (
-    <div className="pb-24 md:pb-40">
+    <div className="pb-16 md:pb-24">
       <Section className="py-0">
         <div className="mb-10">
           <Link to="/works" className="text-[11px] font-bold tracking-[0.3em] uppercase hover:text-[#C9A66B] transition-colors">← Back to Works</Link>
