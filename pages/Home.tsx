@@ -113,16 +113,16 @@ const Home: React.FC = () => {
     selectedArchives: {
       tainan: {
         JP: {
-          title: '台湾・國立臺南大学にて流行音楽の特別講義を実施',
-          desc: '流行音楽の特別講義とワークショップを開催。NAKAMURA Hiroyukiは2025年9月より同大学の講師に就任しています。'
+          title: '臺南國立大学 特別講義',
+          desc: '台湾・臺南國立大学にて、流行音楽における空間表現の講義とワークショップを実施。'
         },
         EN: {
-          title: 'Special Lecture on Pop Music at National University of Tainan',
-          desc: 'Held a lecture and workshop on spatial expression in pop music. NAKAMURA Hiroyuki has been appointed as a lecturer at the university starting September 2025.'
+          title: 'Special Lecture at National University of Tainan',
+          desc: 'At the National University of Tainan (Taiwan), we held a lecture and workshop on spatial expression in pop music.'
         },
         TW: {
-          title: '於國立臺南大學舉辦流行音樂特別講座',
-          desc: '舉辦關於流行音樂空間表現的講座與工作坊。NAKAMURA Hiroyuki 自 2025 年 9 月起擔任該校講師。'
+          title: '國立臺南大學 特別講座',
+          desc: '於台灣國立臺南大學舉辦關於流行音樂空間表現的講座與工作坊。'
         }
       }
     }

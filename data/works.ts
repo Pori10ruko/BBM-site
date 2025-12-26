@@ -260,58 +260,253 @@ export const works: Work[] = [
     approach: { JP: '声の定位を2chで最適化し、長時間の視聴でも疲れない自然な立体感。', EN: 'Optimizing voice localization for long-term comfort in 2ch.', TW: '優化聲音定位。' }
   },
   {
-    id: 'bbm-seminar',
-    title: 'BBM Seminar',
-    client: 'Education / Community',
-    category: 'Education',
-    pillar: 'Education',
-    description: {
-      JP: '立体音響の思想と技術を分かち合うナレッジ共有プラットフォーム。',
-      EN: 'Knowledge-sharing platform for spatial audio philosophy and tech.',
-      TW: '分享立體音響知識的平台。'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Education', 'Tech Share'],
-    role: { JP: '講師 / プログラム設計', EN: 'Lecturer', TW: '講師' },
-    approach: { JP: '技術を分かち合うことで、文化全体の質を向上させる精神。', EN: 'Improving cultural quality through sharing technology.', TW: '透過分享提升品質。' }
-  },
-  {
-    id: 'oiwada-career',
-    title: 'Career Lecture at Oiwada',
-    client: 'Oiwada Elementary School',
-    category: 'Lecture',
-    pillar: 'Education',
-    description: {
-      JP: '土浦市立大岩田小学校でのキャリア講演。宇津木が音の未来を語る。',
-      EN: 'Career talk at Oiwada Elementary, discussing the future of sound.',
-      TW: '大岩田小學的職涯講座。'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Career', 'Kids', 'Community'],
-    role: { JP: '講師（宇津木）', EN: 'Speaker (Utsugi)', TW: '講師（宇津木）' },
-    approach: { JP: '目に見えない「音」の重要性とクリエイティブの楽しさを伝達。', EN: 'Conveying the importance of invisible "sound" and creative joy.', TW: '向孩子們傳達聲音的重要性。' }
-  },
-  {
     id: 'tainan-lecture',
-    title: 'Tainan University Lecture',
+    title: 'Special Lecture at National University of Tainan',
+    titleLocalized: {
+      JP: '臺南國立大学 特別講義',
+      EN: 'Special Lecture at National University of Tainan',
+      TW: '國立臺南大學 特別講座'
+    },
+    date: '2024',
     client: 'National University of Tainan',
     category: 'Lecture',
     pillar: 'Education',
     description: {
-      JP: '台湾・國立臺南大学にて流行音楽の特別講義を実施。NAKAMURA Hiroyukiは2025年9月より同大学の講師に就任しています。',
-      EN: 'Special lecture on pop music at the National University of Tainan. NAKAMURA Hiroyuki has been appointed as a lecturer at the university starting September 2025.',
-      TW: '於國立臺南大學舉辦流行音樂特別講座。NAKAMURA Hiroyuki 自 2025 年 9 月起擔任該校講師。'
+      JP: '台湾・臺南國立大学にて、流行音楽における空間表現の講義とワークショップを実施。',
+      EN: 'At the National University of Tainan (Taiwan), we held a lecture and workshop on spatial expression in pop music.',
+      TW: '於台灣國立臺南大學舉辦關於流行音樂空間表現的講座與工作坊。'
     },
     imageUrl: '/images/tainan lecture.jpg',
-    tags: ['Taiwan', 'Academic', 'Global'],
-    role: { JP: '特別講師', EN: 'Guest Lecturer', TW: '客座講師' },
-    approach: { JP: '学術的視点と実務的スキルの橋渡しを行う教育的アプローチ。', EN: 'Bridging academic theory and practical engineering skills.', TW: '學術與實作的橋樑。' },
+    tags: ['2024', 'Taiwan', 'Lecture', 'Education'],
+    role: { JP: '特別講義', EN: 'Guest Lecture', TW: '特別講座' },
+    approach: {
+      JP: '立体音響の基礎と表現実践を接続し、学びを制作へと落とし込む。',
+      EN: 'Connecting spatial-audio fundamentals with practice, turning learning into making.',
+      TW: '連結立體音響基礎與實作，將學習落地到創作。'
+    }
+  },
+  {
+    id: 'tama-art-univ',
+    title: 'Special Lecture at Tama Art University (Graduate School)',
+    titleLocalized: {
+      JP: '多摩美術大学大学院 特別講義 (Apichatpong Weerasethakul Workshop)',
+      EN: 'Special Lecture at Tama Art University (Graduate School)',
+      TW: '多摩美術大學研究所 特別講座'
+    },
+    date: '2024.11',
+    client: 'Tama Art University',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: '映画監督アピチャッポン・ウィーラセタクン氏本人の招聘により、多摩美術大学大学院で実施された同監督のワークショップにて特別講義を担当。専門とするバイノーラル音響技術と芸術表現への応用について、学生やアーティストに向けて解説と実演を行いました。',
+      EN: 'A special lecture delivered during a workshop by film director Apichatpong Weerasethakul at Tama Art University (Graduate School). We presented and demonstrated binaural audio techniques and their applications to artistic expression for students and artists.',
+      TW: '在多摩美術大學研究所舉辦、由電影導演阿彼察邦・韋拉斯塔古本人受邀主持的工作坊中，負責特別講座。面向學生與藝術家解說並示範雙耳（binaural）音響技術及其在藝術表現上的應用。'
+    },
+    imageUrl: '/images/tamabi.avif',
+    tags: ['2024.11', 'Lecture', 'Workshop', 'Education'],
+    role: { JP: '特別講義', EN: 'Guest Lecture', TW: '特別講座' },
+    approach: {
+      JP: '音響技術を表現へ接続し、実演を通して理解を深める。',
+      EN: 'Connecting audio techniques to expression and deepening understanding through demonstration.',
+      TW: '將音響技術連結到表現，透過示範加深理解。'
+    }
+  },
+  {
+    id: 'showa-music-univ',
+    title: 'Showa Music University Research Presentation',
+    titleLocalized: {
+      JP: '昭和音楽大学 教員・研究員研究発表',
+      EN: 'Showa Music University Faculty/Researcher Presentation',
+      TW: '昭和音樂大學 教員・研究員研究發表'
+    },
+    date: '2024.11.14',
+    client: 'Showa Music University',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: '昭和音楽大学ユリホールにて行われた教員・研究員研究発表に出演。「Voices in the Void」において電子音響と映像を担当し、学術的な場での実践研究を発表しました。',
+      EN: 'Performed at the faculty/researcher presentation at Showa Music University Yuri Hall. For “Voices in the Void,” we handled electroacoustic sound and visuals, presenting practice-based research in an academic setting.',
+      TW: '於昭和音樂大學尤里音樂廳舉辦的教員・研究員研究發表中演出。在「Voices in the Void」中負責電子音響與影像，於學術場域發表實踐研究。'
+    },
+    imageUrl: '/images/showa.avif',
+    tags: ['2024.11.14', 'Research', 'Performance', 'Education'],
+    role: { JP: '電子音響 / 映像', EN: 'Electroacoustics / Visuals', TW: '電子音響／影像' },
+    approach: {
+      JP: '電子音響と映像を統合し、研究発表として成立する表現形式を設計。',
+      EN: 'Integrating electroacoustics and visuals into a form suitable for research presentation.',
+      TW: '整合電子音響與影像，設計可作為研究發表成立的表現形式。'
+    }
+  },
+  {
+    id: 'bbm-workshop',
+    title: 'BBM Workshop',
+    titleLocalized: {
+      JP: 'BBM Workshop',
+      EN: 'BBM Workshop',
+      TW: 'BBM Workshop'
+    },
+    date: '2024 - Present',
+    client: 'BBM',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: '「音」を扱うすべての人のための実践的ワークショップ。プロフェッショナルな制作環境やスタジオにて、立体音響の基礎から応用、そして表現の可能性をハンズオン形式で探求します。',
+      EN: 'A hands-on workshop for everyone who works with sound. In professional production environments and studios, we explore spatial audio from fundamentals to applications—and its expressive possibilities.',
+      TW: '為所有使用「聲音」的人而設的實作型工作坊。在專業製作環境與錄音室中，以 hands-on 形式探索立體音響的基礎、應用與表現可能性。'
+    },
+    imageUrl: '/images/workshop.webp',
+    tags: ['2024 - Present', 'Workshop', 'Hands-on', 'Spatial Audio'],
+    role: { JP: '講師 / 進行', EN: 'Facilitation / Instruction', TW: '講師／帶領' },
+    approach: {
+      JP: '基礎→応用→表現を一続きの体験として設計し、現場で学ぶ。',
+      EN: 'Designing fundamentals→applications→expression as one continuous studio experience.',
+      TW: '將基礎→應用→表現設計為連續體驗，在現場學習。'
+    },
     externalLinks: [
       {
-        label: 'Facebook',
-        url: 'https://www.facebook.com/photo?fbid=122221039964062649&set=a.122112593654062649'
+        label: 'Link',
+        url: 'https://note.com/bbmusic/n/n6ab3abd6043d?fbclid=IwY2xjawO6sktleHRuA2FlbQIxMABicmlkETE0TEFPemxoeGJuMFVSVVljc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHiZtz9mAN8da7X7asHFtyLMquwCz8IU5JYajqnR20E8Afy3AZoI8m5MThGFi_aem_IAQgkkZJB7LL3REWjuI_hA'
       }
     ]
+  },
+  {
+    id: 'bbm-online-seminar',
+    title: 'BBM Online Seminar',
+    titleLocalized: {
+      JP: 'BBM Online Seminar',
+      EN: 'BBM Online Seminar',
+      TW: 'BBM Online Seminar'
+    },
+    date: '2023 - Present',
+    client: 'BBM',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: 'オンラインで学ぶ、音響表現の現在地。場所を問わず参加できるセミナー形式で、最新の技術動向や制作プロセスを共有し、知のオープン化を推進しています。',
+      EN: 'Learning online—where audio expression stands today. In an accessible seminar format, we share current technical trends and production processes, promoting open knowledge.',
+      TW: '在線學習音響表現的現在地。以不受地點限制的研討會形式分享最新技術動向與製作流程，推動知識的開放。'
+    },
+    imageUrl: '/images/seminor.webp',
+    tags: ['2023 - Present', 'Online', 'Seminar', 'Knowledge'],
+    role: { JP: '講師 / 共有', EN: 'Lecturing / Sharing', TW: '講師／分享' },
+    approach: {
+      JP: '最新動向と制作の実例を共有し、参加者の実践へつなぐ。',
+      EN: 'Sharing up-to-date practice and real examples to support participants’ work.',
+      TW: '分享最新動向與實例，連結到參與者的實踐。'
+    }
+  },
+  {
+    id: 'bbm-note',
+    title: 'BBM Note',
+    titleLocalized: {
+      JP: 'BBM Note',
+      EN: 'BBM Note',
+      TW: 'BBM Note'
+    },
+    date: '2023 - Present',
+    client: 'BBM',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: 'プロジェクトの裏側や技術的な知見、日々の思考を綴る公式テキストメディア。作品が生まれるまでのプロセスや思想をより深く共有するためのアーカイブです。',
+      EN: 'An official text medium documenting behind-the-scenes processes, technical insights, and daily thoughts. An archive to share the ideas and steps behind each work in greater depth.',
+      TW: '官方文字媒體，記錄專案幕後、技術見解與日常思考。作為更深入分享作品誕生過程與思想的檔案庫。'
+    },
+    imageUrl: '/images/note.avif',
+    tags: ['2023 - Present', 'Writing', 'Archive', 'Process'],
+    role: { JP: '編集 / 執筆', EN: 'Editing / Writing', TW: '編輯／撰寫' },
+    approach: {
+      JP: '技術と思想を言葉にし、共有可能な知として蓄積する。',
+      EN: 'Turning technique and thought into words and accumulating shareable knowledge.',
+      TW: '將技術與思想化為文字，累積為可共享的知識。'
+    },
+    externalLinks: [
+      { label: 'Link', url: 'https://note.com/bbmusic' }
+    ]
+  },
+  {
+    id: 'bbm-net-radio',
+    title: 'BBM Net Radio',
+    titleLocalized: {
+      JP: 'BBM Net Radio',
+      EN: 'BBM Net Radio',
+      TW: 'BBM Net Radio'
+    },
+    date: '2023 - Present',
+    client: 'BBM',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: '音声による思考の共有。ゲストを招いた対談や、制作の中で生まれた気づきを、ラジオ形式でカジュアルに発信。聴覚を通じた「学び」と「対話」の場です。',
+      EN: 'Sharing thoughts through voice. We casually broadcast guest dialogues and insights born from making—creating a place for learning and dialogue through listening.',
+      TW: '以聲音分享思考。以廣播形式輕鬆發送來賓對談與製作中的發現，作為透過聆聽而展開的「學習」與「對話」場域。'
+    },
+    imageUrl: '/images/radio.jpg',
+    tags: ['2023 - Present', 'Radio', 'Dialogue', 'Learning'],
+    role: { JP: 'パーソナリティ', EN: 'Host', TW: '主持' },
+    approach: {
+      JP: '制作の気づきを言葉にし、聴くことから学びを立ち上げる。',
+      EN: 'Putting making into words and letting learning emerge from listening.',
+      TW: '把製作中的覺察化為語言，讓學習從聆聽中生成。'
+    },
+    externalLinks: [
+      { label: 'Link', url: 'https://stand.fm/channels/6857f11ebe67144ad58a3f6a' }
+    ]
+  },
+  {
+    id: 'shimamura-music-seminar',
+    title: 'Shimamura Music Seminar',
+    titleLocalized: {
+      JP: '島村楽器 特別セミナー',
+      EN: 'Shimamura Music Seminar',
+      TW: '島村樂器 特別研討會'
+    },
+    date: '2024',
+    client: 'Shimamura Music',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: '島村楽器とのコラボレーションによる特別セミナー。最新の機材や技術を用いた音楽制作のノウハウを、実演を交えて解説。楽器店という身近な場所から、音の楽しみ方を広げます。',
+      EN: 'A special seminar in collaboration with Shimamura Music. We explain music production know-how using the latest gear and techniques, with live demonstrations—expanding ways to enjoy sound from a familiar place: the music store.',
+      TW: '與島村樂器合作的特別研討會。結合實演，解說使用最新器材與技術的音樂製作訣竅，從熟悉的樂器店出發，拓展享受聲音的方式。'
+    },
+    imageUrl: '/images/simamura.webp',
+    tags: ['2024', 'Seminar', 'Gear', 'Production'],
+    role: { JP: '講師', EN: 'Lecturer', TW: '講師' },
+    approach: {
+      JP: '実演を通して、制作の手触りをその場で共有する。',
+      EN: 'Sharing the tactile feel of production through live demos.',
+      TW: '透過實演即時分享製作的手感。'
+    },
+    externalLinks: [
+      { label: 'Link', url: 'https://note.com/bbmusic/n/n934a4790feb2' }
+    ]
+  },
+  {
+    id: 'tsuchiura-elementary-special-class',
+    title: 'Tsuchiura Elementary School Special Class',
+    titleLocalized: {
+      JP: '土浦市立大岩田小学校 特別授業',
+      EN: 'Tsuchiura Elementary School Special Class',
+      TW: '土浦市立小學 特別課程'
+    },
+    date: '2024',
+    client: 'Tsuchiura City',
+    category: 'Education',
+    pillar: 'Education',
+    description: {
+      JP: '「キャリア講演会」として体育館で特別授業を実施。金管バンド部との共演に加え、全児童が足踏みや文房具の音でアンサンブルに参加するワークショップを開催。「楽器以外の音」で奏でる喜びを共有しました。',
+      EN: 'A special class held in the gym as a “career lecture.” Alongside a performance with the brass band, all students joined an ensemble workshop using footsteps and the sounds of stationery—sharing the joy of making music with “sounds beyond instruments.”',
+      TW: '以「職涯講演會」形式在體育館舉辦特別課程。除了與金管樂團共演，也透過工作坊讓全體學生用踏步與文具聲加入合奏，共享以「非樂器之聲」演奏的喜悅。'
+    },
+    imageUrl: '/images/school_tsuchiura.jpg',
+    tags: ['2024', 'School', 'Workshop', 'Community'],
+    role: { JP: '特別授業 / ワークショップ', EN: 'Special Class / Workshop', TW: '特別課程／工作坊' },
+    approach: {
+      JP: '身近な音をアンサンブルへ接続し、全員参加の表現体験を設計。',
+      EN: 'Connecting everyday sounds to ensemble-making, designing an inclusive experience.',
+      TW: '把日常聲音連結到合奏，設計人人可參與的表達體驗。'
+    }
   },
   {
     id: 'seigetsuki',

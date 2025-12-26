@@ -39,12 +39,7 @@ const pillarContent = {
     color: '#4A5568'
   },
   Education: {
-    title: {
-      JP: 'Knowledge Cycle / 知の循環。',
-      EN: 'Knowledge Cycle / 知の循環。',
-      TW: 'Knowledge Cycle / 知の循環。'
-    },
-    sub: '知の循環。',
+    title: 'Knowledge Cycle / 知の循環。',
     desc: 'コミュニティとしての学びの場。若手への技術継承や、分野を超えた対話を通じて、これからの音響表現の土壌を共に耕します。',
     color: '#2D3748'
   }
@@ -54,7 +49,8 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   const { lang } = useContext(LanguageContext);
   const [selectedWork, setSelectedWork] = useState<Work | null>(null);
   const content = pillarContent[type];
-  const filteredWorks = works.filter(w => w.pillar === type);
+  // Preserve `data/works.ts` order (especially for Education).
+  const filteredWorks = works.filter((w) => w.pillar === type);
 
   const pageTitle = type.toUpperCase();
   const subtitle = typeof content.title === 'string' ? content.title : content.title[lang];
@@ -68,6 +64,21 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   const kawasakiWorks: Work[] = [
     getWork('encount-kawasaki'),
     getWork('venus-festival')
+  ].filter(Boolean) as Work[];
+
+  const educationBbmProjects: Work[] = [
+    getWork('bbm-workshop'),
+    getWork('bbm-online-seminar'),
+    getWork('bbm-note'),
+    getWork('bbm-net-radio')
+  ].filter(Boolean) as Work[];
+
+  const educationInvitedLectures: Work[] = [
+    getWork('tama-art-univ'),
+    getWork('showa-music-univ'),
+    getWork('tainan-lecture'),
+    getWork('shimamura-music-seminar'),
+    getWork('tsuchiura-elementary-special-class')
   ].filter(Boolean) as Work[];
 
   return (
@@ -122,6 +133,32 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {kawasakiWorks.map((work) => (
+                  <WorkCard key={work.id} work={work} onClick={() => setSelectedWork(work)} />
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : type === 'Education' ? (
+          <div className="space-y-24">
+            <div>
+              <div className="flex items-baseline justify-between mb-10">
+                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">BBM Projects / 自主企画</h2>
+                <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{educationBbmProjects.length} Projects</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {educationBbmProjects.map((work) => (
+                  <WorkCard key={work.id} work={work} onClick={() => setSelectedWork(work)} />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-baseline justify-between mb-10">
+                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Invited Lectures / 招聘・外部講義</h2>
+                <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{educationInvitedLectures.length} Projects</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {educationInvitedLectures.map((work) => (
                   <WorkCard key={work.id} work={work} onClick={() => setSelectedWork(work)} />
                 ))}
               </div>
