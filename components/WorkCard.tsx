@@ -23,7 +23,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, onClick }) => {
       onClick={onClick}
       className="group relative cursor-pointer flex flex-col space-y-6"
     >
-      <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden bg-gray-100 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+      <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden bg-gray-100 grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
         {work.imageUrl ? (
           <motion.img
             src={work.imageUrl}

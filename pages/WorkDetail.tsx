@@ -50,7 +50,11 @@ const WorkDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 border border-black/5 bg-white rounded-[4px] shadow-2xl overflow-hidden">
           <div className="lg:col-span-5 relative bg-gray-50 min-h-[320px] lg:min-h-[720px]">
             {work.imageUrl ? (
-              <img src={work.imageUrl} alt={title} className="absolute inset-0 w-full h-full object-cover grayscale" />
+              <img
+                src={work.imageUrl}
+                alt={title}
+                className="absolute inset-0 w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
+              />
             ) : (
               <div className="absolute inset-0 w-full h-full flex items-center justify-center">
                 <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-black/20">{title}</span>

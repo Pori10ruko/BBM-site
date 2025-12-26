@@ -135,7 +135,7 @@ const Home: React.FC = () => {
       title: 'ART',
       imageUrl: '/images/art.jpg',
       desc: t.missions.art[lang],
-      path: '/pillar/art'
+      path: '/art'
     },
     {
       id: 'public',
@@ -143,7 +143,7 @@ const Home: React.FC = () => {
       title: 'PUBLIC',
       imageUrl: '/images/public.jpg',
       desc: t.missions.public[lang],
-      path: '/pillar/public'
+      path: '/public'
     },
     {
       id: 'education',
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
       title: 'EDUCATION',
       imageUrl: '/images/edu.jpg',
       desc: t.missions.education[lang],
-      path: '/pillar/education'
+      path: '/education'
     }
   ] as const;
 
@@ -240,7 +240,7 @@ const Home: React.FC = () => {
                 <img
                   src={pillar.imageUrl}
                   alt=""
-                  className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${pillar.id === 'art' || pillar.id === 'education' ? 'grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100' : ''}`}
+                  className="w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
@@ -273,7 +273,7 @@ const Home: React.FC = () => {
               rel="noopener noreferrer"
               className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
             >
-              <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+              <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
                 <img
                   src="/images/yuki share .jpg"
                   alt=""
@@ -293,7 +293,7 @@ const Home: React.FC = () => {
 
             {seigetsukiWork && (
               <Link to={`/works/${seigetsukiWork.id}`} className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500">
-                <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+                <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
                   <img
                     src={seigetsukiWork.imageUrl}
                     alt=""
@@ -370,7 +370,7 @@ const Home: React.FC = () => {
           className="block bg-white border border-black/5 shadow-sm overflow-hidden"
         >
           <div className="grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out">
               <img
                 src="/images/tokoji1.png"
                 alt=""

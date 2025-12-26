@@ -25,7 +25,11 @@ const pillarContent = {
     color: '#C9A66B'
   },
   Public: {
-    title: 'Public Resonance',
+    title: {
+      JP: 'Public Resonance / 共鳴する公共空間',
+      EN: 'Public Resonance / 共鳴する公共空間',
+      TW: 'Public Resonance / 共鳴する公共空間'
+    },
     sub: '社会の響き。',
     desc: {
       JP: '街の声を聴く。私たちは、その場所の喧騒も静寂も、あるがままに受け入れ、そこに暮らす人々との対話を通して新たな「風景」を紡ぎ出します。それは、公共空間そのものを、共鳴する一つの楽器へと変える試みです。',
@@ -35,7 +39,11 @@ const pillarContent = {
     color: '#4A5568'
   },
   Education: {
-    title: 'Knowledge Cycle',
+    title: {
+      JP: 'Knowledge Cycle / 知の循環。',
+      EN: 'Knowledge Cycle / 知の循環。',
+      TW: 'Knowledge Cycle / 知の循環。'
+    },
     sub: '知の循環。',
     desc: 'コミュニティとしての学びの場。若手への技術継承や、分野を超えた対話を通じて、これからの音響表現の土壌を共に耕します。',
     color: '#2D3748'
@@ -47,6 +55,9 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   const [selectedWork, setSelectedWork] = useState<Work | null>(null);
   const content = pillarContent[type];
   const filteredWorks = works.filter(w => w.pillar === type);
+
+  const pageTitle = type.toUpperCase();
+  const subtitle = typeof content.title === 'string' ? content.title : content.title[lang];
 
   const getWork = (id: string) => works.find((w) => w.id === id);
   const tsuchiuraWorks: Work[] = [
@@ -68,8 +79,11 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
             <p className="font-bold tracking-[0.5em] uppercase text-[10px]" style={{ color: content.color }}>Pillar / {type}</p>
         </div>
         <h1 className="hero-title text-6xl md:text-9xl text-black mb-12 leading-none">
-          {typeof content.title === 'string' ? content.title : content.title[lang]}
+          {pageTitle}
         </h1>
+        <p className="text-xs md:text-sm font-bold tracking-[0.25em] text-gray-400 mb-10 whitespace-pre-line">
+          {subtitle}
+        </p>
         <p className="text-base md:text-lg text-gray-500 font-serif font-light max-w-3xl leading-loose whitespace-pre-line">
           {typeof content.desc === 'string' ? content.desc : content.desc[lang]}
         </p>

@@ -11,7 +11,9 @@ import Services from './pages/Services';
 import Technology from './pages/Technology';
 import Contact from './pages/Contact';
 import Spatial2ch from './pages/Spatial2ch';
-import PillarDetail from './pages/PillarDetail';
+import Art from './pages/Art';
+import Public from './pages/Public';
+import Education from './pages/Education';
 import { Language } from './types';
 
 interface LanguageContextType {
@@ -70,12 +72,12 @@ const App: React.FC = () => {
                 <Route path="/technology" element={<Technology />} />
                 <Route path="/contact" element={<Contact />} />
                 {/* Pillar pages */}
-                <Route path="/art" element={<PillarDetail type="Art" />} />
-                <Route path="/public" element={<PillarDetail type="Public" />} />
-                <Route path="/education" element={<PillarDetail type="Education" />} />
-                <Route path="/pillar/art" element={<PillarDetail type="Art" />} />
-                <Route path="/pillar/public" element={<PillarDetail type="Public" />} />
-                <Route path="/pillar/education" element={<PillarDetail type="Education" />} />
+                <Route path="/art" element={<Art />} />
+                <Route path="/public" element={<Public />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/pillar/art" element={<Art />} />
+                <Route path="/pillar/public" element={<Public />} />
+                <Route path="/pillar/education" element={<Education />} />
               </Routes>
             </PageTransition>
           </main>
