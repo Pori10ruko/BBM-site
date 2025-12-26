@@ -1,81 +1,173 @@
 import React from 'react';
 import Section from '../components/Section';
-import { motion } from 'framer-motion';
 
 const Technology: React.FC = () => {
-  return (
-    <div className="pt-32 pb-20">
-      <Section className="py-0 mb-32 pt-20">
-        <div className="flex items-center space-x-4 mb-8">
-            <div className="w-12 h-[1px] bg-[#C9A66B]" />
-            <p className="text-[#C9A66B] font-bold tracking-[0.4em] uppercase text-xs">The Engine</p>
-        </div>
-        <h1 className="text-7xl md:text-[10rem] font-display italic tracking-tighter mb-16 leading-none text-black">TECH.</h1>
-        <p className="text-xl md:text-3xl text-gray-500 font-serif font-light max-w-4xl leading-relaxed italic">
-            最先端の音響エンジニアリングを、確かな品質で。
-            BBMは制作から実装まで、あらゆるプラットフォームに対応可能な技術基盤を備えています。
-        </p>
-      </Section>
+  const youtubeEmbeds = [
+    'https://www.youtube.com/embed/f_KZ37Aatgs',
+    'https://www.youtube.com/embed/Q5KNuObeIkI',
+    'https://www.youtube.com/embed/71i0_KPyRfQ',
+  ] as const;
 
-      <Section className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-32">
-        <div className="bg-white/50 backdrop-blur-xl border border-black/5 p-12 rounded-[4px] lg:col-span-2">
-          <h2 className="text-2xl font-serif font-light mb-10 tracking-widest text-[#C9A66B] uppercase">Delivery Formats</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="font-bold text-[9px] tracking-[0.3em] text-black/20 uppercase mb-4">Linear Audio</h3>
-              <ul className="space-y-4 text-base font-serif font-light text-gray-500">
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>Binaural (2ch)</span> <span className="text-[9px] font-bold text-gray-300">WAV / ADM</span></li>
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>Ambisonics (1-7th)</span> <span className="text-[9px] font-bold text-gray-300">AmbiX / FuMa</span></li>
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>Dolby Atmos</span> <span className="text-[9px] font-bold text-gray-300">ADM BWF</span></li>
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>Surround</span> <span className="text-[9px] font-bold text-gray-300">Discrete</span></li>
-              </ul>
+  const soundcloudCredits = {
+    profileUrl: 'https://soundcloud.com/nakamurahiroyuki',
+    standardPlayerUrl:
+      'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2015253087%3Fsecret_token%3Ds-axESrXDa0wz&color=%230c6689&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+    proprietaryPlayerUrl:
+      'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2015253711%3Fsecret_token%3Ds-ibO2BBPcfw5&color=%2333606a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+  } as const;
+
+  return (
+    <div className="pt-32 pb-40">
+      <Section className="py-0">
+        {/* Header */}
+        <div className="mb-20">
+          <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-6">TECHNOLOGY</p>
+          <h1 className="text-6xl md:text-8xl font-display font-bold tracking-tighter text-black mb-6">TECHNOLOGY</h1>
+          <p className="text-lg md:text-2xl font-serif text-gray-800">2ch Spatial Audio / 空間を拡張する独自技術</p>
+        </div>
+
+        {/* Audio Demonstration */}
+        <div className="mb-24 border-t border-black/5 pt-16">
+          <div className="space-y-4 mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">Experience the Difference / 聴覚による体験</h2>
+            <p className="text-gray-600 font-serif leading-loose md:text-base text-sm">従来のDolby Atmos技術と、BBM独自のバイノーラル技術による立体感の違いをご体感ください。</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white border border-black/5 shadow-sm p-10 space-y-5">
+              <p className="text-[10px] font-bold tracking-[0.35em] uppercase text-gray-400">Standard (Dolby Atmos)</p>
+              <div className="overflow-hidden">
+                <iframe
+                  title="Standard / Dolby Atmos"
+                  width="100%"
+                  height="450"
+                  scrolling="no"
+                  frameBorder="0"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2015253087%3Fsecret_token%3Ds-axESrXDa0wz&color=%230c6689&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+                />
+              </div>
+              <p className="text-[11px] text-gray-400 font-serif">
+                <a href={soundcloudCredits.profileUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  NAKAMURA Hiroyuki
+                </a>
+                {' · '}
+                <a href={soundcloudCredits.standardPlayerUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  SoundCloud Playlist
+                </a>
+              </p>
             </div>
-            <div>
-              <h3 className="font-bold text-[9px] tracking-[0.3em] text-black/20 uppercase mb-4">Interactive</h3>
-              <ul className="space-y-4 text-base font-serif font-light text-gray-500">
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>Unity / Wwise</span> <span className="text-[9px] font-bold text-gray-300">Integration</span></li>
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>Unreal 5</span> <span className="text-[9px] font-bold text-gray-300">Metasounds</span></li>
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>MaxMSP</span> <span className="text-[9px] font-bold text-gray-300">Standalone</span></li>
-                <li className="flex justify-between border-b border-black/5 pb-2"><span>Web Audio</span> <span className="text-[9px] font-bold text-gray-300">Three.js</span></li>
-              </ul>
+
+            <div className="bg-white border border-black/5 shadow-sm p-10 space-y-5">
+              <p className="text-[10px] font-bold tracking-[0.35em] uppercase text-gray-400">BBM Proprietary / 独自技術</p>
+              <div className="overflow-hidden">
+                <iframe
+                  title="BBM Proprietary / Binaural"
+                  width="100%"
+                  height="450"
+                  scrolling="no"
+                  frameBorder="0"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2015253711%3Fsecret_token%3Ds-ibO2BBPcfw5&color=%2333606a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+                />
+              </div>
+              <p className="text-[11px] text-gray-400 font-serif">
+                <a href={soundcloudCredits.profileUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  NAKAMURA Hiroyuki
+                </a>
+                {' · '}
+                <a href={soundcloudCredits.proprietaryPlayerUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  SoundCloud Playlist
+                </a>
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white/50 backdrop-blur-xl border border-black/5 p-12 rounded-[4px] flex flex-col justify-between">
-          <div>
-            <h2 className="text-2xl font-serif font-light mb-6 tracking-widest text-[#C9A66B] uppercase">QA</h2>
-            <p className="text-gray-400 text-sm leading-relaxed mb-8 font-serif">
-                専用の視聴ルームと、高精度なHMDを使用した実機検証体制を整えています。聴感上の「正しさ」と「快楽」を追求します。
+        {/* Introduction */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-24 border-t border-black/5 pt-16">
+          <div className="lg:col-span-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">
+              Introduction
+            </h2>
+          </div>
+          <div className="lg:col-span-8">
+            <p className="text-gray-700 font-serif leading-loose md:text-base text-sm whitespace-pre-line">
+              BBMが実装する立体音響技術（バイノーラル・空間オーディオ）は、単なるサラウンドではありません。限られたスピーカーやヘッドホンを用い、音の『指向性』と『距離感』を緻密に操ることで、物理的な制約を超えて空間そのものを拡張する技術です。
+              {'\n'}
+              小規模なミニシアターでは壁の向こう側まで世界が広がるような錯覚を。広大なホールでは上下左右・奥行きを駆使し、客席全体を包み込む濃密な音響空間を創出します。
+              {'\n'}
+              つまり、『どこから音が鳴っているのか』『どの方向に動いていくのか』という情報を繊細にコントロールすることで、“場”の印象そのものを変容させるのです。
             </p>
           </div>
-          <div className="pt-8 border-t border-black/5">
-            <span className="text-[9px] font-bold text-gray-300 tracking-widest uppercase">Certified Tools</span>
-            <div className="flex flex-wrap gap-2 mt-4">
-                {['Avid S6', 'Genelec', 'Sennheiser', 'Sound Devices'].map(tool => (
-                    <span key={tool} className="text-[9px] text-gray-400 border border-black/5 px-3 py-1">{tool}</span>
-                ))}
+        </div>
+
+        {/* Visual Demonstration */}
+        <div className="border-t border-black/5 pt-16">
+          <div className="space-y-4 mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">Visual Demonstration / 空間実験の記録</h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {youtubeEmbeds.map((src) => (
+                <div key={src} className="relative aspect-[9/16] bg-gray-50 border border-black/5 overflow-hidden">
+                  <iframe
+                    title={src}
+                    src={src}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </Section>
 
-      <Section className="py-0">
-        <h2 className="text-4xl md:text-7xl font-display italic tracking-tighter mb-16 text-center text-black">PRODUCTION FLOW</h2>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {[
-                { step: '01', title: 'Hearing', desc: '目的、体験環境、予算、納期を詳しくヒアリングします。' },
-                { step: '02', title: 'Drafting', desc: 'コンセプトに基づいたデモ制作を行い方向性を確定させます。' },
-                { step: '03', title: 'Recording', desc: 'スタジオまたはフィールドにて、高精度な素材を収録します。' },
-                { step: '04', title: 'Mixing', desc: '立体音響ミキシング。空間、質感を緻密に調整します。' },
-                { step: '05', title: 'Checking', desc: '実地または実機での最終確認。環境に合わせ微調整します。' }
-            ].map((item, i) => (
-                <div key={item.step} className="bg-white border border-black/5 p-8 rounded-[2px] flex flex-col hover:border-[#C9A66B] transition-colors group">
-                    <span className="text-4xl font-serif italic text-black/5 group-hover:text-[#C9A66B] transition-colors mb-4">{item.step}</span>
-                    <h3 className="text-lg font-serif font-light mb-2 tracking-tight text-black">{item.title}</h3>
-                    <p className="text-xs text-gray-400 leading-relaxed font-serif">{item.desc}</p>
-                </div>
-            ))}
+        {/* Works */}
+        <div className="border-t border-black/5 pt-16 mt-24">
+          <div className="space-y-4 mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">Works / 制作事例</h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="space-y-4">
+              <div className="relative aspect-video bg-gray-50 border border-black/5 overflow-hidden">
+                <iframe
+                  title="Classical Spatial Album (2026 Release)"
+                  src="https://www.youtube.com/embed/02uUCenAJ-g"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.35em] uppercase text-gray-400">Piano Spatial Audio Album (2026)</p>
+              <h3 className="text-lg font-display font-bold tracking-tight text-black">Classical Spatial Album (2026 Release)</h3>
+              <p className="text-gray-600 font-serif leading-loose text-sm">中村による新しい立体音響技術のピアノアルバム。2026年リリース予定。</p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="relative aspect-video bg-gray-50 border border-black/5 overflow-hidden">
+                <iframe
+                  title="Electric Opera 'VENUS' - 860 Tracks Mix"
+                  src="https://www.youtube.com/embed/lmy-eChYDro"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.35em] uppercase text-gray-400">Electric Opera "VENUS" (860 Tracks)</p>
+              <h3 className="text-lg font-display font-bold tracking-tight text-black">Electric Opera 'VENUS' - 860 Tracks Mix</h3>
+              <p className="text-gray-600 font-serif leading-loose text-sm">860トラックもの音源を立体的に配置・制御した、エレクトリックオペラ『VENUS』の音響構成。</p>
+            </div>
+          </div>
         </div>
       </Section>
     </div>

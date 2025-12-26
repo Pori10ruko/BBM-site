@@ -10,7 +10,6 @@ import WorkDetail from './pages/WorkDetail';
 import Services from './pages/Services';
 import Technology from './pages/Technology';
 import Contact from './pages/Contact';
-import Spatial2ch from './pages/Spatial2ch';
 import Art from './pages/Art';
 import Public from './pages/Public';
 import Education from './pages/Education';
@@ -68,7 +67,7 @@ const App: React.FC = () => {
                 <Route path="/works" element={<Works />} />
                 <Route path="/works/:id" element={<WorkDetail />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/spatial-2ch" element={<Spatial2ch />} />
+                <Route path="/spatial-2ch" element={<Technology />} />
                 <Route path="/technology" element={<Technology />} />
                 <Route path="/contact" element={<Contact />} />
                 {/* Pillar pages */}
