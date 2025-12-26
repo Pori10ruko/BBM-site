@@ -5,7 +5,7 @@ import { Language } from '../types';
 import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
-  { label: 'TECHNOLOGY', to: '/#technology' },
+  { label: 'TECHNOLOGY', to: '/technology' },
   { label: 'ART', to: '/art' },
   { label: 'PUBLIC', to: '/public' },
   { label: 'EDUCATION', to: '/education' },
@@ -77,8 +77,8 @@ const Header: React.FC = () => {
                 const isActive =
                   item.to === '/contact'
                     ? location.pathname === '/contact'
-                    : item.to === '/#technology'
-                      ? location.pathname === '/' && location.hash === '#technology'
+                    : item.to === '/technology'
+                      ? location.pathname === '/technology' || location.pathname === '/spatial-2ch'
                       : location.pathname === item.to;
 
                 return (

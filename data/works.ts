@@ -33,6 +33,11 @@ export const works: Work[] = [
   {
     id: 'distant-echo',
     title: 'Distant Echo',
+    titleLocalized: {
+      JP: 'Distant Echo',
+      EN: "Installation 'Distant Echo'",
+      TW: "裝置藝術 'Distant Echo'"
+    },
     date: '2025.11.14',
     client: 'BBM Collective',
     category: 'Installation',
@@ -40,8 +45,8 @@ export const works: Work[] = [
     featuredInTech: true,
     description: {
       JP: '「距離」と「残響」の美学。ピアノの旋律が空間に描く不可視の軌跡を、独自の音響処理によって聴覚的な建築として再構築します。静寂の中に浮かび上がる音の粒子が、鑑賞者の記憶と共振する没入型ライブインスタレーション。 Live Painting: Maria Noto (能登真理亜)',
-      EN: 'The aesthetics of distance and reverberation. Piano melodies trace invisible trajectories, reconstructed as auditory architecture. An immersive live installation where sound particles emerging from silence resonate with memories. Live Painting: Maria Noto.',
-      TW: '「距離」與「殘響」的美學。鋼琴旋律在空間中描繪出的隱形軌跡，重建為聽覺的建築。從寂靜中浮現的聲音粒子，與觀賞者記憶共鳴的沉浸式現場裝置。 Live Painting: Maria Noto (能登真理亜)'
+      EN: 'Achieved a vast sound field wrapping the entire venue with only two speakers.',
+      TW: '僅使用兩支揚聲器，便實現了包覆整個會場的廣闊音場。'
     },
     imageUrl: '/images/distant-echo.avif',
     tags: ['Immersive', 'Performance', '2ch Spatial'],
@@ -261,11 +266,11 @@ export const works: Work[] = [
   },
   {
     id: 'tainan-lecture',
-    title: 'Special Lecture at National University of Tainan',
+    title: 'Special Lecture at Tainan University of Technology',
     titleLocalized: {
       JP: '臺南國立大学 特別講義',
-      EN: 'Special Lecture at National University of Tainan',
-      TW: '國立臺南大學 特別講座'
+      EN: 'Special Lecture at Tainan University of Technology',
+      TW: '台南應用科技大學 特別講座'
     },
     date: '2024',
     client: 'National University of Tainan',
@@ -273,8 +278,8 @@ export const works: Work[] = [
     pillar: 'Education',
     description: {
       JP: '台湾・臺南國立大学にて、流行音楽における空間表現の講義とワークショップを実施。',
-      EN: 'At the National University of Tainan (Taiwan), we held a lecture and workshop on spatial expression in pop music.',
-      TW: '於台灣國立臺南大學舉辦關於流行音樂空間表現的講座與工作坊。'
+      EN: 'Lecture on binaural audio technology and artistic expression for the next generation of creators.',
+      TW: '針對次世代創作者，講授關於雙耳立體聲技術與藝術表現的特別課程。'
     },
     imageUrl: '/images/tainan lecture.jpg',
     tags: ['2024', 'Taiwan', 'Lecture', 'Education'],
@@ -316,8 +321,8 @@ export const works: Work[] = [
     title: 'Showa Music University Research Presentation',
     titleLocalized: {
       JP: '昭和音楽大学 教員・研究員研究発表',
-      EN: 'Showa Music University Faculty/Researcher Presentation',
-      TW: '昭和音樂大學 教員・研究員研究發表'
+      EN: 'Showa University of Music Research Presentation',
+      TW: '昭和音樂大學 教員研究發表'
     },
     date: '2024.11.14',
     client: 'Showa Music University',
@@ -326,8 +331,8 @@ export const works: Work[] = [
     link: 'https://www.tosei-showa-music.ac.jp/calendar/20241114_002572.html?fbclid=IwY2xjawLnG-FleHRuA2FlbQIxMABicmlkETFzdU9uVUNrR2xmUk01T2s2AR6sQHh1yR4vtsR2grZBBwlAeTL5hdL0NjQEuibHZQBtH8ARYpfwoEuJp31ufw_aem__QWZpxTr8XXn3Gr2m2ucBg',
     description: {
       JP: '昭和音楽大学ユリホールにて行われた教員・研究員研究発表に出演。「Voices in the Void」において電子音響と映像を担当し、学術的な場での実践研究を発表しました。',
-      EN: 'Performed at the faculty/researcher presentation at Showa Music University Yuri Hall. For “Voices in the Void,” we handled electroacoustic sound and visuals, presenting practice-based research in an academic setting.',
-      TW: '於昭和音樂大學尤里音樂廳舉辦的教員・研究員研究發表中演出。在「Voices in the Void」中負責電子音響與影像，於學術場域發表實踐研究。'
+      EN: "Performed electronic acoustics and visuals for 'Voices in the Void' at the academic research presentation.",
+      TW: '在學術研究發表會上，擔任『Voices in the Void』的電子音響與影像演出。'
     },
     imageUrl: '/images/showa.avif',
     tags: ['2024.11.14', 'Research', 'Performance', 'Education'],
@@ -344,7 +349,7 @@ export const works: Work[] = [
     titleLocalized: {
       JP: 'BBM Workshop',
       EN: 'BBM Workshop',
-      TW: 'BBM Workshop'
+      TW: 'BBM 工作坊'
     },
     date: '2024 - Present',
     client: 'BBM',
@@ -352,8 +357,8 @@ export const works: Work[] = [
     pillar: 'Education',
     description: {
       JP: '「音」を扱うすべての人のための実践的ワークショップ。プロフェッショナルな制作環境やスタジオにて、立体音響の基礎から応用、そして表現の可能性をハンズオン形式で探求します。',
-      EN: 'A hands-on workshop for everyone who works with sound. In professional production environments and studios, we explore spatial audio from fundamentals to applications—and its expressive possibilities.',
-      TW: '為所有使用「聲音」的人而設的實作型工作坊。在專業製作環境與錄音室中，以 hands-on 形式探索立體音響的基礎、應用與表現可能性。'
+      EN: 'Practical workshop for exploring spatial audio from basics to advanced expression.',
+      TW: '針對立體音響從基礎到應用，探索表現可能性的實踐型工作坊。'
     },
     imageUrl: '/images/workshop.webp',
     tags: ['2024 - Present', 'Workshop', 'Hands-on', 'Spatial Audio'],
@@ -512,14 +517,19 @@ export const works: Work[] = [
   {
     id: 'seigetsuki',
     title: 'バーチャル霊園 清月記',
+    titleLocalized: {
+      JP: 'バーチャル霊園 清月記',
+      EN: 'Seigetsuki Virtual Cemetery',
+      TW: '清月記 虛擬墓園'
+    },
     client: '株式会社清月記',
     category: 'App',
     pillar: 'Technology',
     featuredInTech: true,
     description: {
       JP: '株式会社清月記の「バーチャル霊園」アプリ。立体音響の音楽デザインを担当。',
-      EN: 'Virtual cemetery app by Seigetsuki Co., Ltd. Spatial audio music design.',
-      TW: '清月記的虛擬靈園 App。負責立體音響音樂設計。'
+      EN: 'Construction of a serene acoustic space in a virtual environment.',
+      TW: '在虛擬空間中建構寧靜的音響空間。'
     },
     imageUrl: '/images/reien_photo.webp',
     tags: ['Mobile', 'App', 'Spatial Audio'],
@@ -531,21 +541,83 @@ export const works: Work[] = [
     ]
   },
   {
-    id: 'yuki-share',
-    title: "YUKI 'Share' MV",
-    client: 'Epic Records Japan',
-    category: 'Music Video',
-    pillar: 'Technology',
-    featuredInTech: true,
-    description: {
-      JP: '日常の音を「立体」として配置し、楽曲の実在感を2chで強調。',
-      EN: 'Emphasizing reality via spatial 2ch foley in YUKI\'s music video.',
-      TW: 'YUKI MV 的 2ch 立體音響化。'
+    id: 'seigetsuki-virtual',
+    title: 'バーチャル霊園 清月記',
+    titleLocalized: {
+      JP: 'バーチャル霊園 清月記',
+      EN: 'Seigetsuki Virtual Cemetery',
+      TW: '清月記 虛擬墓園'
     },
-    imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200',
-    tags: ['MV', 'Foley', '2ch'],
-    role: { JP: '立体音響デザイン', EN: 'Spatial Design', TW: '立體音響設計' },
-    approach: { JP: '映像の質感に同期した繊細な音の配置。', EN: 'Delicate sound placement synchronized with visual textures.', TW: '強調樂曲的真實感。' }
+    date: '2024',
+    client: '株式会社清月記',
+    category: 'Client Works',
+    pillar: 'Technology',
+    description: {
+      JP: '株式会社清月記の「バーチャル霊園」アプリ。立体音響の音楽デザインを担当。',
+      EN: 'Construction of a serene acoustic space in a virtual environment.',
+      TW: '在虛擬空間中建構寧靜的音響空間。'
+    },
+    imageUrl: '/images/reien_photo.webp',
+    tags: ['2024', 'Client Work', 'Virtual', 'Spatial Audio'],
+    role: {
+      JP: '音響空間設計',
+      EN: 'Acoustic Space Design',
+      TW: '音響空間設計'
+    },
+    approach: {
+      JP: '静謐さを損なわない距離感と定位感の設計で、“場”の質感を支える。',
+      EN: 'Supporting the sense of place through distance and localization design without breaking the calm atmosphere.',
+      TW: '以不破壞寧靜氛圍的距離感與定位感設計，支撐「場」的質感。'
+    }
+  },
+  {
+    id: 'tokoji-speaker-test-2026',
+    title: 'Tokoji Temple 2ch Speaker Test (2026)',
+    titleLocalized: {
+      JP: '東光寺 2ch スピーカーテスト (2026)',
+      EN: 'Tokoji Temple 2ch Speaker Test (2026)',
+      TW: '東光寺 2ch 揚聲器測試 (2026)'
+    },
+    date: '2026',
+    client: 'Tokoji Temple',
+    category: 'Archive',
+    pillar: 'Technology',
+    description: {
+      JP: '2026年に実施予定の東光寺での音響実験。寺院空間で2chスピーカーのみを用いて立体感のある音響空間を構築するテスト。',
+      EN: 'Spatial audio experiment in a temple environment using only 2 speakers.',
+      TW: '在寺廟環境中僅使用兩支揚聲器進行的空間音響實驗。'
+    },
+    imageUrl: '/images/tokoji1.png',
+    tags: ['2026', 'Tokoji', '2ch', 'Test', 'Spatial Audio'],
+    role: { JP: '音響実験', EN: 'Audio Experiment', TW: '音響實驗' },
+    approach: {
+      JP: '通常の2ch環境でも成立する空間設計を検証し、実装へつなぐ。',
+      EN: 'Validating spatial design that works in standard 2ch setups and translating it into implementation.',
+      TW: '驗證可在標準 2ch 環境成立的空間設計，並連結到實作。'
+    },
+    link: 'https://youtu.be/D4dLEi8udTk'
+  },
+  {
+    id: 'yuki-share',
+    title: 'Yuki Share',
+    date: '2024',
+    client: 'Yuki Share',
+    category: 'Client Works',
+    pillar: 'Technology',
+    description: {
+      JP: '空間音響技術を用いたシェアリングサービスへの技術提供。',
+      EN: 'Technical support for a sharing service using spatial audio technology.',
+      TW: '以立體音響技術為共享服務提供技術支援。'
+    },
+    imageUrl: '/images/yuki%20share%20.jpg',
+    link: 'https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl',
+    tags: ['2024', 'Client Work', 'Spatial Audio'],
+    role: { JP: '技術提供', EN: 'Technical Support', TW: '技術支援' },
+    approach: {
+      JP: 'サービス体験に寄与する音響表現を設計し、実装へ落とし込む。',
+      EN: 'Designing an audio experience that supports the service and translating it into implementation.',
+      TW: '設計可支援服務體驗的音響表現，並落地到實作。'
+    }
   },
   {
     id: 'random-together-riyadh',

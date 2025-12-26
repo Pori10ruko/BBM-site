@@ -6,7 +6,7 @@ import WorkModal from '../components/WorkModal';
 import { works } from '../data/works';
 import { Category, Work } from '../types';
 
-const categories: Category[] = ['All', 'Installation', 'Music Video', 'App', 'Archive', 'Education'];
+const categories: Category[] = ['All', 'Installation', 'Music Video', 'App', 'Client Works', 'Archive', 'Education'];
 
 const Works: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('All');

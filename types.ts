@@ -1,4 +1,4 @@
-export type Category = 'All' | 'Installation' | 'Music Video' | 'App' | 'Archive' | 'Education' | 'Performance' | 'Lecture' | 'Album' | 'Release';
+export type Category = 'All' | 'Installation' | 'Music Video' | 'App' | 'Archive' | 'Education' | 'Performance' | 'Lecture' | 'Album' | 'Release' | 'Client Works';
 export type Pillar = 'Art' | 'Public' | 'Education' | 'Technology';
 export type Language = 'JP' | 'EN' | 'TW';
 

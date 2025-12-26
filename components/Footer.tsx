@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const navItems = [
-  { label: 'TECHNOLOGY', to: '/#technology', kind: 'anchor' },
-  { label: 'ART', to: '/art', kind: 'link' },
-  { label: 'PUBLIC', to: '/public', kind: 'link' },
-  { label: 'EDUCATION', to: '/education', kind: 'link' },
-  { label: 'CONTACT', to: '/contact', kind: 'link' },
+  { label: 'TECHNOLOGY', to: '/technology' },
+  { label: 'ART', to: '/art' },
+  { label: 'PUBLIC', to: '/public' },
+  { label: 'EDUCATION', to: '/education' },
+  { label: 'CONTACT', to: '/contact' },
 ] as const;
 
 const Footer: React.FC = () => {
@@ -37,15 +37,9 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 font-serif">
               {navItems.map((item) => (
                 <li key={item.to}>
-                  {item.kind === 'anchor' ? (
-                    <a href={item.to} className="text-sm text-gray-500 hover:text-black">
-                      {item.label}
-                    </a>
-                  ) : (
-                    <Link to={item.to} className="text-sm text-gray-500 hover:text-black">
-                      {item.label}
-                    </Link>
-                  )}
+                  <Link to={item.to} className="text-sm text-gray-500 hover:text-black">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
