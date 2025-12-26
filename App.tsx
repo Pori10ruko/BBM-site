@@ -57,10 +57,10 @@ const App: React.FC = () => {
     <LanguageContext.Provider value={{ lang, setLang }}>
       <Router>
         <ScrollToTop />
-        <div className="relative min-h-screen text-black selection:bg-[#C9A66B] selection:text-white">
+        <div className="relative flex flex-col min-h-screen justify-start pt-32 bg-white text-black selection:bg-[#C9A66B] selection:text-white">
           <BackgroundCanvas />
           <Header />
-          <main className="relative z-10">
+          <main className="relative z-10 flex-1">
             <PageTransition>
               <Routes>
                 <Route path="/" element={<Home />} />

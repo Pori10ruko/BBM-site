@@ -3,7 +3,7 @@ import Section from '../components/Section';
 
 const Contact: React.FC = () => {
   return (
-    <div className="pt-28 sm:pt-32 pb-16 md:pb-20">
+    <div className="pb-16 md:pb-20">
       <Section className="py-0 mb-12 md:mb-20 text-center pt-12 md:pt-20">
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-display italic tracking-tighter mb-6 md:mb-8 text-black">CONTACT.</h1>
         <p className="text-gray-400 font-serif font-light max-w-xl mx-auto italic">

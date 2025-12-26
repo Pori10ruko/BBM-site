@@ -15,7 +15,7 @@ const Spatial2ch: React.FC = () => {
   const techWorks = works.filter(w => w.featuredInTech);
 
   return (
-    <div className="pt-28 sm:pt-32 md:pt-40 pb-24 md:pb-40">
+    <div className="pb-24 md:pb-40">
       <Section className="mb-16 md:mb-32 text-center md:text-left">
         <div className="flex items-center justify-center md:justify-start space-x-6 mb-12">
             <div className="w-12 h-[1px] bg-[#C9A66B]" />

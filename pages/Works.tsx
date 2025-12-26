@@ -17,7 +17,7 @@ const Works: React.FC = () => {
     : works.filter(w => w.category === activeCategory);
 
   return (
-    <div className="pt-28 sm:pt-32 md:pt-40 lg:pt-48 pb-24 md:pb-40">
+    <div className="pb-24 md:pb-40">
       <Section className="py-0 mb-16 md:mb-32">
         <div className="flex items-center space-x-6 mb-10">
             <div className="w-16 h-[1px] bg-[#C9A66B]" />

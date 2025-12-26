@@ -4,6 +4,7 @@ import WorkCard from '../components/WorkCard';
 import WorkModal from '../components/WorkModal';
 import { works } from '../data/works';
 import { LanguageContext } from '../App';
+import { useLanguage } from '../hooks/useLanguage';
 import { Pillar, Work } from '../types';
 
 interface PillarDetailProps {
@@ -47,13 +48,40 @@ const pillarContent = {
 
 const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   const { lang } = useContext(LanguageContext);
+  const { language } = useLanguage();
   const [selectedWork, setSelectedWork] = useState<Work | null>(null);
-  const content = pillarContent[type];
+  const pillar = pillarContent[type];
+
+  const content = {
+    ja: {
+      subtitle: 'Knowledge Cycle / 知の循環。',
+      desc: 'コミュニティとしての学びの場。若手への技術継承や、分野を超えた対話を通じて、これからの音響表現の土壌を共に耕します。',
+      section1: 'BBM Projects',
+      section2: 'Invited Lectures / 招聘・外部講義',
+    },
+    en: {
+      subtitle: 'Knowledge Cycle.',
+      desc: 'A community for learning. Through passing skills to the next generation and cross-disciplinary dialogue, we cultivate the soil for future acoustic expression together.',
+      section1: 'BBM Projects',
+      section2: 'Invited Lectures',
+    },
+    tw: {
+      subtitle: '知識的循環。',
+      desc: '作為社群的學習場域。透過將技術傳承給年輕一代以及跨領域的對話，我們共同耕耘未來音響表現的土壤。',
+      section1: 'BBM 專案',
+      section2: '受邀講座',
+    },
+  } as const;
   // Preserve `data/works.ts` order (especially for Education).
   const filteredWorks = works.filter((w) => w.pillar === type);
 
   const pageTitle = type.toUpperCase();
-  const subtitle = typeof content.title === 'string' ? content.title : content.title[lang];
+  const subtitle =
+    type === 'Education'
+      ? content[language].subtitle
+      : typeof pillar.title === 'string'
+        ? pillar.title
+        : pillar.title[lang];
 
   const getWork = (id: string) => works.find((w) => w.id === id);
   const tsuchiuraWorks: Work[] = [
@@ -82,12 +110,12 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   ].filter(Boolean) as Work[];
 
   return (
-    <div className="pt-28 sm:pt-32 md:pt-40 pb-24 md:pb-40">
+    <div className="pb-24 md:pb-40">
       {/* Header */}
       <Section className="mb-16 md:mb-32">
         <div className="flex items-center space-x-6 mb-12">
-            <div className="w-16 h-[1px]" style={{ backgroundColor: content.color }} />
-            <p className="font-bold tracking-[0.5em] uppercase text-[10px]" style={{ color: content.color }}>Pillar / {type}</p>
+            <div className="w-16 h-[1px]" style={{ backgroundColor: pillar.color }} />
+            <p className="font-bold tracking-[0.5em] uppercase text-[10px]" style={{ color: pillar.color }}>Pillar / {type}</p>
         </div>
         <h1 className="hero-title text-4xl sm:text-6xl md:text-9xl text-black mb-8 md:mb-12 leading-none">
           {pageTitle}
@@ -96,7 +124,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
           {subtitle}
         </p>
         <p className="text-base md:text-lg text-gray-500 font-serif font-light max-w-3xl leading-loose whitespace-pre-line">
-          {typeof content.desc === 'string' ? content.desc : content.desc[lang]}
+          {type === 'Education' ? content[language].desc : typeof pillar.desc === 'string' ? pillar.desc : pillar.desc[lang]}
         </p>
       </Section>
 
@@ -142,7 +170,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
           <div className="space-y-24">
             <div>
               <div className="flex items-baseline justify-between mb-10">
-                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">BBM Projects / 自主企画</h2>
+                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">{content[language].section1}</h2>
                 <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{educationBbmProjects.length} Projects</span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -154,7 +182,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
 
             <div>
               <div className="flex items-baseline justify-between mb-10">
-                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Invited Lectures / 招聘・外部講義</h2>
+                <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">{content[language].section2}</h2>
                 <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{educationInvitedLectures.length} Projects</span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

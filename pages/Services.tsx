@@ -21,7 +21,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <div className="pt-28 sm:pt-32 pb-16 md:pb-20">
+    <div className="pb-16 md:pb-20">
       <Section className="py-0 mb-16 md:mb-32 pt-12 md:pt-20">
         <p className="text-[#C9A66B] font-bold tracking-[0.4em] uppercase text-xs mb-6">Our Edge</p>
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-display italic tracking-tighter mb-8 md:mb-12 text-black">{content.title[lang]}</h1>

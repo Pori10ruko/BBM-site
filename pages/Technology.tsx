@@ -3,9 +3,49 @@ import Section from '../components/Section';
 import { Link, useNavigate } from 'react-router-dom';
 import WorkCard from '../components/WorkCard';
 import { works } from '../data/works';
+import { useLanguage } from '../hooks/useLanguage';
 
 const Technology: React.FC = () => {
   const navigate = useNavigate();
+  const { language } = useLanguage();
+
+  const content = {
+    ja: {
+      hero: 'まず、私たちの音を体感してください。ぜひ、ヘッドフォンで聴いてください...',
+      philosophyTitle: 'The Necessity of Spatial Audio / 音響の必然性',
+      philosophyBody: '現在、立体音響技術は広く普及しつつあります...',
+      beyondTitle: 'Beyond Headphones / スピーカー環境での拡張',
+      beyondBody: '私たちの技術はヘッドフォンだけに留まりません...',
+      clientTitle: 'Client Works',
+      ctaTitle: 'Create with Us / 共創の呼びかけ',
+      ctaBody: '私たちは、この独自技術を用いた新しい表現を...',
+      ctaButton: 'CONTACT / お問い合わせ',
+    },
+    en: {
+      hero: 'First, Experience Our Sound. Please listen with headphones. Our technology is not just stereo...',
+      philosophyTitle: 'The Necessity of Spatial Audio',
+      philosophyBody: 'Spatial audio is becoming common, but sounds that *require* it are still rare...',
+      beyondTitle: 'Beyond Headphones',
+      beyondBody: 'Our technology goes beyond headphones. We can create an expanded acoustic space using standard 2ch speakers...',
+      clientTitle: 'Client Works',
+      ctaTitle: 'Create with Us',
+      ctaBody: 'We are eager to create new expressions with artists and companies using this unique technology...',
+      ctaButton: 'CONTACT',
+    },
+    tw: {
+      hero: '首先，請體驗我們的聲音。請務必使用耳機聆聽...',
+      philosophyTitle: '立體音響的必然性',
+      philosophyBody: '雖然空間音訊技術正逐漸普及，但真正『非此不可』的聲音仍屬罕見...',
+      beyondTitle: '超越耳機的體驗',
+      beyondBody: '我們的技術不僅是立體聲，即便是普通的2ch揚聲器也能創造擴展的空間...',
+      clientTitle: '客戶案例',
+      ctaTitle: '與我們共創',
+      ctaBody: '我們熱切希望能與藝術家及企業合作，利用這項獨特技術創造全新的表現形式...',
+      ctaButton: 'CONTACT',
+    },
+  } as const;
+
+  const t = content[language];
 
   const soundcloudCredits = {
     profileUrl: 'https://soundcloud.com/nakamurahiroyuki',
@@ -21,7 +61,7 @@ const Technology: React.FC = () => {
   const clientWorks = [yukiShare, seigetsukiVirtual].filter(Boolean);
 
   return (
-    <div className="pt-32 pb-40">
+    <div className="pb-40">
       <Section className="py-0">
         {/* Header */}
         <div className="mb-20">
@@ -35,7 +75,7 @@ const Technology: React.FC = () => {
             <div className="space-y-4">
               <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter text-black">First, Experience Our Sound.</h2>
               <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
-                ぜひ、ヘッドフォンで聴いてください。私たちの技術は、単なる左右のステレオではありません。上下、奥行き、そして無限に広がる空間そのものを体感していただけるはずです。これが、私たちが提示する『音』です。
+                {t.hero}
               </p>
             </div>
             <div className="relative w-full aspect-video bg-gray-50 border border-black/5 overflow-hidden">
@@ -54,13 +94,11 @@ const Technology: React.FC = () => {
         <div className="border-t border-black/5 pt-16 mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-4">
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">The Necessity of Spatial Audio / 音響の必然性</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.philosophyTitle}</h2>
             </div>
             <div className="lg:col-span-8">
               <p className="text-gray-700 font-serif leading-loose md:text-base text-sm whitespace-pre-line">
-                現在、立体音響技術（Spatial Audio）は広く普及しつつあります。しかし、『その技術を使わなければ成立しない音』に出会うことは、未だ稀です。
-                {'\n'}
-                私たちは単に技術を誇示するのではなく、『この表現には、この空間が必要だ』という必然性に向き合い続けています。
+                {t.philosophyBody}
               </p>
             </div>
           </div>
@@ -116,9 +154,9 @@ const Technology: React.FC = () => {
           <div className="border-t border-black/5 pt-16 mb-24">
             {/* Header */}
             <div className="space-y-4 mb-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">Beyond Headphones / スピーカー環境での拡張</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.beyondTitle}</h2>
               <p className="text-gray-600 font-serif leading-loose md:text-base text-sm max-w-4xl">
-                私たちの技術はヘッドフォンだけに留まりません。通常の2chスピーカー環境であっても、その物理的な配置を超え、外側に広がる音響空間を創出することが可能です。
+                {t.beyondBody}
               </p>
             </div>
 
@@ -163,7 +201,7 @@ const Technology: React.FC = () => {
         {!!clientWorks.length && (
           <div className="border-t border-black/5 pt-16 mb-24">
             <div className="space-y-4 mb-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">Client Works</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.clientTitle}</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -237,16 +275,16 @@ const Technology: React.FC = () => {
         {/* Call to Action */}
         <div className="border-t border-black/5 pt-16 mt-24">
           <div className="text-center max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">Create with Us / 共創の呼びかけ</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.ctaTitle}</h2>
             <p className="text-gray-600 font-serif leading-loose md:text-base text-sm">
-              私たちは、この独自技術を用いた新しい表現を、アーティストや企業の皆様と共に作り上げていきたいと強く願っています。
+              {t.ctaBody}
             </p>
             <div className="pt-2">
               <Link
                 to="/contact"
                 className="inline-block py-4 px-10 bg-black text-white text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[#C9A66B] transition-all"
               >
-                CONTACT / お問い合わせ
+                {t.ctaButton}
               </Link>
             </div>
           </div>
