@@ -26,10 +26,10 @@ const Technology: React.FC = () => {
       clientTitle: 'Client Works',
       clientBody: '本技術は2024年に完成し、すでに下記のアーティスト／企業の皆さまとコラボレーションを行っています。',
       tokojiTestBody: '2026年に実施予定の東光寺での音響実験。お寺という特殊な空間においても、わずか2chのスピーカーで立体感のある音響空間を構築するテストの様子。',
-      appendixSubtitle: '従来のDolby AtmosとBBM独自技術の比較。',
-      ctaTitle: 'Create with Us / 共創の呼びかけ',
-      ctaBody: '私たちは、この独自技術を用いた新しい表現を...',
-      ctaButton: 'CONTACT / お問い合わせ',
+      collabTitle: '次は、みなさまと。',
+      collabBody:
+        '次はぜひ、みなさまとコラボレーションを行いたいと考えています。会場や目的に合わせて、音の拡がり・距離感・没入感を設計し、体験として成立するサウンドを一緒に形にします。',
+      collabButton: 'CONTACT / お問い合わせ',
     },
     en: {
       heroTitle: 'First, Experience Our Sound.',
@@ -45,10 +45,10 @@ const Technology: React.FC = () => {
       clientTitle: 'Client Works',
       clientBody: 'Completed in 2024, this technology has already been used in collaborations with the following artists and companies.',
       tokojiTestBody: 'A 2026 temple acoustic experiment to build a spatial sound field using only two speakers—even in a unique space like a temple.',
-      appendixSubtitle: 'A comparison between conventional Dolby Atmos and BBM’s proprietary technology.',
-      ctaTitle: 'Create with Us',
-      ctaBody: 'We are eager to create new expressions with artists and companies using this unique technology...',
-      ctaButton: 'CONTACT',
+      collabTitle: "Let's Collaborate Next.",
+      collabBody:
+        "We’d love to collaborate with you next. We design perceived expansion, distance, and immersion for the venue and objective—and shape sound into a cohesive experience.",
+      collabButton: 'CONTACT',
     },
     tw: {
       heroTitle: '首先，請體驗我們的聲音。',
@@ -64,27 +64,20 @@ const Technology: React.FC = () => {
       clientTitle: '客戶案例',
       clientBody: '這項技術於 2024 年完成，並已與下列藝術家／企業展開合作。',
       tokojiTestBody: '預計於 2026 年在東光寺進行的聲學實驗：即使在寺廟這樣特殊的空間，也能僅用 2ch 揚聲器建構具有立體感的音響空間。',
-      appendixSubtitle: '比較傳統 Dolby Atmos 與 BBM 的獨家技術。',
-      ctaTitle: '與我們共創',
-      ctaBody: '我們熱切希望能與藝術家及企業合作，利用這項獨特技術創造全新的表現形式...',
-      ctaButton: 'CONTACT',
+      collabTitle: '下一位，想與你合作。',
+      collabBody:
+        '我們希望下一次能與你一起合作。依據場地與目標，設計聲音的延展感、距離感與沉浸感，把聲音作為「體驗」完整落地。',
+      collabButton: 'CONTACT',
     },
   } as const;
 
   const t = content[language];
 
-  const soundcloudCredits = {
-    profileUrl: 'https://soundcloud.com/nakamurahiroyuki',
-    standardPlayerUrl:
-      'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2015253087%3Fsecret_token%3Ds-axESrXDa0wz&color=%230c6689&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-    proprietaryPlayerUrl:
-      'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2015253711%3Fsecret_token%3Ds-ibO2BBPcfw5&color=%2333606a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-  } as const;
-
   const distantEcho = works.find(w => w.id === 'distant-echo');
+  const forumHallEvent = works.find(w => w.id === 'tokyo-international-forum-hall-event');
   const yukiShare = works.find(w => w.id === 'yuki-share');
   const seigetsukiVirtual = works.find(w => w.id === 'seigetsuki-virtual');
-  const clientWorks = [yukiShare, seigetsukiVirtual].filter(Boolean);
+  const clientWorks = [forumHallEvent, yukiShare, seigetsukiVirtual].filter(Boolean);
 
   return (
     <div className="pb-24 md:pb-40">
@@ -247,73 +240,19 @@ const Technology: React.FC = () => {
           </div>
         )}
 
-        {/* Technical Comparison (Appendix) */}
+        {/* Collaboration CTA */}
         <div className="border-t border-black/5 pt-16">
-          <div className="space-y-2 mb-6">
-            <h2 className="text-lg md:text-xl font-display font-bold tracking-tight text-black">Technical Comparison (Reference)</h2>
-            <p className="text-gray-500 font-serif leading-loose text-xs">{t.appendixSubtitle}</p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white border border-black/5 p-6">
-                <iframe
-                  title="Standard / Dolby Atmos (Reference)"
-                  width="100%"
-                  className="w-full h-40 sm:h-56 md:h-72 lg:h-96"
-                  scrolling="no"
-                  frameBorder="0"
-                  allow="autoplay"
-                  src={soundcloudCredits.standardPlayerUrl}
-                />
-                <p className="mt-2 text-[10px] text-gray-400 font-serif">
-                  <a href={soundcloudCredits.profileUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
-                    NAKAMURA Hiroyuki
-                  </a>
-                  {' · '}
-                  <a href={soundcloudCredits.standardPlayerUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
-                    SoundCloud Playlist
-                  </a>
-                </p>
-              </div>
-
-              <div className="bg-white border border-black/5 p-6">
-                <iframe
-                  title="BBM Proprietary (Reference)"
-                  width="100%"
-                  className="w-full h-40 sm:h-56 md:h-72 lg:h-96"
-                  scrolling="no"
-                  frameBorder="0"
-                  allow="autoplay"
-                  src={soundcloudCredits.proprietaryPlayerUrl}
-                />
-                <p className="mt-2 text-[10px] text-gray-400 font-serif">
-                  <a href={soundcloudCredits.profileUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
-                    NAKAMURA Hiroyuki
-                  </a>
-                  {' · '}
-                  <a href={soundcloudCredits.proprietaryPlayerUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
-                    SoundCloud Playlist
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="border-t border-black/5 pt-16 mt-24">
           <div className="text-center max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.ctaTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.collabTitle}</h2>
             <p className="text-gray-600 font-serif leading-loose md:text-base text-sm">
-              {t.ctaBody}
+              {t.collabBody}
             </p>
             <div className="pt-2">
               <Link
                 to="/contact"
                 className="inline-block py-4 px-10 bg-black text-white text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[#C9A66B] transition-all"
               >
-                {t.ctaButton}
+                {t.collabButton}
               </Link>
             </div>
           </div>

@@ -625,6 +625,36 @@ export const works: Work[] = [
     }
   },
   {
+    id: 'tokyo-international-forum-hall-event',
+    title: 'Tokyo International Forum Hall Event',
+    titleLocalized: {
+      JP: '東京国際フォーラム ホール（企業イベント）',
+      EN: 'Corporate Event at Tokyo International Forum Hall',
+      TW: '東京國際論壇 大廳（企業活動）'
+    },
+    date: '2024',
+    client: 'Confidential Corporate Client',
+    category: 'Client Works',
+    pillar: 'Technology',
+    description: {
+      JP: '東京国際フォーラムのホールで行われた企業イベントにて、「音の拡がり」を意識した演出に関わる機会を得ました。',
+      EN: 'At a corporate event held in the hall of Tokyo International Forum, we contributed to a direction focused on perceived sound expansion.',
+      TW: '在東京國際論壇的大廳舉辦的企業活動中，我們參與了著重「聲音延展感」的演出設計。'
+    },
+    imageUrl: '/images/forum.webp',
+    tags: ['2024', 'Client Work', 'Event', 'Spatial Audio'],
+    role: {
+      JP: '音響演出（拡がり設計）',
+      EN: 'Audio Direction (Perceived Expansion)',
+      TW: '音響演出（延展感設計）'
+    },
+    approach: {
+      JP: 'ホール空間に合わせて、音像の広がりと距離感を設計し、観客体験全体の没入感を支える。',
+      EN: 'Designed width and depth cues for the hall to support immersion across the audience experience.',
+      TW: '依場館特性設計聲像的延展與距離感，支撐整體觀眾體驗的沉浸感。'
+    }
+  },
+  {
     id: 'random-together-riyadh',
     title: 'Random Together (Riyadh Art)',
     client: 'Random Together',
