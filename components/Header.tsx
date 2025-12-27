@@ -26,6 +26,29 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const scrollY = window.scrollY;
+    const originalOverflow = document.body.style.overflow;
+    const originalPosition = document.body.style.position;
+    const originalTop = document.body.style.top;
+    const originalWidth = document.body.style.width;
+
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.position = originalPosition;
+      document.body.style.top = originalTop;
+      document.body.style.width = originalWidth;
+      window.scrollTo(0, scrollY);
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'py-4 glass-header border-b border-black/5 shadow-sm' : 'py-8'}`}>
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-wrap justify-between items-center">
@@ -169,8 +192,15 @@ const Header: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white z-[90] flex flex-col items-center justify-center space-y-8"
+            className="fixed inset-0 bg-white z-[200] flex flex-col items-center justify-center space-y-8"
           >
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-6 right-6 p-2 text-[10px] font-bold tracking-[0.2em] uppercase text-black"
+              aria-label="Close Menu"
+            >
+              Close
+            </button>
             {navItems.map((item) => (
               <Link 
                 key={item.to} 

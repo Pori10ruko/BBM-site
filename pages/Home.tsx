@@ -179,7 +179,7 @@ const Home: React.FC = () => {
           className="max-w-6xl"
         >
           <span className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-8 block">Collective / Label / Research</span>
-          <h1 className="hero-title text-3xl sm:text-5xl md:text-[10rem] text-black mb-12">
+          <h1 className="hero-title text-4xl sm:text-6xl md:text-[10rem] text-black mb-12">
             Beyond<br />Boundary Music
           </h1>
           {heroLogoSrc && (
@@ -245,10 +245,6 @@ const Home: React.FC = () => {
             <div>
               <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">{t.technology[lang].h1}</p>
               <p className="text-white/80 font-serif leading-loose md:text-base text-sm">{t.technology[lang].p1}</p>
-            </div>
-            <div>
-              <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">{t.technology[lang].h2}</p>
-              <p className="text-white/80 font-serif leading-loose md:text-base text-sm">{t.technology[lang].p2}</p>
             </div>
           </div>
           <div className="mt-10">
