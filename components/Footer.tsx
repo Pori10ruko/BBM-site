@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const navItems = [
+  { label: 'WORKS', to: '/works' },
   { label: 'TECHNOLOGY', to: '/technology' },
   { label: 'ART', to: '/art' },
   { label: 'PUBLIC', to: '/public' },

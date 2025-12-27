@@ -625,6 +625,40 @@ export const works: Work[] = [
     }
   },
   {
+    id: 'yuki-parade-tsuzuku-nara',
+    title: 'パレードが続くなら / YUKI',
+    titleLocalized: {
+      JP: 'パレードが続くなら / YUKI',
+      EN: 'Parade ga Tsuzuku Nara / YUKI',
+      TW: '如果遊行持續下去 / YUKI'
+    },
+    date: '2023.02.01',
+    client: 'YUKI (SONY MUSIC)',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: 'アルバム『パレードが続くなら』における制作。BBM中村が音楽およびジャケットのCGI制作を担当。',
+      EN: "Production for the album 'Parade ga Tsuzuku Nara'. BBM Nakamura handled music and CGI for the cover jacket.",
+      TW: '專輯《如果遊行持續下去》的製作。由 BBM 中村負責音樂與封面 CGI 製作。'
+    },
+    imageUrl: 'https://www.sonymusic.co.jp/adm_image/common/artist_image/75000000/75000262/jacket_image/273649.jpg',
+    tags: ['2022–2024', 'SONY MUSIC', 'Album', 'Jacket CGI', 'Music'],
+    role: {
+      JP: '音楽（BBM 中村） / CGI制作（ジャケット）',
+      EN: 'Music (BBM Nakamura) / CGI (Cover Jacket)',
+      TW: '音樂（BBM 中村）／封面 CGI 製作'
+    },
+    approach: {
+      JP: '作品の世界観に合わせて、音とビジュアル（CGI）を統合し、アルバムの顔となる表現を設計。',
+      EN: 'Designed the album-facing expression by integrating sound and visuals (CGI) to match the work’s worldview.',
+      TW: '依作品世界觀整合聲音與視覺（CGI），設計作為專輯門面的表現。'
+    },
+    externalLinks: [
+      { label: 'YUKIweb', url: 'https://www.yukiweb.net/disco/archive/?ESCL-5752' },
+      { label: 'Sony Music', url: 'https://www.sonymusic.co.jp/artist/YUKI/discography/ESCL-5752' }
+    ]
+  },
+  {
     id: 'xiden-day-opener',
     title: 'Day Opener / XIDEN (Official MV)',
     titleLocalized: {
