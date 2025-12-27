@@ -87,8 +87,8 @@ const Technology: React.FC = () => {
   const distantEcho = works.find(w => w.id === 'distant-echo');
   const forumHallEvent = works.find(w => w.id === 'tokyo-international-forum-hall-event');
   const yukiShare = works.find(w => w.id === 'yuki-share');
-  const seigetsukiVirtual = works.find(w => w.id === 'seigetsuki-virtual');
-  const clientWorks = [yukiShare, seigetsukiVirtual, forumHallEvent].filter(Boolean);
+  const seigetsuki = works.find(w => w.id === 'seigetsuki');
+  const clientWorks = [yukiShare, seigetsuki, forumHallEvent].filter(Boolean);
 
   return (
     <div className="pb-24 md:pb-40">

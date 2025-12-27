@@ -541,36 +541,6 @@ export const works: Work[] = [
     ]
   },
   {
-    id: 'seigetsuki-virtual',
-    title: 'バーチャル霊園 清月記',
-    titleLocalized: {
-      JP: 'バーチャル霊園 清月記',
-      EN: 'Seigetsuki Virtual Cemetery',
-      TW: '清月記 虛擬墓園'
-    },
-    date: '2024',
-    client: '株式会社清月記',
-    category: 'Client Works',
-    pillar: 'Technology',
-    description: {
-      JP: '株式会社清月記の「バーチャル霊園」アプリ。立体音響の音楽デザインを担当。',
-      EN: 'Construction of a serene acoustic space in a virtual environment.',
-      TW: '在虛擬空間中建構寧靜的音響空間。'
-    },
-    imageUrl: '/images/reien_photo.webp',
-    tags: ['2024', 'Client Work', 'Virtual', 'Spatial Audio'],
-    role: {
-      JP: '音響空間設計',
-      EN: 'Acoustic Space Design',
-      TW: '音響空間設計'
-    },
-    approach: {
-      JP: '静謐さを損なわない距離感と定位感の設計で、“場”の質感を支える。',
-      EN: 'Supporting the sense of place through distance and localization design without breaking the calm atmosphere.',
-      TW: '以不破壞寧靜氛圍的距離感與定位感設計，支撐「場」的質感。'
-    }
-  },
-  {
     id: 'tokoji-speaker-test-2026',
     title: 'Tokoji Temple 2ch Speaker Test (2026)',
     titleLocalized: {
@@ -904,22 +874,5 @@ export const works: Work[] = [
       EN: 'Designed width and depth cues for the hall to support immersion across the audience experience.',
       TW: '依場館特性設計聲像的延展與距離感，支撐整體觀眾體驗的沉浸感。'
     }
-  },
-  {
-    id: 'random-together-riyadh',
-    title: 'Random Together (Riyadh Art)',
-    client: 'Random Together',
-    category: 'Installation',
-    pillar: 'Technology',
-    featuredInTech: true,
-    description: {
-      JP: 'Noor Riyadhでの巨大展示。視覚的スケールを凌駕する2ch音響。',
-      EN: 'Massive exhibition at Noor Riyadh using our unique 2ch spatial system.',
-      TW: '為巨大裝置提供 2ch 系統。'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Art', 'Global', '2ch'],
-    role: { JP: '立体音響システム設計', EN: 'System Design', TW: '系統設計' },
-    approach: { JP: '2chのみで砂漠の広大さに匹敵する音響空間を構築。', EN: 'Building a space rivaling desert scales via 2ch alone.', TW: '構建宏大的 2ch 空間。' }
   },
 ];
