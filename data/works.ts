@@ -625,6 +625,192 @@ export const works: Work[] = [
     }
   },
   {
+    id: 'xiden-day-opener',
+    title: 'Day Opener / XIDEN (Official MV)',
+    titleLocalized: {
+      JP: 'Day Opener / XIDEN【Official MV】',
+      EN: 'Day Opener / XIDEN (Official MV)',
+      TW: 'Day Opener / XIDEN（Official MV）'
+    },
+    date: '2024-25',
+    client: 'RK Music',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: 'VSinger「XIDEN」の楽曲。クールで情熱的な世界観を、先鋭的なサウンドデザインとメロディで表現。',
+      EN: 'A song for the VSinger XIDEN, expressing his cool and passionate worldview through cutting-edge sound design and melody.',
+      TW: '為歌手 XIDEN 製作的作品，以前衛的聲音設計與旋律展現他冷酷卻充滿熱情的世界觀。'
+    },
+    imageUrl: 'https://i.ytimg.com/vi/kqqkPzZV8b4/maxresdefault.jpg',
+    tags: ['2024-25', 'Client Work', 'Pop', 'VSinger', 'Composition', 'Arrangement', 'Mix'],
+    role: {
+      JP: '作曲・編曲（中村） / ミックス（宇津木）',
+      EN: 'Composition & Arrangement (Nakamura) / Mix (Utsugi)',
+      TW: '作曲・編曲（中村）／混音（宇津木）'
+    },
+    approach: {
+      JP: 'アーティストの世界観と歌声の輪郭を優先し、立ち上がりと質感の設計で“強さ”を作る。',
+      EN: 'Prioritizing the artist’s worldview and vocal clarity, shaping impact through transient and texture design.',
+      TW: '以歌聲輪廓與世界觀為優先，透過瞬態與質感設計建立「力量感」。'
+    },
+    externalLinks: [{ label: 'YouTube', url: 'https://www.youtube.com/watch?v=kqqkPzZV8b4' }]
+  },
+  {
+    id: 'xiden-accompany',
+    title: 'accompany / XIDEN (Official MV)',
+    titleLocalized: {
+      JP: 'accompany / XIDEN【Official MV】',
+      EN: 'accompany / XIDEN (Official MV)',
+      TW: 'accompany / XIDEN（Official MV）'
+    },
+    date: '2024-25',
+    client: 'RK Music',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: 'VSinger「XIDEN」の楽曲。クールで情熱的な世界観を、先鋭的なサウンドデザインとメロディで表現。',
+      EN: 'A song for the VSinger XIDEN, expressing his cool and passionate worldview through cutting-edge sound design and melody.',
+      TW: '為歌手 XIDEN 的作品，以前衛的聲音設計與旋律展現他冷酷卻充滿熱情的世界觀。'
+    },
+    imageUrl: 'https://i.ytimg.com/vi/yrwF8EyLOcA/maxresdefault.jpg',
+    tags: ['2024-25', 'Client Work', 'Pop', 'VSinger', 'Composition', 'Arrangement', 'Mix'],
+    role: {
+      JP: '作曲・編曲（中村） / ミックス（宇津木）',
+      EN: 'Composition & Arrangement (Nakamura) / Mix (Utsugi)',
+      TW: '作曲・編曲（中村）／混音（宇津木）'
+    },
+    approach: {
+      JP: '歌の情緒を支える空間設計と、低域の解像度を両立するミックスバランスを構築。',
+      EN: 'Building a mix balance that supports emotion through space while maintaining low-end definition.',
+      TW: '兼顧空間感與低頻解析度，建立支撐情緒的混音平衡。'
+    },
+    externalLinks: [{ label: 'YouTube', url: 'https://www.youtube.com/watch?v=yrwF8EyLOcA' }]
+  },
+  {
+    id: 'xiden-shukumei',
+    title: '宿命 / XIDEN (Official MV)',
+    titleLocalized: {
+      JP: '宿命 / XIDEN【Official MV】',
+      EN: 'Shukumei / XIDEN (Official MV)',
+      TW: '宿命 / XIDEN（Official MV）'
+    },
+    date: '2024-25',
+    client: 'RK Music',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: 'VSinger「XIDEN」の楽曲。クールで情熱的な世界観を、先鋭的なサウンドデザインとメロディで表現。',
+      EN: 'A song for the VSinger XIDEN, expressing his cool and passionate worldview through cutting-edge sound design and melody.',
+      TW: '為歌手 XIDEN 的作品，以前衛的聲音設計與旋律展現他冷酷卻充滿熱情的世界觀。'
+    },
+    imageUrl: 'https://i.ytimg.com/vi/jWGWFkILgS4/maxresdefault.jpg',
+    tags: ['2024-25', 'Client Work', 'Pop', 'VSinger', 'Composition', 'Arrangement', 'Mix'],
+    role: {
+      JP: '作曲・編曲（中村） / ミックス（宇津木）',
+      EN: 'Composition & Arrangement (Nakamura) / Mix (Utsugi)',
+      TW: '作曲・編曲（中村）／混音（宇津木）'
+    },
+    approach: {
+      JP: 'メロディの推進力と音色のエッジを両立させ、サビで“抜ける”レンジ設計に最適化。',
+      EN: 'Balancing melodic drive with edgy timbres, optimizing the chorus for a clear, forward presence.',
+      TW: '兼顧旋律推進力與音色銳度，並在副歌做出更「穿透」的頻段設計。'
+    },
+    externalLinks: [{ label: 'YouTube', url: 'https://www.youtube.com/watch?v=jWGWFkILgS4' }]
+  },
+  {
+    id: 'xiden-closer',
+    title: 'closer / XIDEN (Official MV)',
+    titleLocalized: {
+      JP: 'closer / XIDEN【Official MV】',
+      EN: 'closer / XIDEN (Official MV)',
+      TW: 'closer / XIDEN（Official MV）'
+    },
+    date: '2024-25',
+    client: 'RK Music',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: 'VSinger「XIDEN」の楽曲。クールで情熱的な世界観を、先鋭的なサウンドデザインとメロディで表現。',
+      EN: 'A song for the VSinger XIDEN, expressing his cool and passionate worldview through cutting-edge sound design and melody.',
+      TW: '為歌手 XIDEN 的作品，以前衛的聲音設計與旋律展現他冷酷卻充滿熱情的世界觀。'
+    },
+    imageUrl: 'https://i.ytimg.com/vi/lQ0atrk7IgA/maxresdefault.jpg',
+    tags: ['2024-25', 'Client Work', 'Pop', 'VSinger', 'Composition', 'Arrangement', 'Mix'],
+    role: {
+      JP: '作曲・編曲（中村） / ミックス（宇津木）',
+      EN: 'Composition & Arrangement (Nakamura) / Mix (Utsugi)',
+      TW: '作曲・編曲（中村）／混音（宇津木）'
+    },
+    approach: {
+      JP: '情緒のグラデーションを支えるため、音の密度と余白をセクションごとに再設計。',
+      EN: 'Redesigning density and negative space per section to support an emotional gradient.',
+      TW: '為了支撐情緒層次，在各段落重新設計聲音密度與留白。'
+    },
+    externalLinks: [{ label: 'YouTube', url: 'https://www.youtube.com/watch?v=lQ0atrk7IgA' }]
+  },
+  {
+    id: 'reverberation-higher',
+    title: 'higher / REVERBERATION',
+    titleLocalized: {
+      JP: 'higher / REVERBERATION',
+      EN: 'higher / REVERBERATION',
+      TW: 'higher / REVERBERATION'
+    },
+    date: '2024',
+    client: 'Re:AcT',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: 'アーティスト「REVERBERATION」のデビューシングルにおいて作編曲を担当。未来への飛躍を感じさせる、疾走感のあるエレクトロニック・ポップサウンドを構築。',
+      EN: 'Composition and arrangement for REVERBERATION’s debut single, featuring a driving electronic pop sound that evokes soaring into the future.',
+      TW: '為新銳藝人 REVERBERATION 出道單曲擔任作曲與編曲，以充滿推進力的電子流行音色營造飛向未來的感受。'
+    },
+    imageUrl: 'https://booth.pximg.net/654d0689-7c3a-4776-a30b-9bd7b6be7efa/i/6874855/4e803a46-3c87-42c2-8916-77bc1dd4b516_base_resized.jpg',
+    tags: ['2024', 'Client Work', 'Pop', 'Composition', 'Mix', 'Mastering'],
+    role: {
+      JP: '作曲（中村） / ミックス・マスタリング（宇津木）',
+      EN: 'Composition (Nakamura) / Mix & Mastering (Utsugi)',
+      TW: '作曲（中村）／混音與母帶（宇津木）'
+    },
+    approach: {
+      JP: '推進力のあるビート設計と、浮遊感のあるハーモニーを両立させ、未来感のあるドライブを形成。',
+      EN: 'Balancing driving beat design with airy harmony to create forward momentum.',
+      TW: '兼顧推進力節奏與漂浮和聲，塑造面向未來的驅動感。'
+    },
+    externalLinks: [{ label: 'BOOTH', url: 'https://react.booth.pm/items/6874855' }]
+  },
+  {
+    id: 'yumekawa-kanau-jelly-selfish',
+    title: 'Jelly-selfish / Yumekawa Kanau',
+    titleLocalized: {
+      JP: 'Jelly-selfish / 夢川かなう',
+      EN: 'Jelly-selfish / Yumekawa Kanau',
+      TW: 'Jelly-selfish / 夢川叶'
+    },
+    date: '2024',
+    client: 'Re:AcT',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: 'アーティスト「夢川かなう」の3rdシングルにおいて作編曲を担当。独特の浮遊感と内に秘めた強い意志を、テクニカルかつキャッチーな楽曲で表現。',
+      EN: 'Composition and arrangement for Yumekawa Kanau’s 3rd single, expressing her floating sensibility and inner strength through a technical yet catchy track.',
+      TW: '為藝人 夢川叶 第三張單曲擔任作曲與編曲，以精緻卻朗朗上口的編曲展現飄浮感受性與內在力量。'
+    },
+    imageUrl: 'https://booth.pximg.net/654d0689-7c3a-4776-a30b-9bd7b6be7efa/i/5647485/7c877fd5-8320-4235-9f6d-c6bb65246ac3_base_resized.jpg',
+    tags: ['2024', 'Client Work', 'Pop', 'Composition', 'Arrangement'],
+    role: {
+      JP: '作詞・作曲・編曲（BBM）',
+      EN: 'Lyrics, Music & Arrangement (BBM)',
+      TW: '作詞・作曲・編曲（BBM）'
+    },
+    approach: {
+      JP: '浮遊感を保ちながら、フックの明瞭さを確保する音色選定とアレンジメントで“強さ”を可視化。',
+      EN: 'Selecting timbres and arranging for hook clarity while preserving a floating feel.',
+      TW: '在保留漂浮感的同時，透過音色與編曲確保副歌鉤子的清晰度。'
+    },
+    externalLinks: [{ label: 'BOOTH', url: 'https://react.booth.pm/items/5647485' }]
+  },
+  {
     id: 'tokyo-international-forum-hall-event',
     title: 'Tokyo International Forum Hall Event',
     titleLocalized: {
