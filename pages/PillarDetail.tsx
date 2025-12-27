@@ -129,7 +129,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
       </Section>
 
       {/* Relevant Works */}
-      <Section className="py-20 border-t border-black/5">
+      <Section className="border-t border-black/5">
         {type === 'Public' ? (
           <div className="space-y-24">
             <div>
@@ -194,7 +194,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
           </div>
         ) : (
           <>
-            <div className="flex items-baseline justify-between mb-10 md:mb-20">
+            <div className="flex items-baseline justify-between mb-10 md:mb-16">
               <h2 className="text-3xl md:text-5xl font-display font-bold italic tracking-tighter">Selected Archives in {type}.</h2>
               <span className="text-[10px] font-bold text-gray-300 tracking-widest uppercase">{filteredWorks.length} Projects</span>
             </div>
@@ -206,7 +206,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
                 ))}
               </div>
             ) : (
-              <div className="py-20 md:py-40 text-center border border-dashed border-black/10">
+              <div className="py-16 md:py-32 text-center border border-dashed border-black/10">
                 <p className="text-gray-400 font-serif italic text-sm">Now building archives...</p>
               </div>
             )}

@@ -223,7 +223,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Technology Section */}
-      <Section className="py-32">
+      <Section className="py-20 md:py-32">
         <Link
           id="technology"
           to="/spatial-2ch"
@@ -256,7 +256,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Four Pillars - Clickable Navigation */}
-      <Section className="py-20 md:py-40 bg-gray-50/50">
+      <Section className="py-16 md:py-32 bg-gray-50/50">
         <div className="flex items-center space-x-4 mb-16">
             <div className="w-12 h-[1px] bg-[#C9A66B]" />
             <p className="text-[#C9A66B] font-bold tracking-[0.4em] uppercase text-[10px]">Four Missions</p>
@@ -296,7 +296,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* NEWS */}
-      <Section className="pt-10 pb-20 md:pb-32">
+      <Section className="pt-8 pb-16 md:pb-24">
         <div className="flex justify-between items-end mb-10">
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter">NEWS.</h2>
         </div>
@@ -340,7 +340,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Upcoming Event */}
-      <Section className="py-20 md:py-32">
+      <Section className="py-16 md:py-24">
         <div className="flex justify-between items-end mb-12">
           <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">Upcoming Event</h2>
         </div>
@@ -375,7 +375,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Selected Works Gallery */}
-      <Section className="py-32 border-t border-black/5">
+      <Section className="py-20 md:py-32 border-t border-black/5">
         <div className="flex justify-between items-end mb-24">
           <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">Archives.</h2>
           <Link to="/works" className="text-[11px] font-bold tracking-[0.3em] uppercase hover:text-[#C9A66B] transition-colors">Full Gallery →</Link>
@@ -399,7 +399,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Leads / Community */}
-      <Section className="py-20 md:py-40 bg-black text-white rounded-sm mx-6 md:mx-12 mb-20">
+      <Section className="py-16 md:py-32 bg-black text-white rounded-sm mx-6 md:mx-12 mb-12 md:mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 md:p-12">
           <div className="space-y-12">
             <h3 className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase">Collective Leads</h3>
