@@ -11,7 +11,7 @@ const navItems = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative z-20 py-20 px-6 border-t border-black/5 mt-20 bg-white text-black">
+    <footer className="relative z-20 py-12 md:py-20 px-6 border-t border-black/5 mt-12 md:mt-20 bg-white text-black">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-12 md:gap-8">
         <div className="md:flex-1 md:max-w-xl">
           <Link to="/" className="inline-flex items-center mb-6">
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             </ul>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto pt-20 flex flex-col md:flex-row justify-between items-center text-[9px] font-bold text-gray-300 tracking-[0.3em] uppercase">
+      <div className="max-w-7xl mx-auto pt-12 md:pt-20 flex flex-col md:flex-row justify-between items-center text-[9px] font-bold text-gray-300 tracking-[0.3em] uppercase">
         <p>&copy; 2025 BBM / BEYOND BOUNDARY MUSIC. ALL RIGHTS RESERVED.</p>
         <p className="mt-4 md:mt-0">MADE IN TOKYO</p>
       </div>

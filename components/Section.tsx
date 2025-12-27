@@ -35,7 +35,7 @@ const Section: React.FC<SectionProps> = ({ children, className = "", id, delay =
       whileInView="visible"
       viewport={{ once: true, margin: "-10%" }}
       variants={variants}
-      className={`py-20 px-6 max-w-7xl mx-auto w-full ${className}`}
+      className={`py-16 md:py-20 px-6 max-w-7xl mx-auto w-full ${className}`}
     >
       {children}
     </motion.section>

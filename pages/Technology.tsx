@@ -21,8 +21,10 @@ const Technology: React.FC = () => {
       works1Body: '私たちの独自技術をフルに用いた、初のピアノアルバム。非常に立体的な音響が映像と融合し、没入感あふれる世界を描き出します。（2026年リリース予定）',
       works2Body: 'こちらはまた異なる『Ambisonics（アンビソニックス）』技術を採用した、初のデジタルポップス作品。860トラックもの音源を使用し、特にサビ部分での爆発的な空間の広がりは圧巻です。',
       beyondTitle: 'Beyond Headphones / スピーカー環境での拡張',
-      beyondBody: '私たちの技術はヘッドフォンだけに留まりません...',
+      beyondBody:
+        '私たちの技術はヘッドフォンだけに留まりません。一般的な2chスピーカー環境でも、音像の前後・左右だけでなく、空間の奥行きや距離感までを精密にデザインし、展示・舞台・小規模イベントなど「場」に合わせた没入体験を構築できます。BBMでは、そうした空間を体現するイベントも実施しています。',
       clientTitle: 'Client Works',
+      clientBody: '本技術は2024年に完成し、すでに下記のアーティスト／企業の皆さまとコラボレーションを行っています。',
       tokojiTestBody: '2026年に実施予定の東光寺での音響実験。お寺という特殊な空間においても、わずか2chのスピーカーで立体感のある音響空間を構築するテストの様子。',
       appendixSubtitle: '従来のDolby AtmosとBBM独自技術の比較。',
       ctaTitle: 'Create with Us / 共創の呼びかけ',
@@ -41,6 +43,7 @@ const Technology: React.FC = () => {
       beyondTitle: 'Beyond Headphones',
       beyondBody: 'Our technology goes beyond headphones. We can create an expanded acoustic space using standard 2ch speakers...',
       clientTitle: 'Client Works',
+      clientBody: 'Completed in 2024, this technology has already been used in collaborations with the following artists and companies.',
       tokojiTestBody: 'A 2026 temple acoustic experiment to build a spatial sound field using only two speakers—even in a unique space like a temple.',
       appendixSubtitle: 'A comparison between conventional Dolby Atmos and BBM’s proprietary technology.',
       ctaTitle: 'Create with Us',
@@ -59,6 +62,7 @@ const Technology: React.FC = () => {
       beyondTitle: '超越耳機的體驗',
       beyondBody: '我們的技術不僅是立體聲，即便是普通的2ch揚聲器也能創造擴展的空間...',
       clientTitle: '客戶案例',
+      clientBody: '這項技術於 2024 年完成，並已與下列藝術家／企業展開合作。',
       tokojiTestBody: '預計於 2026 年在東光寺進行的聲學實驗：即使在寺廟這樣特殊的空間，也能僅用 2ch 揚聲器建構具有立體感的音響空間。',
       appendixSubtitle: '比較傳統 Dolby Atmos 與 BBM 的獨家技術。',
       ctaTitle: '與我們共創',
@@ -83,7 +87,7 @@ const Technology: React.FC = () => {
   const clientWorks = [yukiShare, seigetsukiVirtual].filter(Boolean);
 
   return (
-    <div className="pb-40">
+    <div className="pb-24 md:pb-40">
       <Section className="py-0">
         {/* Header */}
         <div className="mb-20">
@@ -224,6 +228,9 @@ const Technology: React.FC = () => {
           <div className="border-t border-black/5 pt-16 mb-24">
             <div className="space-y-4 mb-10">
               <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.clientTitle}</h2>
+              <p className="text-gray-600 font-serif leading-loose md:text-base text-sm max-w-4xl">
+                {t.clientBody}
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
