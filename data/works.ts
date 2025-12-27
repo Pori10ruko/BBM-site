@@ -637,26 +637,57 @@ export const works: Work[] = [
     category: 'Client Works',
     pillar: 'Art',
     description: {
-      JP: 'アルバム『パレードが続くなら』における制作。BBM中村が音楽およびジャケットのCGI制作を担当。',
-      EN: "Production for the album 'Parade ga Tsuzuku Nara'. BBM Nakamura handled music and CGI for the cover jacket.",
-      TW: '專輯《如果遊行持續下去》的製作。由 BBM 中村負責音樂與封面 CGI 製作。'
+      JP: 'アルバム『パレードが続くなら』における、ジャケットCGI参加。',
+      EN: "Jacket CGI participation for the album 'Parade ga Tsuzuku Nara'.",
+      TW: '專輯《如果遊行持續下去》的封面 CGI 參與。'
     },
     imageUrl: 'https://www.sonymusic.co.jp/adm_image/common/artist_image/75000000/75000262/jacket_image/273649.jpg',
     tags: ['2022–2024', 'SONY MUSIC', 'Album', 'Jacket CGI', 'Music'],
     role: {
-      JP: '音楽（BBM 中村） / CGI制作（ジャケット）',
-      EN: 'Music (BBM Nakamura) / CGI (Cover Jacket)',
-      TW: '音樂（BBM 中村）／封面 CGI 製作'
+      JP: 'ジャケットCGI参加（BBM 中村）',
+      EN: 'Jacket CGI (BBM Nakamura)',
+      TW: '封面 CGI（BBM 中村）'
     },
     approach: {
-      JP: '作品の世界観に合わせて、音とビジュアル（CGI）を統合し、アルバムの顔となる表現を設計。',
-      EN: 'Designed the album-facing expression by integrating sound and visuals (CGI) to match the work’s worldview.',
-      TW: '依作品世界觀整合聲音與視覺（CGI），設計作為專輯門面的表現。'
+      JP: '作品の世界観に合わせて、アルバムの顔となるジャケットCGI表現を設計。',
+      EN: 'Designed the jacket CGI expression to match the work’s worldview.',
+      TW: '依作品世界觀設計作為專輯門面的封面 CGI 表現。'
     },
     externalLinks: [
       { label: 'YUKIweb', url: 'https://www.yukiweb.net/disco/archive/?ESCL-5752' },
       { label: 'Sony Music', url: 'https://www.sonymusic.co.jp/artist/YUKI/discography/ESCL-5752' }
     ]
+  },
+  {
+    id: 'yuki-super-slits-2024-intermission',
+    title: 'Intermission Video Music / YUKI concert tour “SUPER SLITS” 2024',
+    titleLocalized: {
+      JP: '幕間映像 音楽 / YUKI concert tour “SUPER SLITS” 2024',
+      EN: 'Intermission Video Music / YUKI concert tour “SUPER SLITS” 2024',
+      TW: '幕間影像 音樂 / YUKI concert tour “SUPER SLITS” 2024'
+    },
+    date: '2024',
+    client: 'YUKI (SONY MUSIC)',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: '全国ホールツアー「YUKI concert tour “SUPER SLITS” 2024」における、幕間映像（会場スクリーン映像）の音楽を担当。',
+      EN: 'Composed music for the intermission screen projection videos for the nationwide hall tour “YUKI concert tour “SUPER SLITS” 2024”.',
+      TW: '負責全國巡迴「YUKI concert tour “SUPER SLITS” 2024」幕間（會場螢幕投影影像）的音樂。'
+    },
+    imageUrl: 'https://www.yukiweb.net/super-slits-2024/img/og.png',
+    tags: ['2024', 'SONY MUSIC', 'Live', 'Intermission', 'Projection', 'Music'],
+    role: {
+      JP: '幕間映像 音楽（BBM 中村）',
+      EN: 'Intermission Video Music (BBM Nakamura)',
+      TW: '幕間影像 音樂（BBM 中村）'
+    },
+    approach: {
+      JP: 'ライブの流れを途切れさせず、会場体験の温度を保つための音楽設計。',
+      EN: 'Music design that maintains the venue’s energy without breaking the live flow.',
+      TW: '在不打斷演出節奏的前提下，維持會場體驗溫度的音樂設計。'
+    },
+    externalLinks: [{ label: 'YUKIweb', url: 'https://www.yukiweb.net/super-slits-2024/' }]
   },
   {
     id: 'xiden-day-opener',
