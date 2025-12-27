@@ -611,7 +611,7 @@ export const works: Work[] = [
       EN: "Jacket CGI participation for the album 'Parade ga Tsuzuku Nara'.",
       TW: '專輯《如果遊行持續下去》的封面 CGI 參與。'
     },
-    imageUrl: 'https://www.sonymusic.co.jp/adm_image/common/artist_image/75000000/75000262/jacket_image/273649.jpg',
+    imageUrl: '/images/parade.jpg',
     tags: ['2022–2024', 'SONY MUSIC', 'Album', 'Jacket CGI', 'Music'],
     role: {
       JP: 'ジャケットCGI参加（BBM 中村）',
