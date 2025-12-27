@@ -9,6 +9,8 @@ const Technology: React.FC = () => {
   const navigate = useNavigate();
   const { language } = useLanguage();
 
+  const technicalComparisonUrl = 'https://note.com/bbmusic/n/ne00d26d71887';
+
   const content = {
     ja: {
       heroTitle: 'まず、体感してください。',
@@ -20,6 +22,9 @@ const Technology: React.FC = () => {
       worksTitle: '技術が必然となる作品たち',
       works1Body: '私たちの独自技術をフルに用いた、初のピアノアルバム。非常に立体的な音響が映像と融合し、没入感あふれる世界を描き出します。（2026年リリース予定）',
       works2Body: 'こちらはまた異なる『Ambisonics（アンビソニックス）』技術を採用した、初のデジタルポップス作品。860トラックもの音源を使用し、特にサビ部分での爆発的な空間の広がりは圧巻です。',
+      compareTitle: 'Technical Comparison / 技術比較',
+      compareBody: '細かく技術を比べたい場合はこちらのサイトへ。',
+      compareLink: '記事を見る',
       beyondTitle: 'Beyond Headphones / スピーカー環境での拡張',
       beyondBody:
         '私たちの技術はヘッドフォンだけに留まりません。一般的な2chスピーカー環境でも、音像の前後・左右だけでなく、空間の奥行きや距離感までを精密にデザインし、展示・舞台・小規模イベントなど「場」に合わせた没入体験を構築できます。BBMでは、そうした空間を体現するイベントも実施しています。',
@@ -40,6 +45,9 @@ const Technology: React.FC = () => {
       worksTitle: 'Works Where Technology Becomes Necessary',
       works1Body: 'Our first piano album fully leveraging our proprietary technology. Highly spatial sound merges with visuals to draw an immersive world. (Planned release in 2026)',
       works2Body: 'A first digital pop work using a different approach: Ambisonics. With as many as 860 tracks, the explosive expansion of space—especially in the chorus—is striking.',
+      compareTitle: 'Technical Comparison',
+      compareBody: 'For a detailed technical comparison, please visit this article.',
+      compareLink: 'Read the article',
       beyondTitle: 'Beyond Headphones',
       beyondBody: 'Our technology goes beyond headphones. We can create an expanded acoustic space using standard 2ch speakers...',
       clientTitle: 'Client Works',
@@ -59,6 +67,9 @@ const Technology: React.FC = () => {
       worksTitle: '技術成為必然的作品',
       works1Body: '我們首張完整運用獨家技術的鋼琴專輯。高度立體的聲響與影像融合，描繪出沉浸感十足的世界。（預計 2026 年發行）',
       works2Body: '採用另一種「Ambisonics（全景聲）」技術的首部數位流行作品。使用多達 860 軌音源，尤其副歌段落空間爆發性的擴張令人震撼。',
+      compareTitle: '技術比較',
+      compareBody: '若想更細緻地比較技術，請參考這篇文章。',
+      compareLink: '閱讀文章',
       beyondTitle: '超越耳機的體驗',
       beyondBody: '我們的技術不僅是立體聲，即便是普通的2ch揚聲器也能創造擴展的空間...',
       clientTitle: '客戶案例',
@@ -77,7 +88,7 @@ const Technology: React.FC = () => {
   const forumHallEvent = works.find(w => w.id === 'tokyo-international-forum-hall-event');
   const yukiShare = works.find(w => w.id === 'yuki-share');
   const seigetsukiVirtual = works.find(w => w.id === 'seigetsuki-virtual');
-  const clientWorks = [forumHallEvent, yukiShare, seigetsukiVirtual].filter(Boolean);
+  const clientWorks = [yukiShare, seigetsukiVirtual, forumHallEvent].filter(Boolean);
 
   return (
     <div className="pb-24 md:pb-40">
@@ -90,17 +101,18 @@ const Technology: React.FC = () => {
         </div>
         {/* Hero Section (Main Experience) */}
         <div className="mb-16">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
+          <div className="space-y-6">
+            <div className="space-y-4 max-w-3xl">
               <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter text-black">{t.heroTitle}</h2>
               <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
                 {t.hero}
               </p>
             </div>
+
             <div className="relative w-full aspect-video bg-gray-50 border border-black/5 overflow-hidden">
               <iframe
                 title="First, Experience Our Sound"
-                src="https://www.youtube.com/embed/ULXKPccZk50"
+                src="https://www.youtube.com/embed/friwNAv_FTU"
                 className="absolute inset-0 w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -165,6 +177,28 @@ const Technology: React.FC = () => {
                 {t.works2Body}
               </p>
             </article>
+          </div>
+        </div>
+
+        {/* Technical Comparison Link */}
+        <div className="border-t border-black/5 pt-16 mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div className="lg:col-span-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.compareTitle}</h2>
+            </div>
+            <div className="lg:col-span-8 space-y-6">
+              <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
+                {t.compareBody}
+              </p>
+              <a
+                href={technicalComparisonUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block py-4 px-10 bg-black text-white text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[#C9A66B] transition-all"
+              >
+                {t.compareLink}
+              </a>
+            </div>
           </div>
         </div>
 
