@@ -125,7 +125,7 @@ export const works: Work[] = [
     },
     date: '2023.12',
     client: 'Live Painting Concert',
-    category: 'Performance',
+    category: 'Installation',
     pillar: 'Art',
     description: {
       JP: '星を見上げる行為—その根源的な感覚を、音と色彩の対話によって表現します。能登真理亜の描く生命力溢れる色彩と、全方位から包み込む音響空間がリアルタイムに交錯し、鑑賞者を無限の広がりへと誘います。',
@@ -172,6 +172,37 @@ export const works: Work[] = [
     externalLinks: [
       { label: 'YouTube', url: 'https://www.youtube.com/watch?v=TWYuiozIxps' }
     ]
+  },
+  {
+    id: 'una-venus-video',
+    title: "Electric Opera 'VENUS' - 860 Tracks Mix / UN.a",
+    titleLocalized: {
+      JP: "Electric Opera 'VENUS' - 860 Tracks Mix / UN.a",
+      EN: "Electric Opera 'VENUS' - 860 Tracks Mix / UN.a",
+      TW: "Electric Opera 'VENUS' - 860 Tracks Mix / UN.a"
+    },
+    date: '2023',
+    client: 'UN.a',
+    category: 'Music Video',
+    pillar: 'Art',
+    description: {
+      JP: 'エレクトリックオペラ「VENUS」の映像作品。',
+      EN: "A video work for the Electric Opera 'VENUS'.",
+      TW: '電氣歌劇「VENUS」的影像作品。'
+    },
+    imageUrl: 'https://img.youtube.com/vi/lmy-eChYDro/hqdefault.jpg',
+    tags: ['2023', 'UN.a', 'VENUS', 'Video'],
+    role: {
+      JP: '映像作品',
+      EN: 'Video Work',
+      TW: '影像作品'
+    },
+    approach: {
+      JP: '作品のコンセプトに沿って映像と音の体験を設計。',
+      EN: 'Designed the audio-visual experience aligned with the work’s concept.',
+      TW: '依作品概念設計影像與聲音的體驗。'
+    },
+    link: 'https://www.youtube.com/watch?v=lmy-eChYDro'
   },
   {
     id: 'tsuchiura-archive',
@@ -247,22 +278,6 @@ export const works: Work[] = [
       EN: 'Turning everyday sounds into expression, designing an inclusive ensemble experience.',
       TW: '將日常聲音轉化為表達，設計人人可參與的合奏體驗。'
     }
-  },
-  {
-    id: 'net-radio-spatial',
-    title: 'Spatial Net Radio',
-    client: 'Media Project',
-    category: 'Archive',
-    pillar: 'Public',
-    description: {
-      JP: 'トーク番組に「場所の気配」を付与。リスナーと同じ空間にいる体験。',
-      EN: 'Adding "sense of place" to talk shows, placing listeners in the same room.',
-      TW: '網路廣播中的全新空間表達。'
-    },
-    imageUrl: 'https://images.unsplash.com/photo-1478737270239-2fccd27ee086?auto=format&fit=crop&q=80&w=1200',
-    tags: ['Radio', 'Public', 'UX'],
-    role: { JP: '空間音響設計', EN: 'Spatial Design', TW: '空間設計' },
-    approach: { JP: '声の定位を2chで最適化し、長時間の視聴でも疲れない自然な立体感。', EN: 'Optimizing voice localization for long-term comfort in 2ch.', TW: '優化聲音定位。' }
   },
   {
     id: 'tainan-lecture',
@@ -440,7 +455,7 @@ export const works: Work[] = [
     },
     date: '2023 - Present',
     client: 'BBM',
-    category: 'Education',
+    category: 'Archive',
     pillar: 'Education',
     description: {
       JP: '音声による思考の共有。ゲストを招いた対談や、制作の中で生まれた気づきを、ラジオ形式でカジュアルに発信。聴覚を通じた「学び」と「対話」の場です。',
