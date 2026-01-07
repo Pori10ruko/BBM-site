@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { motion } from 'framer-motion';
 import Section from '../components/Section';
 import WorkCard from '../components/WorkCard';
 import WorkModal from '../components/WorkModal';
@@ -110,9 +111,84 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   ].filter(Boolean) as Work[];
 
   return (
-    <div className="pb-16 md:pb-24">
+    <div className="pb-16 md:pb-24 relative overflow-hidden">
+      {/* 3D Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Left sphere */}
+        <motion.div
+          className="absolute top-1/4 -left-32 md:left-12 w-[600px] h-[600px] md:w-[850px] md:h-[850px]"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          <motion.div
+            className="absolute inset-0 rounded-full border-[3px] border-[#C9A66B]/45"
+            animate={{
+              rotateY: [0, 360],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{
+              rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
+              scale: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
+            }}
+            style={{
+              boxShadow: 'inset 0 0 95px rgba(201, 166, 107, 0.3), 0 0 140px rgba(201, 166, 107, 0.2)',
+              transformStyle: 'preserve-3d'
+            }}
+          />
+          <motion.div
+            className="absolute inset-[25%] rounded-full border-[2px] border-[#C9A66B]/35"
+            animate={{ rotateY: [360, 0] }}
+            transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+            style={{
+              boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.22)'
+            }}
+          />
+        </motion.div>
+
+        {/* Particles */}
+        {[...Array(10)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-5 h-5 rounded-full bg-gradient-to-br from-[#C9A66B]/60 to-[#C9A66B]/20"
+            style={{
+              left: `${10 + i * 9}%`,
+              top: `${15 + (i % 4) * 22}%`,
+              boxShadow: '0 0 42px rgba(201, 166, 107, 0.45)'
+            }}
+            animate={{
+              y: [0, -75, 0],
+              x: [0, (i % 2 === 0 ? 30 : -30), 0],
+              opacity: [0.35, 0.8, 0.35],
+              scale: [1, 2.2, 1]
+            }}
+            transition={{
+              duration: 4.5 + i * 0.3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.22
+            }}
+          />
+        ))}
+
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(201, 166, 107, 0.08) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(201, 166, 107, 0.08) 1px, transparent 1px)
+            `,
+            backgroundSize: '85px 85px',
+            transform: 'perspective(850px) rotateX(62deg)',
+            transformOrigin: 'center center',
+            opacity: 0.7
+          }}
+        />
+      </div>
+
       {/* Header */}
-      <Section className="mb-16 md:mb-32">
+      <Section className="mb-16 md:mb-32 relative z-10">
         <div className="flex items-center space-x-6 mb-12">
             <div className="w-16 h-[1px]" style={{ backgroundColor: pillar.color }} />
             <p className="font-bold tracking-[0.5em] uppercase text-[10px]" style={{ color: pillar.color }}>Pillar / {type}</p>

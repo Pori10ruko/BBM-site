@@ -1,4 +1,5 @@
 import React, { useContext, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import Section from '../components/Section';
 import { works } from '../data/works';
@@ -41,8 +42,90 @@ const WorkDetail: React.FC = () => {
   };
 
   return (
-    <div className="pb-16 md:pb-24">
-      <Section className="py-0">
+    <div className="pb-16 md:pb-24 relative overflow-hidden">
+      {/* 3D Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Right-bottom sphere */}
+        <motion.div
+          className="absolute bottom-20 -right-24 md:right-16 w-[550px] h-[550px] md:w-[750px] md:h-[750px]"
+          initial={{ scale: 0.85, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.3 }}
+        >
+          <motion.div
+            className="absolute inset-0 rounded-full border-[3px] border-[#C9A66B]/42"
+            animate={{
+              rotateZ: [0, 360],
+              scale: [1, 1.08, 1]
+            }}
+            transition={{
+              rotateZ: { duration: 21, repeat: Infinity, ease: "linear" },
+              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            }}
+            style={{
+              boxShadow: 'inset 0 0 90px rgba(201, 166, 107, 0.28), 0 0 125px rgba(201, 166, 107, 0.18)',
+              transformStyle: 'preserve-3d'
+            }}
+          />
+          <motion.div
+            className="absolute inset-[28%] rounded-full border-[2px] border-[#C9A66B]/30"
+            animate={{ rotateZ: [360, 0] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            style={{
+              boxShadow: 'inset 0 0 55px rgba(201, 166, 107, 0.2)'
+            }}
+          />
+        </motion.div>
+
+        {/* Pulsing rings */}
+        {[...Array(2)].map((_, i) => (
+          <motion.div
+            key={`detail-ring-${i}`}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-[#C9A66B]/32"
+            initial={{ width: 0, height: 0, opacity: 0 }}
+            animate={{
+              width: ['0px', '1500px'],
+              height: ['0px', '1500px'],
+              opacity: [0.55, 0],
+            }}
+            transition={{
+              duration: 5.2,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: i * 2.6
+            }}
+            style={{
+              boxShadow: '0 0 50px rgba(201, 166, 107, 0.3)'
+            }}
+          />
+        ))}
+
+        {/* Particles */}
+        {[...Array(7)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-4 h-4 rounded-full bg-gradient-to-br from-[#C9A66B]/55 to-[#C9A66B]/20"
+            style={{
+              left: `${15 + i * 12}%`,
+              top: `${20 + (i % 3) * 25}%`,
+              boxShadow: '0 0 36px rgba(201, 166, 107, 0.4)'
+            }}
+            animate={{
+              y: [0, -65, 0],
+              opacity: [0.3, 0.75, 0.3],
+              scale: [1, 2, 1]
+            }}
+            transition={{
+              duration: 4 + i * 0.28,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.2
+            }}
+          />
+        ))}
+      </div>
+
+      <Section className="py-0 relative z-10">
         <div className="mb-10">
           <Link to="/works" className="text-[11px] font-bold tracking-[0.3em] uppercase hover:text-[#C9A66B] transition-colors">← Back to Works</Link>
         </div>

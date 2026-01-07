@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useContext, useEffect, useState, useRef } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Section from '../components/Section';
 import WorkCard from '../components/WorkCard';
 import { LanguageContext } from '../App';
@@ -168,25 +168,240 @@ const Home: React.FC = () => {
     };
   });
 
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  // Reveal on scroll hook
+  const RevealSection: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = "" }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    return (
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 60 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className={className}
+      >
+        {children}
+      </motion.div>
+    );
+  };
+
   return (
-    <div className="pt-24">
-      {/* Hero Section */}
-      <Section className="min-h-[75vh] flex flex-col justify-center items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-6xl"
+    <div className="bg-white">
+      {/* Hero Section - Full Screen with Parallax */}
+      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        {/* 3D Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Grid Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.12]"
+            style={{
+              backgroundImage: 'linear-gradient(rgba(201, 166, 107, 0.25) 3px, transparent 3px), linear-gradient(90deg, rgba(201, 166, 107, 0.25) 3px, transparent 3px)',
+              backgroundSize: '100px 100px',
+              transform: 'perspective(800px) rotateX(65deg) translateY(-40%)',
+              transformOrigin: 'center top'
+            }}
+          />
+          
+          {/* Central 3D Sphere - More prominent */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[1100px] md:h-[1100px] lg:w-[1400px] lg:h-[1400px]"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+              rotateY: [0, 360],
+              rotateX: [0, 25, 0],
+            }}
+            transition={{
+              scale: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+              opacity: { duration: 1.5 },
+              rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
+              rotateX: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+            }}
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            {/* Outer ring - More visible */}
+            <motion.div 
+              className="absolute inset-0 rounded-full border-[3px] border-[#C9A66B]/50" 
+              animate={{
+                scale: [1, 1.08, 1],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                boxShadow: 'inset 0 0 120px rgba(201, 166, 107, 0.35), 0 0 150px rgba(201, 166, 107, 0.25), 0 0 200px rgba(201, 166, 107, 0.15)'
+              }}
+            />
+            
+            {/* Middle rings with enhanced depth */}
+            <motion.div 
+              className="absolute inset-[10%] rounded-full border-[3px] border-[#C9A66B]/40"
+              animate={{ 
+                rotateZ: [0, 360],
+                scale: [1, 1.06, 1]
+              }}
+              transition={{ 
+                rotateZ: { duration: 15, repeat: Infinity, ease: "linear" },
+                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              }}
+              style={{
+                boxShadow: 'inset 0 0 90px rgba(201, 166, 107, 0.25), 0 0 80px rgba(201, 166, 107, 0.2)'
+              }}
+            />
+            <motion.div 
+              className="absolute inset-[22%] rounded-full border-[2px] border-[#C9A66B]/35"
+              animate={{ 
+                rotateZ: [360, 0],
+                scale: [1, 1.08, 1]
+              }}
+              transition={{ 
+                rotateZ: { duration: 12, repeat: Infinity, ease: "linear" },
+                scale: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+              }}
+              style={{
+                boxShadow: 'inset 0 0 70px rgba(201, 166, 107, 0.22)'
+              }}
+            />
+            
+            {/* Core sphere - Glowing center */}
+            <motion.div 
+              className="absolute inset-[35%] rounded-full bg-gradient-to-br from-white/60 via-[#C9A66B]/30 to-[#C9A66B]/20"
+              animate={{
+                scale: [1, 1.12, 1],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                boxShadow: 'inset -20px -20px 80px rgba(201, 166, 107, 0.4), inset 20px 20px 80px rgba(255, 255, 255, 0.4), 0 40px 120px rgba(201, 166, 107, 0.3)'
+              }}
+            />
+          </motion.div>
+
+          {/* Enhanced floating particles */}
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-5 h-5 rounded-full bg-gradient-to-br from-[#C9A66B]/60 to-[#C9A66B]/20"
+              style={{
+                left: `${10 + (i * 5.5)}%`,
+                top: `${15 + (i % 4) * 20}%`,
+                boxShadow: '0 0 40px rgba(201, 166, 107, 0.5), 0 0 60px rgba(201, 166, 107, 0.3)'
+              }}
+              animate={{
+                y: [0, -80, 0],
+                x: [0, (i % 2 === 0 ? 30 : -30), 0],
+                opacity: [0.4, 0.9, 0.4],
+                scale: [1, 2.2, 1]
+              }}
+              transition={{
+                duration: 3.5 + i * 0.3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.15
+              }}
+            />
+          ))}
+
+          {/* Pulsing rings */}
+          {[...Array(4)].map((_, i) => (
+            <motion.div
+              key={`ring-${i}`}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-[#C9A66B]/40"
+              initial={{ width: 0, height: 0, opacity: 0 }}
+              animate={{
+                width: ['0px', '1800px'],
+                height: ['0px', '1800px'],
+                opacity: [0.7, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeOut",
+                delay: i * 1.25
+              }}
+              style={{
+                boxShadow: '0 0 60px rgba(201, 166, 107, 0.4)'
+              }}
+            />
+          ))}
+        </div>
+
+        <motion.div 
+          style={{ y: heroY, opacity: heroOpacity }}
+          className="relative z-10 text-center px-6 max-w-7xl mx-auto"
         >
-          <span className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-8 block">Collective / Label / Research</span>
-          <h1 className="hero-title text-4xl sm:text-6xl md:text-[10rem] text-black mb-12">
-            Beyond<br />Boundary Music
-          </h1>
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="inline-block text-[10px] md:text-[11px] font-bold tracking-[0.6em] text-[#C9A66B] uppercase mb-12"
+          >
+            Collective / Label / Research
+          </motion.span>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[14vw] md:text-[12vw] lg:text-[10rem] xl:text-[13rem] font-display italic tracking-tighter leading-[0.9] mb-16"
+            style={{
+              color: '#000',
+              textShadow: '2px 2px 0px rgba(201, 166, 107, 0.3), 4px 4px 0px rgba(0, 0, 0, 0.1), 6px 6px 12px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            <motion.span
+              className="inline-block"
+              initial={{ opacity: 0, x: -30, rotateY: -15 }}
+              animate={{ opacity: 1, x: 0, rotateY: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              Beyond
+            </motion.span>
+            <br />
+            <motion.span
+              className="inline-block"
+              initial={{ opacity: 0, x: 30, rotateY: 15 }}
+              animate={{ opacity: 1, x: 0, rotateY: 0 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              Boundary
+            </motion.span>
+            <br />
+            <motion.span
+              className="inline-block"
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              Music
+            </motion.span>
+          </motion.h1>
+
           {heroLogoSrc && (
-            <img
+            <motion.img
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.8 }}
               src={heroLogoSrc}
               alt="BBM"
-              className="mx-auto mb-12 w-40 md:w-56 h-auto"
+              className="mx-auto mb-16 w-32 md:w-48 h-auto"
               loading="eager"
               onError={() => {
                 if (!heroLogoFallbackTried && heroLogoSrc.endsWith('.jpg')) {
@@ -198,7 +413,13 @@ const Home: React.FC = () => {
               }}
             />
           )}
-          <p className="text-xl md:text-3xl text-gray-800 font-serif font-light leading-relaxed mb-16 max-w-4xl mx-auto">
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="text-xl md:text-3xl lg:text-4xl text-gray-700 font-serif font-light leading-relaxed max-w-5xl mx-auto"
+          >
             {lang === 'JP' ? (
               <>
                 この時代に必要な表現を、共に
@@ -207,250 +428,702 @@ const Home: React.FC = () => {
             ) : (
               t.tagline[lang]
             )}
-          </p>
-
-          <div className="max-w-3xl mx-auto text-left text-sm md:text-lg text-gray-700 font-serif leading-relaxed md:leading-loose space-y-6 md:space-y-8 mb-16">
-            <p>
-              {t.philosophy[lang].p1}
-            </p>
-            <p>
-              {t.philosophy[lang].p2}
-            </p>
-          </div>
-          
-
+          </motion.p>
         </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        >
+          <span className="text-[9px] tracking-[0.3em] uppercase text-gray-400">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent"
+          />
+        </motion.div>
+      </section>
+
+      {/* Philosophy Section */}
+      <Section className="py-32 md:py-48 relative overflow-hidden">
+        {/* 3D Background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div
+            className="absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 w-[650px] h-[650px] md:w-[900px] md:h-[900px]"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <motion.div
+              className="absolute inset-0 rounded-full border-[3px] border-[#C9A66B]/35"
+              animate={{ rotateZ: [0, 360] }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              style={{
+                boxShadow: 'inset 0 0 90px rgba(201, 166, 107, 0.2), 0 0 120px rgba(201, 166, 107, 0.15)'
+              }}
+            />
+            <motion.div
+              className="absolute inset-[20%] rounded-full border-[2px] border-[#C9A66B]/30"
+              animate={{ 
+                rotateZ: [360, 0],
+                scale: [1, 1.08, 1]
+              }}
+              transition={{ 
+                rotateZ: { duration: 13, repeat: Infinity, ease: "linear" },
+                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              }}
+              style={{
+                boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.18)'
+              }}
+            />
+          </motion.div>
+        </div>
+        <RevealSection>
+          <div className="max-w-5xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start">
+              <div className="md:col-span-3">
+                <div className="w-16 h-[1px] bg-[#C9A66B] mb-6" />
+                <h2 className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase">Philosophy</h2>
+              </div>
+              <div className="md:col-span-9 space-y-10">
+                <p className="text-lg md:text-2xl text-gray-800 font-serif leading-relaxed">
+                  {t.philosophy[lang].p1}
+                </p>
+                <p className="text-lg md:text-2xl text-gray-700 font-serif leading-relaxed">
+                  {t.philosophy[lang].p2}
+                </p>
+              </div>
+            </div>
+          </div>
+        </RevealSection>
       </Section>
 
       {/* Technology Section */}
-      <Section className="py-20 md:py-32">
-        <Link
-          id="technology"
-          to="/spatial-2ch"
-          className="group block bg-gray-950 text-white border border-white/10 hover:border-[#C9A66B] transition-all duration-500 p-10 md:p-14"
-        >
-          <div className="flex items-center justify-between gap-6 mb-8">
-            <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase">04 Technology</span>
-          </div>
-
-          <div className="h-[220px] bg-white/5 border border-white/10 overflow-hidden mb-10">
-            <img src="/images/tech.jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
-          </div>
-
-          <h3 className="text-3xl md:text-5xl font-display font-bold mb-10 tracking-tight group-hover:translate-x-1 transition-transform duration-500">
-            BBM Spatial Audio Tech
-          </h3>
-
-          <div className="max-w-4xl space-y-8">
-            <div>
-              <p className="text-white/70 text-[11px] font-bold tracking-[0.35em] uppercase mb-4">{t.technology[lang].h1}</p>
-              <p className="text-white/80 font-serif leading-loose md:text-base text-sm">{t.technology[lang].p1}</p>
-            </div>
-          </div>
-          <div className="mt-10">
-            <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/70 group-hover:text-white transition-colors">
-              Explore Technology →
-            </span>
-          </div>
-        </Link>
-      </Section>
-
-      {/* Four Pillars - Clickable Navigation */}
-      <Section className="py-16 md:py-32 bg-gray-50/50">
-        <div className="flex items-center space-x-4 mb-16">
-            <div className="w-12 h-[1px] bg-[#C9A66B]" />
-            <p className="text-[#C9A66B] font-bold tracking-[0.4em] uppercase text-[10px]">Four Missions</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {pillars.map((pillar) => (
-            <Link
-              key={pillar.id}
-              id={pillar.id}
-              to={pillar.path}
-              className="group bg-white border border-black/5 shadow-sm hover:shadow-md hover:border-[#C9A66B] transition-all duration-500 overflow-hidden"
-            >
-              <div className="relative h-[220px] bg-gray-100 overflow-hidden">
-                <img
-                  src={pillar.imageUrl}
-                  alt=""
-                  className="w-full h-full object-cover grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:group-hover:grayscale-0 transition-all duration-700 ease-in-out"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
-              </div>
-              <div className="p-6 md:p-10 text-center">
-                <div className="mb-10">
-                  <span className="text-[10px] font-bold text-[#C9A66B] tracking-[0.4em] uppercase block">{pillar.num}</span>
-                  <h3 className="mt-4 text-4xl md:text-5xl font-display font-bold tracking-tight group-hover:translate-x-1 transition-transform duration-500">
-                    {pillar.title}
-                  </h3>
-                </div>
-                <p className="text-gray-700 font-serif leading-loose text-sm md:text-base max-w-[26rem] mx-auto mb-10">
-                  {pillar.desc}
-                </p>
-                <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-gray-300 group-hover:text-black transition-colors">Learn More →</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Section>
-
-      {/* NEWS */}
-      <Section className="pt-8 pb-16 md:pb-24">
-        <div className="flex justify-between items-end mb-10">
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter">NEWS.</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a
-            href="https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
-          >
-            <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:hover:grayscale-0 transition-all duration-700 ease-in-out">
-              <img src="/images/yuki share .jpg" alt="" className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-black/5" />
-            </div>
-            <div className="p-6 md:p-10">
-              <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.20 Release</p>
-              <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.yukiTitle[lang]}</h3>
-              <p className="text-gray-600 font-serif leading-loose text-sm">
-                平野さん監督のMVにて、カトラリー／レストラン空間の立体音響制作として参加しました。劇場アニメ『この本を盗む者は』主題歌です。ぜひご覧ください。
-              </p>
-            </div>
-          </a>
-
-          {seigetsukiWork && (
-            <Link
-              to={`/works/${seigetsukiWork.id}`}
-              className="group bg-white border border-black/5 shadow-sm overflow-hidden hover:border-[#C9A66B] hover:shadow-md transition-all duration-500"
-            >
-              <div className="relative h-[220px] bg-gray-100 overflow-hidden grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:hover:grayscale-0 transition-all duration-700 ease-in-out">
-                <img src={seigetsukiWork.imageUrl} alt="" className="w-full h-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-black/5" />
-              </div>
-              <div className="p-6 md:p-10">
-                <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-4">2025.12.15 Release</p>
-                <h3 className="text-2xl md:text-3xl font-display font-bold mb-5">{t.news.seigetsukiTitle[lang]}</h3>
-                <p className="text-gray-600 font-serif leading-loose text-sm">{seigetsukiWork.description?.[lang] ?? ''}</p>
-              </div>
-            </Link>
-          )}
-        </div>
-      </Section>
-
-      {/* Upcoming Event */}
-      <Section className="py-16 md:py-24">
-        <div className="flex justify-between items-end mb-12">
-          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">Upcoming Event</h2>
-        </div>
-        <a
-          href="https://tsuchiura-sound-achib.netlify.app/#events"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block bg-white border border-black/5 shadow-sm overflow-hidden"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 relative h-[250px] md:h-auto bg-gray-100 overflow-hidden grayscale-0 [@media(hover:hover)and(pointer:fine)]:grayscale [@media(hover:hover)and(pointer:fine)]:hover:grayscale-0 transition-all duration-700 ease-in-out">
-              <img
-                src="/images/tokoji1.png"
-                alt=""
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/5" />
-            </div>
-            <div className="md:col-span-3 p-10 md:p-14">
-              <p className="text-[10px] font-bold tracking-[0.3em] text-[#C9A66B] uppercase mb-5">2/23(月・祝) 夕刻</p>
-              <h3 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-6">{t.upcoming.title[lang]}</h3>
-              <p className="text-gray-600 font-serif leading-loose text-sm md:text-base mb-8">
-                東光寺（茨城県土浦市大手町3-14）
-              </p>
-              <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
-                {t.upcoming.desc[lang]}
-              </p>
-            </div>
-          </div>
-        </a>
-      </Section>
-
-      {/* Selected Works Gallery */}
-      <Section className="py-20 md:py-32 border-t border-black/5">
-        <div className="flex justify-between items-end mb-24">
-          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">Archives.</h2>
-          <Link to="/works" className="text-[11px] font-bold tracking-[0.3em] uppercase hover:text-[#C9A66B] transition-colors">Full Gallery →</Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {featuredWorksForHome.map((work) => (
-            <WorkCard
-              key={work.id}
-              work={work}
-              onClick={() => {
-                if (work.id === 'tainan-lecture') {
-                  const url = work.externalLinks?.[0]?.url;
-                  if (url) window.open(url, '_blank', 'noopener,noreferrer');
-                  return;
-                }
-                navigate(`/works/${work.id}`);
+      <Section className="py-32 md:py-48 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Animated 3D Grid Background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: 'linear-gradient(rgba(201, 166, 107, 0.2) 2px, transparent 2px), linear-gradient(90deg, rgba(201, 166, 107, 0.2) 2px, transparent 2px)',
+              backgroundSize: '60px 60px',
+              transform: 'perspective(800px) rotateX(60deg) translateY(-30%)'
+            }}
+            animate={{
+              backgroundPosition: ['0px 0px', '60px 60px']
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          {/* Floating spheres */}
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-6 h-6 rounded-full bg-gradient-to-br from-[#C9A66B]/50 to-[#C9A66B]/20"
+              style={{
+                left: `${8 + i * 12}%`,
+                top: `${15 + (i % 2) * 40}%`,
+                boxShadow: '0 0 50px rgba(201, 166, 107, 0.4), 0 0 80px rgba(201, 166, 107, 0.2)'
+              }}
+              animate={{
+                y: [0, -80, 0],
+                x: [0, (i % 2 === 0 ? 40 : -40), 0],
+                scale: [1, 2.5, 1],
+                opacity: [0.4, 0.9, 0.4]
+              }}
+              transition={{
+                duration: 4.5 + i * 0.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.25
               }}
             />
           ))}
         </div>
+        <RevealSection>
+          <Link
+            id="technology"
+            to="/spatial-2ch"
+            className="group block relative overflow-hidden z-10"
+          >
+            {/* Image with Parallax */}
+            <div className="relative h-[60vh] md:h-[70vh] overflow-hidden mb-16">
+              <motion.img 
+                src="/images/tech.jpg" 
+                alt="" 
+                className="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out"
+                loading="lazy"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              
+              {/* Overlay Text */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 text-white">
+                <motion.span 
+                  className="text-[10px] font-bold text-[#C9A66B] tracking-[0.5em] uppercase block mb-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  04 Technology
+                </motion.span>
+                <motion.h3 
+                  className="text-4xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-none mb-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  style={{
+                    textShadow: '0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)',
+                    letterSpacing: '-0.02em',
+                    fontWeight: '800',
+                    WebkitTextStroke: '1px rgba(255, 255, 255, 0.1)'
+                  }}
+                >
+                  <motion.span
+                    className="inline-block"
+                    initial={{ opacity: 0, scale: 0.95, rotateX: 10 }}
+                    whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    style={{ 
+                      transformStyle: 'preserve-3d',
+                      display: 'inline-block',
+                      padding: '0.1em 0.3em',
+                      borderRadius: '0.2em',
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)'
+                    }}
+                  >
+                    BBM Spatial
+                  </motion.span>
+                  <br />
+                  <motion.span
+                    className="inline-block"
+                    initial={{ opacity: 0, scale: 0.95, rotateX: -10 }}
+                    whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    style={{ 
+                      transformStyle: 'preserve-3d',
+                      display: 'inline-block',
+                      padding: '0.1em 0.3em',
+                      borderRadius: '0.2em',
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)'
+                    }}
+                  >
+                    Audio Tech
+                  </motion.span>
+                </motion.h3>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="max-w-6xl mx-auto px-6 md:px-12 space-y-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+                <div>
+                  <h4 className="text-xl md:text-2xl font-display font-bold mb-6 text-black">
+                    {t.technology[lang].h1}
+                  </h4>
+                  <p className="text-gray-700 font-serif leading-loose text-base md:text-lg">
+                    {t.technology[lang].p1}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-xl md:text-2xl font-display font-bold mb-6 text-black">
+                    {t.technology[lang].h2}
+                  </h4>
+                  <p className="text-gray-700 font-serif leading-loose text-base md:text-lg">
+                    {t.technology[lang].p2}
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center pt-8">
+                <span className="inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.4em] uppercase text-gray-400 group-hover:text-[#C9A66B] transition-colors duration-300">
+                  Explore Technology 
+                  <motion.span
+                    className="inline-block"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    →
+                  </motion.span>
+                </span>
+              </div>
+            </div>
+          </Link>
+        </RevealSection>
+      </Section>
+
+      {/* Four Pillars - Clickable Navigation */}
+      <Section className="py-32 md:py-48 relative overflow-hidden">
+        {/* 3D Background Elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div
+            className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+          >
+            <motion.div
+              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/15"
+              animate={{
+                rotateY: [0, 360],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{
+                rotateY: { duration: 25, repeat: Infinity, ease: "linear" },
+                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              }}
+              style={{
+                boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.12), 0 0 100px rgba(201, 166, 107, 0.08)',
+                transformStyle: 'preserve-3d'
+              }}
+            />
+            <motion.div
+              className="absolute inset-[20%] rounded-full border border-[#C9A66B]/12"
+              animate={{ rotateZ: [360, 0] }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              style={{
+                boxShadow: 'inset 0 0 40px rgba(201, 166, 107, 0.1)'
+              }}
+            />
+          </motion.div>
+        </div>
+        <RevealSection>
+          <div className="mb-24">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-[1px] bg-[#C9A66B]" />
+              <span className="text-[#C9A66B] font-bold tracking-[0.5em] uppercase text-[10px]">Four Missions</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {pillars.map((pillar, idx) => (
+              <motion.div
+                key={pillar.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Link
+                  id={pillar.id}
+                  to={pillar.path}
+                  className="group block h-full"
+                >
+                  {/* Image */}
+                  <div className="relative h-[50vh] md:h-[60vh] overflow-hidden mb-8">
+                    <motion.img
+                      src={pillar.imageUrl}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
+                    
+                    {/* Overlay Number */}
+                    <div className="absolute top-8 left-8">
+                      <span className="text-[10px] font-bold text-white/60 tracking-[0.5em] uppercase">
+                        {pillar.num}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="px-2">
+                    <h3 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter mb-6 group-hover:text-[#C9A66B] transition-colors duration-300">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-gray-700 font-serif leading-loose text-base md:text-lg mb-8">
+                      {pillar.desc}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400 group-hover:text-black transition-colors">
+                      Learn More →
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </RevealSection>
+      </Section>
+
+      {/* NEWS */}
+      <Section className="py-32 md:py-48 bg-gray-50 relative overflow-hidden">
+        {/* Pulsing rings background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(2)].map((_, i) => (
+            <motion.div
+              key={`news-ring-${i}`}
+              className="absolute top-1/2 right-1/4 -translate-y-1/2 rounded-full border border-[#C9A66B]/20"
+              initial={{ width: 0, height: 0, opacity: 0 }}
+              animate={{
+                width: ['0px', '1000px'],
+                height: ['0px', '1000px'],
+                opacity: [0.4, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeOut",
+                delay: i * 2.5
+              }}
+            />
+          ))}
+        </div>
+        <RevealSection>
+          <div className="mb-20">
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
+              NEWS.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <motion.a
+              href="https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img 
+                  src="/images/yuki share .jpg" 
+                  alt="" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" 
+                  loading="lazy" 
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2025.12.20 Release
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.yukiTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                平野さん監督のMVにて、カトラリー／レストラン空間の立体音響制作として参加しました。劇場アニメ『この本を盗む者は』主題歌です。ぜひご覧ください。
+              </p>
+            </motion.a>
+
+            {seigetsukiWork && (
+              <motion.div
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Link
+                  to={`/works/${seigetsukiWork.id}`}
+                  className="group block"
+                >
+                  <div className="relative h-[50vh] overflow-hidden mb-8">
+                    <img 
+                      src={seigetsukiWork.imageUrl} 
+                      alt="" 
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" 
+                      loading="lazy" 
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+                  </div>
+                  <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                    2025.12.15 Release
+                  </p>
+                  <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                    {t.news.seigetsukiTitle[lang]}
+                  </h3>
+                  <p className="text-gray-600 font-serif leading-loose text-base">
+                    {seigetsukiWork.description?.[lang] ?? ''}
+                  </p>
+                </Link>
+              </motion.div>
+            )}
+          </div>
+        </RevealSection>
+      </Section>
+
+      {/* Upcoming Event */}
+      <Section className="py-32 md:py-48 relative overflow-hidden">
+        {/* 3D Sphere Background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px]"
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+          >
+            <motion.div
+              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/15"
+              animate={{
+                rotateZ: [0, 360],
+                scale: [1, 1.06, 1]
+              }}
+              transition={{
+                rotateZ: { duration: 22, repeat: Infinity, ease: "linear" },
+                scale: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
+              }}
+              style={{
+                boxShadow: 'inset 0 0 70px rgba(201, 166, 107, 0.12), 0 0 90px rgba(201, 166, 107, 0.08)'
+              }}
+            />
+          </motion.div>
+        </div>
+        <RevealSection>
+          <div className="mb-20">
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
+              Upcoming<br />Event
+            </h2>
+          </div>
+
+          <a
+            href="https://tsuchiura-sound-achib.netlify.app/#events"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block group"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="relative h-[50vh] lg:h-[70vh] overflow-hidden">
+                <motion.img
+                  src="/images/tokoji1.png"
+                  alt=""
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-1000"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+
+              <div className="bg-white p-12 lg:p-20 flex flex-col justify-center">
+                <p className="text-[10px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-8">
+                  2/23(月・祝) 夕刻
+                </p>
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-8 group-hover:text-[#C9A66B] transition-colors">
+                  {t.upcoming.title[lang]}
+                </h3>
+                <p className="text-gray-600 font-serif text-lg mb-10">
+                  東光寺（茨城県土浦市大手町3-14）
+                </p>
+                <p className="text-gray-700 font-serif leading-loose text-base md:text-lg">
+                  {t.upcoming.desc[lang]}
+                </p>
+              </div>
+            </div>
+          </a>
+        </RevealSection>
+      </Section>
+
+      {/* Selected Works Gallery */}
+      <Section className="py-32 md:py-48 bg-gray-50 relative overflow-hidden">
+        {/* Animated particles background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(10)].map((_, i) => (
+            <motion.div
+              key={`archive-particle-${i}`}
+              className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-[#C9A66B]/35 to-[#C9A66B]/10"
+              style={{
+                left: `${5 + i * 9}%`,
+                top: `${15 + (i % 3) * 25}%`,
+                boxShadow: '0 0 20px rgba(201, 166, 107, 0.25)'
+              }}
+              animate={{
+                y: [0, -70, 0],
+                x: [0, (i % 2 === 0 ? 25 : -25), 0],
+                opacity: [0.2, 0.7, 0.2],
+                scale: [1, 2, 1]
+              }}
+              transition={{
+                duration: 5 + i * 0.3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.25
+              }}
+            />
+          ))}
+        </div>
+        <RevealSection>
+          <div className="flex justify-between items-end mb-20">
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
+              Archives.
+            </h2>
+            <Link 
+              to="/works" 
+              className="text-[11px] font-bold tracking-[0.4em] uppercase hover:text-[#C9A66B] transition-colors"
+            >
+              Full Gallery →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+            {featuredWorksForHome.map((work, idx) => (
+              <motion.div
+                key={work.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <WorkCard
+                  work={work}
+                  onClick={() => {
+                    if (work.id === 'tainan-lecture') {
+                      const url = work.externalLinks?.[0]?.url;
+                      if (url) window.open(url, '_blank', 'noopener,noreferrer');
+                      return;
+                    }
+                    navigate(`/works/${work.id}`);
+                  }}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </RevealSection>
       </Section>
 
       {/* Leads / Community */}
-      <Section className="py-16 md:py-32 bg-black text-white rounded-sm mx-6 md:mx-12 mb-12 md:mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 md:p-12">
-          <div className="space-y-12">
-            <h3 className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase">Collective Leads</h3>
+      <Section className="py-32 md:py-48 relative overflow-hidden">
+        {/* Final 3D sphere */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div
+            className="absolute bottom-1/4 right-0 translate-x-1/3 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+          >
+            <motion.div
+              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/20"
+              animate={{
+                rotateY: [0, 360],
+                rotateX: [0, 15, 0]
+              }}
+              transition={{
+                rotateY: { duration: 28, repeat: Infinity, ease: "linear" },
+                rotateX: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+              }}
+              style={{
+                boxShadow: 'inset 0 0 80px rgba(201, 166, 107, 0.15), 0 0 100px rgba(201, 166, 107, 0.1)',
+                transformStyle: 'preserve-3d'
+              }}
+            />
+            <motion.div
+              className="absolute inset-[30%] rounded-full bg-gradient-to-br from-white/30 via-[#C9A66B]/15 to-black/5"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+              style={{
+                boxShadow: 'inset -10px -10px 50px rgba(201, 166, 107, 0.2), inset 10px 10px 50px rgba(255, 255, 255, 0.25)'
+              }}
+            />
+          </motion.div>
+        </div>
+        <RevealSection>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
             <div className="space-y-16">
               <div>
-                <a
-                  href="https://www.nakamurahiroyuki.info/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                >
-                  <h4 className="text-3xl font-display font-bold mb-2 hover:text-[#C9A66B] transition-colors">NAKAMURA Hiroyuki</h4>
-                </a>
-                <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-4">Composer / Academic</p>
-                <p className="text-gray-400 font-serif text-sm leading-relaxed max-w-sm">
-                  音響学とメディア表現の講師。BBMの芸術的ディレクションと理論構築を担う。
-                </p>
-              </div>
-              <div>
-                <a
-                  href="https://www.instagram.com/utsugikoichi/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                >
-                  <h4 className="text-3xl font-display font-bold mb-2 hover:text-[#C9A66B] transition-colors">UTSUGI Koichi</h4>
-                </a>
-                <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-4">Spatial Audio Engineer</p>
-                <p className="text-gray-400 font-serif text-sm leading-relaxed max-w-sm">
-                  独自の2ch立体音響アルゴリズムの開発者。グローバルな展示へのシステム実装を統括。
-                </p>
+                <div className="w-16 h-[1px] bg-[#C9A66B] mb-6" />
+                <h3 className="text-[11px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-16">
+                  Collective Leads
+                </h3>
               </div>
 
-              <div>
-                <h4 className="text-3xl font-display font-bold mb-2">TAGUCHI Mayumi</h4>
-                <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-4">Piano Teacher, Eurhythmics, Narrator</p>
+              <div className="space-y-20">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <a
+                    href="https://www.nakamurahiroyuki.info/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block group"
+                  >
+                    <h4 className="text-4xl md:text-5xl font-display font-bold mb-3 group-hover:text-[#C9A66B] transition-colors">
+                      NAKAMURA Hiroyuki
+                    </h4>
+                  </a>
+                  <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-6">
+                    Composer / Academic
+                  </p>
+                  <p className="text-gray-700 font-serif text-base md:text-lg leading-relaxed max-w-md">
+                    音響学とメディア表現の講師。BBMの芸術的ディレクションと理論構築を担う。
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  <a
+                    href="https://www.instagram.com/utsugikoichi/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block group"
+                  >
+                    <h4 className="text-4xl md:text-5xl font-display font-bold mb-3 group-hover:text-[#C9A66B] transition-colors">
+                      UTSUGI Koichi
+                    </h4>
+                  </a>
+                  <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-6">
+                    Spatial Audio Engineer
+                  </p>
+                  <p className="text-gray-700 font-serif text-base md:text-lg leading-relaxed max-w-md">
+                    独自の2ch立体音響アルゴリズムの開発者。グローバルな展示へのシステム実装を統括。
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h4 className="text-4xl md:text-5xl font-display font-bold mb-3">
+                    TAGUCHI Mayumi
+                  </h4>
+                  <p className="text-[10px] font-bold text-gray-500 tracking-widest uppercase mb-6">
+                    Piano Teacher, Eurhythmics, Narrator
+                  </p>
+                </motion.div>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col justify-center">
-            <div className="border border-white/10 p-10 bg-white/5 backdrop-blur-md">
-              <h4 className="text-2xl font-serif mb-6 italic">Dialogue is the starting point.</h4>
-              <p className="text-gray-400 text-sm font-serif leading-loose mb-10">
-                BBMは流動的なコミュニティです。新しいプロジェクトのアイデア、技術的な相談、あらゆる音への興味から対話が始まります。
-              </p>
-              <Link to="/contact" className="inline-block py-4 px-10 bg-white text-black text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[#C9A66B] hover:text-white transition-all">
-                Join the Discussion
-              </Link>
+
+            <div className="flex flex-col justify-center">
+              <motion.div 
+                className="bg-black text-white p-12 lg:p-16"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h4 className="text-3xl md:text-4xl font-serif italic mb-8 leading-tight">
+                  Dialogue is the<br />starting point.
+                </h4>
+                <p className="text-gray-400 text-base font-serif leading-loose mb-12">
+                  BBMは流動的なコミュニティです。新しいプロジェクトのアイデア、技術的な相談、あらゆる音への興味から対話が始まります。
+                </p>
+                <Link 
+                  to="/contact" 
+                  className="inline-block py-5 px-12 bg-white text-black text-[11px] font-bold tracking-[0.4em] uppercase hover:bg-[#C9A66B] hover:text-white transition-all duration-300"
+                >
+                  Join the Discussion
+                </Link>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </RevealSection>
       </Section>
     </div>
   );

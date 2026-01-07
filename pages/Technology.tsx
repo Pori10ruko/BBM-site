@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Section from '../components/Section';
 import { Link, useNavigate } from 'react-router-dom';
 import WorkCard from '../components/WorkCard';
@@ -8,6 +9,7 @@ import { useLanguage } from '../hooks/useLanguage';
 const Technology: React.FC = () => {
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const { scrollYProgress } = useScroll();
 
   const technicalComparisonUrl = 'https://note.com/bbmusic/n/ne00d26d71887';
 
@@ -90,26 +92,346 @@ const Technology: React.FC = () => {
   const seigetsuki = works.find(w => w.id === 'seigetsuki');
   const clientWorks = [yukiShare, seigetsuki, forumHallEvent].filter(Boolean);
 
+  // Parallax transforms - reduce on mobile for performance
+  const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -150]);
+  const sphereRotate = useTransform(scrollYProgress, [0, 1], [0, 720]);
+  const particleFloat = useTransform(scrollYProgress, [0, 1], [0, -300]);
+
+  // Detect mobile/tablet for performance optimization
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const isTablet = typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024;
+
   return (
-    <div className="pb-24 md:pb-40">
-      <Section className="py-0">
-        {/* Header */}
-        <div className="mb-20">
-          <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400 mb-6">TECHNOLOGY</p>
-          <h1 className="text-6xl md:text-8xl font-display font-bold tracking-tighter text-black mb-6">TECHNOLOGY</h1>
-          <p className="text-lg md:text-2xl font-serif text-gray-800">{t.subheading}</p>
-        </div>
-        {/* Hero Section (Main Experience) */}
-        <div className="mb-16">
+    <div className="pb-24 md:pb-40 relative overflow-hidden bg-black">
+      {/* Revolutionary 3D Audio Visualization */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Massive multi-layered sphere system - Optimized for mobile */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ y: isMobile ? 0 : heroY }}
+        >
+          {/* Outer ring - largest */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] md:w-[1400px] md:h-[1400px] lg:w-[1800px] lg:h-[1800px]"
+            animate={isMobile ? {
+              rotateY: [0, 360],
+            } : {
+              rotateX: [0, 360],
+              rotateY: [0, -360],
+            }}
+            transition={isMobile ? {
+              rotateY: { duration: 50, repeat: Infinity, ease: "linear" }
+            } : {
+              rotateX: { duration: 40, repeat: Infinity, ease: "linear" },
+              rotateY: { duration: 35, repeat: Infinity, ease: "linear" }
+            }}
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            <div
+              className="absolute inset-0 rounded-full"
+              style={{
+                border: isMobile ? '2px solid rgba(201, 166, 107, 0.5)' : '4px solid rgba(201, 166, 107, 0.6)',
+                boxShadow: isMobile 
+                  ? 'inset 0 0 80px rgba(201, 166, 107, 0.4), 0 0 100px rgba(201, 166, 107, 0.3)'
+                  : `inset 0 0 150px rgba(201, 166, 107, 0.5),
+                     0 0 200px rgba(201, 166, 107, 0.4),
+                     0 0 300px rgba(201, 166, 107, 0.2)`
+              }}
+            />
+          </motion.div>
+
+          {/* Mid ring */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] lg:w-[1300px] lg:h-[1300px]"
+            animate={isMobile ? {
+              rotateZ: [0, 360],
+            } : {
+              rotateY: [360, 0],
+              rotateZ: [0, 360],
+              scale: [1, 1.15, 1]
+            }}
+            transition={isMobile ? {
+              rotateZ: { duration: 35, repeat: Infinity, ease: "linear" }
+            } : {
+              rotateY: { duration: 30, repeat: Infinity, ease: "linear" },
+              rotateZ: { duration: 25, repeat: Infinity, ease: "linear" },
+              scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+            }}
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            <div
+              className="absolute inset-0 rounded-full"
+              style={{
+                border: isMobile ? '2px solid rgba(201, 166, 107, 0.6)' : '3px solid rgba(201, 166, 107, 0.7)',
+                boxShadow: isMobile
+                  ? 'inset 0 0 70px rgba(201, 166, 107, 0.45), 0 0 90px rgba(201, 166, 107, 0.35)'
+                  : `inset 0 0 130px rgba(201, 166, 107, 0.55),
+                     0 0 180px rgba(201, 166, 107, 0.45)`
+              }}
+            />
+          </motion.div>
+
+          {/* Inner ring */}
+          {!isMobile && (
+            <motion.div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
+              animate={{
+                rotateX: [360, 0],
+                rotateZ: [0, 360],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{
+                rotateX: { duration: 20, repeat: Infinity, ease: "linear" },
+                rotateZ: { duration: 18, repeat: Infinity, ease: "linear" },
+                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              }}
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  border: '3px solid rgba(201, 166, 107, 0.85)',
+                  boxShadow: `
+                    inset 0 0 100px rgba(201, 166, 107, 0.7),
+                    0 0 150px rgba(201, 166, 107, 0.55)
+                  `
+                }}
+              />
+            </motion.div>
+          )}
+
+          {/* Core sphere */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px]"
+            animate={{
+              rotateY: [0, 360],
+              scale: [1, 1.25, 1]
+            }}
+            transition={{
+              rotateY: { duration: 12, repeat: Infinity, ease: "linear" },
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+            }}
+          >
+            <div
+              className="absolute inset-0 rounded-full bg-gradient-radial from-[#C9A66B]/80 via-[#C9A66B]/40 to-transparent"
+              style={{
+                boxShadow: `
+                  inset -30px -30px 120px rgba(0, 0, 0, 0.6),
+                  inset 30px 30px 120px rgba(255, 255, 255, 0.3),
+                  0 0 200px rgba(201, 166, 107, 0.8)
+                `
+              }}
+            />
+          </motion.div>
+        </motion.div>
+
+        {/* Audio wave rings emanating from center - Reduced on mobile */}
+        {[...Array(isMobile ? 4 : 8)].map((_, i) => (
+          <motion.div
+            key={`wave-${i}`}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+            style={{
+              border: isMobile ? '1px solid rgba(201, 166, 107, 0.3)' : '2px solid rgba(201, 166, 107, 0.4)',
+              boxShadow: isMobile ? '0 0 50px rgba(201, 166, 107, 0.3)' : '0 0 80px rgba(201, 166, 107, 0.4)'
+            }}
+            initial={{ width: 0, height: 0, opacity: 0 }}
+            animate={{
+              width: ['0px', isMobile ? '1400px' : '2400px'],
+              height: ['0px', isMobile ? '1400px' : '2400px'],
+              opacity: [0.8, 0],
+            }}
+            transition={{
+              duration: isMobile ? 6 : 8,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: i * (isMobile ? 1.5 : 1)
+            }}
+          />
+        ))}
+
+        {/* Floating frequency particles - Reduced on mobile */}
+        {[...Array(isMobile ? 8 : isTablet ? 15 : 25)].map((_, i) => (
+          <motion.div
+            key={`particle-${i}`}
+            className="absolute w-3 h-3 md:w-6 md:h-6"
+            style={{
+              left: `${5 + (i * 3.8)}%`,
+              top: `${10 + (i % 5) * 18}%`,
+              y: particleFloat
+            }}
+          >
+            <motion.div
+              className="w-full h-full rounded-full bg-gradient-to-br from-[#C9A66B] to-[#C9A66B]/30"
+              animate={{
+                y: [0, -120, 0],
+                x: [0, Math.sin(i) * 60, 0],
+                scale: [1, 3, 1],
+                opacity: [0.4, 1, 0.4],
+              }}
+              transition={{
+                duration: 5 + (i % 5) * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.15
+              }}
+              style={{
+                boxShadow: isMobile 
+                  ? '0 0 40px rgba(201, 166, 107, 0.6)' 
+                  : '0 0 60px rgba(201, 166, 107, 0.8), 0 0 100px rgba(201, 166, 107, 0.4)'
+              }}
+            />
+          </motion.div>
+        ))}
+
+        {/* 3D Grid floor - Simplified on mobile */}
+        <div
+          className={`absolute inset-0 ${isMobile ? 'opacity-10' : 'opacity-20'}`}
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(201, 166, 107, 0.8) ${isMobile ? '1px' : '2px'}, transparent ${isMobile ? '1px' : '2px'}),
+              linear-gradient(to bottom, rgba(201, 166, 107, 0.8) ${isMobile ? '1px' : '2px'}, transparent ${isMobile ? '1px' : '2px'})
+            `,
+            backgroundSize: isMobile ? '80px 80px' : '100px 100px',
+            transform: isMobile ? 'perspective(800px) rotateX(65deg) translateY(-30%)' : 'perspective(1200px) rotateX(70deg) translateY(-40%)',
+            transformOrigin: 'center bottom'
+          }}
+        />
+
+        {/* Vertical light beams - Desktop only */}
+        {!isMobile && [...Array(5)].map((_, i) => (
+          <motion.div
+            key={`beam-${i}`}
+            className="absolute top-0 w-1 h-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              background: `linear-gradient(to bottom, 
+                transparent, 
+                rgba(201, 166, 107, ${0.3 + i * 0.1}) 50%, 
+                transparent)`
+            }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scaleY: [1, 1.2, 1]
+            }}
+            transition={{
+              duration: 4 + i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.3
+            }}
+          />
+        ))}
+      </div>
+
+      <Section className="py-0 relative z-10">
+        {/* Revolutionary Hero */}
+        <motion.div 
+          className="min-h-screen flex flex-col justify-center items-center text-center py-16 md:py-20 px-4"
+          style={{ y: isMobile ? 0 : heroY }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <motion.p 
+              className="text-[10px] md:text-xs font-bold tracking-[0.4em] md:tracking-[0.6em] uppercase text-[#C9A66B] mb-6 md:mb-8"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              Core Technology
+            </motion.p>
+            
+            <motion.h1 
+              className="text-5xl sm:text-7xl md:text-[10rem] lg:text-[12rem] xl:text-[16rem] font-display italic tracking-tighter leading-none mb-8 md:mb-12"
+              style={{
+                background: 'linear-gradient(135deg, #C9A66B 0%, #ffffff 50%, #C9A66B 100%)',
+                backgroundSize: '200% 200%',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                textShadow: isMobile ? '0 0 50px rgba(201, 166, 107, 0.4)' : '0 0 100px rgba(201, 166, 107, 0.5)'
+              }}
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              2ch<br/>SPATIAL
+            </motion.h1>
+
+            <motion.p 
+              className="text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl font-serif text-white/90 max-w-5xl mx-auto leading-relaxed mb-12 md:mb-16 px-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              {language === 'ja' 
+                ? '2つのスピーカーで、誰も到達したことのない立体音響の極地へ。'
+                : 'Reaching unprecedented spatial audio heights with just two speakers.'}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 1 }}
+            >
+              <motion.div
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="text-[#C9A66B] text-xs md:text-sm tracking-widest"
+              >
+                ↓ SCROLL TO EXPERIENCE
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* First Experience Section */}
+        <motion.div 
+          className="mb-24 md:mb-32 lg:mb-48 px-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1 }}
+        >
           <div className="space-y-6">
-            <div className="space-y-4 max-w-3xl">
-              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter text-black">{t.heroTitle}</h2>
-              <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
+            <div className="space-y-4 max-w-4xl mx-auto text-center">
+              <motion.h2 
+                className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-white"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                {t.heroTitle}
+              </motion.h2>
+              <motion.p 
+                className="text-white/70 font-serif leading-loose text-base md:text-lg"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+              >
                 {t.hero}
-              </p>
+              </motion.p>
             </div>
 
-            <div className="relative w-full aspect-video bg-gray-50 border border-black/5 overflow-hidden">
+            <motion.div 
+              className="relative w-full aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              whileHover={{ 
+                borderColor: 'rgba(201, 166, 107, 0.7)',
+                boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+              }}
+            >
               <iframe
                 title="First, Experience Our Sound"
                 src="https://www.youtube.com/embed/friwNAv_FTU"
@@ -119,31 +441,80 @@ const Technology: React.FC = () => {
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
-        <div className="border-t border-black/5 pt-16 mb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-            <div className="lg:col-span-4">
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.philosophyTitle}</h2>
-            </div>
-            <div className="lg:col-span-8">
-              <p className="text-gray-700 font-serif leading-loose md:text-base text-sm whitespace-pre-line">
+        </motion.div>
+
+        {/* Philosophy Section */}
+        <motion.div 
+          className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20">
+            <motion.div 
+              className="lg:col-span-5"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white leading-tight">
+                {t.philosophyTitle}
+              </h2>
+            </motion.div>
+            <motion.div 
+              className="lg:col-span-7"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <p className="text-white/80 font-serif leading-loose text-base md:text-xl whitespace-pre-line">
                 {t.philosophyBody}
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Works Section */}
-        <div className="border-t border-black/5 pt-16 mb-24">
-          <div className="space-y-4 mb-10">
-            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.worksTitle}</h2>
+        <motion.div 
+          className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="space-y-6 mb-16 text-center">
+            <motion.h2 
+              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              {t.worksTitle}
+            </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <article className="space-y-5">
-              <div className="relative aspect-video bg-gray-50 border border-black/5 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+            <motion.article 
+              className="space-y-6"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.div 
+                className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+                whileHover={{ 
+                  borderColor: 'rgba(201, 166, 107, 0.7)',
+                  boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+                }}
+                transition={{ duration: 0.3 }}
+              >
                 <iframe
                   title="Classical Spatial Album (2026 Release)"
                   src="https://www.youtube.com/embed/02uUCenAJ-g"
@@ -153,15 +524,30 @@ const Technology: React.FC = () => {
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
                 />
-              </div>
-              <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight text-black">Classical Spatial Album (2026 Release)</h3>
-              <p className="text-gray-600 font-serif leading-loose md:text-base text-sm">
+              </motion.div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-[#C9A66B]">
+                Classical Spatial Album (2026 Release)
+              </h3>
+              <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
                 {t.works1Body}
               </p>
-            </article>
+            </motion.article>
 
-            <article className="space-y-5">
-              <div className="relative aspect-video bg-gray-50 border border-black/5 overflow-hidden">
+            <motion.article 
+              className="space-y-6"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <motion.div 
+                className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+                whileHover={{ 
+                  borderColor: 'rgba(201, 166, 107, 0.7)',
+                  boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+                }}
+                transition={{ duration: 0.3 }}
+              >
                 <iframe
                   title="Electric Opera 'VENUS' - 860 Tracks Mix"
                   src="https://www.youtube.com/embed/lmy-eChYDro"
@@ -171,64 +557,130 @@ const Technology: React.FC = () => {
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
                 />
-              </div>
-              <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight text-black">Electric Opera 'VENUS' - 860 Tracks Mix</h3>
-              <p className="text-gray-600 font-serif leading-loose md:text-base text-sm">
+              </motion.div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-[#C9A66B]">
+                Electric Opera 'VENUS' - 860 Tracks Mix
+              </h3>
+              <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
                 {t.works2Body}
               </p>
-            </article>
+            </motion.article>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Technical Comparison Link */}
-        <div className="border-t border-black/5 pt-16 mb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="lg:col-span-4">
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.compareTitle}</h2>
-            </div>
-            <div className="lg:col-span-8 space-y-6">
-              <p className="text-gray-700 font-serif leading-loose md:text-base text-sm">
+        {/* Technical Comparison */}
+        <motion.div 
+          className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
+            <motion.div 
+              className="lg:col-span-5"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-white leading-tight">
+                {t.compareTitle}
+              </h2>
+            </motion.div>
+            <motion.div 
+              className="lg:col-span-7 space-y-8"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <p className="text-white/80 font-serif leading-loose text-base md:text-xl">
                 {t.compareBody}
               </p>
-              <a
+              <motion.a
                 href={technicalComparisonUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block py-4 px-10 bg-black text-white text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[#C9A66B] transition-all"
+                className="inline-block py-5 px-12 bg-[#C9A66B] text-black text-xs font-bold tracking-[0.3em] uppercase transition-all"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: '0 0 80px rgba(201, 166, 107, 0.6)'
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 {t.compareLink}
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Beyond Headphones (Distant Echo) */}
+        {/* Beyond Headphones */}
         {distantEcho && (
-          <div className="border-t border-black/5 pt-16 mb-24">
-            {/* Header */}
-            <div className="space-y-4 mb-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.beyondTitle}</h2>
-              <p className="text-gray-600 font-serif leading-loose md:text-base text-sm max-w-4xl">
+          <motion.div 
+            className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <div className="space-y-6 mb-16">
+              <motion.h2 
+                className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white text-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                {t.beyondTitle}
+              </motion.h2>
+              <motion.p 
+                className="text-white/70 font-serif leading-loose text-base md:text-xl max-w-5xl mx-auto text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+              >
                 {t.beyondBody}
-              </p>
+              </motion.p>
             </div>
 
-            {/* Content Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              {/* Left: Distant Echo */}
-              <div className="space-y-4">
-                <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400">Case Study: Installation</p>
-                <WorkCard
-                  work={distantEcho}
-                  onClick={() => {
-                    navigate(`/works/${distantEcho.id}`);
-                  }}
-                />
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
+              <motion.div 
+                className="space-y-6"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <p className="text-xs font-bold tracking-[0.4em] uppercase text-[#C9A66B]/80">
+                  Case Study: Installation
+                </p>
+                <div className="transform transition-transform hover:scale-105">
+                  <WorkCard
+                    work={distantEcho}
+                    onClick={() => {
+                      navigate(`/works/${distantEcho.id}`);
+                    }}
+                  />
+                </div>
+              </motion.div>
 
-              {/* Right: Tokoji Temple Test */}
-              <div className="space-y-5">
-                <div className="relative w-full aspect-video bg-gray-50 border border-black/5 overflow-hidden">
+              <motion.div 
+                className="space-y-6"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+              >
+                <motion.div 
+                  className="relative w-full aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+                  whileHover={{ 
+                    borderColor: 'rgba(201, 166, 107, 0.7)',
+                    boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
                   <iframe
                     title="Tokoji Temple 2ch Speaker Test (2026)"
                     src="https://www.youtube.com/embed/D4dLEi8udTk"
@@ -238,59 +690,115 @@ const Technology: React.FC = () => {
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"
                   />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight text-black">Tokoji Temple 2ch Speaker Test (2026)</h3>
-                  <p className="text-gray-600 font-serif leading-loose md:text-base text-sm">
+                </motion.div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-[#C9A66B]">
+                    Tokoji Temple 2ch Speaker Test (2026)
+                  </h3>
+                  <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
                     {t.tokojiTestBody}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Client Works */}
         {!!clientWorks.length && (
-          <div className="border-t border-black/5 pt-16 mb-24">
-            <div className="space-y-4 mb-10">
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.clientTitle}</h2>
-              <p className="text-gray-600 font-serif leading-loose md:text-base text-sm max-w-4xl">
+          <motion.div 
+            className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <div className="space-y-6 mb-16 text-center">
+              <motion.h2 
+                className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                {t.clientTitle}
+              </motion.h2>
+              <motion.p 
+                className="text-white/70 font-serif leading-loose text-base md:text-xl max-w-5xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+              >
                 {t.clientBody}
-              </p>
+              </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {clientWorks.map((work) => (
-                <WorkCard
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+              {clientWorks.map((work, index) => (
+                <motion.div
                   key={work.id}
-                  work={work}
-                  onClick={() => {
-                    navigate(`/works/${work.id}`);
-                  }}
-                />
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.15, duration: 0.8 }}
+                  className="transform transition-transform hover:scale-105"
+                >
+                  <WorkCard
+                    work={work}
+                    onClick={() => {
+                      navigate(`/works/${work.id}`);
+                    }}
+                  />
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Collaboration CTA */}
-        <div className="border-t border-black/5 pt-16">
-          <div className="text-center max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-black">{t.collabTitle}</h2>
-            <p className="text-gray-600 font-serif leading-loose md:text-base text-sm">
+        <motion.div 
+          className="border-t border-[#C9A66B]/20 pt-20 md:pt-32"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="text-center max-w-5xl mx-auto space-y-10">
+            <motion.h2 
+              className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight text-white"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              {t.collabTitle}
+            </motion.h2>
+            <motion.p 
+              className="text-white/80 font-serif leading-loose text-base md:text-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
               {t.collabBody}
-            </p>
-            <div className="pt-2">
+            </motion.p>
+            <motion.div 
+              className="pt-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
               <Link
                 to="/contact"
-                className="inline-block py-4 px-10 bg-black text-white text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[#C9A66B] transition-all"
+                className="inline-block py-6 px-16 bg-[#C9A66B] text-black text-sm font-bold tracking-[0.4em] uppercase hover:shadow-[0_0_100px_rgba(201,166,107,0.8)] transition-all"
               >
                 {t.collabButton}
               </Link>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </Section>
     </div>
   );

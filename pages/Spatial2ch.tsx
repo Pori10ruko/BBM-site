@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { motion } from 'framer-motion';
 import Section from '../components/Section';
 import WorkCard from '../components/WorkCard';
 import WorkModal from '../components/WorkModal';
@@ -15,8 +16,101 @@ const Spatial2ch: React.FC = () => {
   const techWorks = works.filter(w => w.featuredInTech);
 
   return (
-    <div className="pb-16 md:pb-24">
-      <Section className="mb-16 md:mb-32 text-center md:text-left">
+    <div className="pb-16 md:pb-24 relative overflow-hidden">
+      {/* 3D Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Center large sphere */}
+        <motion.div
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] md:w-[1050px] md:h-[1050px]"
+          initial={{ scale: 0.88, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.4 }}
+        >
+          <motion.div
+            className="absolute inset-0 rounded-full border-[3px] border-[#C9A66B]/48"
+            animate={{
+              rotateY: [0, 360],
+              rotateX: [0, 25, 0],
+              scale: [1, 1.12, 1]
+            }}
+            transition={{
+              rotateY: { duration: 23, repeat: Infinity, ease: "linear" },
+              rotateX: { duration: 7.5, repeat: Infinity, ease: "easeInOut" },
+              scale: { duration: 4.8, repeat: Infinity, ease: "easeInOut" }
+            }}
+            style={{
+              boxShadow: 'inset 0 0 110px rgba(201, 166, 107, 0.32), 0 0 150px rgba(201, 166, 107, 0.22)',
+              transformStyle: 'preserve-3d'
+            }}
+          />
+          <motion.div
+            className="absolute inset-[20%] rounded-full border-[2px] border-[#C9A66B]/38"
+            animate={{ rotateZ: [360, 0] }}
+            transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+            style={{
+              boxShadow: 'inset 0 0 70px rgba(201, 166, 107, 0.24)'
+            }}
+          />
+          <motion.div
+            className="absolute inset-[38%] rounded-full bg-gradient-to-br from-white/55 via-[#C9A66B]/28 to-[#C9A66B]/18"
+            animate={{ scale: [1, 1.15, 1] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            style={{
+              boxShadow: 'inset -18px -18px 75px rgba(201, 166, 107, 0.38), inset 18px 18px 75px rgba(255, 255, 255, 0.38)'
+            }}
+          />
+        </motion.div>
+
+        {/* Animated grid */}
+        <motion.div
+          className="absolute inset-0"
+          animate={{
+            backgroundPosition: ['0px 0px', '0px 95px']
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(201, 166, 107, 0.12) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(201, 166, 107, 0.12) 1px, transparent 1px)
+            `,
+            backgroundSize: '95px 95px',
+            transform: 'perspective(900px) rotateX(64deg)',
+            transformOrigin: 'center center',
+            opacity: 0.8
+          }}
+        />
+
+        {/* Particles */}
+        {[...Array(11)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-5 h-5 rounded-full bg-gradient-to-br from-[#C9A66B]/58 to-[#C9A66B]/22"
+            style={{
+              left: `${8 + i * 8.5}%`,
+              top: `${18 + (i % 4) * 20}%`,
+              boxShadow: '0 0 45px rgba(201, 166, 107, 0.48)'
+            }}
+            animate={{
+              y: [0, -78, 0],
+              x: [0, (i % 2 === 0 ? 35 : -35), 0],
+              opacity: [0.38, 0.82, 0.38],
+              scale: [1, 2.4, 1]
+            }}
+            transition={{
+              duration: 4.8 + i * 0.35,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.24
+            }}
+          />
+        ))}
+      </div>
+
+      <Section className="mb-16 md:mb-32 text-center md:text-left relative z-10">
         <div className="flex items-center justify-center md:justify-start space-x-6 mb-12">
             <div className="w-12 h-[1px] bg-[#C9A66B]" />
             <p className="text-[#C9A66B] font-bold tracking-[0.5em] uppercase text-[10px]">Acoustic Specialization</p>
