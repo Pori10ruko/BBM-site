@@ -210,131 +210,68 @@ const Home: React.FC = () => {
             }}
           />
           
-          {/* Central 3D Sphere - More prominent */}
+          {/* Central 3D Sphere - Simplified for performance */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[1100px] md:h-[1100px] lg:w-[1400px] lg:h-[1400px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[900px] md:h-[900px] lg:w-[1100px] lg:h-[1100px]"
             initial={{ scale: 0.8, opacity: 0 }}
-            animate={{
-              scale: 1,
-              opacity: 1,
-              rotateY: [0, 360],
-              rotateX: [0, 25, 0],
-            }}
-            transition={{
-              scale: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
-              opacity: { duration: 1.5 },
-              rotateY: { duration: 20, repeat: Infinity, ease: "linear" },
-              rotateX: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-            }}
-            style={{ transformStyle: 'preserve-3d' }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Outer ring - More visible */}
-            <motion.div 
-              className="absolute inset-0 rounded-full border-[3px] border-[#C9A66B]/50" 
-              animate={{
-                scale: [1, 1.08, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
+            {/* Outer ring - Static with CSS animation */}
+            <div 
+              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/40 animate-spin-very-slow" 
               style={{
-                boxShadow: 'inset 0 0 120px rgba(201, 166, 107, 0.35), 0 0 150px rgba(201, 166, 107, 0.25), 0 0 200px rgba(201, 166, 107, 0.15)'
+                boxShadow: 'inset 0 0 80px rgba(201, 166, 107, 0.25), 0 0 100px rgba(201, 166, 107, 0.15)'
               }}
             />
             
-            {/* Middle rings with enhanced depth */}
-            <motion.div 
-              className="absolute inset-[10%] rounded-full border-[3px] border-[#C9A66B]/40"
-              animate={{ 
-                rotateZ: [0, 360],
-                scale: [1, 1.06, 1]
-              }}
-              transition={{ 
-                rotateZ: { duration: 15, repeat: Infinity, ease: "linear" },
-                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
+            {/* Middle ring */}
+            <div 
+              className="absolute inset-[15%] rounded-full border-2 border-[#C9A66B]/30 animate-spin-slow-reverse"
               style={{
-                boxShadow: 'inset 0 0 90px rgba(201, 166, 107, 0.25), 0 0 80px rgba(201, 166, 107, 0.2)'
-              }}
-            />
-            <motion.div 
-              className="absolute inset-[22%] rounded-full border-[2px] border-[#C9A66B]/35"
-              animate={{ 
-                rotateZ: [360, 0],
-                scale: [1, 1.08, 1]
-              }}
-              transition={{ 
-                rotateZ: { duration: 12, repeat: Infinity, ease: "linear" },
-                scale: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
-              }}
-              style={{
-                boxShadow: 'inset 0 0 70px rgba(201, 166, 107, 0.22)'
+                boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.2)'
               }}
             />
             
-            {/* Core sphere - Glowing center */}
-            <motion.div 
-              className="absolute inset-[35%] rounded-full bg-gradient-to-br from-white/60 via-[#C9A66B]/30 to-[#C9A66B]/20"
-              animate={{
-                scale: [1, 1.12, 1],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
+            {/* Core sphere - Static glow */}
+            <div 
+              className="absolute inset-[35%] rounded-full bg-gradient-to-br from-white/50 via-[#C9A66B]/25 to-[#C9A66B]/15 animate-pulse-slow"
               style={{
-                boxShadow: 'inset -20px -20px 80px rgba(201, 166, 107, 0.4), inset 20px 20px 80px rgba(255, 255, 255, 0.4), 0 40px 120px rgba(201, 166, 107, 0.3)'
+                boxShadow: 'inset -15px -15px 60px rgba(201, 166, 107, 0.3), inset 15px 15px 60px rgba(255, 255, 255, 0.3), 0 30px 80px rgba(201, 166, 107, 0.2)'
               }}
             />
           </motion.div>
 
-          {/* Enhanced floating particles */}
-          {[...Array(15)].map((_, i) => (
-            <motion.div
+          {/* Simplified floating particles - reduced for performance */}
+          {[...Array(4)].map((_, i) => (
+            <div
               key={i}
-              className="absolute w-5 h-5 rounded-full bg-gradient-to-br from-[#C9A66B]/60 to-[#C9A66B]/20"
+              className="absolute w-4 h-4 rounded-full bg-gradient-to-br from-[#C9A66B]/40 to-[#C9A66B]/10 animate-float-slow"
               style={{
-                left: `${10 + (i * 5.5)}%`,
-                top: `${15 + (i % 4) * 20}%`,
-                boxShadow: '0 0 40px rgba(201, 166, 107, 0.5), 0 0 60px rgba(201, 166, 107, 0.3)'
-              }}
-              animate={{
-                y: [0, -80, 0],
-                x: [0, (i % 2 === 0 ? 30 : -30), 0],
-                opacity: [0.4, 0.9, 0.4],
-                scale: [1, 2.2, 1]
-              }}
-              transition={{
-                duration: 3.5 + i * 0.3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.15
+                left: `${15 + (i * 20)}%`,
+                top: `${20 + (i % 2) * 35}%`,
+                animationDelay: `${i * 0.8}s`,
+                boxShadow: '0 0 30px rgba(201, 166, 107, 0.3)'
               }}
             />
           ))}
 
-          {/* Pulsing rings */}
-          {[...Array(4)].map((_, i) => (
+          {/* Pulsing rings - reduced to 2 */}
+          {[...Array(2)].map((_, i) => (
             <motion.div
               key={`ring-${i}`}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-[#C9A66B]/40"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#C9A66B]/25"
               initial={{ width: 0, height: 0, opacity: 0 }}
               animate={{
-                width: ['0px', '1800px'],
-                height: ['0px', '1800px'],
-                opacity: [0.7, 0],
+                width: ['0px', '1200px'],
+                height: ['0px', '1200px'],
+                opacity: [0.5, 0],
               }}
               transition={{
-                duration: 5,
+                duration: 6,
                 repeat: Infinity,
                 ease: "easeOut",
-                delay: i * 1.25
-              }}
-              style={{
-                boxShadow: '0 0 60px rgba(201, 166, 107, 0.4)'
+                delay: i * 3
               }}
             />
           ))}
@@ -449,38 +386,24 @@ const Home: React.FC = () => {
 
       {/* Philosophy Section */}
       <Section className="py-32 md:py-48 relative overflow-hidden">
-        {/* 3D Background */}
+        {/* 3D Background - Simplified */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <motion.div
-            className="absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 w-[650px] h-[650px] md:w-[900px] md:h-[900px]"
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          <div
+            className="absolute top-1/2 right-0 translate-x-1/3 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px]"
           >
-            <motion.div
-              className="absolute inset-0 rounded-full border-[3px] border-[#C9A66B]/35"
-              animate={{ rotateZ: [0, 360] }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            <div
+              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/25 animate-spin-very-slow"
               style={{
-                boxShadow: 'inset 0 0 90px rgba(201, 166, 107, 0.2), 0 0 120px rgba(201, 166, 107, 0.15)'
+                boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.15), 0 0 80px rgba(201, 166, 107, 0.1)'
               }}
             />
-            <motion.div
-              className="absolute inset-[20%] rounded-full border-[2px] border-[#C9A66B]/30"
-              animate={{ 
-                rotateZ: [360, 0],
-                scale: [1, 1.08, 1]
-              }}
-              transition={{ 
-                rotateZ: { duration: 13, repeat: Infinity, ease: "linear" },
-                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
+            <div
+              className="absolute inset-[20%] rounded-full border border-[#C9A66B]/20 animate-spin-slow-reverse"
               style={{
-                boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.18)'
+                boxShadow: 'inset 0 0 40px rgba(201, 166, 107, 0.12)'
               }}
             />
-          </motion.div>
+          </div>
         </div>
         <RevealSection>
           <div className="max-w-5xl mx-auto relative z-10">
@@ -504,48 +427,16 @@ const Home: React.FC = () => {
 
       {/* Technology Section */}
       <Section className="py-32 md:py-48 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        {/* Animated 3D Grid Background */}
+        {/* Static Grid Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <motion.div
-            className="absolute inset-0 opacity-[0.04]"
+          <div
+            className="absolute inset-0 opacity-[0.03]"
             style={{
-              backgroundImage: 'linear-gradient(rgba(201, 166, 107, 0.2) 2px, transparent 2px), linear-gradient(90deg, rgba(201, 166, 107, 0.2) 2px, transparent 2px)',
-              backgroundSize: '60px 60px',
+              backgroundImage: 'linear-gradient(rgba(201, 166, 107, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 166, 107, 0.2) 1px, transparent 1px)',
+              backgroundSize: '80px 80px',
               transform: 'perspective(800px) rotateX(60deg) translateY(-30%)'
             }}
-            animate={{
-              backgroundPosition: ['0px 0px', '60px 60px']
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "linear"
-            }}
           />
-          {/* Floating spheres */}
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-6 h-6 rounded-full bg-gradient-to-br from-[#C9A66B]/50 to-[#C9A66B]/20"
-              style={{
-                left: `${8 + i * 12}%`,
-                top: `${15 + (i % 2) * 40}%`,
-                boxShadow: '0 0 50px rgba(201, 166, 107, 0.4), 0 0 80px rgba(201, 166, 107, 0.2)'
-              }}
-              animate={{
-                y: [0, -80, 0],
-                x: [0, (i % 2 === 0 ? 40 : -40), 0],
-                scale: [1, 2.5, 1],
-                opacity: [0.4, 0.9, 0.4]
-              }}
-              transition={{
-                duration: 4.5 + i * 0.4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.25
-              }}
-            />
-          ))}
         </div>
         <RevealSection>
           <Link
@@ -666,39 +557,24 @@ const Home: React.FC = () => {
 
       {/* Four Pillars - Clickable Navigation */}
       <Section className="py-32 md:py-48 relative overflow-hidden">
-        {/* 3D Background Elements */}
+        {/* 3D Background Elements - Simplified */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <motion.div
-            className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
+          <div
+            className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[650px] md:h-[650px]"
           >
-            <motion.div
-              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/15"
-              animate={{
-                rotateY: [0, 360],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{
-                rotateY: { duration: 25, repeat: Infinity, ease: "linear" },
-                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
+            <div
+              className="absolute inset-0 rounded-full border border-[#C9A66B]/12 animate-spin-very-slow"
               style={{
-                boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.12), 0 0 100px rgba(201, 166, 107, 0.08)',
-                transformStyle: 'preserve-3d'
+                boxShadow: 'inset 0 0 50px rgba(201, 166, 107, 0.1), 0 0 80px rgba(201, 166, 107, 0.06)'
               }}
             />
-            <motion.div
-              className="absolute inset-[20%] rounded-full border border-[#C9A66B]/12"
-              animate={{ rotateZ: [360, 0] }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            <div
+              className="absolute inset-[20%] rounded-full border border-[#C9A66B]/10 animate-spin-slow-reverse"
               style={{
-                boxShadow: 'inset 0 0 40px rgba(201, 166, 107, 0.1)'
+                boxShadow: 'inset 0 0 30px rgba(201, 166, 107, 0.08)'
               }}
             />
-          </motion.div>
+          </div>
         </div>
         <RevealSection>
           <div className="mb-24">
@@ -761,27 +637,6 @@ const Home: React.FC = () => {
 
       {/* NEWS */}
       <Section className="py-32 md:py-48 bg-gray-50 relative overflow-hidden">
-        {/* Pulsing rings background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(2)].map((_, i) => (
-            <motion.div
-              key={`news-ring-${i}`}
-              className="absolute top-1/2 right-1/4 -translate-y-1/2 rounded-full border border-[#C9A66B]/20"
-              initial={{ width: 0, height: 0, opacity: 0 }}
-              animate={{
-                width: ['0px', '1000px'],
-                height: ['0px', '1000px'],
-                opacity: [0.4, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeOut",
-                delay: i * 2.5
-              }}
-            />
-          ))}
-        </div>
         <RevealSection>
           <div className="mb-20">
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
@@ -854,30 +709,18 @@ const Home: React.FC = () => {
 
       {/* Upcoming Event */}
       <Section className="py-32 md:py-48 relative overflow-hidden">
-        {/* 3D Sphere Background */}
+        {/* 3D Sphere Background - Simplified */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <motion.div
-            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px]"
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
+          <div
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] md:w-[550px] md:h-[550px]"
           >
-            <motion.div
-              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/15"
-              animate={{
-                rotateZ: [0, 360],
-                scale: [1, 1.06, 1]
-              }}
-              transition={{
-                rotateZ: { duration: 22, repeat: Infinity, ease: "linear" },
-                scale: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
-              }}
+            <div
+              className="absolute inset-0 rounded-full border border-[#C9A66B]/12 animate-spin-very-slow"
               style={{
-                boxShadow: 'inset 0 0 70px rgba(201, 166, 107, 0.12), 0 0 90px rgba(201, 166, 107, 0.08)'
+                boxShadow: 'inset 0 0 50px rgba(201, 166, 107, 0.1), 0 0 60px rgba(201, 166, 107, 0.06)'
               }}
             />
-          </motion.div>
+          </div>
         </div>
         <RevealSection>
           <div className="mb-20">
@@ -924,32 +767,6 @@ const Home: React.FC = () => {
 
       {/* Selected Works Gallery */}
       <Section className="py-32 md:py-48 bg-gray-50 relative overflow-hidden">
-        {/* Animated particles background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(10)].map((_, i) => (
-            <motion.div
-              key={`archive-particle-${i}`}
-              className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-[#C9A66B]/35 to-[#C9A66B]/10"
-              style={{
-                left: `${5 + i * 9}%`,
-                top: `${15 + (i % 3) * 25}%`,
-                boxShadow: '0 0 20px rgba(201, 166, 107, 0.25)'
-              }}
-              animate={{
-                y: [0, -70, 0],
-                x: [0, (i % 2 === 0 ? 25 : -25), 0],
-                opacity: [0.2, 0.7, 0.2],
-                scale: [1, 2, 1]
-              }}
-              transition={{
-                duration: 5 + i * 0.3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.25
-              }}
-            />
-          ))}
-        </div>
         <RevealSection>
           <div className="flex justify-between items-end mb-20">
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
@@ -991,39 +808,24 @@ const Home: React.FC = () => {
 
       {/* Leads / Community */}
       <Section className="py-32 md:py-48 relative overflow-hidden">
-        {/* Final 3D sphere */}
+        {/* Final 3D sphere - Simplified */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <motion.div
-            className="absolute bottom-1/4 right-0 translate-x-1/3 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
+          <div
+            className="absolute bottom-1/4 right-0 translate-x-1/3 w-[500px] h-[500px] md:w-[650px] md:h-[650px]"
           >
-            <motion.div
-              className="absolute inset-0 rounded-full border-2 border-[#C9A66B]/20"
-              animate={{
-                rotateY: [0, 360],
-                rotateX: [0, 15, 0]
-              }}
-              transition={{
-                rotateY: { duration: 28, repeat: Infinity, ease: "linear" },
-                rotateX: { duration: 7, repeat: Infinity, ease: "easeInOut" }
-              }}
+            <div
+              className="absolute inset-0 rounded-full border border-[#C9A66B]/15 animate-spin-very-slow"
               style={{
-                boxShadow: 'inset 0 0 80px rgba(201, 166, 107, 0.15), 0 0 100px rgba(201, 166, 107, 0.1)',
-                transformStyle: 'preserve-3d'
+                boxShadow: 'inset 0 0 60px rgba(201, 166, 107, 0.12), 0 0 80px rgba(201, 166, 107, 0.08)'
               }}
             />
-            <motion.div
-              className="absolute inset-[30%] rounded-full bg-gradient-to-br from-white/30 via-[#C9A66B]/15 to-black/5"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            <div
+              className="absolute inset-[30%] rounded-full bg-gradient-to-br from-white/20 via-[#C9A66B]/10 to-black/5 animate-pulse-slow"
               style={{
-                boxShadow: 'inset -10px -10px 50px rgba(201, 166, 107, 0.2), inset 10px 10px 50px rgba(255, 255, 255, 0.25)'
+                boxShadow: 'inset -8px -8px 40px rgba(201, 166, 107, 0.15), inset 8px 8px 40px rgba(255, 255, 255, 0.2)'
               }}
             />
-          </motion.div>
+          </div>
         </div>
         <RevealSection>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">

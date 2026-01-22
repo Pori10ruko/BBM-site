@@ -1,66 +1,94 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const BackgroundCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    // Disable animation when tab is not visible
+    const handleVisibilityChange = () => {
+      setIsVisible(!document.hidden);
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || !isVisible) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
     let animationFrameId: number;
     let time = 0;
+    let lastFrameTime = 0;
+    const targetFPS = 30; // Limit to 30fps for better performance
+    const frameInterval = 1000 / targetFPS;
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // Use devicePixelRatio for crisp rendering but limit for performance
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.scale(dpr, dpr);
     };
 
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize, { passive: true });
     resize();
 
+    // Reduce particle count for better performance
+    const particleCount = window.innerWidth < 768 ? 10 : 20;
     const particles: { x: number; y: number; size: number; speed: number; angle: number }[] = [];
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < particleCount; i++) {
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
         size: Math.random() * 1.5,
-        speed: 0.05 + Math.random() * 0.15,
+        speed: 0.03 + Math.random() * 0.1,
         angle: Math.random() * Math.PI * 2,
       });
     }
 
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const draw = (currentTime: number) => {
+      // Throttle to target FPS
+      if (currentTime - lastFrameTime < frameInterval) {
+        animationFrameId = requestAnimationFrame(draw);
+        return;
+      }
+      lastFrameTime = currentTime;
+
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      ctx.clearRect(0, 0, width, height);
       time += 0.002;
 
-      // Draw subtle light gold waves
+      // Draw subtle light gold waves (simplified)
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(201, 166, 107, 0.12)';
+      ctx.strokeStyle = 'rgba(201, 166, 107, 0.1)';
       ctx.lineWidth = 0.5;
-      for (let i = 0; i < 2; i++) {
-        const yOffset = (canvas.height / 2) + (i * 200 - 100);
-        ctx.moveTo(0, yOffset);
-        for (let x = 0; x < canvas.width; x += 30) {
-          const y = yOffset + Math.sin(x * 0.001 + time + i) * 120;
-          ctx.lineTo(x, y);
-        }
+      const yOffset = height / 2;
+      ctx.moveTo(0, yOffset);
+      for (let x = 0; x < width; x += 50) { // Increased step for performance
+        const y = yOffset + Math.sin(x * 0.001 + time) * 100;
+        ctx.lineTo(x, y);
       }
       ctx.stroke();
 
       // Draw subtle dust particles
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
       particles.forEach((p) => {
         p.x += Math.cos(p.angle) * p.speed;
         p.y += Math.sin(p.angle) * p.speed;
 
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
 
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -69,18 +97,19 @@ const BackgroundCanvas: React.FC = () => {
       animationFrameId = requestAnimationFrame(draw);
     };
 
-    draw();
+    animationFrameId = requestAnimationFrame(draw);
 
     return () => {
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-80"
+      className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-60"
+      style={{ willChange: 'auto' }} // Prevent unnecessary GPU layer
     />
   );
 };

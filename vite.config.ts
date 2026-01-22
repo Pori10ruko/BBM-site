@@ -18,6 +18,21 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        // Performance optimizations
+        target: 'esnext',
+        minify: 'esbuild',
+        cssMinify: true,
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'react-vendor': ['react', 'react-dom'],
+              'router': ['react-router-dom'],
+              'motion': ['framer-motion']
+            }
+          }
+        }
       }
     };
 });

@@ -92,235 +92,94 @@ const Technology: React.FC = () => {
   const seigetsuki = works.find(w => w.id === 'seigetsuki');
   const clientWorks = [yukiShare, seigetsuki, forumHallEvent].filter(Boolean);
 
-  // Parallax transforms - reduce on mobile for performance
-  const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -150]);
-  const sphereRotate = useTransform(scrollYProgress, [0, 1], [0, 720]);
-  const particleFloat = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  // Simplified parallax - only on desktop
+  const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -80]);
 
-  // Detect mobile/tablet for performance optimization
+  // Detect mobile for performance optimization
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const isTablet = typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024;
 
   return (
     <div className="pb-24 md:pb-40 relative overflow-hidden bg-black">
-      {/* Revolutionary 3D Audio Visualization */}
+      {/* Simplified 3D Audio Visualization */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Massive multi-layered sphere system - Optimized for mobile */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ y: isMobile ? 0 : heroY }}
-        >
-          {/* Outer ring - largest */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] md:w-[1400px] md:h-[1400px] lg:w-[1800px] lg:h-[1800px]"
-            animate={isMobile ? {
-              rotateY: [0, 360],
-            } : {
-              rotateX: [0, 360],
-              rotateY: [0, -360],
+        {/* Single simplified sphere system */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          {/* Outer ring */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] lg:w-[1200px] lg:h-[1200px] rounded-full border-2 border-[#C9A66B]/40 animate-spin-very-slow"
+            style={{
+              boxShadow: 'inset 0 0 100px rgba(201, 166, 107, 0.3), 0 0 150px rgba(201, 166, 107, 0.2)'
             }}
-            transition={isMobile ? {
-              rotateY: { duration: 50, repeat: Infinity, ease: "linear" }
-            } : {
-              rotateX: { duration: 40, repeat: Infinity, ease: "linear" },
-              rotateY: { duration: 35, repeat: Infinity, ease: "linear" }
-            }}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            <div
-              className="absolute inset-0 rounded-full"
-              style={{
-                border: isMobile ? '2px solid rgba(201, 166, 107, 0.5)' : '4px solid rgba(201, 166, 107, 0.6)',
-                boxShadow: isMobile 
-                  ? 'inset 0 0 80px rgba(201, 166, 107, 0.4), 0 0 100px rgba(201, 166, 107, 0.3)'
-                  : `inset 0 0 150px rgba(201, 166, 107, 0.5),
-                     0 0 200px rgba(201, 166, 107, 0.4),
-                     0 0 300px rgba(201, 166, 107, 0.2)`
-              }}
-            />
-          </motion.div>
+          />
 
           {/* Mid ring */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] lg:w-[1300px] lg:h-[1300px]"
-            animate={isMobile ? {
-              rotateZ: [0, 360],
-            } : {
-              rotateY: [360, 0],
-              rotateZ: [0, 360],
-              scale: [1, 1.15, 1]
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] md:w-[700px] md:h-[700px] lg:w-[850px] lg:h-[850px] rounded-full border-2 border-[#C9A66B]/50 animate-spin-slow-reverse"
+            style={{
+              boxShadow: 'inset 0 0 80px rgba(201, 166, 107, 0.35), 0 0 100px rgba(201, 166, 107, 0.25)'
             }}
-            transition={isMobile ? {
-              rotateZ: { duration: 35, repeat: Infinity, ease: "linear" }
-            } : {
-              rotateY: { duration: 30, repeat: Infinity, ease: "linear" },
-              rotateZ: { duration: 25, repeat: Infinity, ease: "linear" },
-              scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-            }}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            <div
-              className="absolute inset-0 rounded-full"
-              style={{
-                border: isMobile ? '2px solid rgba(201, 166, 107, 0.6)' : '3px solid rgba(201, 166, 107, 0.7)',
-                boxShadow: isMobile
-                  ? 'inset 0 0 70px rgba(201, 166, 107, 0.45), 0 0 90px rgba(201, 166, 107, 0.35)'
-                  : `inset 0 0 130px rgba(201, 166, 107, 0.55),
-                     0 0 180px rgba(201, 166, 107, 0.45)`
-              }}
-            />
-          </motion.div>
-
-          {/* Inner ring */}
-          {!isMobile && (
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
-              animate={{
-                rotateX: [360, 0],
-                rotateZ: [0, 360],
-                scale: [1, 1.2, 1]
-              }}
-              transition={{
-                rotateX: { duration: 20, repeat: Infinity, ease: "linear" },
-                rotateZ: { duration: 18, repeat: Infinity, ease: "linear" },
-                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
-              style={{ transformStyle: 'preserve-3d' }}
-            >
-              <div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  border: '3px solid rgba(201, 166, 107, 0.85)',
-                  boxShadow: `
-                    inset 0 0 100px rgba(201, 166, 107, 0.7),
-                    0 0 150px rgba(201, 166, 107, 0.55)
-                  `
-                }}
-              />
-            </motion.div>
-          )}
+          />
 
           {/* Core sphere */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px]"
-            animate={{
-              rotateY: [0, 360],
-              scale: [1, 1.25, 1]
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] md:w-[220px] md:h-[220px] lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-radial from-[#C9A66B]/60 via-[#C9A66B]/30 to-transparent animate-pulse-slow"
+            style={{
+              boxShadow: 'inset -20px -20px 80px rgba(0, 0, 0, 0.4), inset 20px 20px 80px rgba(255, 255, 255, 0.2), 0 0 150px rgba(201, 166, 107, 0.6)'
             }}
-            transition={{
-              rotateY: { duration: 12, repeat: Infinity, ease: "linear" },
-              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-            }}
-          >
-            <div
-              className="absolute inset-0 rounded-full bg-gradient-radial from-[#C9A66B]/80 via-[#C9A66B]/40 to-transparent"
-              style={{
-                boxShadow: `
-                  inset -30px -30px 120px rgba(0, 0, 0, 0.6),
-                  inset 30px 30px 120px rgba(255, 255, 255, 0.3),
-                  0 0 200px rgba(201, 166, 107, 0.8)
-                `
-              }}
-            />
-          </motion.div>
-        </motion.div>
+          />
+        </div>
 
-        {/* Audio wave rings emanating from center - Reduced on mobile */}
-        {[...Array(isMobile ? 4 : 8)].map((_, i) => (
+        {/* Audio wave rings emanating from center - Reduced to 3 */}
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={`wave-${i}`}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
             style={{
-              border: isMobile ? '1px solid rgba(201, 166, 107, 0.3)' : '2px solid rgba(201, 166, 107, 0.4)',
-              boxShadow: isMobile ? '0 0 50px rgba(201, 166, 107, 0.3)' : '0 0 80px rgba(201, 166, 107, 0.4)'
+              border: '1px solid rgba(201, 166, 107, 0.25)',
             }}
             initial={{ width: 0, height: 0, opacity: 0 }}
             animate={{
-              width: ['0px', isMobile ? '1400px' : '2400px'],
-              height: ['0px', isMobile ? '1400px' : '2400px'],
-              opacity: [0.8, 0],
+              width: ['0px', '1800px'],
+              height: ['0px', '1800px'],
+              opacity: [0.5, 0],
             }}
             transition={{
-              duration: isMobile ? 6 : 8,
+              duration: 8,
               repeat: Infinity,
               ease: "easeOut",
-              delay: i * (isMobile ? 1.5 : 1)
+              delay: i * 2.5
             }}
           />
         ))}
 
-        {/* Floating frequency particles - Reduced on mobile */}
-        {[...Array(isMobile ? 8 : isTablet ? 15 : 25)].map((_, i) => (
-          <motion.div
+        {/* Floating frequency particles - Reduced significantly */}
+        {[...Array(isMobile ? 3 : 6)].map((_, i) => (
+          <div
             key={`particle-${i}`}
-            className="absolute w-3 h-3 md:w-6 md:h-6"
+            className="absolute w-3 h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-br from-[#C9A66B]/50 to-[#C9A66B]/20 animate-float-slow"
             style={{
-              left: `${5 + (i * 3.8)}%`,
-              top: `${10 + (i % 5) * 18}%`,
-              y: particleFloat
+              left: `${10 + (i * 15)}%`,
+              top: `${15 + (i % 3) * 25}%`,
+              animationDelay: `${i * 0.5}s`,
+              boxShadow: '0 0 30px rgba(201, 166, 107, 0.4)'
             }}
-          >
-            <motion.div
-              className="w-full h-full rounded-full bg-gradient-to-br from-[#C9A66B] to-[#C9A66B]/30"
-              animate={{
-                y: [0, -120, 0],
-                x: [0, Math.sin(i) * 60, 0],
-                scale: [1, 3, 1],
-                opacity: [0.4, 1, 0.4],
-              }}
-              transition={{
-                duration: 5 + (i % 5) * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.15
-              }}
-              style={{
-                boxShadow: isMobile 
-                  ? '0 0 40px rgba(201, 166, 107, 0.6)' 
-                  : '0 0 60px rgba(201, 166, 107, 0.8), 0 0 100px rgba(201, 166, 107, 0.4)'
-              }}
-            />
-          </motion.div>
+          />
         ))}
 
-        {/* 3D Grid floor - Simplified on mobile */}
+        {/* 3D Grid floor - Static for performance */}
         <div
-          className={`absolute inset-0 ${isMobile ? 'opacity-10' : 'opacity-20'}`}
+          className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(201, 166, 107, 0.8) ${isMobile ? '1px' : '2px'}, transparent ${isMobile ? '1px' : '2px'}),
-              linear-gradient(to bottom, rgba(201, 166, 107, 0.8) ${isMobile ? '1px' : '2px'}, transparent ${isMobile ? '1px' : '2px'})
+              linear-gradient(to right, rgba(201, 166, 107, 0.6) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(201, 166, 107, 0.6) 1px, transparent 1px)
             `,
-            backgroundSize: isMobile ? '80px 80px' : '100px 100px',
-            transform: isMobile ? 'perspective(800px) rotateX(65deg) translateY(-30%)' : 'perspective(1200px) rotateX(70deg) translateY(-40%)',
+            backgroundSize: '100px 100px',
+            transform: 'perspective(1000px) rotateX(65deg) translateY(-35%)',
             transformOrigin: 'center bottom'
           }}
         />
 
-        {/* Vertical light beams - Desktop only */}
-        {!isMobile && [...Array(5)].map((_, i) => (
-          <motion.div
-            key={`beam-${i}`}
-            className="absolute top-0 w-1 h-full"
-            style={{
-              left: `${20 + i * 15}%`,
-              background: `linear-gradient(to bottom, 
-                transparent, 
-                rgba(201, 166, 107, ${0.3 + i * 0.1}) 50%, 
-                transparent)`
-            }}
-            animate={{
-              opacity: [0.3, 0.8, 0.3],
-              scaleY: [1, 1.2, 1]
-            }}
-            transition={{
-              duration: 4 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.3
-            }}
-          />
-        ))}
       </div>
 
       <Section className="py-0 relative z-10">
@@ -346,19 +205,10 @@ const Technology: React.FC = () => {
               className="text-5xl sm:text-7xl md:text-[10rem] lg:text-[12rem] xl:text-[16rem] font-display italic tracking-tighter leading-none mb-8 md:mb-12"
               style={{
                 background: 'linear-gradient(135deg, #C9A66B 0%, #ffffff 50%, #C9A66B 100%)',
-                backgroundSize: '200% 200%',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                textShadow: isMobile ? '0 0 50px rgba(201, 166, 107, 0.4)' : '0 0 100px rgba(201, 166, 107, 0.5)'
-              }}
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear"
+                textShadow: '0 0 60px rgba(201, 166, 107, 0.4)'
               }}
             >
               2ch<br/>SPATIAL
