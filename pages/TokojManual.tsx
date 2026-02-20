@@ -50,6 +50,26 @@ const Aside: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </p>
 );
 
+const Discuss: React.FC<{ title: string; items: string[] }> = ({ title, items }) => (
+  <div className="my-8 rounded-lg border-2 border-cyan-400/40 p-5 relative overflow-hidden" style={{ background: 'rgba(6,182,212,0.06)' }}>
+    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400/60 via-cyan-300/40 to-cyan-400/60" />
+    <div className="flex items-center gap-2 mb-3">
+      <span className="text-cyan-400 text-[16px]">💬</span>
+      <span className="text-cyan-300/90 text-[12px] font-medium tracking-[0.2em]">2/20 打ち合わせ</span>
+      <span className="text-cyan-400/70 text-[11px]">│</span>
+      <span className="text-cyan-200/80 text-[13px] font-medium">{title}</span>
+    </div>
+    <div className="space-y-1.5 pl-1">
+      {items.map((item, i) => (
+        <div key={i} className="flex items-start gap-2">
+          <span className="text-cyan-400/70 text-[11px] mt-0.5 shrink-0">▸</span>
+          <span className="text-cyan-100/80 text-[13px] leading-relaxed">{item}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const Photo: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className = '' }) => (
   <div className={`overflow-hidden rounded ${className}`}>
     <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
@@ -129,9 +149,15 @@ const TokojManual: React.FC = () => {
               <p>服装：黒（中村・宇津木は黒系和装、Mayumi＝留袖）</p>
             </div>
           </motion.div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 1 }}
+            className="mt-14 mx-auto max-w-md rounded-lg border-2 border-cyan-400/40 p-5" style={{ background: 'rgba(6,182,212,0.08)' }}>
+            <p className="text-cyan-300/90 text-[12px] font-medium tracking-[0.15em] mb-2">💬 2/20 最終打ち合わせ</p>
+            <p className="text-cyan-100/80 text-[13px] leading-relaxed">本番を"迷いなく回せる状態"にする<br />タイムライン・役割・テック・撮影・ATを最終確定し、各自のToDoを締切付きで持ち帰る</p>
+            <p className="text-cyan-400/50 text-[10px] mt-3">※ シアン色のバナー＝今日話し合うポイント</p>
+          </motion.div>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8, duration: 1 }}
-            className="mt-20 text-slate-500/50 text-[10px] tracking-wider">
-            最終更新日：2026-02-13（会議反映）
+            className="mt-8 text-slate-500/50 text-[10px] tracking-wider">
+            最終更新日：2026-02-20（最終打ち合わせ用）
           </motion.p>
         </div>
         <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2"
@@ -226,6 +252,14 @@ const TokojManual: React.FC = () => {
               <Num n={3} />
               <Title>役割分担</Title>
               <p className="text-slate-400 text-[11px] tracking-[0.2em]">当日迷わないための固定</p>
+            <Discuss title="役割分担の最終確定" items={[
+              '受付担当：誰がやるか？ 人数は？ 場所（室内or屋外）は？',
+              '来場者誘導：入口→靴→荷物→席or立ち位置の導線を誰が担当？',
+              '注意事項アナウンス担当は真弓？ それとも司会？',
+              'Manamiの登場タイミング最終決定（AT終盤案 → 今日決める）',
+              'ストール搬入・設置の担当者確定（futashiba/宇津木/協力者）',
+              'ストール返却・管理：誰が管理表をつくり、返却導線を仕切るか',
+            ]} />
             </motion.div>
             <motion.div {...stagger(0.15)} className="mt-6 md:mt-0 md:w-72 shrink-0">
               <Photo src="/tokoji/performance.jpg" alt="東光寺パフォーマンス" className="h-44 md:h-48 rounded" />
@@ -256,6 +290,12 @@ const TokojManual: React.FC = () => {
           </motion.div>
 
           <motion.div {...stagger(0.3)} className="mt-12">
+            <Discuss title="アフタートーク最終確定（14分）" items={[
+              'お題一言（各15〜30秒）を各自その場で確定する',
+              '質問2つずつ確定（住職／futashiba／中村／宇津木）',
+              '司会（真弓）の立ち位置・マイク有無を決める',
+              'アフタートーク撮影の可否を最終確認',
+            ]} />
             <h3 className="text-[11px] text-amber-500/80 tracking-[0.25em] mb-5">アフタートーク（本番後／15〜20分・短縮版）</h3>
             <div className="rounded p-5 mb-4" style={{ background: 'rgba(255,255,255,0.025)' }}>
               <div className="space-y-2.5 text-[14px]">
@@ -321,7 +361,15 @@ const TokojManual: React.FC = () => {
           <motion.div {...fadeUp}>
             <Num n={4} />
             <Title>会場レイアウト</Title>
-            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-10">音響体験優先の基本形 ─ 適正30名・椅子あり</p>
+            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-4">音響体験優先の基本形 ─ 適正30名・椅子あり</p>
+            <Discuss title="会場レイアウト最終確認" items={[
+              'スクリーン位置の最終確定（もう確定でOK？）',
+              'プロジェクター位置：投影距離・台形補正できる設置か確認',
+              'スピーカー配置：動線を塞がないか最終チェック',
+              '客席：椅子数・立ち見範囲・子どもの位置を確定',
+              '受付位置：室内／屋外、雨天対応をどうするか',
+              '撮影の定点位置と干渉しないことを同時に確認',
+            ]} />
           </motion.div>
 
           <div className="md:flex md:gap-8 mb-14">
@@ -416,7 +464,15 @@ const TokojManual: React.FC = () => {
           <motion.div {...fadeUp}>
             <Num n={5} />
             <Title>機材チェック</Title>
-            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-12">当日朝の点検表</p>
+            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-4">当日朝の点検表</p>
+            <Discuss title="テック最終仕様を確定" items={[
+              '【中村】本番はPC1台で再生・同期（Ableton／映像）でOKか最終確認',
+              '【中村】再生手順：スタートの合図／止まった時の復帰手順を文章化',
+              '【宇津木】読経マイクの方式：手持ち or スタンド？',
+              '【宇津木】マイク入力先：ミキサー→PC？ 増幅＆処理はAbleton？',
+              '【宇津木】マイク不調時の予備案は？',
+              'プロジェクター：超短焦点レンタル or 液晶ディスプレイ、今日決断',
+            ]} />
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -488,7 +544,14 @@ const TokojManual: React.FC = () => {
               <motion.div {...fadeUp}>
                 <Num n={6} />
                 <Title>当日タイムライン</Title>
-                <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-12">9:00集合〜撤収</p>
+                <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-4">9:00集合〜撤収</p>
+                <Discuss title="タイムライン全時刻を確定（曖昧にしない）" items={[
+                  '集合時間／搬入開始の時刻は9:00で確定？',
+                  '映像・音のテスト開始／終了時刻を明確に',
+                  '設営開始（装飾・スクリーン・音響・受付）の具体的スケジュール',
+                  '開場18:30／本番19:00で最終確定？',
+                  '撤収開始／完全撤収の時刻を決める',
+                ]} />
               </motion.div>
 
               {/* 集合時間 */}
@@ -569,7 +632,16 @@ const TokojManual: React.FC = () => {
             <motion.div {...fadeUp} className="md:flex-1">
               <Num n={7} />
               <Title>本番ランスルー</Title>
-              <p className="text-slate-400 text-[11px] tracking-[0.2em]">30分の全体像　＋　アフタートーク</p>
+              <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-0">30分の全体像　＋　アフタートーク</p>
+              <Discuss title="セクション構成の映像有無を今日確定" items={[
+                '01 入場（子どもiPhone）→ 映像なし でOK？',
+                '02 読経①：明滅映像（DistantEcho流用）→ これで確定？',
+                '03 結界1：映像あり（完成済）→ 確定',
+                '04 結界2：リズム映像（制作中）→ 間に合うか確認',
+                '05 結界3：映像どうする？（合成？／抽象？／なし？）← 今日決める',
+                '06 読経②：消えていく映像 or なし ← 今日決める',
+                '「映像なし」セクション＝"間"として成立させる方針を全員で共有',
+              ]} />
             </motion.div>
             <motion.div {...stagger(0.1)} className="mt-6 md:mt-0 md:w-80 shrink-0">
               <Photo src="/tokoji/installation-1.jpg" alt="インスタレーション風景" className="h-48 rounded" />
@@ -834,7 +906,15 @@ const TokojManual: React.FC = () => {
           <motion.div {...fadeUp}>
             <Num n={13} />
             <Title>観客ガイド</Title>
-            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-16">最小の言葉で統一 ／ 適正30名 ── アナウンス文はMayumi準備</p>
+            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-4">最小の言葉で統一 ／ 適正30名 ── アナウンス文はMayumi準備</p>
+            <Discuss title="来場者への案内文を今日確定して送信" items={[
+              '集合時間／開場時間の記載内容を確定',
+              '駐車場・入口導線（地図）の内容確認',
+              'トイレの制約を明記するか',
+              '注意事項（録音・撮影・マナーモード・足元暗い等）の文面',
+              '服装（寒さ対策）の案内を入れるか',
+              '誰が送信担当か？ 今日中に送るか？',
+            ]} />
           </motion.div>
 
           <motion.div {...stagger(0.15)} className="space-y-12">
@@ -869,7 +949,14 @@ const TokojManual: React.FC = () => {
           <motion.div {...fadeUp}>
             <Num n={14} />
             <Title>撮影・取材</Title>
-            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-10">メイン：ユースケ（動画）／ 補助：利根 ／ Jコム取材あり</p>
+            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-4">メイン：ユースケ（動画）／ 補助：利根 ／ Jコム取材あり</p>
+            <Discuss title="撮影班（岡野さん）に渡す確定情報" items={[
+              '定点カメラの第1候補／第2候補の位置を今日決める',
+              '撮影してほしい優先カット（5項目）を最終確認',
+              'アフタートーク撮影の可否を伝える',
+              '音の扱い：ガンマイク収録でOK？ 邪魔しない位置はどこ？',
+              '撮影エリアを確保する担当は誰？（人が被らない運用）',
+            ]} />
           </motion.div>
 
           <motion.div {...stagger(0.1)} className="flex gap-3 mb-12 overflow-x-auto -mx-6 px-6 pb-2">
@@ -969,7 +1056,13 @@ const TokojManual: React.FC = () => {
           <motion.div {...fadeUp}>
             <Num n={16} />
             <Title>ToDo一覧</Title>
-            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-12">2/13会議後 ─ 担当者別アクション</p>
+            <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-4">2/13会議後 ─ 担当者別アクション</p>
+            <Discuss title="持ち帰りToDo最終確定" items={[
+              '各自のToDoを「締切つき」で読み上げて確定する',
+              '次の連絡手段：当日グループLINEでOKか確認',
+              '当日トラブル時の"最終判断者"を決める（基本は中村、現場運用は宇津木 など）',
+              '未完了のToDoに新しい期限を設定',
+            ]} />
           </motion.div>
 
           <motion.div {...stagger(0.1)} className="space-y-8">
