@@ -367,7 +367,7 @@ const TokojGuide: React.FC = () => {
                 { q: '携帯電話', a: 'マナーモードに設定をお願いいたします' },
                 { q: '撮影', a: '開演前・アフタートーク中はOK ／ 上演中はご遠慮ください' },
                 { q: '服装', a: '本堂内は暖房がありますが、冬の寺院です。暖かい服装でお越しください' },
-                { q: '駐車場', a: '専用駐車場はございません。近隣のコインパーキング等をご利用ください' },
+                { q: '駐車場', a: '東光寺の駐車場をご利用いただけます（台数に限りがございます）' },
               ].map((item) => (
                 <div key={item.q} className="flex flex-col md:flex-row md:items-baseline py-4 border-b border-slate-700/15 gap-1 md:gap-6">
                   <span className="text-[12px] text-amber-500/60 tracking-wider w-24 shrink-0">{item.q}</span>
