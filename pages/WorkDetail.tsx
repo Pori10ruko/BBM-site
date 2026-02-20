@@ -101,7 +101,7 @@ const WorkDetail: React.FC = () => {
         ))}
 
         {/* Particles */}
-        {[...Array(7)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-4 h-4 rounded-full bg-gradient-to-br from-[#C9A66B]/55 to-[#C9A66B]/20"
@@ -152,17 +152,17 @@ const WorkDetail: React.FC = () => {
 
           <div className="lg:col-span-7 p-10 md:p-16 space-y-16">
             <section>
-              <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/10 uppercase mb-8 border-b border-black/5 pb-4 italic">{labels.narrative[lang]}</h2>
+              <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/20 uppercase mb-8 border-b border-black/5 pb-4 italic">{labels.narrative[lang]}</h2>
               <p className="text-base sm:text-xl md:text-2xl font-serif font-light leading-relaxed text-gray-800">{work.description[lang]}</p>
             </section>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <section>
-                <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/10 uppercase mb-6 border-b border-black/5 pb-4">{labels.role[lang]}</h2>
+                <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/20 uppercase mb-6 border-b border-black/5 pb-4">{labels.role[lang]}</h2>
                 <p className="text-lg font-serif font-light text-[#C9A66B] italic">{work.role[lang]}</p>
               </section>
               <section>
-                <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/10 uppercase mb-6 border-b border-black/5 pb-4">{labels.tech[lang]}</h2>
+                <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/20 uppercase mb-6 border-b border-black/5 pb-4">{labels.tech[lang]}</h2>
                 <div className="flex flex-wrap gap-2">
                   {work.techStack?.map(tech => (
                     <span key={tech} className="text-[9px] font-bold tracking-widest text-gray-400 uppercase border border-black/5 px-2 py-1">{tech}</span>
@@ -172,8 +172,8 @@ const WorkDetail: React.FC = () => {
             </div>
 
             <section>
-              <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/10 uppercase mb-8 border-b border-black/5 pb-4 italic">{labels.logic[lang]}</h2>
-              <p className="text-base text-gray-500 font-serif font-light leading-relaxed">{work.approach[lang]}</p>
+              <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/20 uppercase mb-8 border-b border-black/5 pb-4 italic">{labels.logic[lang]}</h2>
+              <p className="text-base text-gray-600 font-serif font-light leading-relaxed">{work.approach[lang]}</p>
               {!!links.length && (
                 <div className="mt-10 flex flex-wrap gap-3">
                   {links.map(link => (
@@ -182,7 +182,7 @@ const WorkDetail: React.FC = () => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-[#C9A66B] text-white font-bold rounded hover:bg-[#b18c4e] transition-colors"
+                      className="inline-block px-6 py-3 bg-black text-white text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-[#C9A66B] transition-colors duration-300"
                     >
                       {link.label}
                     </a>

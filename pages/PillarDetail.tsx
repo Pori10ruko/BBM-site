@@ -147,7 +147,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
         </motion.div>
 
         {/* Particles */}
-        {[...Array(10)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-5 h-5 rounded-full bg-gradient-to-br from-[#C9A66B]/60 to-[#C9A66B]/20"

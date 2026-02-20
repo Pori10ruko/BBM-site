@@ -60,7 +60,7 @@ const Services: React.FC = () => {
         </motion.div>
 
         {/* Particles */}
-        {[...Array(9)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-5 h-5 rounded-full bg-gradient-to-br from-[#C9A66B]/56 to-[#C9A66B]/20"
@@ -126,15 +126,15 @@ const Services: React.FC = () => {
                 </p>
             </div>
         </div>
-        <div className="space-y-32 md:mt-64">
+        <div className="space-y-16 md:space-y-32 md:mt-64">
              <div>
-                <h2 className="text-4xl font-serif font-light mb-6 text-black border-l-2 border-[#C9A66B] pl-6">03. Digital Art Engine</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light mb-4 md:mb-6 text-black border-l-2 border-[#C9A66B] pl-6">03. Digital Art Engine</h2>
                 <p className="text-gray-500 leading-loose font-serif font-light">
                     デジタルアートや光の演出に同期した2ch音響エンジンの提供。Noor RiyadhやSuperMiami等、世界規模の展示で培われた実績があります。
                 </p>
             </div>
              <div>
-                <h2 className="text-4xl font-serif font-light mb-6 text-black border-l-2 border-[#C9A66B] pl-6">04. Consultation</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light mb-4 md:mb-6 text-black border-l-2 border-[#C9A66B] pl-6">04. Consultation</h2>
                 <p className="text-gray-500 leading-loose font-serif font-light">
                     既存の2ch環境をいかにアップグレードするか。技術実装からクリエイティブディレクションまでをサポート。
                 </p>

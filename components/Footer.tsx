@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto pt-12 md:pt-20 flex flex-col md:flex-row justify-between items-center text-[9px] font-bold text-gray-300 tracking-[0.3em] uppercase">
-        <p>&copy; 2025 BBM / BEYOND BOUNDARY MUSIC. ALL RIGHTS RESERVED.</p>
+        <p>&copy; {new Date().getFullYear()} BBM / BEYOND BOUNDARY MUSIC. ALL RIGHTS RESERVED.</p>
         <p className="mt-4 md:mt-0">MADE IN TOKYO</p>
       </div>
     </footer>

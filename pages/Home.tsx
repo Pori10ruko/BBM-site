@@ -748,7 +748,7 @@ const Home: React.FC = () => {
 
               <div className="bg-white p-12 lg:p-20 flex flex-col justify-center">
                 <p className="text-[10px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-8">
-                  2/23(月・祝) 夕刻
+                  2/23(月・祝) 18:30開場 / 19:00開演
                 </p>
                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-8 group-hover:text-[#C9A66B] transition-colors">
                   {t.upcoming.title[lang]}

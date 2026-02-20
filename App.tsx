@@ -13,6 +13,8 @@ import Contact from './pages/Contact';
 import Art from './pages/Art';
 import Public from './pages/Public';
 import Education from './pages/Education';
+import TokojManual from './pages/TokojManual';
+import TokojGuide from './pages/TokojGuide';
 import { Language } from './types';
 
 interface LanguageContextType {
@@ -46,8 +48,64 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    const titles: Record<string, string> = {
+      '/': 'BBM | Beyond Boundary Music',
+      '/works': 'Works | BBM',
+      '/services': 'Services | BBM',
+      '/technology': 'Technology | BBM',
+      '/spatial-2ch': 'Technology | BBM',
+      '/contact': 'Contact | BBM',
+      '/art': 'Art | BBM',
+      '/public': 'Public | BBM',
+      '/education': 'Education | BBM',
+      '/tokoji': '東光寺「音と光の建築」運用マニュアル',
+      '/tokoji-guide': '東光寺「音と光の建築」ご来場の皆さまへ',
+    };
+    document.title = titles[pathname] || (pathname.startsWith('/works/') ? 'Work Detail | BBM' : 'BBM | Beyond Boundary Music');
   }, [pathname]);
   return null;
+};
+
+const AppContent: React.FC = () => {
+  const location = useLocation();
+  const isStandalone = location.pathname === '/tokoji' || location.pathname === '/tokoji-guide';
+
+  if (isStandalone) {
+    return (
+      <Routes>
+        <Route path="/tokoji" element={<TokojManual />} />
+        <Route path="/tokoji-guide" element={<TokojGuide />} />
+      </Routes>
+    );
+  }
+
+  return (
+    <div className="relative flex flex-col min-h-screen justify-start bg-white text-black selection:bg-[#C9A66B] selection:text-white">
+      <BackgroundCanvas />
+      <Header />
+      <main className="relative z-10 flex-1 pt-32">
+        <PageTransition>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/works" element={<Works />} />
+            <Route path="/works/:id" element={<WorkDetail />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/spatial-2ch" element={<Technology />} />
+            <Route path="/technology" element={<Technology />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Pillar pages */}
+            <Route path="/art" element={<Art />} />
+            <Route path="/public" element={<Public />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/pillar/art" element={<Art />} />
+            <Route path="/pillar/public" element={<Public />} />
+            <Route path="/pillar/education" element={<Education />} />
+          </Routes>
+        </PageTransition>
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 const App: React.FC = () => {
@@ -57,31 +115,7 @@ const App: React.FC = () => {
     <LanguageContext.Provider value={{ lang, setLang }}>
       <Router>
         <ScrollToTop />
-        <div className="relative flex flex-col min-h-screen justify-start bg-white text-black selection:bg-[#C9A66B] selection:text-white">
-          <BackgroundCanvas />
-          <Header />
-          <main className="relative z-10 flex-1 pt-32">
-            <PageTransition>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/works" element={<Works />} />
-                <Route path="/works/:id" element={<WorkDetail />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/spatial-2ch" element={<Technology />} />
-                <Route path="/technology" element={<Technology />} />
-                <Route path="/contact" element={<Contact />} />
-                {/* Pillar pages */}
-                <Route path="/art" element={<Art />} />
-                <Route path="/public" element={<Public />} />
-                <Route path="/education" element={<Education />} />
-                <Route path="/pillar/art" element={<Art />} />
-                <Route path="/pillar/public" element={<Public />} />
-                <Route path="/pillar/education" element={<Education />} />
-              </Routes>
-            </PageTransition>
-          </main>
-          <Footer />
-        </div>
+        <AppContent />
       </Router>
     </LanguageContext.Provider>
   );
