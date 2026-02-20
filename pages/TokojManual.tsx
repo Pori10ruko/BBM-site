@@ -397,10 +397,9 @@ const TokojManual: React.FC = () => {
             <div>
               <h3 className="text-[11px] text-amber-500/80 tracking-[0.25em] mb-4">駐車場</h3>
               <div className="space-y-1.5 text-[14px] text-slate-200/85">
-                <p>等覚寺の駐車場（5〜6台）をお借り</p>
-                <p className="text-[12px] text-slate-400/70">16時頃に車を東光寺P → 等覚寺Pへ移動</p>
-                <p className="text-[12px] text-slate-400/70">UTSUGI：地図＋手書きメモ＋説明文を作成 → 予約者へ事前送付</p>
-                <p className="text-[12px] text-slate-400/70">駐車場の場所・移動タイミングは北柴さん・次くんと調整</p>
+                <p>等覚寺の駐車場（5〜6台）＝<span className="text-red-400/90 font-medium">関係者専用</span>（来場者には案内しない）</p>
+                <p className="text-[12px] text-slate-400/70">来場者には近隣コインパーキングを案内</p>
+                <p className="text-[12px] text-slate-400/70">スタッフ車両：東光寺P → 等覚寺Pへ16時頃移動</p>
               </div>
             </div>
           </motion.div>
@@ -517,8 +516,7 @@ const TokojManual: React.FC = () => {
                     <p className="text-[11px] text-slate-400/70 mt-1">出演する子どもたちの入り時間（目安）</p>
                   </div>
                 </div>
-                <p className="text-[12px] text-slate-400/60 mt-3"><span className="text-amber-500/60 mr-1">※</span>駐車場：東光寺に隣接する<a href="https://kanko.tsuchiura.jp/togakuji" target="_blank" rel="noopener noreferrer" className="text-amber-400/80 underline underline-offset-2">等覚寺</a>の駐車場をお借りしています（5〜6台）</p>
-                <p className="text-[12px] text-slate-400/60 mt-1"><span className="text-amber-500/60 mr-1">※</span>等覚寺へお越しの方もいらっしゃいますので、開場時間の少し前までは東光寺の駐車場にお停めいただき、時間になりましたら等覚寺の駐車場へ移動をお願いいたします</p>
+                <p className="text-[12px] text-slate-400/60 mt-3"><span className="text-amber-500/60 mr-1">※</span>駐車場：等覚寺Pは<span className="text-red-400/80">関係者専用</span>。来場者には近隣コインパーキングを案内</p>
                 <p className="text-[12px] text-slate-400/60 mt-1"><span className="text-amber-500/60 mr-1">※</span>利根は午後から参加（LINEにて合流連絡）</p>
               </motion.div>
 
@@ -536,7 +534,7 @@ const TokojManual: React.FC = () => {
                   { n: 8, t: '13:00 — 装飾開始＋マナミ・ユースケ合流', d: '関ご夫妻 装飾開始。ストール持ち込み装飾ヘルプの方々入り。マナミ・ユースケ合流', a: true },
                   { n: 9, t: '14:00 — 最終確認', d: '全体通し確認・微調整', a: false },
                   { n: 10, t: '14:30–16:00 — 待機・休憩', d: '投影・音響の微調整', a: false },
-                  { n: 11, t: '16:00 — 駐車場移動', d: '車を東光寺P → 等覚寺Pへ移動', a: false },
+                  { n: 11, t: '16:00 — 駐車場移動', d: 'スタッフ車を東光寺P → 等覚寺Pへ移動（関係者専用）', a: false },
                   { n: 12, t: '16:30 — 全体リハーサル', d: '本番と同じ流れで通す。ライト・暗転テスト', a: true },
                   { n: 13, t: '18:30 — 開場・客入れ', d: '屋内側受付でご案内', a: true },
                   { n: 14, t: '19:00 — 開演（本番）', d: '上演30分', a: true },
@@ -675,29 +673,8 @@ const TokojManual: React.FC = () => {
             <p className="text-slate-400 text-[11px] tracking-[0.2em] mb-12">前回の東光寺リハテスト ─ 布投影・音響・竹ライトの確認</p>
           </motion.div>
 
-          {/* Videos */}
-          <motion.div {...stagger(0.15)} className="mb-12">
-            <h3 className="text-[11px] text-amber-500/80 tracking-[0.25em] mb-5">テスト映像</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <video controls preload="metadata" playsInline className="w-full rounded-lg" poster="/tokoji/rehearsal/IMG_4648.jpg">
-                  <source src="/tokoji/rehearsal/test-sound-light.mp4" type="video/mp4" />
-                </video>
-                <p className="text-[12px] text-slate-400/70 mt-2">音と光のテスト</p>
-              </div>
-              <div>
-                <video controls preload="metadata" playsInline className="w-full rounded-lg" poster="/tokoji/rehearsal/IMG_4647.jpg">
-                  <source src="/tokoji/rehearsal/test-projection.mp4" type="video/mp4" />
-                </video>
-                <p className="text-[12px] text-slate-400/70 mt-2">東光寺での映像投射テスト</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <Dash />
-
           {/* Photos */}
-          <motion.div {...stagger(0.3)} className="mt-10">
+          <motion.div {...stagger(0.15)}>
             <h3 className="text-[11px] text-amber-500/80 tracking-[0.25em] mb-5">会場セットアップ</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
@@ -1076,7 +1053,7 @@ const TokojManual: React.FC = () => {
                 { q: 'アフタートーク', a: '15〜20分（短縮版）' },
                 { q: 'DAW', a: 'Ableton Live' },
                 { q: '緊急連絡', a: '宇津木（電話）' },
-                { q: '駐車場', a: '等覚寺P（5〜6台）／16時頃に移動' },
+                { q: '駐車場', a: '等覚寺P＝関係者専用／来場者は近隣コインP案内' },
                 { q: '服装', a: '全員黒（中村・宇津木＝黒系和装、Mayumi＝留袖）' },
                 { q: '搬入', a: '本堂の階段から' },
                 { q: '暖房', a: '寺側で暖房あり' },

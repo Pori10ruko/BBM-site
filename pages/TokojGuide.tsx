@@ -136,8 +136,8 @@ const TokojGuide: React.FC = () => {
               <h3 style={{ fontFamily: "'Noto Serif JP', serif" }}
                 className="text-[20px] md:text-[22px] font-light text-white/90 mb-3 tracking-wide">始まり</h3>
               <p className="text-[14px] leading-[1.9] text-slate-300/70">
-                暗い本堂に、子どもたちが竹の音を鳴らしながら入ってきます。<br />
-                続いて、iPhoneから流れる自然の音と共に入室する人。<br />
+                暗い本堂に、竹の音が鳴り響きます。<br />
+                自然の音と共に、空間がゆっくりと目を覚ます。<br />
                 日常の空気が、すこしずつ変わり始めます。
               </p>
             </motion.div>
@@ -348,16 +348,26 @@ const TokojGuide: React.FC = () => {
             </h2>
           </motion.div>
 
+          <motion.div {...stagger(0.05)} className="mb-10">
+            <div className="rounded-lg p-5 border border-amber-500/25" style={{ background: 'rgba(212,168,83,0.06)' }}>
+              <p className="text-[14px] text-amber-200/90 leading-relaxed" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                おかげさまで、お座席は満席となりました。<br />
+                今後のご予約は<span className="text-white/90 font-medium">立ち見</span>でのご案内となります。ご了承ください。
+              </p>
+            </div>
+          </motion.div>
+
           <motion.div {...stagger(0.1)}>
             <div className="space-y-0 border-t border-slate-600/15">
               {[
                 { q: '日時', a: '2026年2月23日（月・祝）開場 18:30 ／ 開演 19:00' },
                 { q: '会場', a: '東光寺 本堂（茨城県土浦市）' },
                 { q: '上演時間', a: '約30分 ＋ アフタートーク（15〜20分）' },
+                { q: '座席', a: '座布団席です。足の不自由な方には椅子をご用意いたしますので、お気軽にお申し付けください' },
                 { q: '携帯電話', a: 'マナーモードに設定をお願いいたします' },
                 { q: '撮影', a: '開演前・アフタートーク中はOK ／ 上演中はご遠慮ください' },
                 { q: '服装', a: '本堂内は暖房がありますが、冬の寺院です。暖かい服装でお越しください' },
-                { q: '駐車場', a: '隣接する等覚寺の駐車場をお借りしています（詳細は別途ご案内）' },
+                { q: '駐車場', a: '専用駐車場はございません。近隣のコインパーキング等をご利用ください' },
               ].map((item) => (
                 <div key={item.q} className="flex flex-col md:flex-row md:items-baseline py-4 border-b border-slate-700/15 gap-1 md:gap-6">
                   <span className="text-[12px] text-amber-500/60 tracking-wider w-24 shrink-0">{item.q}</span>
@@ -373,9 +383,7 @@ const TokojGuide: React.FC = () => {
                 <span className="text-amber-400/70 mr-2">*</span>
                 上演中は照明を落とし、暗い空間での体験となります。<br />
                 <span className="text-amber-400/70 mr-2">*</span>
-                椅子をご用意しています。お座りになってご体験ください。<br />
-                <span className="text-amber-400/70 mr-2">*</span>
-                お子様連れの方も歓迎です。ただし上演中はお静かにお過ごしください。
+                基本的に座布団にお座りいただく形式です。足の不自由な方には椅子をご用意いたしますので、お気軽にお申し付けください。
               </p>
             </div>
           </motion.div>
