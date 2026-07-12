@@ -103,6 +103,8 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   ].filter(Boolean) as Work[];
 
   const educationInvitedLectures: Work[] = [
+    getWork('deep-fake-showa-lecture'),
+    getWork('yakou-elementary-special-class'),
     getWork('tama-art-univ'),
     getWork('showa-music-univ'),
     getWork('tainan-lecture'),

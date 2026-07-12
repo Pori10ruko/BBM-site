@@ -23,7 +23,8 @@ const Technology: React.FC = () => {
         '現在、立体音響技術（Spatial Audio）は広く普及しつつあります。しかし、『その技術を使わなければ成立しない音』に出会うことは、未だ稀です。\n私たちは単に技術を誇示するのではなく、『この表現には、この空間が必要だ』という必然性に向き合い続けています。',
       worksTitle: '技術が必然となる作品たち',
       works1Body: '私たちの独自技術をフルに用いた、初のピアノアルバム。非常に立体的な音響が映像と融合し、没入感あふれる世界を描き出します。（2026年リリース予定）',
-      works2Body: 'こちらはまた異なる『Ambisonics（アンビソニックス）』技術を採用した、初のデジタルポップス作品。860トラックもの音源を使用し、特にサビ部分での爆発的な空間の広がりは圧巻です。',
+      works2Title: '音の中を歩く ― Piano Distance 立体音響 VR',
+      works2Body: 'アルバム《Piano Distance》を、聴くだけでなく"中に入って体験する"立体音響作品へ。ピアノの一音一音が暗がりに息づく光となり、聴き手が向きを変えると音が頭のまわりを回ります。リアルタイムに生成される三次元空間へ立体音響を統合した、実験途中の試作です。（ヘッドホン推奨）',
       compareTitle: 'Technical Comparison / 技術比較',
       compareBody: '細かく技術を比べたい場合はこちらのサイトへ。',
       compareLink: '記事を見る',
@@ -46,7 +47,8 @@ const Technology: React.FC = () => {
       philosophyBody: 'Spatial audio is becoming common, but sounds that *require* it are still rare...',
       worksTitle: 'Works Where Technology Becomes Necessary',
       works1Body: 'Our first piano album fully leveraging our proprietary technology. Highly spatial sound merges with visuals to draw an immersive world. (Planned release in 2026)',
-      works2Body: 'A first digital pop work using a different approach: Ambisonics. With as many as 860 tracks, the explosive expansion of space—especially in the chorus—is striking.',
+      works2Title: 'Walking Inside the Sound — Piano Distance Spatial Audio VR',
+      works2Body: "An immersive reworking of Piano Distance — you don't just listen, you step inside. Each note becomes a breathing light in the dark, and as you turn, the sound turns around you. A work-in-progress experiment that integrates spatial audio into a real-time 3D world. (Headphones recommended.)",
       compareTitle: 'Technical Comparison',
       compareBody: 'For a detailed technical comparison, please visit this article.',
       compareLink: 'Read the article',
@@ -68,7 +70,8 @@ const Technology: React.FC = () => {
       philosophyBody: '雖然空間音訊技術正逐漸普及，但真正『非此不可』的聲音仍屬罕見...',
       worksTitle: '技術成為必然的作品',
       works1Body: '我們首張完整運用獨家技術的鋼琴專輯。高度立體的聲響與影像融合，描繪出沉浸感十足的世界。（預計 2026 年發行）',
-      works2Body: '採用另一種「Ambisonics（全景聲）」技術的首部數位流行作品。使用多達 860 軌音源，尤其副歌段落空間爆發性的擴張令人震撼。',
+      works2Title: '走進聲音之中 ― Piano Distance 立體音響 VR',
+      works2Body: '將專輯《Piano Distance》從「聆聽」延伸為「走進其中體驗」的立體音響作品。鋼琴的每一個音都化為在黑暗中呼吸的光，當聆聽者轉動視角，聲音便環繞於頭部四周。這是一個將立體音響整合進即時生成三維空間的實驗中試作。（建議使用耳機）',
       compareTitle: '技術比較',
       compareBody: '若想更細緻地比較技術，請參考這篇文章。',
       compareLink: '閱讀文章',
@@ -100,6 +103,23 @@ const Technology: React.FC = () => {
 
   return (
     <div className="pb-24 md:pb-40 relative overflow-hidden bg-black">
+      {/* Hero backdrop — faint Piano Distance Spatial Audio VR still */}
+      <div className="absolute top-0 left-0 right-0 h-screen pointer-events-none overflow-hidden">
+        <img
+          src="/images/pd-vr-3.jpg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover opacity-25"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.7) 55%, #000 100%)'
+          }}
+        />
+      </div>
+
       {/* Simplified 3D Audio Visualization */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Single simplified sphere system */}
@@ -399,8 +419,8 @@ const Technology: React.FC = () => {
                 transition={{ duration: 0.3 }}
               >
                 <iframe
-                  title="Electric Opera 'VENUS' - 860 Tracks Mix"
-                  src="https://www.youtube.com/embed/lmy-eChYDro"
+                  title="Walking Inside the Sound — Piano Distance Spatial Audio VR"
+                  src="https://www.youtube.com/embed/uIFWglR3gBY"
                   className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -408,8 +428,25 @@ const Technology: React.FC = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                 />
               </motion.div>
+              <div className="grid grid-cols-3 gap-3">
+                {['/images/pd-vr-1.jpg', '/images/pd-vr-2.jpg', '/images/pd-vr-3.jpg'].map((src, i) => (
+                  <motion.div
+                    key={src}
+                    className="relative aspect-video bg-black/50 border border-[#C9A66B]/30 overflow-hidden"
+                    whileHover={{ borderColor: 'rgba(201, 166, 107, 0.7)' }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={src}
+                      alt={`Piano Distance Spatial Audio VR still ${i + 1}`}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+              </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-[#C9A66B]">
-                Electric Opera 'VENUS' - 860 Tracks Mix
+                {t.works2Title}
               </h3>
               <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
                 {t.works2Body}
