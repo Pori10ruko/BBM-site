@@ -2,6 +2,34 @@ import { Work } from '../types';
 
 export const works: Work[] = [
   {
+    id: 'tainan-yugaku-2026',
+    title: 'National University of Tainan — Study Program & Career Talk 2026',
+    titleLocalized: {
+      JP: '国立台南大学 遊学プログラム & キャリア講座 2026',
+      EN: 'National University of Tainan — Study Program & Career Talk 2026',
+      TW: '國立臺南大學 遊學計畫與職涯講座 2026'
+    },
+    date: '2026.07.13–23 / talk 2026.07.19 at art space bar buena (Tokyo)',
+    client: 'National University of Tainan / ESP Gakuen',
+    category: 'Lecture',
+    pillar: 'Education',
+    description: {
+      JP: '国立台南大学(台湾)との遊学プログラム(ESP学園)。7月19日には新大久保 art space bar buena にて、来日した学生に向けたBBMキャリア講座を開催——繁体中文を主言語に、音楽・技術・国境を越えて生きることを語った。全20枚のスライドをWeb公開中。',
+      EN: 'A study program with National University of Tainan (with ESP Gakuen). On 19 July, BBM hosted a career talk for the visiting students at art space bar buena, Shin-Okubo, Tokyo — delivered primarily in Traditional Chinese — on building a life across music, technology and borders. All 20 slides are published online.',
+      TW: '與國立臺南大學合作的遊學計畫(ESP學園)。7月19日於東京新大久保 art space bar buena，BBM 為來日學生舉辦職涯講座——以繁體中文為主要語言，談論跨越音樂、技術與國界的生存之道。全部 20 張投影片已於網路公開。'
+    },
+    imageUrl: '/images/tainan lecture.jpg',
+    tags: ['2026', 'Taiwan', 'Lecture', 'Education', 'BBM'],
+    role: { JP: 'プログラム受入・講座登壇', EN: 'Host / Speaker', TW: '接待・講座主講' },
+    approach: {
+      JP: '学生の母語(繁体中文)を主言語に据え、キャリアの実例をスライド20枚に凝縮。講座資料をそのままWeb公開し、参加していない学生にも開く。',
+      EN: 'The talk was delivered in the students\' own language, condensing real career paths into 20 slides — then published openly on the web for those who could not attend.',
+      TW: '以學生的母語(繁體中文)為主要語言，將真實的職涯路徑濃縮為 20 張投影片——並全數公開於網路，讓未能到場的學生也能閱讀。'
+    },
+    link: 'https://bbm-buena-2026-talk.netlify.app'
+  },
+
+  {
     id: 'tsap-exhibition-2026',
     title: 'つちうらサウンド・アーカイブ・プロジェクト 展示',
     titleLocalized: {
@@ -13,6 +41,7 @@ export const works: Work[] = [
     client: 'Public Project',
     category: 'Installation',
     pillar: 'Public',
+    featuredInTech: true,
     description: {
       JP: '2026年8月22–23日、りんりんポート土浦にて開催。市民とともに集めてきた「土浦の音」を、聴く・遊ぶ・つくる・演奏するという4つの入口から体験する2日間。VR作品3点、サウンドトイ、オリジナルゲーム、ワークショップ、そして最終日のライブまでを一つの空間に束ねました。',
       EN: 'Held on 22–23 August 2026 at Ringring Port Tsuchiura. Two days of experiencing the "sounds of Tsuchiura" — gathered together with local citizens — through four doorways: listening, playing, making, and performing. Three VR works, a sound toy, an original game, workshops, and a closing live performance were bound together in a single space.',

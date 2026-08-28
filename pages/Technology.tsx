@@ -15,74 +15,119 @@ const Technology: React.FC = () => {
 
   const content = {
     ja: {
+      eyebrow: 'Spatial Sound, in Many Forms',
+      heroDisplay: 'Sound becomes Space.',
+      heroDisplaySub: '音は、空間になる。',
+      heroLead: 'ヘッドフォンの中に、部屋の中に、ゲームの中に。私たちは、聴くための空間そのものをつくっています。',
+      subheading: 'Binaural / Ambisonics / VR / Game — かたちはひとつではありません',
       heroTitle: 'まず、体感してください。',
       hero: 'まず、私たちの音を体感してください。ぜひ、ヘッドフォンで聴いてください...',
-      subheading: '2ch Spatial Audio / 空間を拡張する独自技術',
-      philosophyTitle: 'The Necessity of Spatial Audio / 音響の必然性',
+      philosophyTitle: '音と空間の必然性',
       philosophyBody:
-        '現在、立体音響技術（Spatial Audio）は広く普及しつつあります。しかし、『その技術を使わなければ成立しない音』に出会うことは、未だ稀です。\n私たちは単に技術を誇示するのではなく、『この表現には、この空間が必要だ』という必然性に向き合い続けています。',
+        '立体音響の技術は、いま広く行き渡りつつあります。しかし「その技術がなければ成立しない音」に出会うことは、いまも稀です。\n私たちは技術を誇示するためではなく、「この表現には、この空間が必要だ」という必然から出発します。\nだから、方法をひとつに決めていません。ヘッドフォンの中で完結するバイノーラル。頭の動きに音が追いつくアンビソニクス。歩いて巡るVR、ブラウザで遊べるゲーム、そして二本のスピーカーだけで奥行きを立ち上げる設計。作品と場所が求めるかたちを、そのつど選び、組み合わせています。',
+      formsTitle: '音の空間、いくつかのかたち',
+      forms: [
+        { name: 'Binaural / 2ch', body: 'ヘッドフォンや、ふつうのステレオスピーカーで。前後・上下・距離までを描く、いちばん身近な入り口です。' },
+        { name: 'Ambisonics + Head Tracking', body: '自作のアンビソニクス・エンジン(最大3次)。あなたが振り向けば、音も振り向きます。' },
+        { name: 'VR / Realtime 3D', body: '音の中を、歩く。リアルタイムに生成される三次元空間に、立体音響を統合します。' },
+        { name: 'Game Engines', body: 'UnityやUnreal Engineで、体験を持ち帰れるかたちに。Webブラウザで、誰でも、いつでも。' },
+      ],
+      gameTitle: '遊べる音の空間 ― おとの帆曳船',
+      gameBody: '土浦の街でアーカイブされた音たちが、Unity製のゲームになりました。帆曳船を操りながら、音のあいだを進んでいく——展覧会「つちうらサウンド・アーカイブ展 2026」で生まれた空間音響の体験は、いまはブラウザひとつで、どこからでも開くことができます。',
+      gamePlayButton: 'ブラウザで遊ぶ',
+      gameWorkButton: '展覧会の記録を見る',
       worksTitle: '技術が必然となる作品たち',
       works1Body: '私たちの独自技術をフルに用いた、初のピアノアルバム。非常に立体的な音響が映像と融合し、没入感あふれる世界を描き出します。（2026年リリース予定）',
       works2Title: '音の中を歩く ― Piano Distance 立体音響 VR',
       works2Body: 'アルバム《Piano Distance》を、聴くだけでなく"中に入って体験する"立体音響作品へ。ピアノの一音一音が暗がりに息づく光となり、聴き手が向きを変えると音が頭のまわりを回ります。リアルタイムに生成される三次元空間へ立体音響を統合した、実験途中の試作です。（ヘッドホン推奨）',
-      compareTitle: 'Technical Comparison / 技術比較',
+      compareTitle: '技術のはなし、もう少し詳しく',
       compareBody: '細かく技術を比べたい場合はこちらのサイトへ。',
       compareLink: '記事を見る',
-      beyondTitle: 'Beyond Headphones / スピーカー環境での拡張',
+      beyondTitle: 'スピーカーのある場所で',
       beyondBody:
-        '私たちの技術はヘッドフォンだけに留まりません。一般的な2chスピーカー環境でも、音像の前後・左右だけでなく、空間の奥行きや距離感までを精密にデザインし、展示・舞台・小規模イベントなど「場」に合わせた没入体験を構築できます。BBMでは、そうした空間を体現するイベントも実施しています。',
-      clientTitle: 'Client Works',
-      clientBody: '本技術は2024年に完成し、すでに下記のアーティスト／企業の皆さまとコラボレーションを行っています。',
+        'ヘッドフォンの外にも、音の空間はつくれます。ふつうの2chスピーカーだけでも、前後・左右、奥行きや距離感までを丁寧に設計すれば、お寺や展示室、小さな会場が、音に包まれる場所になります。BBMでは、そうした「場」そのものを体現するイベントも行っています。',
+      clientTitle: 'ともにつくった仕事',
+      clientBody: 'これまでに、アーティストや企業のみなさまと、こんな音をつくってきました。',
       tokojiTestBody: '2026年に実施予定の東光寺での音響実験。お寺という特殊な空間においても、わずか2chのスピーカーで立体感のある音響空間を構築するテストの様子。',
       collabTitle: '次は、みなさまと。',
       collabBody:
-        '次はぜひ、みなさまとコラボレーションを行いたいと考えています。会場や目的に合わせて、音の拡がり・距離感・没入感を設計し、体験として成立するサウンドを一緒に形にします。',
+        'ヘッドフォンの中の一曲から、会場全体の音響設計、VRやゲームの中の空間まで。会場と目的に合わせて、いちばん合うかたちを一緒に探し、体験として成立する音を形にします。',
       collabButton: 'CONTACT / お問い合わせ',
     },
     en: {
+      eyebrow: 'Spatial Sound, in Many Forms',
+      heroDisplay: 'Sound becomes Space.',
+      heroDisplaySub: '',
+      heroLead: 'Inside headphones, inside a room, inside a game — we build the very spaces in which sound is heard.',
+      subheading: 'Binaural / Ambisonics / VR / Game — one practice, many forms',
       heroTitle: 'First, Experience Our Sound.',
       hero: 'First, Experience Our Sound. Please listen with headphones. Our technology is not just stereo...',
-      subheading: '2ch Spatial Audio / Proprietary Technology that Expands Space',
-      philosophyTitle: 'The Necessity of Spatial Audio',
-      philosophyBody: 'Spatial audio is becoming common, but sounds that *require* it are still rare...',
+      philosophyTitle: 'The Necessity of Sound and Space',
+      philosophyBody: 'Spatial audio is everywhere now. Yet sounds that truly require it are still rare.\nWe do not start from technology; we start from necessity — "this expression needs this space."\nThat is why we keep more than one way of working: binaural sound complete within headphones; ambisonics that turns when you turn; VR you can walk through; games you can play in a browser; and rooms where two ordinary speakers open up depth. For each work and each place, we choose — and combine.',
+      formsTitle: 'Forms of Sound-Space',
+      forms: [
+        { name: 'Binaural / 2ch', body: 'Through headphones or an ordinary stereo pair — front and back, above and below, near and far. The most familiar doorway.' },
+        { name: 'Ambisonics + Head Tracking', body: 'A self-built ambisonic engine (up to 3rd order). When you turn your head, the sound turns with you.' },
+        { name: 'VR / Realtime 3D', body: 'Walking inside the sound — spatial audio woven into three-dimensional worlds generated in real time.' },
+        { name: 'Game Engines', body: 'With Unity and Unreal Engine, the experience becomes something you can take home — in a web browser, for anyone, anytime.' },
+      ],
+      gameTitle: 'A Sound-Space You Can Play — Sailing Boat of Sounds',
+      gameBody: 'Sounds archived from the town of Tsuchiura became a Unity game. Steering a traditional sail-boat, you drift between the sounds — an experience born at the "Tsuchiura Sound Archive Exhibition 2026," now open to anyone, anywhere, in a single browser tab.',
+      gamePlayButton: 'Play in your browser',
+      gameWorkButton: 'See the exhibition record',
       worksTitle: 'Works Where Technology Becomes Necessary',
       works1Body: 'Our first piano album fully leveraging our proprietary technology. Highly spatial sound merges with visuals to draw an immersive world. (Planned release in 2026)',
       works2Title: 'Walking Inside the Sound — Piano Distance Spatial Audio VR',
       works2Body: "An immersive reworking of Piano Distance — you don't just listen, you step inside. Each note becomes a breathing light in the dark, and as you turn, the sound turns around you. A work-in-progress experiment that integrates spatial audio into a real-time 3D world. (Headphones recommended.)",
-      compareTitle: 'Technical Comparison',
+      compareTitle: 'More on the Technical Side',
       compareBody: 'For a detailed technical comparison, please visit this article.',
       compareLink: 'Read the article',
-      beyondTitle: 'Beyond Headphones',
-      beyondBody: 'Our technology goes beyond headphones. We can create an expanded acoustic space using standard 2ch speakers...',
-      clientTitle: 'Client Works',
-      clientBody: 'Completed in 2024, this technology has already been used in collaborations with the following artists and companies.',
+      beyondTitle: 'In Rooms with Speakers',
+      beyondBody: 'Sound-space can exist outside headphones, too. With just two ordinary speakers — carefully designing depth, distance and direction — a temple, a gallery, a small venue becomes a place wrapped in sound. BBM also stages events that embody such spaces.',
+      clientTitle: 'Works with Partners',
+      clientBody: 'Sounds we have made together with artists and companies.',
       tokojiTestBody: 'A 2026 temple acoustic experiment to build a spatial sound field using only two speakers—even in a unique space like a temple.',
       collabTitle: "Let's Collaborate Next.",
       collabBody:
-        "We’d love to collaborate with you next. We design perceived expansion, distance, and immersion for the venue and objective—and shape sound into a cohesive experience.",
+        "From a single piece inside headphones, to the acoustics of a whole venue, to spaces inside VR and games — we look for the form that fits your place and purpose, and shape sound into an experience together.",
       collabButton: 'CONTACT',
     },
     tw: {
+      eyebrow: 'Spatial Sound, in Many Forms',
+      heroDisplay: 'Sound becomes Space.',
+      heroDisplaySub: '聲音，成為空間。',
+      heroLead: '在耳機裡、在房間裡、在遊戲裡——我們打造的，是「聆聽」所在的空間本身。',
+      subheading: 'Binaural / Ambisonics / VR / Game — 形式不只一種',
       heroTitle: '首先，請體驗我們的聲音。',
       hero: '首先，請體驗我們的聲音。請務必使用耳機聆聽...',
-      subheading: '2ch 空間音響 / 擴展空間的獨家技術',
-      philosophyTitle: '立體音響的必然性',
-      philosophyBody: '雖然空間音訊技術正逐漸普及，但真正『非此不可』的聲音仍屬罕見...',
+      philosophyTitle: '聲音與空間的必然性',
+      philosophyBody: '空間音訊技術正逐漸普及。但真正「非此技術不可」的聲音，至今仍屬罕見。\n我們不從炫技出發，而是從「這個表現，需要這個空間」的必然出發。\n因此，我們不把方法限定為一種：在耳機中完結的雙耳聲；隨頭部轉動的 Ambisonics；可以走進去的 VR；能在瀏覽器中遊玩的遊戲；以及僅憑兩顆揚聲器就撐起縱深的設計。依作品與場地的需要，逐次選擇、組合。',
+      formsTitle: '聲音空間的幾種形式',
+      forms: [
+        { name: 'Binaural / 2ch', body: '透過耳機或一般的立體聲喇叭，描繪前後、上下與距離——最貼近日常的入口。' },
+        { name: 'Ambisonics + Head Tracking', body: '自製 Ambisonics 引擎(最高三階)。當你轉頭，聲音也隨之轉向。' },
+        { name: 'VR / Realtime 3D', body: '走進聲音之中——將立體音響整合進即時生成的三維空間。' },
+        { name: 'Game Engines', body: '以 Unity 與 Unreal Engine，把體驗做成可以帶回家的形式——在瀏覽器中，任何人、任何時候。' },
+      ],
+      gameTitle: '可以遊玩的聲音空間 ― 聲音帆曳船',
+      gameBody: '在土浦街頭封存的聲音，成了一款 Unity 遊戲。操縱帆曳船，在聲音之間前行——誕生於「土浦聲音檔案展 2026」的空間音響體驗，如今只需一個瀏覽器分頁，隨處可及。',
+      gamePlayButton: '在瀏覽器中遊玩',
+      gameWorkButton: '查看展覽記錄',
       worksTitle: '技術成為必然的作品',
       works1Body: '我們首張完整運用獨家技術的鋼琴專輯。高度立體的聲響與影像融合，描繪出沉浸感十足的世界。（預計 2026 年發行）',
       works2Title: '走進聲音之中 ― Piano Distance 立體音響 VR',
       works2Body: '將專輯《Piano Distance》從「聆聽」延伸為「走進其中體驗」的立體音響作品。鋼琴的每一個音都化為在黑暗中呼吸的光，當聆聽者轉動視角，聲音便環繞於頭部四周。這是一個將立體音響整合進即時生成三維空間的實驗中試作。（建議使用耳機）',
-      compareTitle: '技術比較',
+      compareTitle: '關於技術，再多說一點',
       compareBody: '若想更細緻地比較技術，請參考這篇文章。',
       compareLink: '閱讀文章',
-      beyondTitle: '超越耳機的體驗',
-      beyondBody: '我們的技術不僅是立體聲，即便是普通的2ch揚聲器也能創造擴展的空間...',
-      clientTitle: '客戶案例',
-      clientBody: '這項技術於 2024 年完成，並已與下列藝術家／企業展開合作。',
+      beyondTitle: '在有揚聲器的空間裡',
+      beyondBody: '耳機之外，也能建構聲音的空間。即使只有兩顆一般的揚聲器，只要細緻設計前後、左右、縱深與距離感，寺廟、展間、小型場地，都能成為被聲音包裹的所在。BBM 也舉辦體現這種「場」的活動。',
+      clientTitle: '一起完成的作品',
+      clientBody: '至今與藝術家、企業夥伴一起做出的這些聲音。',
       tokojiTestBody: '預計於 2026 年在東光寺進行的聲學實驗：即使在寺廟這樣特殊的空間，也能僅用 2ch 揚聲器建構具有立體感的音響空間。',
       collabTitle: '下一位，想與你合作。',
       collabBody:
-        '我們希望下一次能與你一起合作。依據場地與目標，設計聲音的延展感、距離感與沉浸感，把聲音作為「體驗」完整落地。',
+        '從耳機中的一首樂曲、到整個場地的音響設計、再到 VR 與遊戲中的空間——我們依場地與目的，一起尋找最合適的形式，把聲音落實為完整的體驗。',
       collabButton: 'CONTACT',
     },
   } as const;
@@ -94,6 +139,7 @@ const Technology: React.FC = () => {
   const yukiShare = works.find(w => w.id === 'yuki-share');
   const seigetsuki = works.find(w => w.id === 'seigetsuki');
   const clientWorks = [yukiShare, seigetsuki, forumHallEvent].filter(Boolean);
+  const tsuchiuraGame = works.find(w => w.id === 'tsap-exhibition-2026');
 
   // Simplified parallax - only on desktop
   const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -80]);
@@ -120,48 +166,21 @@ const Technology: React.FC = () => {
         />
       </div>
 
-      {/* Simplified 3D Audio Visualization */}
+      {/* Simplified Audio Visualization — wave rings only */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Single simplified sphere system */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          {/* Outer ring */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] lg:w-[1200px] lg:h-[1200px] rounded-full border-2 border-[#C9A66B]/40 animate-spin-very-slow"
-            style={{
-              boxShadow: 'inset 0 0 100px rgba(201, 166, 107, 0.3), 0 0 150px rgba(201, 166, 107, 0.2)'
-            }}
-          />
-
-          {/* Mid ring */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] md:w-[700px] md:h-[700px] lg:w-[850px] lg:h-[850px] rounded-full border-2 border-[#C9A66B]/50 animate-spin-slow-reverse"
-            style={{
-              boxShadow: 'inset 0 0 80px rgba(201, 166, 107, 0.35), 0 0 100px rgba(201, 166, 107, 0.25)'
-            }}
-          />
-
-          {/* Core sphere */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] md:w-[220px] md:h-[220px] lg:w-[300px] lg:h-[300px] rounded-full bg-gradient-radial from-[#C9A66B]/60 via-[#C9A66B]/30 to-transparent animate-pulse-slow"
-            style={{
-              boxShadow: 'inset -20px -20px 80px rgba(0, 0, 0, 0.4), inset 20px 20px 80px rgba(255, 255, 255, 0.2), 0 0 150px rgba(201, 166, 107, 0.6)'
-            }}
-          />
-        </div>
-
-        {/* Audio wave rings emanating from center - Reduced to 3 */}
+        {/* Audio wave rings emanating from center - Reduced to 3, lowered opacity */}
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`wave-${i}`}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
             style={{
-              border: '1px solid rgba(201, 166, 107, 0.25)',
+              border: '1px solid rgba(201, 166, 107, 0.13)',
             }}
             initial={{ width: 0, height: 0, opacity: 0 }}
             animate={{
               width: ['0px', '1800px'],
               height: ['0px', '1800px'],
-              opacity: [0.5, 0],
+              opacity: [0.25, 0],
             }}
             transition={{
               duration: 8,
@@ -171,35 +190,6 @@ const Technology: React.FC = () => {
             }}
           />
         ))}
-
-        {/* Floating frequency particles - Reduced significantly */}
-        {[...Array(isMobile ? 3 : 6)].map((_, i) => (
-          <div
-            key={`particle-${i}`}
-            className="absolute w-3 h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-br from-[#C9A66B]/50 to-[#C9A66B]/20 animate-float-slow"
-            style={{
-              left: `${10 + (i * 15)}%`,
-              top: `${15 + (i % 3) * 25}%`,
-              animationDelay: `${i * 0.5}s`,
-              boxShadow: '0 0 30px rgba(201, 166, 107, 0.4)'
-            }}
-          />
-        ))}
-
-        {/* 3D Grid floor - Static for performance */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(201, 166, 107, 0.6) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(201, 166, 107, 0.6) 1px, transparent 1px)
-            `,
-            backgroundSize: '100px 100px',
-            transform: 'perspective(1000px) rotateX(65deg) translateY(-35%)',
-            transformOrigin: 'center bottom'
-          }}
-        />
-
       </div>
 
       <Section className="py-0 relative z-10">
@@ -213,51 +203,43 @@ const Technology: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <motion.p 
+            <p
               className="text-[10px] md:text-xs font-bold tracking-[0.4em] md:tracking-[0.6em] uppercase text-[#C9A66B] mb-6 md:mb-8"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity }}
             >
-              Core Technology
-            </motion.p>
-            
-            <motion.h1 
-              className="text-5xl sm:text-7xl md:text-[10rem] lg:text-[12rem] xl:text-[16rem] font-display italic tracking-tighter leading-none mb-8 md:mb-12"
-              style={{
-                background: 'linear-gradient(135deg, #C9A66B 0%, #ffffff 50%, #C9A66B 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                textShadow: '0 0 60px rgba(201, 166, 107, 0.4)'
-              }}
+              {t.eyebrow}
+            </p>
+
+            <motion.h1
+              className="text-5xl sm:text-7xl md:text-8xl font-display italic tracking-tighter leading-none mb-4 md:mb-6 text-white"
             >
-              2ch<br/>SPATIAL
+              {t.heroDisplay}
             </motion.h1>
 
-            <motion.p 
-              className="text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl font-serif text-white/90 max-w-5xl mx-auto leading-relaxed mb-12 md:mb-16 px-4"
+            {t.heroDisplaySub && (
+              <p className="text-2xl md:text-3xl font-serif text-white/70 mb-8 md:mb-12">
+                {t.heroDisplaySub}
+              </p>
+            )}
+
+            <motion.p
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif text-white/90 max-w-4xl mx-auto leading-relaxed mb-6 px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
             >
-              {language === 'ja' 
-                ? '2つのスピーカーで、誰も到達したことのない立体音響の極地へ。'
-                : 'Reaching unprecedented spatial audio heights with just two speakers.'}
+              {t.heroLead}
             </motion.p>
 
-            <motion.div
+            <motion.p
+              className="text-sm md:text-base font-serif text-[#C9A66B]/80 tracking-wide mb-12 md:mb-16 px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 1 }}
+              transition={{ delay: 0.7, duration: 1 }}
             >
-              <motion.div
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="text-[#C9A66B] text-xs md:text-sm tracking-widest"
-              >
-                ↓ SCROLL TO EXPERIENCE
-              </motion.div>
-            </motion.div>
+              {t.subheading}
+            </motion.p>
+
+            <div className="text-[#C9A66B]/60 text-lg">↓</div>
           </motion.div>
         </motion.div>
 
@@ -346,6 +328,47 @@ const Technology: React.FC = () => {
                 {t.philosophyBody}
               </p>
             </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Forms Section */}
+        <motion.div
+          className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="space-y-6 mb-16 text-center">
+            <motion.h2
+              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              {t.formsTitle}
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {t.forms.map((f, i) => (
+              <motion.div
+                key={f.name}
+                className="border-t border-[#C9A66B]/20 pt-6 space-y-3"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+              >
+                <h3 className="text-lg md:text-xl font-display font-bold tracking-tight text-[#C9A66B]">
+                  {f.name}
+                </h3>
+                <p className="text-white/70 font-serif leading-relaxed text-sm md:text-base">
+                  {f.body}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
@@ -455,6 +478,63 @@ const Technology: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* Game Section */}
+        {tsuchiuraGame && (
+          <motion.div
+            className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-white">
+                  {t.gameTitle}
+                </h2>
+                <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
+                  {t.gameBody}
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <a
+                    href="https://tsap-hobikibune-game.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block py-4 px-10 border border-[#C9A66B] text-[#C9A66B] hover:bg-[#C9A66B] hover:text-black text-xs font-bold tracking-[0.3em] uppercase transition-all"
+                  >
+                    {t.gamePlayButton}
+                  </a>
+                  <button
+                    onClick={() => navigate('/works/tsap-exhibition-2026')}
+                    className="inline-block py-4 px-10 border border-white/30 text-white/80 hover:border-[#C9A66B] hover:text-[#C9A66B] text-xs font-bold tracking-[0.3em] uppercase transition-all"
+                  >
+                    {t.gameWorkButton}
+                  </button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="transform transition-transform hover:scale-105"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+              >
+                <WorkCard
+                  work={tsuchiuraGame}
+                  onClick={() => navigate('/works/tsap-exhibition-2026')}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+
         {/* Technical Comparison */}
         <motion.div 
           className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
@@ -489,11 +569,8 @@ const Technology: React.FC = () => {
                 href={technicalComparisonUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block py-5 px-12 bg-[#C9A66B] text-black text-xs font-bold tracking-[0.3em] uppercase transition-all"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: '0 0 80px rgba(201, 166, 107, 0.6)'
-                }}
+                className="inline-block py-5 px-12 border border-[#C9A66B] text-[#C9A66B] hover:bg-[#C9A66B] hover:text-black text-xs font-bold tracking-[0.3em] uppercase transition-all"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {t.compareLink}
