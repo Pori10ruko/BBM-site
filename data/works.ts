@@ -83,9 +83,9 @@ export const works: Work[] = [
     pillar: 'Art',
     featuredInTech: true,
     description: {
-      JP: 'BBM レーベル第 1 作（BBM-001）。中村が自ら設計した空間音響システムを、たった一台のピアノに向けた作品。ミックスではなく "作曲のために" 構築されたシステムが、音に位置と距離を与え、ヘッドフォンでも、わずか 2 つのスピーカーだけでも、音は背後から頭上から立ち現れる。武満徹〈Distance〉(1961) に着想。英 Fluid Audio よりサイン・ナンバリング入りハンドメイドCD限定盤、マスタリング: Ian Hawgood。デジタル版は 2026 年 6 月 26 日 Bandcamp にて name-your-price 配信。',
-      EN: 'The first release on BBM (BBM-001). Nakamura turns his self-built spatial-audio system — designed for composition, not mixing — on a single piano: each sound carries a position and a distance, arriving from behind and overhead, on headphones and on just two speakers. After Toru Takemitsu\'s "Distance" (1961). Handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood. Digital edition out June 26, 2026 on Bandcamp (name-your-price).',
-      TW: 'BBM 廠牌首發作品（BBM-001）。中村將自行打造的空間音響系統——為作曲而非混音而生——應用於一台鋼琴：每個聲音皆帶有位置與距離，從背後、從頭頂浮現；無論透過耳機或僅憑兩支喇叭都成立。靈感源自武滿徹〈Distance〉(1961)。英國 Fluid Audio 手工、簽名編號限量發行，由 Ian Hawgood 母帶處理。數位版於 2026 年 6 月 26 日 Bandcamp 上線（name-your-price）。'
+      JP: 'BBM レーベル第 1 作（BBM-001）。中村が自ら設計した空間音響システムを、たった一台のピアノに向けた作品。ミックスではなく "作曲のために" 構築されたシステムが、音に位置と距離を与え、ヘッドフォンでも、わずか 2 つのスピーカーだけでも、音は背後から頭上から立ち現れる。武満徹〈Distance〉(1961) に着想。英 Fluid Audio よりサイン・ナンバリング入りハンドメイドCD限定盤、マスタリング: Ian Hawgood。現在配信中——Spotify・Apple Music ほか各サービスで公開、ミュージック・ビデオも YouTube で公開中。Bandcamp では name-your-price（¥500〜）。',
+      EN: 'The first release on BBM (BBM-001). Nakamura turns his self-built spatial-audio system — designed for composition, not mixing — on a single piano: each sound carries a position and a distance, arriving from behind and overhead, on headphones and on just two speakers. After Toru Takemitsu\'s "Distance" (1961). Handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood. Out now: streaming on Spotify, Apple Music and more, with music videos on YouTube; digital edition on Bandcamp (name-your-price, from ¥500).',
+      TW: 'BBM 廠牌首發作品（BBM-001）。中村將自行打造的空間音響系統——為作曲而非混音而生——應用於一台鋼琴：每個聲音皆帶有位置與距離，從背後、從頭頂浮現；無論透過耳機或僅憑兩支喇叭都成立。靈感源自武滿徹〈Distance〉(1961)。英國 Fluid Audio 手工、簽名編號限量發行，由 Ian Hawgood 母帶處理。現正發行——已於 Spotify、Apple Music 等各串流平台上架，音樂錄影帶亦已於 YouTube 公開；Bandcamp 為 name-your-price（¥500 起）。'
     },
     imageUrl: '/images/piano-distance.jpg',
     tags: ['2026.06.26', 'BBM-001', 'Fluid Audio', '2ch Spatial', 'Solo Piano'],
@@ -96,8 +96,9 @@ export const works: Work[] = [
       TW: '不依靠商用雙耳處理外掛，而是長年自行打造的空間音響系統——將空間維度作為材料寫入作品本身。刻意僅以一台鋼琴呈現，讓聲音的位置、距離與動態以最純粹的形式被聽見。'
     },
     externalLinks: [
+      { label: 'Stream everywhere — Spotify, Apple Music & more', url: 'https://linkco.re/6Sy1mbNE' },
       { label: 'Project page', url: 'https://nakamurahiroyuki.info/piano-distance/' },
-      { label: 'Pre-order & listen — Bandcamp', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' },
+      { label: 'Bandcamp — name your price (from ¥500)', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' },
       { label: 'Limited CD — Fluid Audio (UK)', url: 'https://www.fluidaudio.co.uk/product/nakamura-hiroyuki-piano-distance' }
     ]
   },
