@@ -2,6 +2,131 @@ import { Work } from '../types';
 
 export const works: Work[] = [
   {
+    id: 'tsap-exhibition-2026',
+    title: 'つちうらサウンド・アーカイブ・プロジェクト 展示',
+    titleLocalized: {
+      JP: 'つちうらサウンド・アーカイブ・プロジェクト 展示 ― 土浦の音、その記憶',
+      EN: 'Tsuchiura Sound Archive Project Exhibition — The Sounds and Memory of Tsuchiura',
+      TW: '土浦聲音檔案計畫 展覽 ― 土浦之音與記憶'
+    },
+    date: '2026.08.22-23',
+    client: 'Public Project',
+    category: 'Installation',
+    pillar: 'Public',
+    description: {
+      JP: '2026年8月22–23日、りんりんポート土浦にて開催。市民とともに集めてきた「土浦の音」を、聴く・遊ぶ・つくる・演奏するという4つの入口から体験する2日間。VR作品3点、サウンドトイ、オリジナルゲーム、ワークショップ、そして最終日のライブまでを一つの空間に束ねました。',
+      EN: 'Held on 22–23 August 2026 at Ringring Port Tsuchiura. Two days of experiencing the "sounds of Tsuchiura" — gathered together with local citizens — through four doorways: listening, playing, making, and performing. Three VR works, a sound toy, an original game, workshops, and a closing live performance were bound together in a single space.',
+      TW: '2026年8月22–23日於 Ringring Port 土浦舉辦。將與市民共同收集的「土浦之音」，透過聆聽、遊玩、製作、演奏四個入口體驗的兩天。三件 VR 作品、聲音玩具、原創遊戲、工作坊，以及最終日的現場演出，全部匯聚於同一個空間。'
+    },
+    imageUrl: '/images/tsap-exhibition-2026.jpg',
+    tags: ['2026.08.22-23', 'Tsuchiura', 'Exhibition', 'VR', 'Game', 'Workshop', '2ch Spatial'],
+    role: {
+      JP: '企画・サウンドディレクション・立体音響制作・展示設計',
+      EN: 'Planning, Sound Direction, Spatial Audio Production, Exhibition Design',
+      TW: '企劃、聲音指導、立體音響製作、展覽設計'
+    },
+    approach: {
+      JP: '土浦の風景から採集した音を、2chスピーカーとヘッドフォンによる立体音響、Unity製のオリジナルゲーム、手を動かすワークショップという複数の入口に展開。「聴く」だけで終わらせず、子どもから年配の方までが自分の速度で音に関われる場をつくりました。',
+      EN: 'Sounds collected from the Tsuchiura landscape were unfolded into several doorways: spatial audio over two speakers and headphones, an original game built in Unity, and hands-on workshops. Rather than stopping at "listening," we built a place where anyone from children to elders could engage with sound at their own pace.',
+      TW: '將從土浦風景中採集的聲音，展開為多重入口：雙聲道喇叭與耳機的立體音響、以 Unity 製作的原創遊戲，以及動手實作的工作坊。不止步於「聆聽」，而是打造一個從孩童到長者都能以自己的步調親近聲音的場所。'
+    },
+    externalLinks: [
+      { label: '開催記録', url: 'https://tsuchiura-sound-exhibition-2026.netlify.app/' },
+      { label: 'TSAP', url: 'https://tsuchiura-sound-achib.netlify.app/' },
+      { label: 'Game', url: 'https://tsap-hobikibune-game.netlify.app/' }
+    ]
+  },
+
+  {
+    id: 'deep-fake',
+    title: 'DEEP FAKE: Ghost in the Machine',
+    titleLocalized: {
+      JP: 'DEEP FAKE: Ghost in the Machine',
+      EN: 'DEEP FAKE: Ghost in the Machine',
+      TW: 'DEEP FAKE: Ghost in the Machine'
+    },
+    date: '2026.10 — premieres at Birmingham Repertory Theatre',
+    client: 'K2CO Ltd (Rosie Kay) × Beyond Boundary Music',
+    category: 'Performance',
+    pillar: 'Art',
+    featuredInTech: true,
+    description: {
+      JP: 'ロンドンを拠点とする振付家 Rosie Kay（K2CO Ltd）との日英国際共同制作——コンテンポラリーダンス × リアルタイム技術。ダンサーが舞台に立ち、デプスカメラが骨格データをリアルタイムに読み取り、デジタルの分身（double）を生成。フェーズごとに分身はわずかに正確に、わずかに美しく動き、ライブピアノも同じ曲線で「補正」されていく——完璧になった瞬間、生命を失う。恐ろしいのはシステムではなく、「コピーの方がいい」と感じてしまう、あなた自身だ。Arts Council England および Great Britain Sasakawa Foundation 助成採択。',
+      EN: 'A Japan × UK international co-creation with UK choreographer Rosie Kay (K2CO Ltd) — contemporary dance meets real-time technology. A depth camera reads the dancer\'s skeletal data and generates a digital double; in parallel, the live piano is "corrected" along the same arc. As the system reaches perfection, it loses its life — and so might your preference. The terrifying part isn\'t the system; it\'s realizing you prefer the copy. Supported by Arts Council England and the Great Britain Sasakawa Foundation.',
+      TW: '與英國編舞家 Rosie Kay（K2CO Ltd）的日英國際共製作——當代舞蹈 × 即時技術。深度攝影機讀取舞者的骨架資料即時生成數位分身，現場鋼琴亦沿著同樣的曲線被「修正」。當系統達到完美的那一刻，便失去了生命——恐怖的不是系統，而是發現自己更喜歡複製品的「你」。獲 Arts Council England 與 Great Britain Sasakawa Foundation 助成。'
+    },
+    imageUrl: '/images/deep-fake.jpg',
+    tags: ['Upcoming', 'UK Co-production', 'Contemporary Dance', 'Real-time', '2ch Spatial', 'Birmingham Rep 2026.10'],
+    role: { JP: '音楽・空間音響・リアルタイムシステム / 共同創作', EN: 'Composition / Spatial Audio / Real-time Systems / Co-creator', TW: '音樂・空間音響・即時系統 / 共同創作' },
+    approach: {
+      JP: 'Scrim（透過幕）への前面投影＋背面照明クロスフェードで、生身のダンサーとデジタル double を「比較」させずに、ひとつの存在として段階遷移させる。Azure Kinect → TouchDesigner で骨格を 5 段階補正、同じ MIDI パラメータが Ableton 経由でライブピアノの timing/dynamics 補正・DMX 照明・GLSL 後処理を同時駆動。',
+      EN: 'Front-projection on a scrim with cross-faded back-lighting makes dancer and digital double a single presence rather than two compared objects. Azure Kinect → TouchDesigner runs the skeleton through a 5-stage correction pipeline; the same MIDI parameter drives the piano\'s timing/dynamics correction (Ableton), DMX lighting, and GLSL post-processing in lockstep.',
+      TW: '透過 Scrim（透紗幕）的正面投影與背面照明交叉混合，讓真人舞者與數位分身以「單一存在」逐步轉換，而非並列比較。Azure Kinect → TouchDesigner 將骨架資料經過五階段修正；同一組 MIDI 參數同步驅動 Ableton 的鋼琴 timing/dynamics 修正、DMX 燈光與 GLSL 後製。'
+    },
+    externalLinks: [
+      { label: 'Project page', url: 'https://nakamurahiroyuki.info/deep-fake/' },
+      { label: 'K2CO (Rosie Kay)', url: 'https://k-2co.com' },
+      { label: 'Rosie Kay showreel', url: 'https://vimeo.com/966461994' }
+    ]
+  },
+  {
+    id: 'piano-distance',
+    title: 'Piano Distance',
+    titleLocalized: {
+      JP: 'Piano Distance — Fluid Audio (UK) / BBM-001',
+      EN: 'Piano Distance — Fluid Audio (UK) / BBM-001',
+      TW: 'Piano Distance — Fluid Audio（英國）／ BBM-001'
+    },
+    date: '2026.06.26',
+    client: 'Fluid Audio (UK) / Beyond Boundary Music',
+    category: 'Release',
+    pillar: 'Art',
+    featuredInTech: true,
+    description: {
+      JP: 'BBM レーベル第 1 作（BBM-001）。中村が自ら設計した空間音響システムを、たった一台のピアノに向けた作品。ミックスではなく "作曲のために" 構築されたシステムが、音に位置と距離を与え、ヘッドフォンでも、わずか 2 つのスピーカーだけでも、音は背後から頭上から立ち現れる。武満徹〈Distance〉(1961) に着想。英 Fluid Audio よりサイン・ナンバリング入りハンドメイドCD限定盤、マスタリング: Ian Hawgood。デジタル版は 2026 年 6 月 26 日 Bandcamp にて name-your-price 配信。',
+      EN: 'The first release on BBM (BBM-001). Nakamura turns his self-built spatial-audio system — designed for composition, not mixing — on a single piano: each sound carries a position and a distance, arriving from behind and overhead, on headphones and on just two speakers. After Toru Takemitsu\'s "Distance" (1961). Handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood. Digital edition out June 26, 2026 on Bandcamp (name-your-price).',
+      TW: 'BBM 廠牌首發作品（BBM-001）。中村將自行打造的空間音響系統——為作曲而非混音而生——應用於一台鋼琴：每個聲音皆帶有位置與距離，從背後、從頭頂浮現；無論透過耳機或僅憑兩支喇叭都成立。靈感源自武滿徹〈Distance〉(1961)。英國 Fluid Audio 手工、簽名編號限量發行，由 Ian Hawgood 母帶處理。數位版於 2026 年 6 月 26 日 Bandcamp 上線（name-your-price）。'
+    },
+    imageUrl: '/images/piano-distance.jpg',
+    tags: ['2026.06.26', 'BBM-001', 'Fluid Audio', '2ch Spatial', 'Solo Piano'],
+    role: { JP: '作曲 / 演奏 / 空間音響システム', EN: 'Composition / Piano / Spatial-Audio System', TW: '作曲／鋼琴演奏／空間音響系統' },
+    approach: {
+      JP: '商用のバイノーラル・プラグインに依らず、長年自前で構築してきた空間音響システムを用いて、作曲そのものに空間次元を書き込む。ピアノ一台に絞り、音がどこにあり、どれほど近く、どう動くかという感覚を最も純粋な形で提示。',
+      EN: 'Not an off-the-shelf binaural plug-in, but a spatial-audio system built over years for composing — the spatial dimension is written into the piece as material. Constrained to one piano so the listener\'s sense of where, how close, and how each sound moves can be heard in its purest form.',
+      TW: '不依靠商用雙耳處理外掛，而是長年自行打造的空間音響系統——將空間維度作為材料寫入作品本身。刻意僅以一台鋼琴呈現，讓聲音的位置、距離與動態以最純粹的形式被聽見。'
+    },
+    externalLinks: [
+      { label: 'Project page', url: 'https://nakamurahiroyuki.info/piano-distance/' },
+      { label: 'Pre-order & listen — Bandcamp', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' },
+      { label: 'Limited CD — Fluid Audio (UK)', url: 'https://www.fluidaudio.co.uk/product/nakamura-hiroyuki-piano-distance' }
+    ]
+  },
+  {
+    id: 'lackout',
+    title: 'Lackout',
+    titleLocalized: {
+      JP: 'ラックアウト',
+      EN: 'Lackout',
+      TW: 'ラックアウト（Lackout）'
+    },
+    date: '2026.06.24',
+    client: 'King Records / 千葉翔也',
+    category: 'Client Works',
+    pillar: 'Art',
+    description: {
+      JP: '声優・千葉翔也さんのニューEP『Invention』（2026年6月24日リリース／KICS-4258）収録の「ラックアウト」で、作編曲を担当しました。同曲はTVアニメ『不運からの最強男』（2027年放送）のイメージソングです。ピンチを開き直って楽しむ——ラストへ向けて気持ちが高まっていく、高揚感のあるアニメ／ポップ・ナンバーに仕上げました。公式クレジット：作詞 千葉翔也／作曲 中村浩之／編曲 鵺録音。',
+      EN: 'Composed and arranged “Lackout,” a track on voice actor Shoya Chiba’s new EP *Invention* (released 24 June 2026 / KICS-4258). The song is the image song for the TV anime *The Strongest Man, Born from Misfortune* (on air 2027) — an uplifting anime-pop number that builds toward an exhilarating finish. Official credits: Lyrics, Shoya Chiba / Music, NAKAMURA Hiroyuki / Arrangement, Nué Rokuon.',
+      TW: '擔任聲優千葉翔也新EP《Invention》（2026年6月24日發行／KICS-4258）收錄曲「ラックアウト」的作曲與編曲。此曲為電視動畫《不運からの最強男》（2027年播出）的形象曲，是一首情緒層層高漲、充滿振奮感的動畫流行樂曲。官方製作群：作詞 千葉翔也／作曲 中村浩之／編曲 鵺録音。'
+    },
+    imageUrl: '/images/lackout.jpg',
+    tags: ['Client Works', 'Anime Tie-in', 'Composition', 'Arrangement', 'Shoya Chiba', '2026'],
+    role: { JP: '作編曲', EN: 'Composition & Arrangement', TW: '作曲・編曲' },
+    externalLinks: [
+      { label: 'アニメ公式', url: 'https://fuunsaikyo.asmik-ace.co.jp/' },
+      { label: '千葉書屋ニュース', url: 'https://chibashoya.com/news/2026/0623.html' }
+    ]
+  },
+  {
     id: 'tokoji-light-sound',
     title: 'Architecture of Sound and Light at Tokoji Temple',
     titleLocalized: {
@@ -357,6 +482,66 @@ export const works: Work[] = [
       EN: 'Integrating electroacoustics and visuals into a form suitable for research presentation.',
       TW: '整合電子音響與影像，設計可作為研究發表成立的表現形式。'
     }
+  },
+  {
+    id: 'deep-fake-showa-lecture',
+    title: 'DEEP FAKE Special Lecture — Showa University of Music',
+    titleLocalized: {
+      JP: 'DEEP FAKE 特別レクチャー — 昭和音楽大学 ユリホール',
+      EN: 'DEEP FAKE Special Lecture — Showa University of Music (Yuri Hall)',
+      TW: 'DEEP FAKE 特別講座 — 昭和音樂大學 百合廳'
+    },
+    date: '2026.05.22',
+    client: 'Showa University of Music',
+    category: 'Lecture',
+    pillar: 'Education',
+    link: 'https://nakamurahiroyuki.info/deep-fake/',
+    description: {
+      JP: '昭和音楽大学ユリホールにて、日英国際共同制作の舞台作品「DEEP FAKE — Ghost in the Machine」（振付家 Rosie Kay との共同制作）を題材にした特別レクチャー。Claude Code＋API、MCP、Ableton／Somax2／RAVE とライブピアノ、TouchDesigner といったリアルタイム技術が、ダンサー駆動のシステムをいかに動かすのかを、実演を交えて学生やアーティストと共有しました。',
+      EN: 'A special lecture at Showa University of Music\'s Yuri Hall built around the Japan × UK stage work "DEEP FAKE — Ghost in the Machine" (co-created with choreographer Rosie Kay). With live demonstrations, it traced how real-time technology — Claude Code & API, MCP, Ableton / Somax2 / RAVE with live piano, and TouchDesigner — drives a dancer-controlled system, sharing the practice with students and artists.',
+      TW: '於昭和音樂大學百合廳舉行的特別講座，以日英國際共製舞台作品《DEEP FAKE — Ghost in the Machine》（與編舞家 Rosie Kay 共同創作）為題材。透過實演說明 Claude Code＋API、MCP、Ableton／Somax2／RAVE 與現場鋼琴、TouchDesigner 等即時技術如何驅動由舞者操控的系統，與學生及藝術家分享創作現場。'
+    },
+    imageUrl: '/images/deep-fake.jpg',
+    tags: ['2026.05.22', 'Special Lecture', 'DEEP FAKE', 'Real-time', 'AI'],
+    role: { JP: '講師 / 実演', EN: 'Lecturer / Live Demonstration', TW: '講師／實演' },
+    approach: {
+      JP: '上演中の舞台作品の制作プロセスをそのまま教材化し、リアルタイム技術の仕組みを実演とともに解説。',
+      EN: 'Turning the production process of a live stage work directly into teaching material, explaining real-time systems through hands-on demonstration.',
+      TW: '將正在上演的舞台作品製作過程直接轉化為教材，透過實演解說即時技術的運作。'
+    },
+    externalLinks: [
+      { label: 'DEEP FAKE Project', url: 'https://nakamurahiroyuki.info/deep-fake/' }
+    ]
+  },
+  {
+    id: 'yakou-elementary-special-class',
+    title: 'Yakou Elementary School Special Class',
+    titleLocalized: {
+      JP: '横浜市立矢向小学校 特別授業',
+      EN: 'Yokohama Yakou Elementary School — Special Class',
+      TW: '橫濱市立矢向小學 特別課程'
+    },
+    date: '2026.06.11',
+    client: 'Yokohama Municipal Yakou Elementary School',
+    category: 'Education',
+    pillar: 'Education',
+    link: 'https://note.com/bbmusic/n/nb6bd3fbb3b89',
+    description: {
+      JP: 'Beyond Boundary Music の中村浩之と宇津木紘一が、横浜市立矢向小学校6年2組で「サウンドスケープと出会う時間」と題した特別授業を実施。同校は「まちの音」をテーマに総合学習へ取り組んでおり、BBM の「つちうらサウンド・アーカイブ・プロジェクト」に関心を寄せたことがきっかけ。録音方法で音の聞こえ方が変わること、音の歴史や意味、録音音から音楽をつくる方法など、聴く視点の転換を子どもたちと共有しました。',
+      EN: 'Hiroyuki Nakamura and Koichi Utsuki of Beyond Boundary Music gave a special class, "Time to Meet Soundscape," to a sixth-grade class at Yokohama Municipal Yakou Elementary School. The school had been studying "the sounds of the town," and reached out after discovering BBM\'s Tsuchiura Sound Archive Project. The class shifted how the children listen — how recording method changes what we hear, the history and meaning of sound, and how to make music from recorded sound.',
+      TW: 'Beyond Boundary Music 的中村浩之與宇津木紘一，於橫濱市立矢向小學六年二班進行了名為「與聲景相遇的時間」的特別課程。該校以「街道的聲音」為主題進行綜合學習，並因對 BBM 的「土浦聲音檔案計畫」感興趣而促成此次合作。課程與孩子們分享了錄音方式如何改變聲音的聽感、聲音的歷史與意義，以及如何從錄音聲響創作音樂等「聆聽視角」的轉換。'
+    },
+    imageUrl: '/images/yakou-elementary.jpg',
+    tags: ['2026.06.11', 'Special Class', 'Soundscape', 'Yokohama', 'Education'],
+    role: { JP: '講師（中村浩之・宇津木紘一）', EN: 'Lecturers (Hiroyuki Nakamura / Koichi Utsuki)', TW: '講師（中村浩之・宇津木紘一）' },
+    approach: {
+      JP: '「まちの音」を入口に、録音・歴史・創作の三つの視点から、子どもたちが自分の地域へ活動を展開できるよう聴き方そのものを問い直す授業を設計。',
+      EN: 'Using "the sounds of the town" as an entry point, the class was designed around three lenses — recording, history, and creation — to re-examine the act of listening so children can extend the activity into their own community.',
+      TW: '以「街道的聲音」為入口，從錄音、歷史、創作三個視角設計課程，重新審視「聆聽」本身，讓孩子們能將活動延伸至自己的社區。'
+    },
+    externalLinks: [
+      { label: 'note 記事', url: 'https://note.com/bbmusic/n/nb6bd3fbb3b89' }
+    ]
   },
   {
     id: 'bbm-workshop',

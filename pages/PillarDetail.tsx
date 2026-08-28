@@ -86,6 +86,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
 
   const getWork = (id: string) => works.find((w) => w.id === id);
   const tsuchiuraWorks: Work[] = [
+    getWork('tsap-exhibition-2026'),
     getWork('tsuchiura-archive'),
     getWork('moonlight-concert'),
     getWork('oiwata-elementary-special-class')
@@ -103,6 +104,8 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   ].filter(Boolean) as Work[];
 
   const educationInvitedLectures: Work[] = [
+    getWork('deep-fake-showa-lecture'),
+    getWork('yakou-elementary-special-class'),
     getWork('tama-art-univ'),
     getWork('showa-music-univ'),
     getWork('tainan-lecture'),

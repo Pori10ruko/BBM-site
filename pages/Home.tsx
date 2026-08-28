@@ -11,8 +11,9 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const featuredWorks = [
+    works.find(w => w.id === 'lackout'),
+    works.find(w => w.id === 'deep-fake'),
     works.find(w => w.id === 'distant-echo'),
-    works.find(w => w.id === 'tsuchiura-archive'),
     works.find(w => w.id === 'tainan-lecture'),
   ].filter(Boolean) as typeof works;
   const seigetsukiWork = works.find(w => w.id === 'seigetsuki');
@@ -87,18 +88,43 @@ const Home: React.FC = () => {
       }
     },
     upcoming: {
+      dateLabel: {
+        JP: '2026年8月22日–23日 開催｜開催記録を公開中',
+        EN: '22–23 August 2026 — Exhibition Report Now Online',
+        TW: '2026年8月22日–23日 舉辦｜開催紀錄公開中'
+      },
       title: {
-        JP: '音と光の建築 at 東光寺',
-        EN: 'Architecture of Sound and Light at Tokoji Temple',
-        TW: '音與光的建築 at 東光寺'
+        JP: 'TSAP 展示 ― 土浦の音、その記憶',
+        EN: 'TSAP Exhibition — The Sounds and Memory of Tsuchiura',
+        TW: 'TSAP 展覽 ― 土浦之音與記憶'
+      },
+      venue: {
+        JP: 'りんりんポート土浦（茨城県土浦市）',
+        EN: 'Ringring Port Tsuchiura, Ibaraki',
+        TW: 'Ringring Port 土浦（茨城縣土浦市）'
       },
       desc: {
-        JP: '歴史ある東光寺の本堂を舞台に、市民の皆さんと共につくり上げた“光のまゆ”と、プロジェクトを通して集めた「土浦の音」を組み合わせ、2chスピーカーによるバイノーラル音響で空間全体を包み込む、一日限りの展示・コンサートとなります。',
-        EN: 'A one-day exhibition and concert at the historic main hall of Tokoji Temple. Combining "cocoons of light" created with citizens and "sounds of Tsuchiura," we envelop the space in binaural audio using 2ch speakers.',
-        TW: '以歷史悠久的東光寺本堂為舞台，結合與市民共同創作的「光之繭」以及透過專案收集的「土浦之音」，透過雙聲道喇叭呈現雙耳立體音響（Binaural Audio），包覆整個空間的一日限定展覽與音樂會。'
+        JP: 'つちうらサウンド・アーカイブ・プロジェクト（TSAP）が市民とともに集めてきた「土浦の音」を、聴く・遊ぶ・つくる・演奏するという4つの入口から体験する2日間を開催しました。2chスピーカーとヘッドフォンによる立体音響のVR作品3点、音あそびのサウンドトイ、オリジナルゲーム「おとの帆曳船」、てづくりワークショップ、そして両日15:30のサウンドスケープ・ライブ。会期中の記録を公開しています。',
+        EN: 'We held two days of experiencing the "sounds of Tsuchiura" — gathered together with local citizens through the Tsuchiura Sound Archive Project (TSAP) — through four doorways: listening, playing, making, and performing. Three VR works in spatial audio over two speakers and headphones, a sound toy, the original game "Oto no Hobikibune," hands-on workshops, and a soundscape live performance at 15:30 on both days. A record of the exhibition is now online.',
+        TW: '我們舉辦了為期兩天的活動，透過聆聽、遊玩、製作、演奏四個入口，體驗土浦聲音檔案計畫（TSAP）與市民共同收集的「土浦之音」。包含以雙聲道喇叭與耳機呈現立體音響的三件 VR 作品、聲音玩具、原創遊戲「おとの帆曳船」、動手實作工作坊，以及兩天皆於 15:30 舉行的聲景現場演出。會期紀錄現已公開。'
       }
     },
     news: {
+      pianoDistanceLabel: {
+        JP: 'BBM-001 / 予約受付中・1 曲目試聴可',
+        EN: 'BBM-001 / Pre-order open — first track streaming now',
+        TW: 'BBM-001 / 預購開放中・1 首曲目可立即試聽'
+      },
+      pianoDistanceTitle: {
+        JP: 'Piano Distance — BBM レーベル第 1 作',
+        EN: 'Piano Distance — The First Release on BBM',
+        TW: 'Piano Distance — BBM 廠牌首作'
+      },
+      pianoDistanceDesc: {
+        JP: '中村が自身で構築した空間音響システムを、たった一台のピアノに向けたソロアルバム。Bandcamp 予約ページ公開中——1 曲目『Subglacial Trace』を今すぐフル試聴可能。全曲デジタル解禁は 2026 年 6 月 26 日（BBM-001、name-your-price）。英 Fluid Audio よりハンドメイド CD 限定盤（マスタリング: Ian Hawgood）も並行発売中。武満徹〈Distance〉(1961) への応答。',
+        EN: 'A solo album turning Nakamura\'s self-built spatial-audio system on a single piano. Pre-order is open on Bandcamp now — the opening track "Subglacial Trace" streams in full. Full digital release June 26, 2026 (BBM-001, name-your-price). Handmade limited CD on Fluid Audio (UK), mastered by Ian Hawgood. A response to Toru Takemitsu\'s "Distance" (1961).',
+        TW: '中村將自行打造的空間音響系統用於一台鋼琴的個人專輯。Bandcamp 預購頁面開放中——1 首曲目《Subglacial Trace》可立即完整試聽。全專輯數位上線於 2026 年 6 月 26 日（BBM-001、name-your-price）。英 Fluid Audio 手工限量 CD（母帶: Ian Hawgood）同步發售。回應武滿徹〈Distance〉(1961) 的作品。',
+      },
       yukiTitle: {
         JP: 'YUKI『Share』MV 立体音響制作に参加',
         EN: 'Participated in Spatial Audio Production for YUKI\'s "Share" MV',
@@ -644,6 +670,75 @@ const Home: React.FC = () => {
             </h2>
           </div>
 
+          {/* Piano Distance — Featured Release (BBM-001) — 2 CTA */}
+          <motion.div
+            className="mb-20 lg:mb-24"
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-black text-white overflow-hidden">
+              <a
+                href="https://nakamurahiroyuki.info/piano-distance/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative h-[55vh] lg:h-[65vh] overflow-hidden group block"
+                aria-label="Piano Distance — project page"
+              >
+                <img
+                  src="/images/piano-distance.jpg"
+                  alt="Piano Distance — Cover"
+                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+              </a>
+              <div className="p-12 lg:p-16 flex flex-col justify-center">
+                <p className="text-[10px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-4">
+                  Pre-order open · Digital 2026.06.26
+                </p>
+                <p className="text-[10px] font-bold tracking-[0.4em] text-gray-400 uppercase mb-8">
+                  {t.news.pianoDistanceLabel[lang]}
+                </p>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight mb-8 leading-tight">
+                  {t.news.pianoDistanceTitle[lang]}
+                </h3>
+                <p className="text-gray-300 font-serif leading-loose text-base md:text-lg mb-10">
+                  {t.news.pianoDistanceDesc[lang]}
+                </p>
+                <div className="flex flex-wrap gap-4 mb-4">
+                  <a
+                    href="https://beyondboundarymusic.bandcamp.com/album/piano-distance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block py-3 px-6 bg-[#C9A66B] text-black text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-white transition-colors duration-300"
+                  >
+                    {lang === 'JP' && '試聴 / 予約 — Bandcamp'}
+                    {lang === 'EN' && 'Listen / Pre-order — Bandcamp'}
+                    {lang === 'TW' && '試聽 / 預購 — Bandcamp'}
+                  </a>
+                  <a
+                    href="https://www.fluidaudio.co.uk/product/nakamura-hiroyuki-piano-distance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block py-3 px-6 border border-white/40 text-white text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-colors duration-300"
+                  >
+                    {lang === 'JP' && '限定 CD を購入 — Fluid Audio（英国）'}
+                    {lang === 'EN' && 'Buy the CD — Fluid Audio (UK)'}
+                    {lang === 'TW' && '購買限量 CD — Fluid Audio（英國）'}
+                  </a>
+                </div>
+                <div className="flex flex-wrap gap-6 items-center">
+                  <a href="https://nakamurahiroyuki.info/piano-distance/" target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-[0.3em] uppercase text-gray-300 hover:text-[#C9A66B] transition-colors">
+                    {lang === 'JP' && '作品ページ →'}
+                    {lang === 'EN' && 'Project page →'}
+                    {lang === 'TW' && '作品頁面 →'}
+                  </a>
+                  <p className="text-[10px] tracking-[0.2em] text-gray-500">streaming from late July (Spotify et al.)</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             <motion.a
               href="https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl"
@@ -707,7 +802,7 @@ const Home: React.FC = () => {
         </RevealSection>
       </Section>
 
-      {/* Upcoming Event */}
+      {/* Exhibition Report (TSAP 2026.08) */}
       <Section className="py-32 md:py-48 relative overflow-hidden">
         {/* 3D Sphere Background - Simplified */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -725,12 +820,12 @@ const Home: React.FC = () => {
         <RevealSection>
           <div className="mb-20">
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
-              Upcoming<br />Event
+              Exhibition<br />Report
             </h2>
           </div>
 
           <a
-            href="https://tsuchiura-sound-achib.netlify.app/#events"
+            href="https://tsuchiura-sound-exhibition-2026.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="block group"
@@ -738,7 +833,7 @@ const Home: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="relative h-[50vh] lg:h-[70vh] overflow-hidden">
                 <motion.img
-                  src="/images/tokoji1.png"
+                  src="/images/tsap-exhibition-2026.jpg"
                   alt=""
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-1000"
                   loading="lazy"
@@ -748,13 +843,13 @@ const Home: React.FC = () => {
 
               <div className="bg-white p-12 lg:p-20 flex flex-col justify-center">
                 <p className="text-[10px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-8">
-                  2/23(月・祝) 18:30開場 / 19:00開演
+                  {t.upcoming.dateLabel[lang]}
                 </p>
                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-8 group-hover:text-[#C9A66B] transition-colors">
                   {t.upcoming.title[lang]}
                 </h3>
                 <p className="text-gray-600 font-serif text-lg mb-10">
-                  東光寺（茨城県土浦市大手町3-14）
+                  {t.upcoming.venue[lang]}
                 </p>
                 <p className="text-gray-700 font-serif leading-loose text-base md:text-lg">
                   {t.upcoming.desc[lang]}
