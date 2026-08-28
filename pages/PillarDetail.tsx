@@ -105,6 +105,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
 
   const educationInvitedLectures: Work[] = [
     getWork('deep-fake-showa-lecture'),
+    getWork('tainan-yugaku-2026'),
     getWork('yakou-elementary-special-class'),
     getWork('tama-art-univ'),
     getWork('showa-music-univ'),
