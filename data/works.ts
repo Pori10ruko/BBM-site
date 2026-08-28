@@ -18,7 +18,7 @@ export const works: Work[] = [
       EN: 'A study program with National University of Tainan (with ESP Gakuen). On 19 July, BBM hosted a career talk for the visiting students at art space bar buena, Shin-Okubo, Tokyo — delivered primarily in Traditional Chinese — on building a life across music, technology and borders. All 20 slides are published online.',
       TW: '與國立臺南大學合作的遊學計畫(ESP學園)。7月19日於東京新大久保 art space bar buena，BBM 為來日學生舉辦職涯講座——以繁體中文為主要語言，談論跨越音樂、技術與國界的生存之道。全部 20 張投影片已於網路公開。'
     },
-    imageUrl: '/images/tainan lecture.jpg',
+    imageUrl: '/images/tainan-yugaku-2026.jpg',
     tags: ['2026', 'Taiwan', 'Lecture', 'Education', 'BBM'],
     role: { JP: 'プログラム受入・講座登壇', EN: 'Host / Speaker', TW: '接待・講座主講' },
     approach: {
@@ -26,7 +26,11 @@ export const works: Work[] = [
       EN: 'The talk was delivered in the students\' own language, condensing real career paths into 20 slides — then published openly on the web for those who could not attend.',
       TW: '以學生的母語(繁體中文)為主要語言，將真實的職涯路徑濃縮為 20 張投影片——並全數公開於網路，讓未能到場的學生也能閱讀。'
     },
-    link: 'https://bbm-buena-2026-talk.netlify.app'
+    link: 'https://note.com/bbmusic/n/n6f6384709a24',
+    externalLinks: [
+      { label: 'Essay (note)', url: 'https://note.com/bbmusic/n/n6f6384709a24' },
+      { label: 'Talk Slides', url: 'https://bbm-buena-2026-talk.netlify.app' }
+    ]
   },
 
   {
