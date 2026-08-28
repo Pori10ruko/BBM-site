@@ -111,9 +111,9 @@ const Home: React.FC = () => {
     },
     news: {
       pianoDistanceLabel: {
-        JP: 'BBM-001 / 予約受付中・1 曲目試聴可',
-        EN: 'BBM-001 / Pre-order open — first track streaming now',
-        TW: 'BBM-001 / 預購開放中・1 首曲目可立即試聽'
+        JP: 'BBM-001 / 配信中 — 各サービスで公開',
+        EN: 'BBM-001 / Out now — streaming everywhere',
+        TW: 'BBM-001 / 現正發行 — 各串流平台上架中'
       },
       pianoDistanceTitle: {
         JP: 'Piano Distance — BBM レーベル第 1 作',
@@ -121,9 +121,9 @@ const Home: React.FC = () => {
         TW: 'Piano Distance — BBM 廠牌首作'
       },
       pianoDistanceDesc: {
-        JP: '中村が自身で構築した空間音響システムを、たった一台のピアノに向けたソロアルバム。Bandcamp 予約ページ公開中——1 曲目『Subglacial Trace』を今すぐフル試聴可能。全曲デジタル解禁は 2026 年 6 月 26 日（BBM-001、name-your-price）。英 Fluid Audio よりハンドメイド CD 限定盤（マスタリング: Ian Hawgood）も並行発売中。武満徹〈Distance〉(1961) への応答。',
-        EN: 'A solo album turning Nakamura\'s self-built spatial-audio system on a single piano. Pre-order is open on Bandcamp now — the opening track "Subglacial Trace" streams in full. Full digital release June 26, 2026 (BBM-001, name-your-price). Handmade limited CD on Fluid Audio (UK), mastered by Ian Hawgood. A response to Toru Takemitsu\'s "Distance" (1961).',
-        TW: '中村將自行打造的空間音響系統用於一台鋼琴的個人專輯。Bandcamp 預購頁面開放中——1 首曲目《Subglacial Trace》可立即完整試聽。全專輯數位上線於 2026 年 6 月 26 日（BBM-001、name-your-price）。英 Fluid Audio 手工限量 CD（母帶: Ian Hawgood）同步發售。回應武滿徹〈Distance〉(1961) 的作品。',
+        JP: '中村が自身で構築した空間音響システムを、たった一台のピアノに向けたソロアルバム。現在配信中——Spotify・Apple Music ほか各サービスで公開、ミュージック・ビデオも YouTube で公開中。デジタル版は Beyond Boundary Music より（BBM-001、name-your-price）。英 Fluid Audio よりハンドメイド署名番号入りの限定 CD（マスタリング: Ian Hawgood）も発売され、完売。武満徹〈Distance〉(1961) への応答。',
+        EN: 'A solo album turning Nakamura\'s self-built spatial-audio system on a single piano. Out now: streaming on Spotify, Apple Music and more, with music videos on YouTube. Digital edition on Beyond Boundary Music (BBM-001, name-your-price). The handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood, is sold out. A response to Toru Takemitsu\'s "Distance" (1961).',
+        TW: '中村將自行打造的空間音響系統用於一台鋼琴的個人專輯。現正發行——已於 Spotify、Apple Music 等各串流平台上架，音樂錄影帶亦已於 YouTube 公開。數位版經由 Beyond Boundary Music（BBM-001、name-your-price）。英 Fluid Audio 手工簽名編號限量 CD（母帶: Ian Hawgood）已完售。回應武滿徹〈Distance〉(1961) 的作品。',
       },
       yukiTitle: {
         JP: 'YUKI『Share』MV 立体音響制作に参加',
@@ -139,8 +139,8 @@ const Home: React.FC = () => {
     selectedArchives: {
       tainan: {
         JP: {
-          title: '臺南國立大学 特別講義',
-          desc: '台湾・臺南國立大学にて、流行音楽における空間表現の講義とワークショップを実施。'
+          title: '国立台南大学 特別講義',
+          desc: '台湾・国立台南大学にて、流行音楽における空間表現の講義とワークショップを実施。'
         },
         EN: {
           title: 'Special Lecture at National University of Tainan',
@@ -694,7 +694,7 @@ const Home: React.FC = () => {
               </a>
               <div className="p-12 lg:p-16 flex flex-col justify-center">
                 <p className="text-[10px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-4">
-                  Pre-order open · Digital 2026.06.26
+                  Out now · Digital 2026.06.26
                 </p>
                 <p className="text-[10px] font-bold tracking-[0.4em] text-gray-400 uppercase mb-8">
                   {t.news.pianoDistanceLabel[lang]}
@@ -712,20 +712,17 @@ const Home: React.FC = () => {
                     rel="noopener noreferrer"
                     className="inline-block py-3 px-6 bg-[#C9A66B] text-black text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-white transition-colors duration-300"
                   >
-                    {lang === 'JP' && '試聴 / 予約 — Bandcamp'}
-                    {lang === 'EN' && 'Listen / Pre-order — Bandcamp'}
-                    {lang === 'TW' && '試聽 / 預購 — Bandcamp'}
+                    {lang === 'JP' && '試聴 / 支援 — Bandcamp'}
+                    {lang === 'EN' && 'Listen / Support — Bandcamp'}
+                    {lang === 'TW' && '試聽 / 支持 — Bandcamp'}
                   </a>
-                  <a
-                    href="https://www.fluidaudio.co.uk/product/nakamura-hiroyuki-piano-distance"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block py-3 px-6 border border-white/40 text-white text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-colors duration-300"
+                  <span
+                    className="inline-block py-3 px-6 border border-white/20 text-gray-400 text-[11px] font-bold tracking-[0.3em] uppercase cursor-default"
                   >
-                    {lang === 'JP' && '限定 CD を購入 — Fluid Audio（英国）'}
-                    {lang === 'EN' && 'Buy the CD — Fluid Audio (UK)'}
-                    {lang === 'TW' && '購買限量 CD — Fluid Audio（英國）'}
-                  </a>
+                    {lang === 'JP' && '限定 CD — 完売'}
+                    {lang === 'EN' && 'Limited CD — Sold out'}
+                    {lang === 'TW' && '限量 CD — 已完售'}
+                  </span>
                 </div>
                 <div className="flex flex-wrap gap-6 items-center">
                   <a href="https://nakamurahiroyuki.info/piano-distance/" target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-[0.3em] uppercase text-gray-300 hover:text-[#C9A66B] transition-colors">

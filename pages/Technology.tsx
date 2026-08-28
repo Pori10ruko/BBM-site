@@ -25,19 +25,26 @@ const Technology: React.FC = () => {
       philosophyTitle: '音と空間の必然性',
       philosophyBody:
         '立体音響の技術は、いま広く行き渡りつつあります。しかし「その技術がなければ成立しない音」に出会うことは、いまも稀です。\n私たちは技術を誇示するためではなく、「この表現には、この空間が必要だ」という必然から出発します。\nだから、方法をひとつに決めていません。ヘッドフォンの中で完結するバイノーラル。頭の動きに音が追いつくアンビソニクス。歩いて巡るVR、ブラウザで遊べるゲーム、そして二本のスピーカーだけで奥行きを立ち上げる設計。作品と場所が求めるかたちを、そのつど選び、組み合わせています。',
+      maTitle: '「距離」と「間」',
+      maBody:
+        'アルバム『Piano Distance』の題は、武満徹が1961年に書いたピアノ独奏曲への応答です。武満はひとつの楽器、ひとつの室内に、音と音の「距離」と静寂を置きました。私たちはその距離を、比喩ではなく、三次元の空間として立ち上げます。\nピアノの内部から採取した一音一音は固有の音色を持ち、空間の中で独立した「オブジェクト」として定位する。日本語の「間(ま)」——音と音のあいだにある沈黙と距離——を、装飾としてではなく、空間設計そのものの構造原理として組み込むこと。それが私たちの出発点です。',
       formsTitle: '音の空間、いくつかのかたち',
+      formsLead: 'これらすべてを支えているのは、TouchDesigner上に自作した単一のアンビソニクス・エンジンです。市販のスペーシャライザーもプラグインも使いません。ひとつの核が、作品と場所に合わせてかたちを変えます。',
       forms: [
         { name: 'Binaural / 2ch', body: 'ヘッドフォンや、ふつうのステレオスピーカーで。前後・上下・距離までを描く、いちばん身近な入り口です。' },
-        { name: 'Ambisonics + Head Tracking', body: '自作のアンビソニクス・エンジン(最大3次)。あなたが振り向けば、音も振り向きます。' },
+        { name: 'Ambisonics + Head Tracking', body: '自作のアンビソニクス・エンジン。ひとりの聴き手の頭の向きに音場が追従するバイノーラル構成(Piano Distance、DEEP FAKEではライブで運用)から、iPadを手に歩き回る最大3次・最大30オブジェクト同時定位の展示構成(TSAP)まで——同じ核が、かたちを変えます。' },
         { name: 'VR / Realtime 3D', body: '音の中を、歩く。リアルタイムに生成される三次元空間に、立体音響を統合します。' },
         { name: 'Game Engines', body: 'UnityやUnreal Engineで、体験を持ち帰れるかたちに。Webブラウザで、誰でも、いつでも。' },
       ],
+      tsapTitle: '歩く人ごとに、違う曲になる',
+      tsapBody:
+        'Coral・Aquarium・Sumi——TSAPの3つのシーンは、Piano Distanceと同じTouchDesignerの核を最大3次アンビソニクスへ拡張したものです。Aquariumだけで28個の音オブジェクトとステレオベッドが同時に定位し、iPadを手に歩くと、位置に応じて音場が組み変わります。281.6秒の「嵐」のサイクルと、発見の進行に応じて開くゲートによって、体験は自由な徘徊ではなく、作曲された弧を持ちます。音響解析と空間ロジックはすべてTouchDesignerが担い、UE5には位置・レベル・色の値だけを送信——サンゴの発光は、音のエンベロープに直接追従します。歩く経路が違えば、聴こえるシーケンスも違う。二度と同じ体験はありません。',
       gameTitle: '遊べる音の空間 ― おとの帆曳船',
       gameBody: '土浦の街でアーカイブされた音たちが、Unity製のゲームになりました。帆曳船を操りながら、音のあいだを進んでいく——展覧会「つちうらサウンド・アーカイブ展 2026」で生まれた空間音響の体験は、いまはブラウザひとつで、どこからでも開くことができます。',
       gamePlayButton: 'ブラウザで遊ぶ',
       gameWorkButton: '展覧会の記録を見る',
       worksTitle: '技術が必然となる作品たち',
-      works1Body: '私たちの独自技術をフルに用いた、初のピアノアルバム。非常に立体的な音響が映像と融合し、没入感あふれる世界を描き出します。（2026年リリース予定）',
+      works1Body: '私たちの独自技術をフルに用いた、初のピアノアルバム。ヘッドフォンでも、わずか2台のスピーカーだけでも、音は背後から、頭上から立ち現れます。英Fluid Audioより手製・署名番号入りの限定盤、配信中（Spotify・Apple Musicほか各サービス）。',
       works2Title: '音の中を歩く ― Piano Distance 立体音響 VR',
       works2Body: 'アルバム《Piano Distance》を、聴くだけでなく"中に入って体験する"立体音響作品へ。ピアノの一音一音が暗がりに息づく光となり、聴き手が向きを変えると音が頭のまわりを回ります。リアルタイムに生成される三次元空間へ立体音響を統合した、実験途中の試作です。（ヘッドホン推奨）',
       compareTitle: '技術のはなし、もう少し詳しく',
@@ -45,7 +52,7 @@ const Technology: React.FC = () => {
       compareLink: '記事を見る',
       beyondTitle: 'スピーカーのある場所で',
       beyondBody:
-        'ヘッドフォンの外にも、音の空間はつくれます。ふつうの2chスピーカーだけでも、前後・左右、奥行きや距離感までを丁寧に設計すれば、お寺や展示室、小さな会場が、音に包まれる場所になります。BBMでは、そうした「場」そのものを体現するイベントも行っています。',
+        'ヘッドフォンの外にも、音の空間はつくれます。ふつうの2chスピーカーだけでも、前後・左右、奥行きや距離感までを丁寧に設計すれば、お寺や展示室、小さな会場が、音に包まれる場所になります。BBMでは、そうした「場」そのものを体現するイベントも行っています。東京での《Distant Echo》(2025)では、ヘッドフォンのために磨いてきた同じバイノーラル・エンジンを、2本のスピーカーだけに向けて再チューニング。会場の壁の反響と一体化させ、「スピーカーの存在が消える」音場を設計しました。',
       clientTitle: 'ともにつくった仕事',
       clientBody: 'これまでに、アーティストや企業のみなさまと、こんな音をつくってきました。',
       tokojiTestBody: '2026年に実施予定の東光寺での音響実験。お寺という特殊な空間においても、わずか2chのスピーカーで立体感のある音響空間を構築するテストの様子。',
@@ -64,26 +71,33 @@ const Technology: React.FC = () => {
       hero: 'First, Experience Our Sound. Please listen with headphones. Our technology is not just stereo...',
       philosophyTitle: 'The Necessity of Sound and Space',
       philosophyBody: 'Spatial audio is everywhere now. Yet sounds that truly require it are still rare.\nWe do not start from technology; we start from necessity — "this expression needs this space."\nThat is why we keep more than one way of working: binaural sound complete within headphones; ambisonics that turns when you turn; VR you can walk through; games you can play in a browser; and rooms where two ordinary speakers open up depth. For each work and each place, we choose — and combine.',
+      maTitle: 'Distance, and Ma',
+      maBody:
+        'The title Piano Distance answers a solo piano piece Toru Takemitsu wrote in 1961. Within a single instrument and a single room, Takemitsu placed "distance" and silence between sounds. We raise that distance into literal three-dimensional space.\nEach sound, drawn from inside the piano, carries its own timbral identity and stands in the space as an independent object. The Japanese notion of ma — the charged silence and distance between sounds — is built in not as ornament, but as the structural principle of the spatial design itself. That is where we begin.',
       formsTitle: 'Forms of Sound-Space',
+      formsLead: 'Beneath all of these runs a single ambisonic engine we built ourselves in TouchDesigner — no commercial spatializer, no plug-ins. One core, changing its form for each work and each place.',
       forms: [
         { name: 'Binaural / 2ch', body: 'Through headphones or an ordinary stereo pair — front and back, above and below, near and far. The most familiar doorway.' },
-        { name: 'Ambisonics + Head Tracking', body: 'A self-built ambisonic engine (up to 3rd order). When you turn your head, the sound turns with you.' },
+        { name: 'Ambisonics + Head Tracking', body: 'Our self-built ambisonic engine. From a head-tracked binaural configuration for a single listener (Piano Distance; run live in DEEP FAKE) to an exhibition configuration scaled to 3rd order, localizing up to 30 objects at once as you walk with an iPad (TSAP) — one core, two forms.' },
         { name: 'VR / Realtime 3D', body: 'Walking inside the sound — spatial audio woven into three-dimensional worlds generated in real time.' },
         { name: 'Game Engines', body: 'With Unity and Unreal Engine, the experience becomes something you can take home — in a web browser, for anyone, anytime.' },
       ],
+      tsapTitle: 'A Different Piece for Every Walker',
+      tsapBody:
+        'Coral, Aquarium, Sumi — the three scenes of TSAP scale the same TouchDesigner core behind Piano Distance up to 3rd-order ambisonics. In Aquarium alone, 28 sound objects and a stereo bed hold their positions at once; walking with an iPad, the sound field reassembles around you. A 281.6-second "storm" cycle and discovery-progress gates turn wandering into an experience with a composed arc. TouchDesigner carries all the audio analysis and spatial logic, sending only position, level and color to Unreal Engine — the corals\' glow follows the sound\'s envelope directly. Walk a different path, and you hear a different sequence. No two visits are ever the same.',
       gameTitle: 'A Sound-Space You Can Play — Sailing Boat of Sounds',
       gameBody: 'Sounds archived from the town of Tsuchiura became a Unity game. Steering a traditional sail-boat, you drift between the sounds — an experience born at the "Tsuchiura Sound Archive Exhibition 2026," now open to anyone, anywhere, in a single browser tab.',
       gamePlayButton: 'Play in your browser',
       gameWorkButton: 'See the exhibition record',
       worksTitle: 'Works Where Technology Becomes Necessary',
-      works1Body: 'Our first piano album fully leveraging our proprietary technology. Highly spatial sound merges with visuals to draw an immersive world. (Planned release in 2026)',
+      works1Body: 'Our first piano album fully leveraging our proprietary technology. On ordinary headphones, or on just two speakers alone, sound arrives from behind and overhead. A handmade, signed and numbered limited edition on Fluid Audio (UK) — out now on Spotify, Apple Music and more.',
       works2Title: 'Walking Inside the Sound — Piano Distance Spatial Audio VR',
       works2Body: "An immersive reworking of Piano Distance — you don't just listen, you step inside. Each note becomes a breathing light in the dark, and as you turn, the sound turns around you. A work-in-progress experiment that integrates spatial audio into a real-time 3D world. (Headphones recommended.)",
       compareTitle: 'More on the Technical Side',
       compareBody: 'For a detailed technical comparison, please visit this article.',
       compareLink: 'Read the article',
       beyondTitle: 'In Rooms with Speakers',
-      beyondBody: 'Sound-space can exist outside headphones, too. With just two ordinary speakers — carefully designing depth, distance and direction — a temple, a gallery, a small venue becomes a place wrapped in sound. BBM also stages events that embody such spaces.',
+      beyondBody: 'Sound-space can exist outside headphones, too. With just two ordinary speakers — carefully designing depth, distance and direction — a temple, a gallery, a small venue becomes a place wrapped in sound. BBM also stages events that embody such spaces. For Distant Echo (Tokyo, 2025), we retuned the very binaural engine refined for headphones toward just two speakers, letting it merge with the venue\'s wall reflections until the speakers themselves seemed to disappear.',
       clientTitle: 'Works with Partners',
       clientBody: 'Sounds we have made together with artists and companies.',
       tokojiTestBody: 'A 2026 temple acoustic experiment to build a spatial sound field using only two speakers—even in a unique space like a temple.',
@@ -102,26 +116,33 @@ const Technology: React.FC = () => {
       hero: '首先，請體驗我們的聲音。請務必使用耳機聆聽...',
       philosophyTitle: '聲音與空間的必然性',
       philosophyBody: '空間音訊技術正逐漸普及。但真正「非此技術不可」的聲音，至今仍屬罕見。\n我們不從炫技出發，而是從「這個表現，需要這個空間」的必然出發。\n因此，我們不把方法限定為一種：在耳機中完結的雙耳聲；隨頭部轉動的 Ambisonics；可以走進去的 VR；能在瀏覽器中遊玩的遊戲；以及僅憑兩顆揚聲器就撐起縱深的設計。依作品與場地的需要，逐次選擇、組合。',
+      maTitle: '「間」與距離',
+      maBody:
+        '專輯《Piano Distance》的標題，是對武滿徹 1961 年鋼琴獨奏曲的回應。武滿在單一樂器、單一室內，安放了音與音之間的「距離」與靜默。我們則把這個距離立起為真實的三維空間。\n取自鋼琴內部的每一個音都擁有固有的音色身分，在空間中作為獨立的「物件」定位。日語的「間(ma)」——音與音之間的靜默與距離——不是裝飾，而是被寫入空間設計本身的結構原理。這是我們的出發點。',
       formsTitle: '聲音空間的幾種形式',
+      formsLead: '支撐這一切的，是我們在 TouchDesigner 上自行打造的單一 Ambisonics 引擎——不使用市售空間音訊工具或外掛。同一個核心，隨作品與場地改變形態。',
       forms: [
         { name: 'Binaural / 2ch', body: '透過耳機或一般的立體聲喇叭，描繪前後、上下與距離——最貼近日常的入口。' },
-        { name: 'Ambisonics + Head Tracking', body: '自製 Ambisonics 引擎(最高三階)。當你轉頭，聲音也隨之轉向。' },
+        { name: 'Ambisonics + Head Tracking', body: '自製的 Ambisonics 引擎。從追隨單一聆聽者頭部轉向的雙耳構成(Piano Distance；於 DEEP FAKE 中現場運行)，到手持 iPad 行走、最高三階、最多 30 個物件同時定位的展覽構成(TSAP)——同一個核心，兩種形態。' },
         { name: 'VR / Realtime 3D', body: '走進聲音之中——將立體音響整合進即時生成的三維空間。' },
         { name: 'Game Engines', body: '以 Unity 與 Unreal Engine，把體驗做成可以帶回家的形式——在瀏覽器中，任何人、任何時候。' },
       ],
+      tsapTitle: '每一位行走者，聽見不同的樂曲',
+      tsapBody:
+        'Coral、Aquarium、Sumi——TSAP 的三個場景，把 Piano Distance 背後同一個 TouchDesigner 核心擴充至三階 Ambisonics。僅 Aquarium 一景，就有 28 個聲音物件與立體聲底床同時定位；手持 iPad 行走，音場會隨你的位置重新組合。281.6 秒的「風暴」循環與隨探索進度開啟的閘門，讓體驗不是漫遊，而是一道被作曲過的弧線。聲音解析與空間邏輯全由 TouchDesigner 承擔，只將位置、音量與顏色的數值傳給 Unreal Engine——珊瑚的發光直接追隨聲音的包絡。走過不同的路徑，就聽見不同的序列。沒有兩次相同的體驗。',
       gameTitle: '可以遊玩的聲音空間 ― 聲音帆曳船',
       gameBody: '在土浦街頭封存的聲音，成了一款 Unity 遊戲。操縱帆曳船，在聲音之間前行——誕生於「土浦聲音檔案展 2026」的空間音響體驗，如今只需一個瀏覽器分頁，隨處可及。',
       gamePlayButton: '在瀏覽器中遊玩',
       gameWorkButton: '查看展覽記錄',
       worksTitle: '技術成為必然的作品',
-      works1Body: '我們首張完整運用獨家技術的鋼琴專輯。高度立體的聲響與影像融合，描繪出沉浸感十足的世界。（預計 2026 年發行）',
+      works1Body: '我們首張完整運用獨家技術的鋼琴專輯。無論透過耳機，或僅憑兩支喇叭，聲音都會從背後、從頭頂浮現。英國 Fluid Audio 手工、簽名編號限量發行——現正於 Spotify、Apple Music 等各串流平台上架。',
       works2Title: '走進聲音之中 ― Piano Distance 立體音響 VR',
       works2Body: '將專輯《Piano Distance》從「聆聽」延伸為「走進其中體驗」的立體音響作品。鋼琴的每一個音都化為在黑暗中呼吸的光，當聆聽者轉動視角，聲音便環繞於頭部四周。這是一個將立體音響整合進即時生成三維空間的實驗中試作。（建議使用耳機）',
       compareTitle: '關於技術，再多說一點',
       compareBody: '若想更細緻地比較技術，請參考這篇文章。',
       compareLink: '閱讀文章',
       beyondTitle: '在有揚聲器的空間裡',
-      beyondBody: '耳機之外，也能建構聲音的空間。即使只有兩顆一般的揚聲器，只要細緻設計前後、左右、縱深與距離感，寺廟、展間、小型場地，都能成為被聲音包裹的所在。BBM 也舉辦體現這種「場」的活動。',
+      beyondBody: '耳機之外，也能建構聲音的空間。即使只有兩顆一般的揚聲器，只要細緻設計前後、左右、縱深與距離感，寺廟、展間、小型場地，都能成為被聲音包裹的所在。BBM 也舉辦體現這種「場」的活動。在東京的《Distant Echo》(2025)，我們把為耳機打磨的同一個雙耳引擎，重新調校至僅有的兩顆揚聲器，使其與場地牆面的反響融為一體——直到揚聲器的存在彷彿消失。',
       clientTitle: '一起完成的作品',
       clientBody: '至今與藝術家、企業夥伴一起做出的這些聲音。',
       tokojiTestBody: '預計於 2026 年在東光寺進行的聲學實驗：即使在寺廟這樣特殊的空間，也能僅用 2ch 揚聲器建構具有立體感的音響空間。',
@@ -331,6 +352,40 @@ const Technology: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* Distance and Ma Section */}
+        <motion.div
+          className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20">
+            <motion.div
+              className="lg:col-span-5"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white leading-tight">
+                {t.maTitle}
+              </h2>
+            </motion.div>
+            <motion.div
+              className="lg:col-span-7"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <p className="text-white/80 font-serif leading-loose text-base md:text-xl whitespace-pre-line">
+                {t.maBody}
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
+
         {/* Forms Section */}
         <motion.div
           className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
@@ -349,6 +404,15 @@ const Technology: React.FC = () => {
             >
               {t.formsTitle}
             </motion.h2>
+            <motion.p
+              className="text-white/70 font-serif leading-loose text-base md:text-lg max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              {t.formsLead}
+            </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -400,17 +464,17 @@ const Technology: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <motion.div 
+              <motion.div
                 className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
-                whileHover={{ 
+                whileHover={{
                   borderColor: 'rgba(201, 166, 107, 0.7)',
                   boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
                 }}
                 transition={{ duration: 0.3 }}
               >
                 <iframe
-                  title="Classical Spatial Album (2026 Release)"
-                  src="https://www.youtube.com/embed/02uUCenAJ-g"
+                  title="Piano Distance — Meltwater Stillness (Music Video)"
+                  src="https://www.youtube.com/embed/fP9vLVQJByE"
                   className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -418,8 +482,37 @@ const Technology: React.FC = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                 />
               </motion.div>
+              <div className="grid grid-cols-2 gap-3">
+                <motion.div
+                  className="relative aspect-video bg-black/50 border border-[#C9A66B]/30 overflow-hidden"
+                  whileHover={{ borderColor: 'rgba(201, 166, 107, 0.7)' }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img
+                    src="/images/piano-distance.jpg"
+                    alt="Piano Distance — album cover"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
+                <motion.div
+                  className="relative aspect-video bg-black/50 border border-[#C9A66B]/30 overflow-hidden"
+                  whileHover={{ borderColor: 'rgba(201, 166, 107, 0.7)' }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <iframe
+                    title="Piano Distance — White Flash in Still Air (Music Video)"
+                    src="https://www.youtube.com/embed/TkRUyirgRgM"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </motion.div>
+              </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-[#C9A66B]">
-                Classical Spatial Album (2026 Release)
+                Piano Distance
               </h3>
               <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
                 {t.works1Body}
@@ -478,6 +571,94 @@ const Technology: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* TSAP Section */}
+        <motion.div
+          className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="space-y-6 mb-16 text-center">
+            <motion.h2
+              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              {t.tsapTitle}
+            </motion.h2>
+            <motion.p
+              className="text-white/70 font-serif leading-loose text-base md:text-xl max-w-5xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              {t.tsapBody}
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.div
+                className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+                whileHover={{
+                  borderColor: 'rgba(201, 166, 107, 0.7)',
+                  boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <iframe
+                  title="TSAP — Coral"
+                  src="https://www.youtube.com/embed/84HVNdVfJqg"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </motion.div>
+              <p className="text-center text-xs font-bold tracking-[0.3em] uppercase text-[#C9A66B]/80">Coral</p>
+            </motion.div>
+
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <motion.div
+                className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+                whileHover={{
+                  borderColor: 'rgba(201, 166, 107, 0.7)',
+                  boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <iframe
+                  title="TSAP — Aquarium"
+                  src="https://www.youtube.com/embed/91Yd4NApzTY"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </motion.div>
+              <p className="text-center text-xs font-bold tracking-[0.3em] uppercase text-[#C9A66B]/80">Aquarium</p>
+            </motion.div>
+          </div>
+        </motion.div>
+
         {/* Game Section */}
         {tsuchiuraGame && (
           <motion.div
@@ -520,16 +701,33 @@ const Technology: React.FC = () => {
               </motion.div>
 
               <motion.div
-                className="transform transition-transform hover:scale-105"
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
-                <WorkCard
-                  work={tsuchiuraGame}
-                  onClick={() => navigate('/works/tsap-exhibition-2026')}
-                />
+                <a
+                  href="https://tsap-hobikibune-game.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <motion.div
+                    className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+                    whileHover={{
+                      borderColor: 'rgba(201, 166, 107, 0.7)',
+                      boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src="/images/tsap-game-screenshot.png"
+                      alt="Otono Hobikibune — actual gameplay screenshot"
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                </a>
               </motion.div>
             </div>
           </motion.div>

@@ -14,17 +14,17 @@ export const works: Work[] = [
     category: 'Lecture',
     pillar: 'Education',
     description: {
-      JP: '国立台南大学(台湾)との遊学プログラム(ESP学園)。7月19日には新大久保 art space bar buena にて、来日した学生に向けたBBMキャリア講座を開催——繁体中文を主言語に、音楽・技術・国境を越えて生きることを語った。全20枚のスライドをWeb公開中。',
-      EN: 'A study program with National University of Tainan (with ESP Gakuen). On 19 July, BBM hosted a career talk for the visiting students at art space bar buena, Shin-Okubo, Tokyo — delivered primarily in Traditional Chinese — on building a life across music, technology and borders. All 20 slides are published online.',
-      TW: '與國立臺南大學合作的遊學計畫(ESP學園)。7月19日於東京新大久保 art space bar buena，BBM 為來日學生舉辦職涯講座——以繁體中文為主要語言，談論跨越音樂、技術與國界的生存之道。全部 20 張投影片已於網路公開。'
+      JP: '国立台南大学(台湾)との遊学プログラム(ESP学園)。7月19日には新大久保 art space bar buena にて、来日した学生に向けたBBMキャリア講座を開催——繁体中文を主言語に、音楽・技術・国境を越えて生きることを語った。全20枚のスライドをWeb公開中。7月17日には中村の母校・昭和音楽大学も訪問し、ダミーヘッドマイクによるバイノーラル録音を学生たちが体験した。',
+      EN: 'A study program with National University of Tainan (with ESP Gakuen). On 19 July, BBM hosted a career talk for the visiting students at art space bar buena, Shin-Okubo, Tokyo — delivered primarily in Traditional Chinese — on building a life across music, technology and borders. All 20 slides are published online. On 17 July the group also visited Showa University of Music — Nakamura\'s alma mater — for a hands-on binaural recording session with a dummy-head microphone.',
+      TW: '與國立臺南大學合作的遊學計畫(ESP學園)。7月19日於東京新大久保 art space bar buena，BBM 為來日學生舉辦職涯講座——以繁體中文為主要語言，談論跨越音樂、技術與國界的生存之道。全部 20 張投影片已於網路公開。7月17日一行也造訪中村的母校——昭和音樂大學，學生們體驗了以人頭麥克風進行的雙耳錄音。'
     },
     imageUrl: '/images/tainan-yugaku-2026.jpg',
     tags: ['2026', 'Taiwan', 'Lecture', 'Education', 'BBM'],
     role: { JP: 'プログラム受入・講座登壇', EN: 'Host / Speaker', TW: '接待・講座主講' },
     approach: {
-      JP: '学生の母語(繁体中文)を主言語に据え、キャリアの実例をスライド20枚に凝縮。講座資料をそのままWeb公開し、参加していない学生にも開く。',
-      EN: 'The talk was delivered in the students\' own language, condensing real career paths into 20 slides — then published openly on the web for those who could not attend.',
-      TW: '以學生的母語(繁體中文)為主要語言，將真實的職涯路徑濃縮為 20 張投影片——並全數公開於網路，讓未能到場的學生也能閱讀。'
+      JP: '学生の母語(繁体中文)を主言語に据え、キャリアの実例をスライド20枚に凝縮。講座資料をそのままWeb公開し、参加していない学生にも開く。行程には空間音響の原点体験(ダミーヘッド収録)も組み込み、講座と実技の両輪で構成した。',
+      EN: 'The talk was delivered in the students\' own language, condensing real career paths into 20 slides — then published openly on the web for those who could not attend. The itinerary paired the talk with a first-hand encounter with spatial audio at its origin — dummy-head recording.',
+      TW: '以學生的母語(繁體中文)為主要語言，將真實的職涯路徑濃縮為 20 張投影片——並全數公開於網路，讓未能到場的學生也能閱讀。行程將講座與空間音響的原點體驗(人頭麥克風收錄)並置，理論與實作並行。'
     },
     link: 'https://note.com/bbmusic/n/n6f6384709a24',
     externalLinks: [
@@ -131,8 +131,7 @@ export const works: Work[] = [
     externalLinks: [
       { label: 'Stream everywhere — Spotify, Apple Music & more', url: 'https://linkco.re/6Sy1mbNE' },
       { label: 'Project page', url: 'https://nakamurahiroyuki.info/piano-distance/' },
-      { label: 'Bandcamp — name your price (from ¥500)', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' },
-      { label: 'Limited CD — Fluid Audio (UK)', url: 'https://www.fluidaudio.co.uk/product/nakamura-hiroyuki-piano-distance' }
+      { label: 'Bandcamp — name your price (from ¥500)', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' }
     ]
   },
   {
