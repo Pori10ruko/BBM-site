@@ -440,18 +440,18 @@ export const works: Work[] = [
   },
   {
     id: 'tainan-lecture',
-    title: 'Special Lecture at Tainan University of Technology',
+    title: 'Special Lecture at National University of Tainan',
     titleLocalized: {
-      JP: '臺南國立大学 特別講義',
-      EN: 'Special Lecture at Tainan University of Technology',
-      TW: '台南應用科技大學 特別講座'
+      JP: '国立台南大学 特別講義',
+      EN: 'Special Lecture at National University of Tainan',
+      TW: '國立臺南大學 特別講座'
     },
     date: '2024',
     client: 'National University of Tainan',
     category: 'Lecture',
     pillar: 'Education',
     description: {
-      JP: '台湾・臺南國立大学にて、流行音楽における空間表現の講義とワークショップを実施。',
+      JP: '台湾・国立台南大学にて、流行音楽における空間表現の講義とワークショップを実施。',
       EN: 'Lecture on binaural audio technology and artistic expression for the next generation of creators.',
       TW: '針對次世代創作者，講授關於雙耳立體聲技術與藝術表現的特別課程。'
     },
