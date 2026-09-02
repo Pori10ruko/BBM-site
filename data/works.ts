@@ -47,9 +47,9 @@ export const works: Work[] = [
     pillar: 'Public',
     featuredInTech: true,
     description: {
-      JP: '2026年8月22–23日、りんりんポート土浦にて開催。市民とともに集めてきた「土浦の音」を、聴く・遊ぶ・つくる・演奏するという4つの入口から体験する2日間。Unity製のオリジナルゲーム「おとの帆曳船」、サウンドトイ、ワークショップ、空間音響インスタレーション（別掲「Aquarium / Jisō」）、そして最終日のライブまでを一つの空間に束ねました。ゲームは展示後にWeb公開——体験はいまも開かれています。',
-      EN: "Held on 22–23 August 2026 at Ringring Port Tsuchiura. Two days of experiencing the \"sounds of Tsuchiura\" — gathered together with local citizens — through four doorways: listening, playing, making, and performing. The original Unity game 'Oto no Hobikibune', sound toys, workshops, spatial audio installations (see 'Aquarium / Jisō'), and a closing live performance were bound together in a single space. The game went online after the exhibition — the experience remains open.",
-      TW: '2026年8月22–23日於 Ringring Port 土浦舉辦。將與市民共同收集的「土浦之音」，透過聆聽、遊玩、製作、演奏四個入口體驗的兩天。Unity 原創遊戲《おとの帆曳船》、聲音玩具、工作坊、空間音響裝置（另見《Aquarium / Jisō》），以及最終日的現場演出，全部匯聚於同一個空間。遊戲於展後上線公開——體驗至今仍然開放。'
+      JP: '2026年8月22–23日、りんりんポート土浦にて開催。市民とともに集めてきた「土浦の音」を、聴く・遊ぶ・つくる・演奏するという4つの入口から体験する2日間。VR作品3点、サウンドトイ、オリジナルゲーム、ワークショップ、そして最終日のライブまでを一つの空間に束ねました。',
+      EN: 'Held on 22–23 August 2026 at Ringring Port Tsuchiura. Two days of experiencing the "sounds of Tsuchiura" — gathered together with local citizens — through four doorways: listening, playing, making, and performing. Three VR works, a sound toy, an original game, workshops, and a closing live performance were bound together in a single space.',
+      TW: '2026年8月22–23日於 Ringring Port 土浦舉辦。將與市民共同收集的「土浦之音」，透過聆聽、遊玩、製作、演奏四個入口體驗的兩天。三件 VR 作品、聲音玩具、原創遊戲、工作坊，以及最終日的現場演出，全部匯聚於同一個空間。'
     },
     imageUrl: '/images/tsap-exhibition-2026.jpg',
     tags: ['2026.08.22-23', 'Tsuchiura', 'Exhibition', 'VR', 'Game', 'Workshop', '2ch Spatial'],
@@ -67,43 +67,6 @@ export const works: Work[] = [
       { label: '開催記録', url: 'https://tsuchiura-sound-exhibition-2026.netlify.app/' },
       { label: 'TSAP', url: 'https://tsuchiura-sound-achib.netlify.app/' },
       { label: 'Game', url: 'https://tsap-hobikibune-game.netlify.app/' }
-    ]
-  },
-
-  {
-    id: 'tsap-vr-2026',
-    title: 'Aquarium / Jisō',
-    titleLocalized: {
-      JP: 'Aquarium / Jisō ― 空間音響インスタレーション',
-      EN: 'Aquarium / Jisō — Spatial Audio Installations',
-      TW: 'Aquarium / Jisō ― 空間音響裝置'
-    },
-    date: '2026.08.22-23',
-    client: 'Public Project',
-    category: 'Installation',
-    pillar: 'Art',
-    featuredInTech: true,
-    description: {
-      JP: '2026年8月22–23日、りんりんポート土浦で発表した2つの空間音響インスタレーション。来場者がiPadを手に空間の中を巡ると、28の音がそれぞれの位置に定位したまま空中にとどまる——自作のアンビソニクス・エンジン（TouchDesigner・最大3次・バイノーラルデコード）による。「Aquarium」は土浦の水を、「Jisō（時層）」は時間が堆積した骨格を主題に。頭の向きではなく、空間を巡ることが聴取のインターフェースになります。',
-      EN: "Two spatial audio installations presented at Ringring Port Tsuchiura on 22–23 August 2026. As visitors travel through the space on an iPad, 28 sounds hold their positions in mid-air — rendered by a custom ambisonic engine (TouchDesigner, up to 3rd order, binaural decoding). 'Aquarium' takes the water of Tsuchiura as its subject; 'Jisō', a skeleton of accumulated time. Not head-tracking — moving through the space is itself the interface for listening.",
-      TW: '2026年8月22–23日於 Ringring Port 土浦發表的兩件空間音響裝置。觀眾以 iPad 在空間中巡遊時，28 個聲音各自停留在空中的固定位置——由自製的 Ambisonics 引擎（TouchDesigner・最高三階・雙耳解碼）驅動。《Aquarium》以土浦的水為題；《Jisō》則是時間堆積而成的骨骼。聆聽的介面不是頭部的轉向，而是在空間中的巡遊。'
-    },
-    imageUrl: '/images/tsap-vr-2026.jpg',
-    tags: ['2026.08.22-23', 'Spatial Audio', 'Ambisonics', 'TouchDesigner', 'Installation'],
-    role: {
-      JP: '作曲・立体音響制作・アンビソニクス エンジン開発',
-      EN: 'Composition, Spatial Audio Production, Custom Ambisonic Engine Development',
-      TW: '作曲、立體音響製作、Ambisonics 引擎開發'
-    },
-    approach: {
-      JP: '音源ごとに空間座標を与え、iPad上の視点位置に応じてリアルタイムにバイノーラル・レンダリングするオブジェクトベースの方式。エンジンはTouchDesigner上に自作（最大3次アンビソニクス）。映像はTouchDesignerとUnreal Engine 5で制作しました。',
-      EN: "An object-based approach: each sound source is given spatial coordinates and rendered binaurally in real time according to the viewpoint position on the iPad. The engine was built from scratch in TouchDesigner (up to 3rd-order ambisonics). Visuals were produced in TouchDesigner and Unreal Engine 5.",
-      TW: '物件導向的空間音響：為每個音源賦予空間座標，依 iPad 上的視點位置即時進行雙耳渲染。引擎於 TouchDesigner 上自製（最高三階 Ambisonics）。影像以 TouchDesigner 與 Unreal Engine 5 製作。'
-    },
-    externalLinks: [
-      { label: 'Aquarium (YouTube)', url: 'https://www.youtube.com/watch?v=UTzs9uSEbFY' },
-      { label: 'Jisō (YouTube)', url: 'https://www.youtube.com/watch?v=84HVNdVfJqg' },
-      { label: '開催記録', url: 'https://tsuchiura-sound-exhibition-2026.netlify.app/' }
     ]
   },
 
@@ -184,16 +147,15 @@ export const works: Work[] = [
     category: 'Client Works',
     pillar: 'Art',
     description: {
-      JP: '声優・千葉翔也さんのニューEP『Invention』（2026年6月24日リリース／KICS-4258）収録の「ラックアウト」で、作編曲を担当しました。同曲はTVアニメ『不運からの最強男』（2027年放送）のイメージソングです。ピンチを開き直って楽しむ——ラストへ向けて気持ちが高まっていく、高揚感のあるアニメ／ポップ・ナンバーに仕上げました。公式クレジット：作詞 千葉翔也／作曲 中村浩之／編曲 鵺録音。2026年8月31日、アニメ公式チャンネルにてイメージPVが公開されました。',
-      EN: 'Composed and arranged “Lackout,” a track on voice actor Shoya Chiba’s new EP *Invention* (released 24 June 2026 / KICS-4258). The song is the image song for the TV anime *The Strongest Man, Born from Misfortune* (on air 2027) — an uplifting anime-pop number that builds toward an exhilarating finish. Official credits: Lyrics, Shoya Chiba / Music, NAKAMURA Hiroyuki / Arrangement, Nué Rokuon. On 31 August 2026 the image PV was released on the anime’s official channel.',
-      TW: '擔任聲優千葉翔也新EP《Invention》（2026年6月24日發行／KICS-4258）收錄曲「ラックアウト」的作曲與編曲。此曲為電視動畫《不運からの最強男》（2027年播出）的形象曲，是一首情緒層層高漲、充滿振奮感的動畫流行樂曲。官方製作群：作詞 千葉翔也／作曲 中村浩之／編曲 鵺録音。2026年8月31日，動畫官方頻道公開了形象PV。'
+      JP: '声優・千葉翔也さんのニューEP『Invention』（2026年6月24日リリース／KICS-4258）収録の「ラックアウト」で、作編曲を担当しました。同曲はTVアニメ『不運からの最強男』（2027年放送）のイメージソングです。ピンチを開き直って楽しむ——ラストへ向けて気持ちが高まっていく、高揚感のあるアニメ／ポップ・ナンバーに仕上げました。公式クレジット：作詞 千葉翔也／作曲 中村浩之／編曲 鵺録音。',
+      EN: 'Composed and arranged “Lackout,” a track on voice actor Shoya Chiba’s new EP *Invention* (released 24 June 2026 / KICS-4258). The song is the image song for the TV anime *The Strongest Man, Born from Misfortune* (on air 2027) — an uplifting anime-pop number that builds toward an exhilarating finish. Official credits: Lyrics, Shoya Chiba / Music, NAKAMURA Hiroyuki / Arrangement, Nué Rokuon.',
+      TW: '擔任聲優千葉翔也新EP《Invention》（2026年6月24日發行／KICS-4258）收錄曲「ラックアウト」的作曲與編曲。此曲為電視動畫《不運からの最強男》（2027年播出）的形象曲，是一首情緒層層高漲、充滿振奮感的動畫流行樂曲。官方製作群：作詞 千葉翔也／作曲 中村浩之／編曲 鵺録音。'
     },
     imageUrl: '/images/lackout.jpg',
     tags: ['Client Works', 'Anime Tie-in', 'Composition', 'Arrangement', 'Shoya Chiba', '2026'],
     role: { JP: '作編曲', EN: 'Composition & Arrangement', TW: '作曲・編曲' },
     externalLinks: [
       { label: 'アニメ公式', url: 'https://fuunsaikyo.asmik-ace.co.jp/' },
-      { label: 'イメージPV (YouTube)', url: 'https://www.youtube.com/watch?v=bFi74B3n80o' },
       { label: '千葉書屋ニュース', url: 'https://chibashoya.com/news/2026/0623.html' }
     ]
   },
