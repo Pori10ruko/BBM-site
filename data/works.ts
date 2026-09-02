@@ -194,7 +194,7 @@ export const works: Work[] = [
     externalLinks: [
       { label: 'アニメ公式', url: 'https://fuunsaikyo.asmik-ace.co.jp/' },
       { label: 'イメージPV (YouTube)', url: 'https://www.youtube.com/watch?v=bFi74B3n80o' },
-      { label: '千葉書屋ニュース', url: 'https://chibashoya.com/news/2026/0623.html' }
+      { label: '千葉翔也 Official ニュース', url: 'https://chibashoya.com/news/2026/0623.html' }
     ]
   },
   {
@@ -205,17 +205,17 @@ export const works: Work[] = [
       EN: 'Architecture of Sound and Light at Tokoji Temple',
       TW: '音與光的建築 at 東光寺'
     },
-    date: '2025.02.23',
+    date: '2026.02.23',
     client: 'Tokoji Temple',
     category: 'Performance',
     pillar: 'Art',
     description: {
-      JP: '歴史ある東光寺の本堂を舞台に、過去と未来が交差する一日限りの祝祭。市民と共に紡いだ「光のまゆ」と、土浦の風景から採集した「音」が融合し、聴覚的な伽藍を立ち上げます。',
-      EN: 'A one-night festival where past and future intersect at Tokoji Temple. "Cocoons of light" woven with citizens and "sounds" collected from Tsuchiura fuse to erect an auditory cathedral.',
-      TW: '在歷史悠久的東光寺本堂，上演一場過去與未來交錯的一日限定慶典。與市民共同編織的「光之繭」融合從土浦採集的「聲音」，建構出聽覺的伽藍。'
+      JP: '歴史ある東光寺の本堂を舞台にした一日限りの祝祭（2026年2月23日）。市民と共に紡いだ「光のまゆ」と、土浦の風景から採集した「音」、そして生演奏が融合し、約400年の歴史をもつ寺院空間が聴覚的な伽藍になりました。音響は2chスピーカーによるバイノーラル構成。',
+      EN: 'A one-day festival in the historic main hall of Tokoji Temple (23 February 2026). "Cocoons of light" woven with citizens, sounds collected from the Tsuchiura landscape, and live performance fused together — a temple space with some 400 years of history became an auditory cathedral. Sound: binaural over a single pair of speakers.',
+      TW: '以歷史悠久的東光寺本堂為舞台的一日限定祭典（2026年2月23日）。與市民共同編織的「光之繭」、從土浦風景採集的「聲音」與現場演奏相互融合，約400年歷史的寺院空間化為聽覺的伽藍。音響為兩支喇叭的雙耳（binaural）構成。'
     },
     imageUrl: '/images/tokoji1.png',
-    tags: ['2025.02.23', 'Tsuchiura', 'Exhibition', 'Concert', '2ch Spatial'],
+    tags: ['2026.02.23', 'Tsuchiura', 'Exhibition', 'Concert', '2ch Spatial'],
     role: { JP: '空間音響演出', EN: 'Spatial Audio Direction', TW: '立體音響演出' },
     approach: {
       JP: '展示とコンサートを横断する2ch立体音響の空間演出を設計。',
@@ -234,22 +234,22 @@ export const works: Work[] = [
       EN: "Installation 'Distant Echo'",
       TW: "裝置藝術 'Distant Echo'"
     },
-    date: '2025.11.14',
+    date: '2025.11.15',
     client: 'BBM Collective',
     category: 'Installation',
     pillar: 'Art',
     featuredInTech: true,
     description: {
-      JP: '「距離」と「残響」の美学。ピアノの旋律が空間に描く不可視の軌跡を、独自の音響処理によって聴覚的な建築として再構築します。静寂の中に浮かび上がる音の粒子が、鑑賞者の記憶と共振する没入型ライブインスタレーション。 Live Painting: Maria Noto (能登真理亜)',
-      EN: 'Achieved a vast sound field wrapping the entire venue with only two speakers.',
-      TW: '僅使用兩支揚聲器，便實現了包覆整個會場的廣闊音場。'
+      JP: '「距離」と「残響」の美学。ピアノの旋律が空間に描く不可視の軌跡を、独自の音響処理によって聴覚的な建築として再構築します。静寂の中に浮かび上がる音の粒子が、鑑賞者の記憶と共振する没入型ライブインスタレーション。演目には Random International × Superblue Miami へ提供した「Alone Together」を含みます。木場 Earth+ Gallery（東京）、2025年11月15日。出演: 中村浩之（ピアノ／エレクトロニクス）、宇津木紘一（ソプラノサックス＋ライブエレクトロニクス）／Live Painting: 能登真理亜',
+      EN: 'An aesthetics of distance and reverberation. The invisible trajectories a piano draws in space are rebuilt as auditory architecture — two near-field speakers, no headphones, a fully three-dimensional field. An immersive live installation where particles of sound surface out of silence and resonate with the listener\'s memory. The programme included "Alone Together", written for Random International × Superblue Miami. Earth+ Gallery, Kiba (Tokyo), 15 November 2025. With NAKAMURA Hiroyuki (piano / electronics), UTSUGI Koichi (soprano saxophone + live electronics); live painting by NOTO Maria.',
+      TW: '「距離」與「殘響」的美學。鋼琴旋律在空間中描繪的無形軌跡，重構為聽覺的建築——無需耳機，僅近場兩支喇叭即可成立完整的三維音場。寂靜中浮現的聲音粒子，與觀者的記憶共振的沉浸式現場裝置。演出曲目包含為 Random International × Superblue Miami 創作的《Alone Together》。木場 Earth+ Gallery（東京），2025年11月15日。演出：中村浩之（鋼琴／電子）、宇津木紘一（高音薩克斯風＋現場電子）／現場繪畫：能登真理亞'
     },
     imageUrl: '/images/distant-echo.avif',
     tags: ['Immersive', 'Performance', '2ch Spatial'],
     role: { JP: '音響演出 / システム構築', EN: 'Audio Direction', TW: '聲音演出' },
     approach: { JP: '壁面反射を2chで再現し、スピーカーの存在を消すアプローチ。', EN: 'Eliminating speaker presence by recreating wall reflections.', TW: '消除揚聲器的存在感。' },
     externalLinks: [
-      { label: 'Website', url: 'https://www.nakamurahiroyuki.info/distant-echo' },
+      { label: 'Website', url: 'https://nakamurahiroyuki.info/#/distant-echo' },
       { label: 'YouTube', url: 'https://www.youtube.com/watch?v=Am1jq5AXBS4' }
     ]
   },
@@ -279,7 +279,7 @@ export const works: Work[] = [
       TW: '依空間與動線設計音響實作，確保體驗品質。'
     },
     externalLinks: [
-      { label: 'Riyadh Art', url: 'https://riyadhart.sa/en/artworks/alone-together-2024/' }
+      { label: 'Riyadh Art', url: 'https://www.random-international.com/alone-together' }
     ]
   },
   {
@@ -824,9 +824,9 @@ export const works: Work[] = [
     category: 'Archive',
     pillar: 'Technology',
     description: {
-      JP: '2026年に実施予定の東光寺での音響実験。寺院空間で2chスピーカーのみを用いて立体感のある音響空間を構築するテスト。',
-      EN: 'Spatial audio experiment in a temple environment using only 2 speakers.',
-      TW: '在寺廟環境中僅使用兩支揚聲器進行的空間音響實驗。'
+      JP: '東光寺で実施した音響実験。寺院という特殊な空間において、2chスピーカーのみで立体感のある音響空間が成立するかを検証しました。',
+      EN: 'A spatial audio experiment carried out at Tokoji Temple — testing whether a three-dimensional sound field can stand in a temple space using only two speakers.',
+      TW: '於東光寺進行的音響實驗——驗證僅以兩支喇叭能否在寺院這樣特殊的空間中成立具立體感的音場。'
     },
     imageUrl: '/images/tokoji1.png',
     tags: ['2026', 'Tokoji', '2ch', 'Test', 'Spatial Audio'],

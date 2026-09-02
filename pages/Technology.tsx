@@ -55,7 +55,7 @@ const Technology: React.FC = () => {
         'ヘッドフォンの外にも、音の空間はつくれます。ふつうの2chスピーカーだけでも、前後・左右、奥行きや距離感までを丁寧に設計すれば、お寺や展示室、小さな会場が、音に包まれる場所になります。BBMでは、そうした「場」そのものを体現するイベントも行っています。東京での《Distant Echo》(2025)では、ヘッドフォンのために磨いてきた同じバイノーラル・エンジンを、2本のスピーカーだけに向けて再チューニング。会場の壁の反響と一体化させ、「スピーカーの存在が消える」音場を設計しました。',
       clientTitle: 'ともにつくった仕事',
       clientBody: 'これまでに、アーティストや企業のみなさまと、こんな音をつくってきました。',
-      tokojiTestBody: '2026年に実施予定の東光寺での音響実験。お寺という特殊な空間においても、わずか2chのスピーカーで立体感のある音響空間を構築するテストの様子。',
+      tokojiTestBody: '東光寺で実施した音響実験。お寺という特殊な空間においても、わずか2chのスピーカーで立体感のある音響空間を構築できるかを検証しました。',
       collabTitle: '次は、みなさまと。',
       collabBody:
         'ヘッドフォンの中の一曲から、会場全体の音響設計、VRやゲームの中の空間まで。会場と目的に合わせて、いちばん合うかたちを一緒に探し、体験として成立する音を形にします。',
@@ -100,7 +100,7 @@ const Technology: React.FC = () => {
       beyondBody: 'Sound-space can exist outside headphones, too. With just two ordinary speakers — carefully designing depth, distance and direction — a temple, a gallery, a small venue becomes a place wrapped in sound. BBM also stages events that embody such spaces. For Distant Echo (Tokyo, 2025), we retuned the very binaural engine refined for headphones toward just two speakers, letting it merge with the venue\'s wall reflections until the speakers themselves seemed to disappear.',
       clientTitle: 'Works with Partners',
       clientBody: 'Sounds we have made together with artists and companies.',
-      tokojiTestBody: 'A 2026 temple acoustic experiment to build a spatial sound field using only two speakers—even in a unique space like a temple.',
+      tokojiTestBody: 'An acoustic experiment carried out at Tokoji Temple — testing whether a spatial sound field can be built with only two speakers, even in a space as particular as a temple.',
       collabTitle: "Let's Collaborate Next.",
       collabBody:
         "From a single piece inside headphones, to the acoustics of a whole venue, to spaces inside VR and games — we look for the form that fits your place and purpose, and shape sound into an experience together.",
@@ -145,7 +145,7 @@ const Technology: React.FC = () => {
       beyondBody: '耳機之外，也能建構聲音的空間。即使只有兩顆一般的揚聲器，只要細緻設計前後、左右、縱深與距離感，寺廟、展間、小型場地，都能成為被聲音包裹的所在。BBM 也舉辦體現這種「場」的活動。在東京的《Distant Echo》(2025)，我們把為耳機打磨的同一個雙耳引擎，重新調校至僅有的兩顆揚聲器，使其與場地牆面的反響融為一體——直到揚聲器的存在彷彿消失。',
       clientTitle: '一起完成的作品',
       clientBody: '至今與藝術家、企業夥伴一起做出的這些聲音。',
-      tokojiTestBody: '預計於 2026 年在東光寺進行的聲學實驗：即使在寺廟這樣特殊的空間，也能僅用 2ch 揚聲器建構具有立體感的音響空間。',
+      tokojiTestBody: '於東光寺進行的聲學實驗：驗證即使在寺廟這樣特殊的空間，是否也能僅用 2ch 揚聲器建構具有立體感的音響空間。',
       collabTitle: '下一位，想與你合作。',
       collabBody:
         '從耳機中的一首樂曲、到整個場地的音響設計、再到 VR 與遊戲中的空間——我們依場地與目的，一起尋找最合適的形式，把聲音落實為完整的體驗。',

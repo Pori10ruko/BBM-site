@@ -140,6 +140,11 @@ const Home: React.FC = () => {
         EN: 'Participated in Spatial Audio Production for YUKI\'s "Share" MV',
         TW: '參與 YUKI『Share』MV 立體音響製作'
       },
+      yukiDesc: {
+        JP: '平野さん監督のMVにて、カトラリー／レストラン空間の立体音響制作として参加しました。劇場アニメ『この本を盗む者は』主題歌です。ぜひご覧ください。',
+        EN: 'For the music video directed by Hirano, we produced the spatial audio for the cutlery and the restaurant space. The song is the theme for the theatrical anime "Kono Hon wo Nusumu Mono wa".',
+        TW: '於平野導演的MV中，負責餐具與餐廳空間的立體音響製作。此曲為劇場版動畫《この本を盗む者は》主題曲。'
+      },
       seigetsukiTitle: {
         JP: 'バーチャル霊園 清月記',
         EN: 'Virtual Cemetery Application by Seigetsuki',
@@ -799,7 +804,7 @@ const Home: React.FC = () => {
                 {t.news.yukiTitle[lang]}
               </h3>
               <p className="text-gray-600 font-serif leading-loose text-base">
-                平野さん監督のMVにて、カトラリー／レストラン空間の立体音響制作として参加しました。劇場アニメ『この本を盗む者は』主題歌です。ぜひご覧ください。
+                {t.news.yukiDesc[lang]}
               </p>
             </motion.a>
 
