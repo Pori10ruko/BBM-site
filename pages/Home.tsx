@@ -69,22 +69,22 @@ const Home: React.FC = () => {
     },
     technology: {
       JP: {
-        h1: '革新的な没入体験を、標準的な環境で',
-        p1: '特別なサラウンドシステムは不要です。私たちが開発した独自の2ch立体音響アルゴリズムは、既存のスピーカーやステレオヘッドフォンだけで、驚異的な音響空間を実現します。',
-        h2: 'ビジネスへの実装パートナーとして',
-        p2: 'この技術は、VR/ARコンテンツ、アプリ開発、そして空間インスタレーションにおける没入体験の「核」となります。BBMは単なる技術提供にとどまらず、実装パートナーとしてプロジェクトに伴走。御社のコンテンツに、他にはない音響体験という付加価値を創出します。'
+        h1: '表現の必然から生まれた技術',
+        p1: '核にあるのは、TouchDesigner上に自作したアンビソニクス・エンジン。最大3次、バイノーラルデコード、最大30オブジェクトの同時定位。市販のスペーシャライザーもプラグインも使いません。特別な再生環境も要りません——2本のスピーカーか、ヘッドフォンがあれば成立します。作曲家が、自分の音楽に必要な空間をつくるために書いたコードです。',
+        h2: '舞台から、教室まで',
+        p2: '同じ核が、かたちを変えて動いています。英国の舞台作品『DEEP FAKE』のライブ立体音響。土浦の市民と1年かけて集めた音のVR展示。小学校の特別授業、無料のオンラインセミナー。アニメ楽曲の作編曲やMVの立体音響——クライアントワークも、ボランティアも、隔てなく。「この表現には、この空間が必要だ」というものがあれば、一緒に考えるところから始めます。'
       },
       EN: {
-        h1: 'Immersive Experience in Standard Environments',
-        p1: 'No special surround systems are needed. Our proprietary 2ch spatial audio algorithm realizes a breathtaking sound space using just existing speakers or stereo headphones.',
-        h2: 'As Your Implementation Partner',
-        p2: 'This technology becomes the "core" of immersive experiences in VR/AR content, app development, and spatial installations. BBM goes beyond mere technology licensing; we walk with you as an implementation partner, creating unique value and auditory experiences for your content.'
+        h1: 'Technology Born of Necessity',
+        p1: 'At the core is a custom ambisonic engine, built from scratch in TouchDesigner — up to 3rd order, binaural decoding, up to 30 sound objects placed at once. No commercial spatializers, no plugins. No special playback system, either: two speakers or a pair of headphones is enough. Code written by a composer, for the spaces his music needed.',
+        h2: 'From Stages to Classrooms',
+        p2: 'The same core takes different shapes. Live spatial sound for DEEP FAKE, a UK stage production. A VR exhibition of sounds gathered over a year with the residents of Tsuchiura. Special classes at elementary schools; free online seminars. Composing and arranging for anime, spatial audio for music videos — commissioned work and volunteer work alike. If there is an expression that needs this kind of space, we start by thinking it through together.'
       },
       TW: {
-        h1: '在標準環境中實現革新性的沉浸體驗',
-        p1: '不需要特殊的環繞音響系統。我們開發的獨家雙聲道立體音響演算法，僅需既有的揚聲器或立體聲耳機，即可實現令人驚嘆的音響空間。',
-        h2: '作為商業實踐的合作夥伴',
-        p2: '此技術將成為 VR/AR 內容、App 開發以及空間裝置藝術中沉浸體驗的「核心」。BBM 不僅提供技術，更作為實踐夥伴參與專案，為您的內容創造獨一無二的聽覺體驗與附加價值。'
+        h1: '由必然而生的技術',
+        p1: '核心是在 TouchDesigner 上自製的 Ambisonics 引擎——最高三階、雙耳解碼、可同時定位 30 個聲音物件。不使用市售的空間音響外掛，也不需要特殊的重播環境：兩支喇叭、或一副耳機即可成立。這是一位作曲家為了自己音樂所需要的空間，親手寫下的程式碼。',
+        h2: '從劇場到教室',
+        p2: '同一個核心，以不同的形態運作著。英國舞台作品《DEEP FAKE》的現場立體聲響；與土浦市民花費一年採集聲音的 VR 展覽；小學的特別課程與免費線上講座；動畫歌曲的作編曲、MV 的空間音響——委託製作與志願活動，不分彼此。若有一種表現需要這樣的空間，我們從一起思考開始。'
       }
     },
     upcoming: {
@@ -104,9 +104,9 @@ const Home: React.FC = () => {
         TW: 'Ringring Port 土浦（茨城縣土浦市）'
       },
       desc: {
-        JP: 'つちうらサウンド・アーカイブ・プロジェクト（TSAP）が市民とともに集めてきた「土浦の音」を、聴く・遊ぶ・つくる・演奏するという4つの入口から体験する2日間を開催しました。2chスピーカーとヘッドフォンによる立体音響のVR作品3点、音あそびのサウンドトイ、オリジナルゲーム「おとの帆曳船」、てづくりワークショップ、そして両日15:30のサウンドスケープ・ライブ。会期中の記録を公開しています。',
-        EN: 'We held two days of experiencing the "sounds of Tsuchiura" — gathered together with local citizens through the Tsuchiura Sound Archive Project (TSAP) — through four doorways: listening, playing, making, and performing. Three VR works in spatial audio over two speakers and headphones, a sound toy, the original game "Oto no Hobikibune," hands-on workshops, and a soundscape live performance at 15:30 on both days. A record of the exhibition is now online.',
-        TW: '我們舉辦了為期兩天的活動，透過聆聽、遊玩、製作、演奏四個入口，體驗土浦聲音檔案計畫（TSAP）與市民共同收集的「土浦之音」。包含以雙聲道喇叭與耳機呈現立體音響的三件 VR 作品、聲音玩具、原創遊戲「おとの帆曳船」、動手實作工作坊，以及兩天皆於 15:30 舉行的聲景現場演出。會期紀錄現已公開。'
+        JP: 'つちうらサウンド・アーカイブ・プロジェクト（TSAP）が市民とともに集めてきた「土浦の音」を、聴く・遊ぶ・つくる・演奏するという4つの入口から体験する2日間を開催しました。2chスピーカーとヘッドフォンによる立体音響のVR作品2点、音あそびのサウンドトイ、オリジナルゲーム「おとの帆曳船」、てづくりワークショップ、そして両日15:30のサウンドスケープ・ライブ。会期中の記録を公開しています。',
+        EN: 'We held two days of experiencing the "sounds of Tsuchiura" — gathered together with local citizens through the Tsuchiura Sound Archive Project (TSAP) — through four doorways: listening, playing, making, and performing. Two VR works in spatial audio over two speakers and headphones, a sound toy, the original game "Oto no Hobikibune," hands-on workshops, and a soundscape live performance at 15:30 on both days. A record of the exhibition is now online.',
+        TW: '我們舉辦了為期兩天的活動，透過聆聽、遊玩、製作、演奏四個入口，體驗土浦聲音檔案計畫（TSAP）與市民共同收集的「土浦之音」。包含以雙聲道喇叭與耳機呈現立體音響的兩件 VR 作品、聲音玩具、原創遊戲「おとの帆曳船」、動手實作工作坊，以及兩天皆於 15:30 舉行的聲景現場演出。會期紀錄現已公開。'
       }
     },
     news: {
@@ -124,6 +124,16 @@ const Home: React.FC = () => {
         JP: '中村が自身で構築した空間音響システムを、たった一台のピアノに向けたソロアルバム。現在配信中——Spotify・Apple Music ほか各サービスで公開、ミュージック・ビデオも YouTube で公開中。デジタル版は Beyond Boundary Music より（BBM-001、name-your-price）。英 Fluid Audio よりハンドメイド署名番号入りの限定 CD（マスタリング: Ian Hawgood）も発売され、完売。武満徹〈Distance〉(1961) への応答。',
         EN: 'A solo album turning Nakamura\'s self-built spatial-audio system on a single piano. Out now: streaming on Spotify, Apple Music and more, with music videos on YouTube. Digital edition on Beyond Boundary Music (BBM-001, name-your-price). The handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood, is sold out. A response to Toru Takemitsu\'s "Distance" (1961).',
         TW: '中村將自行打造的空間音響系統用於一台鋼琴的個人專輯。現正發行——已於 Spotify、Apple Music 等各串流平台上架，音樂錄影帶亦已於 YouTube 公開。數位版經由 Beyond Boundary Music（BBM-001、name-your-price）。英 Fluid Audio 手工簽名編號限量 CD（母帶: Ian Hawgood）已完售。回應武滿徹〈Distance〉(1961) 的作品。',
+      },
+      lackoutPvTitle: {
+        JP: 'TVアニメ『不運からの最強男』イメージPV 公開',
+        EN: 'Image PV Released for the TV Anime “The Strongest Man, Born from Misfortune”',
+        TW: '電視動畫《不運からの最強男》形象PV 公開'
+      },
+      lackoutPvDesc: {
+        JP: '2027年放送予定のTVアニメ『不運からの最強男』のイメージPVが、アニメ公式チャンネルで公開されました。中村が作曲を担当したイメージソング「ラックアウト」（歌：千葉翔也）が使われています。',
+        EN: 'The image PV for the TV anime “The Strongest Man, Born from Misfortune” (airing 2027) is now on the anime’s official channel, featuring “Lackout” — the image song composed by NAKAMURA Hiroyuki and performed by Shoya Chiba.',
+        TW: '2027年播出的電視動畫《不運からの最強男》形象PV已於動畫官方頻道公開，使用了由中村浩之作曲的形象曲「ラックアウト」（演唱：千葉翔也）。'
       },
       yukiTitle: {
         JP: 'YUKI『Share』MV 立体音響制作に参加',
@@ -737,6 +747,34 @@ const Home: React.FC = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <motion.a
+              href="https://www.youtube.com/watch?v=bFi74B3n80o"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img
+                  src="/images/lackout.jpg"
+                  alt=""
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2026.08.31 Release
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.lackoutPvTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                {t.news.lackoutPvDesc[lang]}
+              </p>
+            </motion.a>
+
             <motion.a
               href="https://youtu.be/QSQ4U3pcvzQ?si=TkflGvBwPiF9fKyl"
               target="_blank"

@@ -24,7 +24,7 @@ const Technology: React.FC = () => {
       hero: 'まず、私たちの音を体感してください。ぜひ、ヘッドフォンで聴いてください...',
       philosophyTitle: '音と空間の必然性',
       philosophyBody:
-        '立体音響の技術は、いま広く行き渡りつつあります。しかし「その技術がなければ成立しない音」に出会うことは、いまも稀です。\n私たちは技術を誇示するためではなく、「この表現には、この空間が必要だ」という必然から出発します。\nだから、方法をひとつに決めていません。ヘッドフォンの中で完結するバイノーラル。頭の動きに音が追いつくアンビソニクス。歩いて巡るVR、ブラウザで遊べるゲーム、そして二本のスピーカーだけで奥行きを立ち上げる設計。作品と場所が求めるかたちを、そのつど選び、組み合わせています。',
+        '立体音響の技術は、いま広く行き渡りつつあります。しかし「その技術がなければ成立しない音」に出会うことは、いまも稀です。\n私たちは技術を誇示するためではなく、「この表現には、この空間が必要だ」という必然から出発します。\nだから、方法をひとつに決めていません。ヘッドフォンの中で完結するバイノーラル。頭の動きに音が追いつくアンビソニクス。iPadで巡るVR、ブラウザで遊べるゲーム、そして二本のスピーカーだけで奥行きを立ち上げる設計。作品と場所が求めるかたちを、そのつど選び、組み合わせています。',
       maTitle: '「距離」と「間」',
       maBody:
         'アルバム『Piano Distance』の題は、武満徹が1961年に書いたピアノ独奏曲への応答です。武満はひとつの楽器、ひとつの室内に、音と音の「距離」と静寂を置きました。私たちはその距離を、比喩ではなく、三次元の空間として立ち上げます。\nピアノの内部から採取した一音一音は固有の音色を持ち、空間の中で独立した「オブジェクト」として定位する。日本語の「間(ま)」——音と音のあいだにある沈黙と距離——を、装飾としてではなく、空間設計そのものの構造原理として組み込むこと。それが私たちの出発点です。',
@@ -32,13 +32,13 @@ const Technology: React.FC = () => {
       formsLead: 'これらすべてを支えているのは、TouchDesigner上に自作した単一のアンビソニクス・エンジンです。市販のスペーシャライザーもプラグインも使いません。ひとつの核が、作品と場所に合わせてかたちを変えます。',
       forms: [
         { name: 'Binaural / 2ch', body: 'ヘッドフォンや、ふつうのステレオスピーカーで。前後・上下・距離までを描く、いちばん身近な入り口です。' },
-        { name: 'Ambisonics + Head Tracking', body: '自作のアンビソニクス・エンジン。ひとりの聴き手の頭の向きに音場が追従するバイノーラル構成(Piano Distance、DEEP FAKEではライブで運用)から、iPadを手に歩き回る最大3次・最大30オブジェクト同時定位の展示構成(TSAP)まで——同じ核が、かたちを変えます。' },
-        { name: 'VR / Realtime 3D', body: '音の中を、歩く。リアルタイムに生成される三次元空間に、立体音響を統合します。' },
+        { name: 'Ambisonics + Head Tracking', body: '自作のアンビソニクス・エンジン。ひとりの聴き手の頭の向きに音場が追従するバイノーラル構成(Piano Distance、DEEP FAKEではライブで運用)から、iPadで空間を巡る最大3次・最大30オブジェクト同時定位の展示構成(TSAP)まで——同じ核が、かたちを変えます。' },
+        { name: 'VR / Realtime 3D', body: '音の中を、巡る。リアルタイムに生成される三次元空間に、立体音響を統合します。' },
         { name: 'Game Engines', body: 'UnityやUnreal Engineで、体験を持ち帰れるかたちに。Webブラウザで、誰でも、いつでも。' },
       ],
-      tsapTitle: '歩く人ごとに、違う曲になる',
+      tsapTitle: '巡る人ごとに、違う曲になる',
       tsapBody:
-        'Coral・Aquarium・Sumi——TSAPの3つのシーンは、Piano Distanceと同じTouchDesignerの核を最大3次アンビソニクスへ拡張したものです。Aquariumだけで28個の音オブジェクトとステレオベッドが同時に定位し、iPadを手に歩くと、位置に応じて音場が組み変わります。281.6秒の「嵐」のサイクルと、発見の進行に応じて開くゲートによって、体験は自由な徘徊ではなく、作曲された弧を持ちます。音響解析と空間ロジックはすべてTouchDesignerが担い、UE5には位置・レベル・色の値だけを送信——サンゴの発光は、音のエンベロープに直接追従します。歩く経路が違えば、聴こえるシーケンスも違う。二度と同じ体験はありません。',
+        'Jisō・Aquarium——TSAPの2つのシーンは、Piano Distanceと同じTouchDesignerの核を最大3次アンビソニクスへ拡張したものです。Aquariumだけで28個の音オブジェクトとステレオベッドが同時に定位し、iPadで空間を巡ると、位置に応じて音場が組み変わります。281.6秒の「嵐」のサイクルと、発見の進行に応じて開くゲートによって、体験は自由な徘徊ではなく、作曲された弧を持ちます。音響解析と空間ロジックはすべてTouchDesignerが担い、UE5には位置・レベル・色の値だけを送信——Jisōの発光は、音のエンベロープに直接追従します。巡る経路が違えば、聴こえるシーケンスも違う。二度と同じ体験はありません。',
       gameTitle: '遊べる音の空間 ― おとの帆曳船',
       gameBody: '土浦の街でアーカイブされた音たちが、Unity製のゲームになりました。帆曳船を操りながら、音のあいだを進んでいく——展覧会「つちうらサウンド・アーカイブ展 2026」で生まれた空間音響の体験は、いまはブラウザひとつで、どこからでも開くことができます。',
       gamePlayButton: 'ブラウザで遊ぶ',
@@ -70,7 +70,7 @@ const Technology: React.FC = () => {
       heroTitle: 'First, Experience Our Sound.',
       hero: 'First, Experience Our Sound. Please listen with headphones. Our technology is not just stereo...',
       philosophyTitle: 'The Necessity of Sound and Space',
-      philosophyBody: 'Spatial audio is everywhere now. Yet sounds that truly require it are still rare.\nWe do not start from technology; we start from necessity — "this expression needs this space."\nThat is why we keep more than one way of working: binaural sound complete within headphones; ambisonics that turns when you turn; VR you can walk through; games you can play in a browser; and rooms where two ordinary speakers open up depth. For each work and each place, we choose — and combine.',
+      philosophyBody: 'Spatial audio is everywhere now. Yet sounds that truly require it are still rare.\nWe do not start from technology; we start from necessity — "this expression needs this space."\nThat is why we keep more than one way of working: binaural sound complete within headphones; ambisonics that turns when you turn; VR you can travel through; games you can play in a browser; and rooms where two ordinary speakers open up depth. For each work and each place, we choose — and combine.',
       maTitle: 'Distance, and Ma',
       maBody:
         'The title Piano Distance answers a solo piano piece Toru Takemitsu wrote in 1961. Within a single instrument and a single room, Takemitsu placed "distance" and silence between sounds. We raise that distance into literal three-dimensional space.\nEach sound, drawn from inside the piano, carries its own timbral identity and stands in the space as an independent object. The Japanese notion of ma — the charged silence and distance between sounds — is built in not as ornament, but as the structural principle of the spatial design itself. That is where we begin.',
@@ -78,13 +78,13 @@ const Technology: React.FC = () => {
       formsLead: 'Beneath all of these runs a single ambisonic engine we built ourselves in TouchDesigner — no commercial spatializer, no plug-ins. One core, changing its form for each work and each place.',
       forms: [
         { name: 'Binaural / 2ch', body: 'Through headphones or an ordinary stereo pair — front and back, above and below, near and far. The most familiar doorway.' },
-        { name: 'Ambisonics + Head Tracking', body: 'Our self-built ambisonic engine. From a head-tracked binaural configuration for a single listener (Piano Distance; run live in DEEP FAKE) to an exhibition configuration scaled to 3rd order, localizing up to 30 objects at once as you walk with an iPad (TSAP) — one core, two forms.' },
-        { name: 'VR / Realtime 3D', body: 'Walking inside the sound — spatial audio woven into three-dimensional worlds generated in real time.' },
+        { name: 'Ambisonics + Head Tracking', body: 'Our self-built ambisonic engine. From a head-tracked binaural configuration for a single listener (Piano Distance; run live in DEEP FAKE) to an exhibition configuration scaled to 3rd order, localizing up to 30 objects at once as you travel the space on an iPad (TSAP) — one core, two forms.' },
+        { name: 'VR / Realtime 3D', body: 'Travelling inside the sound — spatial audio woven into three-dimensional worlds generated in real time.' },
         { name: 'Game Engines', body: 'With Unity and Unreal Engine, the experience becomes something you can take home — in a web browser, for anyone, anytime.' },
       ],
-      tsapTitle: 'A Different Piece for Every Walker',
+      tsapTitle: 'A Different Piece for Every Path',
       tsapBody:
-        'Coral, Aquarium, Sumi — the three scenes of TSAP scale the same TouchDesigner core behind Piano Distance up to 3rd-order ambisonics. In Aquarium alone, 28 sound objects and a stereo bed hold their positions at once; walking with an iPad, the sound field reassembles around you. A 281.6-second "storm" cycle and discovery-progress gates turn wandering into an experience with a composed arc. TouchDesigner carries all the audio analysis and spatial logic, sending only position, level and color to Unreal Engine — the corals\' glow follows the sound\'s envelope directly. Walk a different path, and you hear a different sequence. No two visits are ever the same.',
+        'Jisō and Aquarium — the two scenes of TSAP scale the same TouchDesigner core behind Piano Distance up to 3rd-order ambisonics. In Aquarium alone, 28 sound objects and a stereo bed hold their positions at once; travelling the space on an iPad, the sound field reassembles around you. A 281.6-second "storm" cycle and discovery-progress gates turn wandering into an experience with a composed arc. TouchDesigner carries all the audio analysis and spatial logic, sending only position, level and color to Unreal Engine — the glow of Jisō follows the sound\'s envelope directly. Take a different path, and you hear a different sequence. No two visits are ever the same.',
       gameTitle: 'A Sound-Space You Can Play — Sailing Boat of Sounds',
       gameBody: 'Sounds archived from the town of Tsuchiura became a Unity game. Steering a traditional sail-boat, you drift between the sounds — an experience born at the "Tsuchiura Sound Archive Exhibition 2026," now open to anyone, anywhere, in a single browser tab.',
       gamePlayButton: 'Play in your browser',
@@ -123,13 +123,13 @@ const Technology: React.FC = () => {
       formsLead: '支撐這一切的，是我們在 TouchDesigner 上自行打造的單一 Ambisonics 引擎——不使用市售空間音訊工具或外掛。同一個核心，隨作品與場地改變形態。',
       forms: [
         { name: 'Binaural / 2ch', body: '透過耳機或一般的立體聲喇叭，描繪前後、上下與距離——最貼近日常的入口。' },
-        { name: 'Ambisonics + Head Tracking', body: '自製的 Ambisonics 引擎。從追隨單一聆聽者頭部轉向的雙耳構成(Piano Distance；於 DEEP FAKE 中現場運行)，到手持 iPad 行走、最高三階、最多 30 個物件同時定位的展覽構成(TSAP)——同一個核心，兩種形態。' },
-        { name: 'VR / Realtime 3D', body: '走進聲音之中——將立體音響整合進即時生成的三維空間。' },
+        { name: 'Ambisonics + Head Tracking', body: '自製的 Ambisonics 引擎。從追隨單一聆聽者頭部轉向的雙耳構成(Piano Distance；於 DEEP FAKE 中現場運行)，到以 iPad 巡遊空間、最高三階、最多 30 個物件同時定位的展覽構成(TSAP)——同一個核心，兩種形態。' },
+        { name: 'VR / Realtime 3D', body: '在聲音之中巡遊——將立體音響整合進即時生成的三維空間。' },
         { name: 'Game Engines', body: '以 Unity 與 Unreal Engine，把體驗做成可以帶回家的形式——在瀏覽器中，任何人、任何時候。' },
       ],
-      tsapTitle: '每一位行走者，聽見不同的樂曲',
+      tsapTitle: '每一位巡遊者，聽見不同的樂曲',
       tsapBody:
-        'Coral、Aquarium、Sumi——TSAP 的三個場景，把 Piano Distance 背後同一個 TouchDesigner 核心擴充至三階 Ambisonics。僅 Aquarium 一景，就有 28 個聲音物件與立體聲底床同時定位；手持 iPad 行走，音場會隨你的位置重新組合。281.6 秒的「風暴」循環與隨探索進度開啟的閘門，讓體驗不是漫遊，而是一道被作曲過的弧線。聲音解析與空間邏輯全由 TouchDesigner 承擔，只將位置、音量與顏色的數值傳給 Unreal Engine——珊瑚的發光直接追隨聲音的包絡。走過不同的路徑，就聽見不同的序列。沒有兩次相同的體驗。',
+        'Jisō、Aquarium——TSAP 的兩個場景，把 Piano Distance 背後同一個 TouchDesigner 核心擴充至三階 Ambisonics。僅 Aquarium 一景，就有 28 個聲音物件與立體聲底床同時定位；以 iPad 巡遊空間，音場會隨你的位置重新組合。281.6 秒的「風暴」循環與隨探索進度開啟的閘門，讓體驗不是漫遊，而是一道被作曲過的弧線。聲音解析與空間邏輯全由 TouchDesigner 承擔，只將位置、音量與顏色的數值傳給 Unreal Engine——Jisō 的發光直接追隨聲音的包絡。巡遊不同的路徑，就聽見不同的序列。沒有兩次相同的體驗。',
       gameTitle: '可以遊玩的聲音空間 ― 聲音帆曳船',
       gameBody: '在土浦街頭封存的聲音，成了一款 Unity 遊戲。操縱帆曳船，在聲音之間前行——誕生於「土浦聲音檔案展 2026」的空間音響體驗，如今只需一個瀏覽器分頁，隨處可及。',
       gamePlayButton: '在瀏覽器中遊玩',
@@ -456,7 +456,7 @@ const Technology: React.FC = () => {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+          <div className="grid grid-cols-1 gap-16 md:gap-20 max-w-3xl mx-auto">
             <motion.article 
               className="space-y-6"
               initial={{ opacity: 0, y: 60 }}
@@ -519,55 +519,6 @@ const Technology: React.FC = () => {
               </p>
             </motion.article>
 
-            <motion.article 
-              className="space-y-6"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              <motion.div 
-                className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
-                whileHover={{ 
-                  borderColor: 'rgba(201, 166, 107, 0.7)',
-                  boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <iframe
-                  title="Walking Inside the Sound — Piano Distance Spatial Audio VR"
-                  src="https://www.youtube.com/embed/uIFWglR3gBY"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </motion.div>
-              <div className="grid grid-cols-3 gap-3">
-                {['/images/pd-vr-1.jpg', '/images/pd-vr-2.jpg', '/images/pd-vr-3.jpg'].map((src, i) => (
-                  <motion.div
-                    key={src}
-                    className="relative aspect-video bg-black/50 border border-[#C9A66B]/30 overflow-hidden"
-                    whileHover={{ borderColor: 'rgba(201, 166, 107, 0.7)' }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img
-                      src={src}
-                      alt={`Piano Distance Spatial Audio VR still ${i + 1}`}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-              <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-[#C9A66B]">
-                {t.works2Title}
-              </h3>
-              <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
-                {t.works2Body}
-              </p>
-            </motion.article>
           </div>
         </motion.div>
 
@@ -617,7 +568,7 @@ const Technology: React.FC = () => {
                 transition={{ duration: 0.3 }}
               >
                 <iframe
-                  title="TSAP — Coral"
+                  title="TSAP — Jisō"
                   src="https://www.youtube.com/embed/84HVNdVfJqg"
                   className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -626,7 +577,7 @@ const Technology: React.FC = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                 />
               </motion.div>
-              <p className="text-center text-xs font-bold tracking-[0.3em] uppercase text-[#C9A66B]/80">Coral</p>
+              <p className="text-center text-xs font-bold tracking-[0.3em] uppercase text-[#C9A66B]/80">Jisō</p>
             </motion.div>
 
             <motion.div
@@ -646,7 +597,7 @@ const Technology: React.FC = () => {
               >
                 <iframe
                   title="TSAP — Aquarium"
-                  src="https://www.youtube.com/embed/91Yd4NApzTY"
+                  src="https://www.youtube.com/embed/UTzs9uSEbFY"
                   className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
