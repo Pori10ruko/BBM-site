@@ -17,6 +17,15 @@ const Home: React.FC = () => {
     works.find(w => w.id === 'tainan-lecture'),
   ].filter(Boolean) as typeof works;
   const seigetsukiWork = works.find(w => w.id === 'seigetsuki');
+  const pdWork = works.find(w => w.id === 'piano-distance');
+  const pdPress = pdWork?.press ?? [];
+  const pressMore: Array<{ label: string; to?: string; url?: string; text: { JP: string; EN: string; TW: string } }> = [
+    { label: 'AI Song Contest 2026 — Finalist', url: 'https://aisongcontest.com/the-2026-finalists',
+      text: { JP: '「Maai(間合い)」がファイナリスト14組に選ばれました。', EN: '"Maai" was selected as one of 14 finalists.', TW: '〈Maai(間合い)〉入圍 14 組決賽名單。' } },
+    { label: 'Furusato Ambassador of Tsuchiura City', to: '/works/tsuchiura-furusato-ambassador',
+      text: { JP: 'BBMのメンバー、宇津木紘一さんが土浦市のふるさと大使に就任しました。', EN: 'BBM member Koichi Utsugi was named a Furusato Ambassador of Tsuchiura City.', TW: 'BBM 成員宇津木紘一先生出任土浦市「故鄉大使」。' } },
+    { label: 'Arts Council England / Great Britain Sasakawa Foundation', text: { JP: '英国との共同制作 DEEP FAKE(現題 CLONE ME BABY)が助成を受けました。', EN: 'Support for the UK co-production DEEP FAKE (now CLONE ME BABY).', TW: '英日共同製作 DEEP FAKE(現名 CLONE ME BABY)獲得補助。' } },
+  ];
   const [heroLogoSrc, setHeroLogoSrc] = useState('/images/bbm-logo-mark.jpg');
   const [heroLogoFallbackTried, setHeroLogoFallbackTried] = useState(false);
 
@@ -52,9 +61,9 @@ const Home: React.FC = () => {
     },
     missions: {
       art: {
-        JP: '表現者は常に新しい技術と共に歩んできました。テクノロジーの進化は、そのまま音楽の発展の歴史でもあります。私たちは、未だかつてない独自の立体音響技術を用いることで、音楽体験そのものを全く新しい次元へと引き上げます。',
-        EN: 'Artists have always walked hand in hand with new technology. The evolution of technology is the history of music itself. By using our unique spatial audio technology, we elevate the musical experience to a completely new dimension.',
-        TW: '創作者總是與新技術並肩前行。科技的進化，即是音樂發展的歷史。我們運用前所未有的獨家立體音響技術，將音樂體驗提升至全新的次元。'
+        JP: '表現者は常に新しい技術と共に歩んできました。テクノロジーの進化は、そのまま音楽の発展の歴史でもあります。私たちは、立体音響の技術を用いて、音楽体験そのものを新しい次元へと引き上げます。',
+        EN: 'Artists have always walked hand in hand with new technology. The evolution of technology is the history of music itself. With our spatial audio technology, we take the musical experience to a new dimension.',
+        TW: '創作者總是與新技術並肩前行。科技的進化，即是音樂發展的歷史。我們運用立體音響技術，將音樂體驗帶往新的次元。'
       },
       public: {
         JP: '土浦市での地域プロジェクトや川崎市『Encount』など、自治体と連携しパブリックな空間における音の価値を再定義。地域社会と対話し、その場所ならではの音風景（サウンドスケープ）を創出しています。',
@@ -70,19 +79,19 @@ const Home: React.FC = () => {
     technology: {
       JP: {
         h1: '表現の必然から生まれた技術',
-        p1: '核にあるのは、TouchDesigner上に自作したアンビソニクス・エンジン。最大3次、バイノーラルデコード、最大30オブジェクトの同時定位。市販のスペーシャライザーもプラグインも使いません。特別な再生環境も要りません——2本のスピーカーか、ヘッドフォンがあれば成立します。作曲家が、自分の音楽に必要な空間をつくるために書いたコードです。',
+        p1: '核にあるのは、TouchDesigner上に組んだアンビソニクス・エンジン。最大3次、バイノーラルデコード、最大30オブジェクトの同時定位。市販の道具も含めて組み合わせ、自分の耳で作り上げたシステムです。特別な再生環境も要りません——2本のスピーカーか、ヘッドフォンがあれば成立します。作曲家が、自分の音楽に必要な空間をつくるために書いたコードです。',
         h2: '舞台から、教室まで',
         p2: '同じ核が、かたちを変えて動いています。英国の舞台作品『DEEP FAKE』のライブ立体音響。土浦の市民と1年かけて集めた音のVR展示。小学校の特別授業、無料のオンラインセミナー。アニメ楽曲の作編曲やMVの立体音響——クライアントワークも、ボランティアも、隔てなく。「この表現には、この空間が必要だ」というものがあれば、一緒に考えるところから始めます。'
       },
       EN: {
         h1: 'Technology Born of Necessity',
-        p1: 'At the core is a custom ambisonic engine, built from scratch in TouchDesigner — up to 3rd order, binaural decoding, up to 30 sound objects placed at once. No commercial spatializers, no plugins. No special playback system, either: two speakers or a pair of headphones is enough. Code written by a composer, for the spaces his music needed.',
+        p1: 'At the core is an ambisonic engine built in TouchDesigner — up to 3rd order, binaural decoding, up to 30 sound objects placed at once. Commercial tools are part of the mix, and the whole system is shaped by his own ears. No special playback system, either: two speakers or a pair of headphones is enough. Code written by a composer, for the spaces his music needed.',
         h2: 'From Stages to Classrooms',
         p2: 'The same core takes different shapes. Live spatial sound for DEEP FAKE, a UK stage production. A VR exhibition of sounds gathered over a year with the residents of Tsuchiura. Special classes at elementary schools; free online seminars. Composing and arranging for anime, spatial audio for music videos — commissioned work and volunteer work alike. If there is an expression that needs this kind of space, we start by thinking it through together.'
       },
       TW: {
         h1: '由必然而生的技術',
-        p1: '核心是在 TouchDesigner 上自製的 Ambisonics 引擎——最高三階、雙耳解碼、可同時定位 30 個聲音物件。不使用市售的空間音響外掛，也不需要特殊的重播環境：兩支喇叭、或一副耳機即可成立。這是一位作曲家為了自己音樂所需要的空間，親手寫下的程式碼。',
+        p1: '核心是在 TouchDesigner 上建構的 Ambisonics 引擎——最高三階、雙耳解碼、可同時定位 30 個聲音物件。結合市售工具，並憑自己的耳朵打造完成。不需要特殊的重播環境：兩支喇叭、或一副耳機即可成立。這是一位作曲家為了自己音樂所需要的空間，親手寫下的程式碼。',
         h2: '從劇場到教室',
         p2: '同一個核心，以不同的形態運作著。英國舞台作品《DEEP FAKE》的現場立體聲響；與土浦市民花費一年採集聲音的 VR 展覽；小學的特別課程與免費線上講座；動畫歌曲的作編曲、MV 的空間音響——委託製作與志願活動，不分彼此。若有一種表現需要這樣的空間，我們從一起思考開始。'
       }
@@ -109,7 +118,89 @@ const Home: React.FC = () => {
         TW: '我們舉辦了為期兩天的活動，透過聆聽、遊玩、製作、演奏四個入口，體驗土浦聲音檔案計畫（TSAP）與市民共同收集的「土浦之音」。包含以雙聲道喇叭與耳機呈現立體音響的兩件 VR 作品、聲音玩具、原創遊戲「おとの帆曳船」、動手實作工作坊，以及兩天皆於 15:30 舉行的聲景現場演出。會期紀錄現已公開。'
       }
     },
+    festival: {
+      dateLabel: {
+        JP: '2026年11月7日–8日 開催｜ゲームとギャラリーを公開中',
+        EN: '7–8 November 2026 — Game and Gallery Now Online',
+        TW: '2026年11月7日–8日 舉辦｜遊戲與藝廊公開中'
+      },
+      title: {
+        JP: '土浦ウェルカムフェス 2026',
+        EN: 'Tsuchiura Welcome Festival 2026',
+        TW: '土浦 Welcome Festival 2026'
+      },
+      venue: {
+        JP: 'アルカス土浦（オープンギャラリー第1室・アルカス土浦広場）',
+        EN: 'ARCUS Tsuchiura (Open Gallery Room 1 and ARCUS Plaza)',
+        TW: 'ARCUS 土浦（開放藝廊第 1 室與 ARCUS 廣場）'
+      },
+      desc: {
+        JP: 'BBMが企画に加わり、VR作品(時層・墨・アクアリウム)と、花火をつくって遊べるゲーム「花火をつくる」を展示しました。ゲームはスマートフォンでもパソコンでも、サイトから無料で遊べます。',
+        EN: 'BBM joined the planning team and presented VR works (Jisō, Sumi, Aquarium) and the game "Make Fireworks", in which anyone can build a firework and launch it. The game is free to play on a phone or computer from the festival site.',
+        TW: 'BBM 參與企劃，帶來 VR 作品(時層・墨・Aquarium)，以及可以自己製作並施放煙火的遊戲《Make Fireworks(製作煙火)》。遊戲可於活動網站免費在手機或電腦上遊玩。'
+      }
+    },
     news: {
+      gonzoTitle: {
+        JP: 'Piano Distance のレビューが Gonzo (circus) 192号に',
+        EN: 'Piano Distance reviewed in Gonzo (circus) #192',
+        TW: 'Piano Distance 的樂評刊登於 Gonzo (circus)第 192 期'
+      },
+      gonzoDesc: {
+        JP: 'オランダ語の雑誌 Gonzo (circus)の192号(2026年10–12月号、88ページ)に、Anthony Fiumara さんによるレビューが載りました。結びは「今年の静かなハイライトのひとつ」(中村訳)。',
+        EN: 'Piano Distance is reviewed in the Dutch-language magazine Gonzo (circus), issue 192 (Oct–Dec 2026), p. 88. The reviewer, Anthony Fiumara, closes with "one of the quieter highlights of the year" (translation by Nakamura from the Dutch).',
+        TW: '荷蘭語雜誌 Gonzo (circus)第 192 期(2026 年 10–12 月號)第 88 頁刊登了 Piano Distance 的樂評，評者為 Anthony Fiumara，文末寫道「今年安靜的亮點之一」(中村譯)。'
+      },
+      simiTitle: {
+        JP: '「Meltwater Stillness」が SIMI Music Video Fest 2026 に選ばれました',
+        EN: '"Meltwater Stillness": Official Selection, SIMI Music Video Fest 2026',
+        TW: '〈Meltwater Stillness〉入選 SIMI Music Video Fest 2026'
+      },
+      simiDesc: {
+        JP: 'Piano Distance の「Meltwater Stillness」のミュージックビデオが、アメリカ・カリフォルニア州の SIMI Music Video Fest 2026(SIMI Film Fest 2026 内)に公式選出されました。',
+        EN: 'The music video for "Meltwater Stillness" (from Piano Distance) was an Official Selection of SIMI Music Video Fest 2026, part of SIMI Film Fest 2026 in Simi Valley, California.',
+        TW: 'Piano Distance 收錄曲〈Meltwater Stillness〉的音樂錄影帶，入選美國加州 SIMI Music Video Fest 2026(SIMI Film Fest 2026 內)。'
+      },
+      ambTitle: {
+        JP: '宇津木紘一さんが土浦市ふるさと大使に就任',
+        EN: 'Koichi Utsugi named a Tsuchiura City Furusato Ambassador',
+        TW: '宇津木紘一先生出任土浦市「故鄉大使」'
+      },
+      ambDesc: {
+        JP: 'BBMのメンバーで、つちうらサウンド・アーカイブ・プロジェクトの代表を務める宇津木紘一さんが、土浦市のふるさと大使に就任しました。',
+        EN: 'Koichi Utsugi, a member of BBM who leads the Tsuchiura Sound Archive Project, has been named a Furusato Ambassador of Tsuchiura City.',
+        TW: 'BBM 成員、同時擔任土浦聲音檔案計畫代表的宇津木紘一先生，出任土浦市「故鄉大使」。'
+      },
+      maaiTitle: {
+        JP: 'AI Song Contest 2026 ファイナリスト「Maai(間合い)」',
+        EN: 'AI Song Contest 2026 Finalist: "Maai"',
+        TW: 'AI Song Contest 2026 決賽入圍「Maai(間合い)」'
+      },
+      maaiDesc: {
+        JP: '国際AI音楽コンテストの14組のファイナリストのひとつに選ばれました。一般投票は11月21日まで。11月29日のバンコクでの授賞式で演奏する予定です。',
+        EN: 'Selected as one of 14 finalists of the international AI Song Contest. Public voting is open until 21 November. Nakamura plans to perform at the awards ceremony in Bangkok on 29 November.',
+        TW: '入圍國際 AI 音樂賽事決賽，為 14 組入圍者之一。公眾投票至 11 月 21 日止，預計於 11 月 29 日曼谷頒獎典禮上現場演奏。'
+      },
+      hobiTitle: {
+        JP: '「おとの帆曳船」Web公開',
+        EN: '"Oto no Hobikibune" Released on the Web',
+        TW: '《聲音帆曳船》公開於網路'
+      },
+      hobiDesc: {
+        JP: '土浦で録った音を使ったUnity製のゲームです。展示後、Webで公開しました。',
+        EN: 'A Unity game built from sounds recorded in Tsuchiura. Released on the web after the exhibition.',
+        TW: '以在土浦錄製的聲音製作的 Unity 遊戲。展覽後公開於網路。'
+      },
+      fesTitle: {
+        JP: '「花火をつくる」公開中',
+        EN: '"Make Fireworks" Now Playable',
+        TW: '《Make Fireworks(製作煙火)》公開中'
+      },
+      fesDesc: {
+        JP: '玉の大きさ・色・形・音・名前を選んで、自分だけの花火を打ち上げるゲーム。11月のウェルカムフェスで展示し、いまはスマートフォンでもパソコンでも遊べます。',
+        EN: 'Choose the size, colour, shape, sound and name of a shell and launch your own firework. Shown at the Welcome Festival in November, and now playable on a phone or computer.',
+        TW: '選擇煙火的大小、顏色、形狀、聲音與名字，施放屬於自己的煙火。於 11 月的 Welcome Festival 展出，現在可於手機或電腦遊玩。'
+      },
       pianoDistanceLabel: {
         JP: 'BBM-001 / 配信中 — 各サービスで公開',
         EN: 'BBM-001 / Out now — streaming everywhere',
@@ -121,9 +212,9 @@ const Home: React.FC = () => {
         TW: 'Piano Distance — BBM 廠牌首作'
       },
       pianoDistanceDesc: {
-        JP: '中村が自身で構築した空間音響システムを、たった一台のピアノに向けたソロアルバム。現在配信中——Spotify・Apple Music ほか各サービスで公開、ミュージック・ビデオも YouTube で公開中。デジタル版は Beyond Boundary Music より（BBM-001、name-your-price）。英 Fluid Audio よりハンドメイド署名番号入りの限定 CD（マスタリング: Ian Hawgood）も発売され、完売。武満徹〈Distance〉(1961) への応答。',
-        EN: 'A solo album turning Nakamura\'s self-built spatial-audio system on a single piano. Out now: streaming on Spotify, Apple Music and more, with music videos on YouTube. Digital edition on Beyond Boundary Music (BBM-001, name-your-price). The handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood, is sold out. A response to Toru Takemitsu\'s "Distance" (1961).',
-        TW: '中村將自行打造的空間音響系統用於一台鋼琴的個人專輯。現正發行——已於 Spotify、Apple Music 等各串流平台上架，音樂錄影帶亦已於 YouTube 公開。數位版經由 Beyond Boundary Music（BBM-001、name-your-price）。英 Fluid Audio 手工簽名編號限量 CD（母帶: Ian Hawgood）已完售。回應武滿徹〈Distance〉(1961) 的作品。',
+        JP: '中村が、市販の道具も含めて組み合わせ、自分の耳で作り上げた空間音響システムを、たった一台のピアノに向けたソロアルバム。現在配信中——Spotify・Apple Music ほか各サービスで公開、ミュージック・ビデオも YouTube で公開中。デジタル版は Beyond Boundary Music より（BBM-001、name-your-price）。英 Fluid Audio よりハンドメイド署名番号入りの限定 CD（マスタリング: Ian Hawgood）も発売され、完売。武満徹のピアノ曲〈ピアノ・ディスタンス〉(1961) への応答。',
+        EN: 'A solo album for piano alone, heard through a spatial-audio system Nakamura put together by ear from many tools, commercial ones included. Out now: streaming on Spotify, Apple Music and more, with music videos on YouTube. Digital edition on Beyond Boundary Music (BBM-001, name-your-price). The handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood, is sold out. A response to Toru Takemitsu\'s piano piece "Piano Distance" (1961).',
+        TW: '中村將結合市售工具、憑自己的耳朵調校而成的空間音響系統，用於一台鋼琴的個人專輯。現正發行——已於 Spotify、Apple Music 等各串流平台上架，音樂錄影帶亦已於 YouTube 公開。數位版經由 Beyond Boundary Music（BBM-001、name-your-price）。英 Fluid Audio 手工簽名編號限量 CD（母帶: Ian Hawgood）已完售。回應武滿徹的鋼琴曲〈Piano Distance〉(1961) 的作品。',
       },
       lackoutPvTitle: {
         JP: 'TVアニメ『不運からの最強男』イメージPV 公開',
@@ -745,13 +836,181 @@ const Home: React.FC = () => {
                     {lang === 'EN' && 'Project page →'}
                     {lang === 'TW' && '作品頁面 →'}
                   </a>
-                  <p className="text-[10px] tracking-[0.2em] text-gray-500">streaming from late July (Spotify et al.)</p>
+                  <p className="text-[10px] tracking-[0.2em] text-gray-500">available on Spotify et al.</p>
                 </div>
               </div>
             </div>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <motion.a
+              href="https://aisongcontest.com/the-2026-finalists"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img
+                  src="/images/maai-ghost-v3.jpg"
+                  alt=""
+                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2026.11 Finalist
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.maaiTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                {t.news.maaiDesc[lang]}
+              </p>
+            </motion.a>
+
+            <motion.a
+              href="https://tsuchiura-sound-achib.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img
+                  src="/images/tsuchiura-ambassador-logo.jpg"
+                  alt=""
+                  className="w-full h-full object-contain bg-white scale-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2026
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.ambTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                {t.news.ambDesc[lang]}
+              </p>
+            </motion.a>
+
+            <motion.a
+              href="https://beyondboundarymusic.bandcamp.com/album/piano-distance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img
+                  src="/images/piano-distance.jpg"
+                  alt=""
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2026.10 Review
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.gonzoTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                {t.news.gonzoDesc[lang]}
+              </p>
+            </motion.a>
+
+            <motion.a
+              href="https://youtu.be/fP9vLVQJByE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img
+                  src="/images/simi-mv.jpg"
+                  alt=""
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2026.09 Official Selection
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.simiTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                {t.news.simiDesc[lang]}
+              </p>
+            </motion.a>
+
+            <motion.a
+              href="https://tsuchiura-fireworks-welcomefestival.com/game/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img
+                  src="/images/make-fireworks-game.jpg"
+                  alt=""
+                  className="w-full h-full object-contain bg-[#0b1020] scale-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2026.11
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.fesTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                {t.news.fesDesc[lang]}
+              </p>
+            </motion.a>
+
+            <motion.a
+              href="https://tsap-hobikibune-game.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative h-[50vh] overflow-hidden mb-8">
+                <img
+                  src="/images/tsap-game-screenshot.png"
+                  alt=""
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.4em] text-[#C9A66B] uppercase mb-4">
+                2026.08
+              </p>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 group-hover:text-[#C9A66B] transition-colors">
+                {t.news.hobiTitle[lang]}
+              </h3>
+              <p className="text-gray-600 font-serif leading-loose text-base">
+                {t.news.hobiDesc[lang]}
+              </p>
+            </motion.a>
+
             <motion.a
               href="https://www.youtube.com/watch?v=bFi74B3n80o"
               target="_blank"
@@ -839,6 +1098,110 @@ const Home: React.FC = () => {
               </motion.div>
             )}
           </div>
+        </RevealSection>
+      </Section>
+
+      {/* PRESS (Piano Distance / BBM-001) */}
+      {pdPress.length > 0 && (
+        <Section className="py-24 md:py-32 relative overflow-hidden">
+          <RevealSection>
+            <div className="mb-12 md:mb-16">
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter leading-none">
+                PRESS.
+              </h2>
+              <p className="mt-6 text-gray-600 font-serif text-base md:text-lg max-w-2xl">
+                {lang === 'JP' ? 'BBMレーベルの第1作 Piano Distance(BBM-001)の掲載と、BBMの選出・就任・助成です。' : lang === 'TW' ? 'BBM 廠牌首作《Piano Distance》(BBM-001)的報導，以及 BBM 的入選、就任與補助。' : 'Coverage of Piano Distance (BBM-001), the first release on BBM, plus selections, appointments and grants.'}
+              </p>
+            </div>
+            <ul className="divide-y divide-black/10 border-t border-black/10 max-w-3xl">
+              {pdPress.map((p) => (
+                <li key={p.label} className="py-6">
+                  {p.url ? (
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-bold tracking-[0.15em] uppercase hover:text-[#C9A66B] transition-colors">{p.label} →</a>
+                  ) : (
+                    <span className="text-sm md:text-base font-bold tracking-[0.15em] uppercase">{p.label}</span>
+                  )}
+                  {p.quote && <p className="mt-2 text-lg font-serif italic text-gray-800">“{p.quote}”</p>}
+                  {p.text && <p className="mt-1 text-sm md:text-base font-serif leading-relaxed text-gray-600">{p.text[lang]}</p>}
+                </li>
+              ))}
+            </ul>
+            <ul className="divide-y divide-black/10 border-y border-black/10 max-w-3xl mt-12">
+              {pressMore.map((p) => (
+                <li key={p.label} className="py-6">
+                  {p.url ? (
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-bold tracking-[0.15em] uppercase hover:text-[#C9A66B] transition-colors">{p.label} →</a>
+                  ) : p.to ? (
+                    <Link to={p.to} className="text-sm md:text-base font-bold tracking-[0.15em] uppercase hover:text-[#C9A66B] transition-colors">{p.label} →</Link>
+                  ) : (
+                    <span className="text-sm md:text-base font-bold tracking-[0.15em] uppercase">{p.label}</span>
+                  )}
+                  <p className="mt-1 text-sm md:text-base font-serif leading-relaxed text-gray-600">{p.text[lang]}</p>
+                </li>
+              ))}
+            </ul>
+            <Link to="/works/piano-distance" className="inline-block mt-8 text-xs font-bold tracking-[0.3em] uppercase border-b border-black pb-1 hover:opacity-50 transition-opacity">
+              Piano Distance →
+            </Link>
+          </RevealSection>
+        </Section>
+      )}
+
+      {/* Festival Report (Welcome Festival 2026.11) */}
+      <Section className="py-32 md:py-48 relative overflow-hidden">
+        {/* 3D Sphere Background - Simplified */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] md:w-[550px] md:h-[550px]"
+          >
+            <div
+              className="absolute inset-0 rounded-full border border-[#C9A66B]/12 animate-spin-very-slow"
+              style={{
+                boxShadow: 'inset 0 0 50px rgba(201, 166, 107, 0.1), 0 0 60px rgba(201, 166, 107, 0.06)'
+              }}
+            />
+          </div>
+        </div>
+        <RevealSection>
+          <div className="mb-20">
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter leading-none">
+              Festival<br />Report
+            </h2>
+          </div>
+
+          <a
+            href="https://tsuchiura-fireworks-welcomefestival.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block group"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="relative h-[50vh] lg:h-[70vh] overflow-hidden">
+                <motion.img
+                  src="/images/welcomefes-flyer-v2.jpg"
+                  alt=""
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-1000"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
+              </div>
+
+              <div className="bg-white p-12 lg:p-20 flex flex-col justify-center">
+                <p className="text-[10px] font-bold tracking-[0.5em] text-[#C9A66B] uppercase mb-8">
+                  {t.festival.dateLabel[lang]}
+                </p>
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-8 group-hover:text-[#C9A66B] transition-colors">
+                  {t.festival.title[lang]}
+                </h3>
+                <p className="text-gray-600 font-serif text-lg mb-10">
+                  {t.festival.venue[lang]}
+                </p>
+                <p className="text-gray-700 font-serif leading-loose text-base md:text-lg">
+                  {t.festival.desc[lang]}
+                </p>
+              </div>
+            </div>
+          </a>
         </RevealSection>
       </Section>
 

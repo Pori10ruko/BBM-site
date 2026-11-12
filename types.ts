@@ -20,6 +20,7 @@ export interface Work {
   link?: string; // カードクリック時に開く外部リンク
   externalUrl?: string; // 外部リンク（YouTube等）
   externalLinks?: Array<{ label: string; url: string }>; // 複数外部リンク
+  press?: Array<{ label: string; url?: string; quote?: string; text?: { [key in Language]: string } }>;
 }
 
 export interface NavItem {

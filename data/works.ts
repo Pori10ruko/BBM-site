@@ -1,6 +1,131 @@
 import { Work } from '../types';
 
 export const works: Work[] = [
+
+  {
+    id: 'ai-song-contest-2026-maai',
+    title: 'AI Song Contest 2026 Finalist: "Maai"',
+    titleLocalized: {
+      JP: 'AI Song Contest 2026 ファイナリスト「Maai(間合い)」',
+      EN: 'AI Song Contest 2026 Finalist: "Maai"',
+      TW: 'AI Song Contest 2026 決賽入圍「Maai(間合い)」'
+    },
+    date: '2026.11',
+    client: 'AI Song Contest',
+    category: 'Performance',
+    pillar: 'Art',
+    description: {
+      JP: '国際AI音楽コンテスト「AI Song Contest 2026」で、「Maai(間合い)」がファイナリスト14組に選ばれました。一般投票は11月21日まで。11月29日のバンコクでの授賞式で演奏する予定です。',
+      EN: 'Selected as one of 14 finalists of the international AI Song Contest 2026 with "Maai". Public voting is open until 21 November. Nakamura plans to perform at the awards ceremony in Bangkok on 29 November.',
+      TW: '以〈Maai(間合い)〉入圍國際 AI 音樂賽事「AI Song Contest 2026」決賽，為 14 組入圍者之一。公眾投票至 11 月 21 日止，預計於 11 月 29 日曼谷頒獎典禮上現場演奏。'
+    },
+    imageUrl: '/images/maai-ghost-v3.jpg',
+    tags: ['2026', 'AI Song Contest', 'Finalist', 'Bangkok'],
+    role: { JP: '作曲・システム設計', EN: 'Composition, System Design', TW: '作曲・系統設計' },
+    approach: {
+      JP: '作品名の「間合い」は、二者のあいだの距離とタイミングを指す言葉です。',
+      EN: '"Maai" is a Japanese word for the distance and timing between two parties.',
+      TW: '作品名「間合い」(Maai)是日文詞彙，指雙方之間的距離與時機。'
+    },
+    externalLinks: [
+      { label: 'Finalists', url: 'https://aisongcontest.com/the-2026-finalists' }
+    ]
+  },
+
+  {
+    id: 'welcome-festival-2026',
+    title: 'Tsuchiura Welcome Festival 2026',
+    titleLocalized: {
+      JP: '土浦ウェルカムフェス 2026',
+      EN: 'Tsuchiura Welcome Festival 2026',
+      TW: '土浦 Welcome Festival 2026'
+    },
+    date: '2026.11.07-08',
+    client: 'Public Project',
+    category: 'Installation',
+    pillar: 'Public',
+    description: {
+      JP: '2026年11月7日(土)・8日(日)、アルカス土浦(オープンギャラリー第1室・アルカス土浦広場)で開催。BBMが企画に加わり、VR作品(時層・墨・アクアリウム)と、花火をつくって遊べるゲーム「花火をつくる」を展示しました。',
+      EN: 'Held on 7-8 November 2026 at ARCUS Tsuchiura (Open Gallery Room 1 and ARCUS Plaza). BBM joined the planning team and presented VR works (Jisō, Sumi, Aquarium) and the game "Make Fireworks", in which anyone can build a firework and launch it.',
+      TW: '2026 年 11 月 7 日(六)至 8 日(日)於 ARCUS 土浦(開放藝廊第 1 室與 ARCUS 廣場)舉行。BBM 參與企劃，帶來 VR 作品《時層(Jisō)》《墨》《Aquarium》，以及可以自己製作並施放煙火的遊戲《Make Fireworks(製作煙火)》。'
+    },
+    imageUrl: '/images/welcomefes-flyer-v2.jpg',
+    tags: ['2026.11.07-08', 'Tsuchiura', 'VR', 'Game', 'Web'],
+    role: { JP: '企画・VR作品・ゲーム制作', EN: 'Planning, VR Works, Game Production', TW: '企劃、VR 作品、遊戲製作' },
+    approach: {
+      JP: 'VR作品と、来場者が自分で花火をつくるゲームを、ひとつの会場に並べました。',
+      EN: 'VR works and a game in which visitors make their own fireworks were presented side by side in one venue.',
+      TW: '將 VR 作品與讓參觀者自己製作煙火的遊戲，並置於同一個會場。'
+    },
+    externalLinks: [
+      { label: 'Festival Site', url: 'https://tsuchiura-fireworks-welcomefestival.com/' },
+      { label: 'Game', url: 'https://tsuchiura-fireworks-welcomefestival.com/game/' },
+      { label: 'Gallery', url: 'https://tsuchiura-fireworks-welcomefestival.com/game/gallery.html' }
+    ]
+  },
+
+  {
+    id: 'make-fireworks-game-2026',
+    title: 'Make Fireworks (Web Game)',
+    titleLocalized: {
+      JP: '花火をつくる(Webゲーム)',
+      EN: 'Make Fireworks (Web Game)',
+      TW: '製作煙火(網頁遊戲)'
+    },
+    date: '2026.11',
+    client: 'Public Project',
+    category: 'App',
+    pillar: 'Technology',
+    description: {
+      JP: '玉の大きさ・色・形・音・名前を選んで、自分だけの花火をつくり、夜空に打ち上げるゲーム。土浦ウェルカムフェス 2026 の会場で来場者が遊び、いまはスマートフォンでもパソコンでも、サイトから無料で遊べます。',
+      EN: 'A game in which you choose the size, colour, shape, sound and name of a shell, build your own firework and launch it into the night sky. Visitors played it at Tsuchiura Welcome Festival 2026, and it is now free to play on a phone or computer from the festival site.',
+      TW: '選擇煙火的大小、顏色、形狀、聲音與名字，製作屬於自己的煙火並施放到夜空的遊戲。於土浦 Welcome Festival 2026 的會場供現場參觀者遊玩，現在可於活動網站在手機或電腦上免費遊玩。'
+    },
+    imageUrl: '/images/make-fireworks-game.jpg',
+    tags: ['2026', 'Game', 'Web', 'Tsuchiura'],
+    role: { JP: 'ゲーム制作', EN: 'Game Production', TW: '遊戲製作' },
+    approach: {
+      JP: 'フェスで作られた花火の一部を、サイトのギャラリーで見られます。',
+      EN: 'A selection of the fireworks made at the festival can be seen in the gallery on the festival site.',
+      TW: '在活動中製作的煙火，部分作品可於活動網站的藝廊觀看。'
+    },
+    externalLinks: [
+      { label: 'Play', url: 'https://tsuchiura-fireworks-welcomefestival.com/game/' },
+      { label: 'Gallery', url: 'https://tsuchiura-fireworks-welcomefestival.com/game/gallery.html' }
+    ]
+  },
+
+  {
+    id: 'oto-no-hobikibune-game',
+    title: 'Oto no Hobikibune: Sailboat of Sound (Web Game)',
+    titleLocalized: {
+      JP: 'おとの帆曳船(Webゲーム)',
+      EN: 'Oto no Hobikibune: Sailboat of Sound (Web Game)',
+      TW: '聲音帆曳船(網頁遊戲)'
+    },
+    date: '2026.08',
+    client: 'Public Project',
+    category: 'App',
+    pillar: 'Technology',
+    description: {
+      JP: '土浦で録った音を使ったUnity製のゲームです。展示後、Webで公開しました。',
+      EN: 'A Unity game built from sounds recorded in Tsuchiura. Released on the web after the exhibition.',
+      TW: '以在土浦錄製的聲音製作的 Unity 遊戲。展覽後公開於網路。'
+    },
+    imageUrl: '/images/tsap-game-screenshot.png',
+    tags: ['2026', 'Game', 'Unity', 'Web', 'TSAP'],
+    role: { JP: 'ゲーム制作', EN: 'Game Production', TW: '遊戲製作' },
+    approach: {
+      JP: '帆曳船を操り、音のあいだを進むゲームです。',
+      EN: 'You steer a hobikibune sailboat and move between the sounds.',
+      TW: '操縱帆曳船，在聲音之間前行。'
+    },
+    externalLinks: [
+      { label: 'Play', url: 'https://tsap-hobikibune-game.netlify.app/' },
+      { label: 'TSAP', url: 'https://tsuchiura-sound-achib.netlify.app/' }
+    ]
+  },
+
   {
     id: 'tainan-yugaku-2026',
     title: 'National University of Tainan — Study Program & Career Talk 2026',
@@ -84,9 +209,9 @@ export const works: Work[] = [
     pillar: 'Art',
     featuredInTech: true,
     description: {
-      JP: '2026年8月22–23日、りんりんポート土浦で発表した2つの空間音響インスタレーション。来場者がiPadを手に空間の中を巡ると、28の音がそれぞれの位置に定位したまま空中にとどまる——自作のアンビソニクス・エンジン（TouchDesigner・最大3次・バイノーラルデコード）による。「Aquarium」は土浦の水を、「Jisō（時層）」は時間が堆積した骨格を主題に。頭の向きではなく、空間を巡ることが聴取のインターフェースになります。',
+      JP: '2026年8月22–23日、りんりんポート土浦で発表した2つの空間音響インスタレーション。来場者がiPadを手に空間の中を巡ると、28の音がそれぞれの位置に定位したまま空中にとどまる——TouchDesignerで組んだアンビソニクス・エンジン（最大3次・バイノーラルデコード）による。「Aquarium」は土浦の水を、「Jisō（時層）」は時間が堆積した骨格を主題に。頭の向きではなく、空間を巡ることが聴取のインターフェースになります。',
       EN: "Two spatial audio installations presented at Ringring Port Tsuchiura on 22–23 August 2026. As visitors travel through the space on an iPad, 28 sounds hold their positions in mid-air — rendered by a custom ambisonic engine (TouchDesigner, up to 3rd order, binaural decoding). 'Aquarium' takes the water of Tsuchiura as its subject; 'Jisō', a skeleton of accumulated time. Not head-tracking — moving through the space is itself the interface for listening.",
-      TW: '2026年8月22–23日於 Ringring Port 土浦發表的兩件空間音響裝置。觀眾以 iPad 在空間中巡遊時，28 個聲音各自停留在空中的固定位置——由自製的 Ambisonics 引擎（TouchDesigner・最高三階・雙耳解碼）驅動。《Aquarium》以土浦的水為題；《Jisō》則是時間堆積而成的骨骼。聆聽的介面不是頭部的轉向，而是在空間中的巡遊。'
+      TW: '2026年8月22–23日於 Ringring Port 土浦發表的兩件空間音響裝置。觀眾以 iPad 在空間中巡遊時，28 個聲音各自停留在空中的固定位置——由在 TouchDesigner 上建構的 Ambisonics 引擎（最高三階・雙耳解碼）驅動。《Aquarium》以土浦的水為題；《Jisō》則是時間堆積而成的骨骼。聆聽的介面不是頭部的轉向，而是在空間中的巡遊。'
     },
     imageUrl: '/images/tsap-vr-2026.jpg',
     tags: ['2026.08.22-23', 'Spatial Audio', 'Ambisonics', 'TouchDesigner', 'Installation'],
@@ -96,9 +221,9 @@ export const works: Work[] = [
       TW: '作曲、立體音響製作、Ambisonics 引擎開發'
     },
     approach: {
-      JP: '音源ごとに空間座標を与え、iPad上の視点位置に応じてリアルタイムにバイノーラル・レンダリングするオブジェクトベースの方式。エンジンはTouchDesigner上に自作（最大3次アンビソニクス）。映像はTouchDesignerとUnreal Engine 5で制作しました。',
-      EN: "An object-based approach: each sound source is given spatial coordinates and rendered binaurally in real time according to the viewpoint position on the iPad. The engine was built from scratch in TouchDesigner (up to 3rd-order ambisonics). Visuals were produced in TouchDesigner and Unreal Engine 5.",
-      TW: '物件導向的空間音響：為每個音源賦予空間座標，依 iPad 上的視點位置即時進行雙耳渲染。引擎於 TouchDesigner 上自製（最高三階 Ambisonics）。影像以 TouchDesigner 與 Unreal Engine 5 製作。'
+      JP: '音源ごとに空間座標を与え、iPad上の視点位置に応じてリアルタイムにバイノーラル・レンダリングするオブジェクトベースの方式。エンジンはTouchDesigner上で構築（最大3次アンビソニクス）。映像はTouchDesignerとUnreal Engine 5で制作しました。',
+      EN: "An object-based approach: each sound source is given spatial coordinates and rendered binaurally in real time according to the viewpoint position on the iPad. The engine was built in TouchDesigner (up to 3rd-order ambisonics). Visuals were produced in TouchDesigner and Unreal Engine 5.",
+      TW: '物件導向的空間音響：為每個音源賦予空間座標，依 iPad 上的視點位置即時進行雙耳渲染。引擎於 TouchDesigner 上建構（最高三階 Ambisonics）。影像以 TouchDesigner 與 Unreal Engine 5 製作。'
     },
     externalLinks: [
       { label: 'Aquarium (YouTube)', url: 'https://www.youtube.com/watch?v=UTzs9uSEbFY' },
@@ -115,18 +240,18 @@ export const works: Work[] = [
       EN: 'DEEP FAKE: Ghost in the Machine',
       TW: 'DEEP FAKE: Ghost in the Machine'
     },
-    date: '2026.10 — premieres at Birmingham Repertory Theatre',
+    date: '2027 UK residency (planned)',
     client: 'K2CO Ltd (Rosie Kay) × Beyond Boundary Music',
     category: 'Performance',
     pillar: 'Art',
     featuredInTech: true,
     description: {
-      JP: 'ロンドンを拠点とする振付家 Rosie Kay（K2CO Ltd）との日英国際共同制作——コンテンポラリーダンス × リアルタイム技術。ダンサーが舞台に立ち、デプスカメラが骨格データをリアルタイムに読み取り、デジタルの分身（double）を生成。フェーズごとに分身はわずかに正確に、わずかに美しく動き、ライブピアノも同じ曲線で「補正」されていく——完璧になった瞬間、生命を失う。恐ろしいのはシステムではなく、「コピーの方がいい」と感じてしまう、あなた自身だ。Arts Council England および Great Britain Sasakawa Foundation 助成採択。',
-      EN: 'A Japan × UK international co-creation with UK choreographer Rosie Kay (K2CO Ltd) — contemporary dance meets real-time technology. A depth camera reads the dancer\'s skeletal data and generates a digital double; in parallel, the live piano is "corrected" along the same arc. As the system reaches perfection, it loses its life — and so might your preference. The terrifying part isn\'t the system; it\'s realizing you prefer the copy. Supported by Arts Council England and the Great Britain Sasakawa Foundation.',
-      TW: '與英國編舞家 Rosie Kay（K2CO Ltd）的日英國際共製作——當代舞蹈 × 即時技術。深度攝影機讀取舞者的骨架資料即時生成數位分身，現場鋼琴亦沿著同樣的曲線被「修正」。當系統達到完美的那一刻，便失去了生命——恐怖的不是系統，而是發現自己更喜歡複製品的「你」。獲 Arts Council England 與 Great Britain Sasakawa Foundation 助成。'
+      JP: '現在の題は「CLONE ME BABY」です(旧題 DEEP FAKE: Ghost in the Machine)。2027年のはじめに英国でレジデンシーを予定しています。以下は旧題のときの紹介です。ロンドンを拠点とする振付家 Rosie Kay（K2CO Ltd）との日英国際共同制作——コンテンポラリーダンス × リアルタイム技術。ダンサーが舞台に立ち、デプスカメラが骨格データをリアルタイムに読み取り、デジタルの分身（double）を生成。フェーズごとに分身はわずかに正確に、わずかに美しく動き、ライブピアノも同じ曲線で「補正」されていく——完璧になった瞬間、生命を失う。恐ろしいのはシステムではなく、「コピーの方がいい」と感じてしまう、あなた自身だ。Arts Council England および Great Britain Sasakawa Foundation 助成採択。',
+      EN: 'Now titled "CLONE ME BABY" (previously DEEP FAKE: Ghost in the Machine). A UK residency is planned for early 2027. The text below is the description under the former title. A Japan × UK international co-creation with UK choreographer Rosie Kay (K2CO Ltd) — contemporary dance meets real-time technology. A depth camera reads the dancer\'s skeletal data and generates a digital double; in parallel, the live piano is "corrected" along the same arc. As the system reaches perfection, it loses its life — and so might your preference. The terrifying part isn\'t the system; it\'s realizing you prefer the copy. Supported by Arts Council England and the Great Britain Sasakawa Foundation.',
+      TW: '現在的作品名為《CLONE ME BABY》(舊題 DEEP FAKE: Ghost in the Machine)。預計於 2027 年初在英國駐地創作。以下為舊題時期的介紹。與英國編舞家 Rosie Kay（K2CO Ltd）的日英國際共製作——當代舞蹈 × 即時技術。深度攝影機讀取舞者的骨架資料即時生成數位分身，現場鋼琴亦沿著同樣的曲線被「修正」。當系統達到完美的那一刻，便失去了生命——恐怖的不是系統，而是發現自己更喜歡複製品的「你」。獲 Arts Council England 與 Great Britain Sasakawa Foundation 助成。'
     },
     imageUrl: '/images/deep-fake.jpg',
-    tags: ['Upcoming', 'UK Co-production', 'Contemporary Dance', 'Real-time', '2ch Spatial', 'Birmingham Rep 2026.10'],
+    tags: ['Upcoming', 'UK Co-production', 'Contemporary Dance', 'Real-time', '2ch Spatial', 'UK Residency 2027'],
     role: { JP: '音楽・空間音響・リアルタイムシステム / 共同創作', EN: 'Composition / Spatial Audio / Real-time Systems / Co-creator', TW: '音樂・空間音響・即時系統 / 共同創作' },
     approach: {
       JP: 'Scrim（透過幕）への前面投影＋背面照明クロスフェードで、生身のダンサーとデジタル double を「比較」させずに、ひとつの存在として段階遷移させる。Azure Kinect → TouchDesigner で骨格を 5 段階補正、同じ MIDI パラメータが Ableton 経由でライブピアノの timing/dynamics 補正・DMX 照明・GLSL 後処理を同時駆動。',
@@ -143,34 +268,143 @@ export const works: Work[] = [
     id: 'piano-distance',
     title: 'Piano Distance',
     titleLocalized: {
-      JP: 'Piano Distance — Fluid Audio (UK) / BBM-001',
-      EN: 'Piano Distance — Fluid Audio (UK) / BBM-001',
-      TW: 'Piano Distance — Fluid Audio（英國）／ BBM-001'
+      JP: 'Piano Distance (BBM-001)',
+      EN: 'Piano Distance (BBM-001)',
+      TW: 'Piano Distance (BBM-001)'
     },
     date: '2026.06.26',
-    client: 'Fluid Audio (UK) / Beyond Boundary Music',
+    client: 'Beyond Boundary Music (BBM-001) / limited CD: Fluid Audio (UK)',
     category: 'Release',
     pillar: 'Art',
     featuredInTech: true,
     description: {
-      JP: 'BBM レーベル第 1 作（BBM-001）。中村が自ら設計した空間音響システムを、たった一台のピアノに向けた作品。ミックスではなく "作曲のために" 構築されたシステムが、音に位置と距離を与え、ヘッドフォンでも、わずか 2 つのスピーカーだけでも、音は背後から頭上から立ち現れる。武満徹〈Distance〉(1961) に着想。英 Fluid Audio よりサイン・ナンバリング入りハンドメイドCD限定盤、マスタリング: Ian Hawgood。現在配信中——Spotify・Apple Music ほか各サービスで公開、ミュージック・ビデオも YouTube で公開中。Bandcamp では name-your-price（¥500〜）。',
-      EN: 'The first release on BBM (BBM-001). Nakamura turns his self-built spatial-audio system — designed for composition, not mixing — on a single piano: each sound carries a position and a distance, arriving from behind and overhead, on headphones and on just two speakers. After Toru Takemitsu\'s "Distance" (1961). Handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood. Out now: streaming on Spotify, Apple Music and more, with music videos on YouTube; digital edition on Bandcamp (name-your-price, from ¥500).',
-      TW: 'BBM 廠牌首發作品（BBM-001）。中村將自行打造的空間音響系統——為作曲而非混音而生——應用於一台鋼琴：每個聲音皆帶有位置與距離，從背後、從頭頂浮現；無論透過耳機或僅憑兩支喇叭都成立。靈感源自武滿徹〈Distance〉(1961)。英國 Fluid Audio 手工、簽名編號限量發行，由 Ian Hawgood 母帶處理。現正發行——已於 Spotify、Apple Music 等各串流平台上架，音樂錄影帶亦已於 YouTube 公開；Bandcamp 為 name-your-price（¥500 起）。'
+      JP: 'BBM レーベルの第1作（BBM-001）です。中村が、市販の道具も含めて組み合わせ、自分の耳で作り上げた空間音響システムを、一台のピアノだけに使いました。ミックスの仕上げではなく、作曲の段階から音の位置と距離を決めています。ヘッドフォンでも、2本のスピーカーでも、音が背後や頭上から聞こえてきます。出発点は武満徹のピアノ曲〈ピアノ・ディスタンス〉(1961)。CDは英 Fluid Audio から、サインとナンバー入りの手づくり限定盤で出ています(マスタリングは Ian Hawgood)。Spotify や Apple Music などで配信中で、ミュージックビデオは YouTube で見られます。Bandcamp は name-your-price（500円から）です。',
+      EN: 'The first release on BBM (BBM-001). Nakamura puts a single piano through a spatial-audio system he put together by ear from many tools, commercial ones included: each sound carries a position and a distance, arriving from behind and overhead, on headphones and on just two speakers. After Toru Takemitsu\'s piano piece "Piano Distance" (1961). Handmade, signed and numbered limited CD on Fluid Audio (UK), mastered by Ian Hawgood. Out now: streaming on Spotify, Apple Music and more, with music videos on YouTube; digital edition on Bandcamp (name-your-price, from ¥500).',
+      TW: 'BBM 廠牌首發作品（BBM-001）。中村將結合市售工具、憑自己的耳朵調校而成的空間音響系統——為作曲而非混音而生——應用於一台鋼琴：每個聲音皆帶有位置與距離，從背後、從頭頂浮現；無論透過耳機或僅憑兩支喇叭都成立。靈感源自武滿徹的鋼琴曲〈Piano Distance〉(1961)。英國 Fluid Audio 手工、簽名編號限量發行，由 Ian Hawgood 母帶處理。現正發行——已於 Spotify、Apple Music 等各串流平台上架，音樂錄影帶亦已於 YouTube 公開；Bandcamp 為 name-your-price（¥500 起）。'
     },
     imageUrl: '/images/piano-distance.jpg',
     tags: ['2026.06.26', 'BBM-001', 'Fluid Audio', '2ch Spatial', 'Solo Piano'],
     role: { JP: '作曲 / 演奏 / 空間音響システム', EN: 'Composition / Piano / Spatial-Audio System', TW: '作曲／鋼琴演奏／空間音響系統' },
     approach: {
-      JP: '商用のバイノーラル・プラグインに依らず、長年自前で構築してきた空間音響システムを用いて、作曲そのものに空間次元を書き込む。ピアノ一台に絞り、音がどこにあり、どれほど近く、どう動くかという感覚を最も純粋な形で提示。',
-      EN: 'Not an off-the-shelf binaural plug-in, but a spatial-audio system built over years for composing — the spatial dimension is written into the piece as material. Constrained to one piano so the listener\'s sense of where, how close, and how each sound moves can be heard in its purest form.',
-      TW: '不依靠商用雙耳處理外掛，而是長年自行打造的空間音響系統——將空間維度作為材料寫入作品本身。刻意僅以一台鋼琴呈現，讓聲音的位置、距離與動態以最純粹的形式被聽見。'
+      JP: 'この仕組みで、曲そのものに「空間」を書き込んでいます。楽器をピアノ一台に絞ったのは、音がどこにあり、どのくらい近く、どう動くかを、そのまま聴いてもらうためです。',
+      EN: 'A spatial-audio system put together from many tools, commercial ones included, and shaped by ear for composing — the spatial dimension is written into the piece as material. Constrained to one piano so the listener\'s sense of where, how close, and how each sound moves can be heard in its purest form.',
+      TW: '結合市售工具、憑自己的耳朵調校而成的空間音響系統——將空間維度作為材料寫入作品本身。刻意僅以一台鋼琴呈現，讓聲音的位置、距離與動態以最純粹的形式被聽見。'
     },
     externalLinks: [
       { label: 'Stream everywhere — Spotify, Apple Music & more', url: 'https://linkco.re/6Sy1mbNE' },
       { label: 'Project page', url: 'https://nakamurahiroyuki.info/piano-distance/' },
       { label: 'Bandcamp — name your price (from ¥500)', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' }
+    ],
+    press: [
+      { label: 'Gonzo (circus) #192', url: 'https://www.gonzocircus.com',
+        quote: 'een van de stillere hoogtepunten van het jaar',
+        text: {
+          JP: 'オランダ語の音楽誌、2026年10–12月号の88ページ。Anthony Fiumara さんのレビューで、結びは「今年の静かなハイライトのひとつ」(中村訳)。音がゆっくり落ちていくさま、音と音のあいだの静けさ、バイノーラル録音で音の位置が移っていくことにふれています。',
+          EN: 'Dutch-language magazine, Oct–Dec 2026, p. 88. Review by Anthony Fiumara, who closes with "one of the quieter highlights of the year" (translation by Nakamura). He writes about the slow pace, the silence between the notes, and how the binaural recording lets sounds appear in different places.',
+          TW: '荷蘭語雜誌，2026 年 10–12 月號第 88 頁。Anthony Fiumara 的樂評，文末寫道「今年安靜的亮點之一」(中村譯)。談到聲音緩緩落下、音與音之間的寂靜，以及雙耳錄音讓聲音位置不斷變化。' } },
+      { label: 'Meltwater Stillness (MV) — SIMI Music Video Fest 2026', url: 'https://youtu.be/fP9vLVQJByE',
+        text: {
+          JP: '「Meltwater Stillness」のミュージックビデオが公式選出されました。',
+          EN: 'The music video for "Meltwater Stillness" was an Official Selection.',
+          TW: '〈Meltwater Stillness〉的音樂錄影帶入選。' } },
+      { label: 'Melted Form #95', url: 'https://meltedform.substack.com/p/95-good-things' },
+    ],
+  },
+  {
+    id: 'pd-mv-meltwater-stillness',
+    title: 'Meltwater Stillness (Official Video)',
+    titleLocalized: {
+      JP: 'Meltwater Stillness(ミュージックビデオ)',
+      EN: 'Meltwater Stillness (Official Video)',
+      TW: 'Meltwater Stillness(音樂錄影帶)'
+    },
+    date: '2026',
+    client: 'Beyond Boundary Music',
+    category: 'Music Video',
+    pillar: 'Art',
+    description: {
+      JP: 'Piano Distance の収録曲「Meltwater Stillness」のミュージックビデオです。凍った結晶と水、ゆっくり回る光の帯が、とけ合っていきます。SIMI Music Video Fest 2026 に公式選出されました。',
+      EN: 'The music video for "Meltwater Stillness" from Piano Distance. Frost crystals, water and slowly turning ribbons of light dissolve into one another. An Official Selection of SIMI Music Video Fest 2026.',
+      TW: 'Piano Distance 收錄曲〈Meltwater Stillness〉的音樂錄影帶。冰晶、水與緩緩旋轉的光帶彼此融化。入選 SIMI Music Video Fest 2026。'
+    },
+    imageUrl: '/images/pd-mv-meltwater-stillness.jpg',
+    tags: ['2026', 'Piano Distance', 'BBM-001', 'Video'],
+    role: { JP: '作曲・演奏・監督', EN: 'Composition, Piano, Direction', TW: '作曲、演奏、導演' },
+    approach: {
+      JP: 'アルバム「Piano Distance」の世界を、映像でも感じてもらうためのミュージックビデオです。',
+      EN: 'A music video that carries the world of the album "Piano Distance" into moving image.',
+      TW: '將專輯《Piano Distance》的世界，以影像呈現的音樂錄影帶。'
+    },
+    link: 'https://www.youtube.com/watch?v=fP9vLVQJByE',
+    externalLinks: [
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=fP9vLVQJByE' },
+      { label: 'Piano Distance (Bandcamp)', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' }
     ]
   },
+
+  {
+    id: 'pd-mv-white-flash',
+    title: 'White Flash in Still Air (Official Video)',
+    titleLocalized: {
+      JP: 'White Flash in Still Air(ミュージックビデオ)',
+      EN: 'White Flash in Still Air (Official Video)',
+      TW: 'White Flash in Still Air(音樂錄影帶)'
+    },
+    date: '2026',
+    client: 'Beyond Boundary Music',
+    category: 'Music Video',
+    pillar: 'Art',
+    description: {
+      JP: 'Piano Distance の収録曲「White Flash in Still Air」のミュージックビデオです。BBM の YouTube チャンネルで公開しています。',
+      EN: 'The music video for "White Flash in Still Air" from Piano Distance, on the BBM YouTube channel.',
+      TW: 'Piano Distance 收錄曲〈White Flash in Still Air〉的音樂錄影帶，公開於 BBM 的 YouTube 頻道。'
+    },
+    imageUrl: '/images/pd-mv-white-flash.jpg',
+    tags: ['2026', 'Piano Distance', 'BBM-001', 'Video'],
+    role: { JP: '作曲・演奏・監督', EN: 'Composition, Piano, Direction', TW: '作曲、演奏、導演' },
+    approach: {
+      JP: 'アルバム「Piano Distance」の世界を、映像でも感じてもらうためのミュージックビデオです。',
+      EN: 'A music video that carries the world of the album "Piano Distance" into moving image.',
+      TW: '將專輯《Piano Distance》的世界，以影像呈現的音樂錄影帶。'
+    },
+    link: 'https://www.youtube.com/watch?v=TkRUyirgRgM',
+    externalLinks: [
+      { label: 'YouTube', url: 'https://www.youtube.com/watch?v=TkRUyirgRgM' },
+      { label: 'Piano Distance (Bandcamp)', url: 'https://beyondboundarymusic.bandcamp.com/album/piano-distance' }
+    ]
+  },
+
+  {
+    id: 'tsuchiura-furusato-ambassador',
+    title: 'Koichi Utsugi: Furusato Ambassador of Tsuchiura City',
+    titleLocalized: {
+      JP: '宇津木紘一さんが土浦市ふるさと大使に就任',
+      EN: 'Koichi Utsugi: Furusato Ambassador of Tsuchiura City',
+      TW: '宇津木紘一先生出任土浦市「故鄉大使」'
+    },
+    date: '2026',
+    client: 'Tsuchiura City',
+    category: 'Archive',
+    pillar: 'Public',
+    description: {
+      JP: 'BBMのメンバーで、つちうらサウンド・アーカイブ・プロジェクトの代表を務める宇津木紘一さんが、土浦市のふるさと大使に就任しました。',
+      EN: 'Koichi Utsugi, a member of BBM who leads the Tsuchiura Sound Archive Project, has been named a Furusato Ambassador of Tsuchiura City.',
+      TW: 'BBM 成員、同時擔任土浦聲音檔案計畫代表的宇津木紘一先生，出任土浦市「故鄉大使」。'
+    },
+    imageUrl: '/images/tsuchiura-ambassador-logo.jpg',
+    tags: ['2026', 'Tsuchiura', 'TSAP', 'Furusato Ambassador'],
+    role: { JP: 'BBMメンバー / TSAP代表', EN: 'BBM member / TSAP representative', TW: 'BBM 成員 / TSAP 代表' },
+    approach: {
+      JP: '土浦での音の記録と展示、ゲーム、イベントを、宇津木さんと一緒に続けています。',
+      EN: 'Together with Mr. Utsugi, BBM keeps recording, exhibiting and playing with the sounds of Tsuchiura.',
+      TW: '與宇津木先生一同持續進行土浦的聲音記錄、展覽、遊戲與活動。'
+    },
+    link: 'https://tsuchiura-sound-achib.netlify.app/',
+    externalLinks: [
+      { label: 'TSAP', url: 'https://tsuchiura-sound-achib.netlify.app/' }
+    ]
+  },
+
   {
     id: 'lackout',
     title: 'Lackout',

@@ -29,10 +29,10 @@ const Technology: React.FC = () => {
       maBody:
         'アルバム『Piano Distance』の題は、武満徹が1961年に書いたピアノ独奏曲への応答です。武満はひとつの楽器、ひとつの室内に、音と音の「距離」と静寂を置きました。私たちはその距離を、比喩ではなく、三次元の空間として立ち上げます。\nピアノの内部から採取した一音一音は固有の音色を持ち、空間の中で独立した「オブジェクト」として定位する。日本語の「間(ま)」——音と音のあいだにある沈黙と距離——を、装飾としてではなく、空間設計そのものの構造原理として組み込むこと。それが私たちの出発点です。',
       formsTitle: '音の空間、いくつかのかたち',
-      formsLead: 'これらすべてを支えているのは、TouchDesigner上に自作した単一のアンビソニクス・エンジンです。市販のスペーシャライザーもプラグインも使いません。ひとつの核が、作品と場所に合わせてかたちを変えます。',
+      formsLead: 'これらすべてを支えているのは、TouchDesigner上に組んだ単一のアンビソニクス・エンジンと、市販の道具も含めて組み合わせ、自分の耳で作り上げたシステムです。ひとつの核が、作品と場所に合わせてかたちを変えます。',
       forms: [
         { name: 'Binaural / 2ch', body: 'ヘッドフォンや、ふつうのステレオスピーカーで。前後・上下・距離までを描く、いちばん身近な入り口です。' },
-        { name: 'Ambisonics + Head Tracking', body: '自作のアンビソニクス・エンジン。ひとりの聴き手の頭の向きに音場が追従するバイノーラル構成(Piano Distance、DEEP FAKEではライブで運用)から、iPadで空間を巡る最大3次・最大30オブジェクト同時定位の展示構成(TSAP)まで——同じ核が、かたちを変えます。' },
+        { name: 'Ambisonics + Head Tracking', body: 'TouchDesignerで組んだアンビソニクス・エンジン。ひとりの聴き手の頭の向きに音場が追従するバイノーラル構成(Piano Distance、DEEP FAKEではライブで運用)から、iPadで空間を巡る最大3次・最大30オブジェクト同時定位の展示構成(TSAP)まで——同じ核が、かたちを変えます。' },
         { name: 'VR / Realtime 3D', body: '音の中を、巡る。リアルタイムに生成される三次元空間に、立体音響を統合します。' },
         { name: 'Game Engines', body: 'UnityやUnreal Engineで、体験を持ち帰れるかたちに。Webブラウザで、誰でも、いつでも。' },
       ],
@@ -43,8 +43,11 @@ const Technology: React.FC = () => {
       gameBody: '土浦の街でアーカイブされた音たちが、Unity製のゲームになりました。帆曳船を操りながら、音のあいだを進んでいく——展覧会「つちうらサウンド・アーカイブ展 2026」で生まれた空間音響の体験は、いまはブラウザひとつで、どこからでも開くことができます。',
       gamePlayButton: 'ブラウザで遊ぶ',
       gameWorkButton: '展覧会の記録を見る',
+      fwTitle: "遊べる花火 ― 花火をつくる",
+      fwBody: '玉の大きさ・色・形・音・名前を選んで、自分だけの花火をつくり、夜空に打ち上げるゲームです。土浦ウェルカムフェス 2026 で展示し、いまはスマートフォンでもパソコンでも、ブラウザで遊べます。',
+      fwWorkButton: '作品ページを見る',
       worksTitle: '技術が必然となる作品たち',
-      works1Body: '私たちの独自技術をフルに用いた、初のピアノアルバム。ヘッドフォンでも、わずか2台のスピーカーだけでも、音は背後から、頭上から立ち現れます。英Fluid Audioより手製・署名番号入りの限定盤、配信中（Spotify・Apple Musicほか各サービス）。',
+      works1Body: '私たちの技術をフルに用いた、初のピアノアルバム。ヘッドフォンでも、わずか2台のスピーカーだけでも、音は背後から、頭上から立ち現れます。英Fluid Audioより手製・署名番号入りの限定盤、配信中（Spotify・Apple Musicほか各サービス）。',
       works2Title: '音の中を歩く ― Piano Distance 立体音響 VR',
       works2Body: 'アルバム《Piano Distance》を、聴くだけでなく"中に入って体験する"立体音響作品へ。ピアノの一音一音が暗がりに息づく光となり、聴き手が向きを変えると音が頭のまわりを回ります。リアルタイムに生成される三次元空間へ立体音響を統合した、実験途中の試作です。（ヘッドホン推奨）',
       compareTitle: '技術のはなし、もう少し詳しく',
@@ -75,10 +78,10 @@ const Technology: React.FC = () => {
       maBody:
         'The title Piano Distance answers a solo piano piece Toru Takemitsu wrote in 1961. Within a single instrument and a single room, Takemitsu placed "distance" and silence between sounds. We raise that distance into literal three-dimensional space.\nEach sound, drawn from inside the piano, carries its own timbral identity and stands in the space as an independent object. The Japanese notion of ma — the charged silence and distance between sounds — is built in not as ornament, but as the structural principle of the spatial design itself. That is where we begin.',
       formsTitle: 'Forms of Sound-Space',
-      formsLead: 'Beneath all of these runs a single ambisonic engine we built ourselves in TouchDesigner — no commercial spatializer, no plug-ins. One core, changing its form for each work and each place.',
+      formsLead: 'Beneath all of these runs a single ambisonic engine we built in TouchDesigner, combined with commercial tools and shaped by ear. One core, changing its form for each work and each place.',
       forms: [
         { name: 'Binaural / 2ch', body: 'Through headphones or an ordinary stereo pair — front and back, above and below, near and far. The most familiar doorway.' },
-        { name: 'Ambisonics + Head Tracking', body: 'Our self-built ambisonic engine. From a head-tracked binaural configuration for a single listener (Piano Distance; run live in DEEP FAKE) to an exhibition configuration scaled to 3rd order, localizing up to 30 objects at once as you travel the space on an iPad (TSAP) — one core, two forms.' },
+        { name: 'Ambisonics + Head Tracking', body: 'Our ambisonic engine, built in TouchDesigner. From a head-tracked binaural configuration for a single listener (Piano Distance; run live in DEEP FAKE) to an exhibition configuration scaled to 3rd order, localizing up to 30 objects at once as you travel the space on an iPad (TSAP) — one core, two forms.' },
         { name: 'VR / Realtime 3D', body: 'Travelling inside the sound — spatial audio woven into three-dimensional worlds generated in real time.' },
         { name: 'Game Engines', body: 'With Unity and Unreal Engine, the experience becomes something you can take home — in a web browser, for anyone, anytime.' },
       ],
@@ -89,8 +92,11 @@ const Technology: React.FC = () => {
       gameBody: 'Sounds archived from the town of Tsuchiura became a Unity game. Steering a traditional sail-boat, you drift between the sounds — an experience born at the "Tsuchiura Sound Archive Exhibition 2026," now open to anyone, anywhere, in a single browser tab.',
       gamePlayButton: 'Play in your browser',
       gameWorkButton: 'See the exhibition record',
+      fwTitle: 'A Firework You Can Make — "Make Fireworks"',
+      fwBody: 'Choose the size, colour, shape, sound and name of a shell, build your own firework and launch it into the night sky. Shown at Tsuchiura Welcome Festival 2026, it now plays in the browser on a phone or computer.',
+      fwWorkButton: 'View the project',
       worksTitle: 'Works Where Technology Becomes Necessary',
-      works1Body: 'Our first piano album fully leveraging our proprietary technology. On ordinary headphones, or on just two speakers alone, sound arrives from behind and overhead. A handmade, signed and numbered limited edition on Fluid Audio (UK) — out now on Spotify, Apple Music and more.',
+      works1Body: 'Our first piano album fully leveraging our own technology. On ordinary headphones, or on just two speakers alone, sound arrives from behind and overhead. A handmade, signed and numbered limited edition on Fluid Audio (UK) — out now on Spotify, Apple Music and more.',
       works2Title: 'Walking Inside the Sound — Piano Distance Spatial Audio VR',
       works2Body: "An immersive reworking of Piano Distance — you don't just listen, you step inside. Each note becomes a breathing light in the dark, and as you turn, the sound turns around you. A work-in-progress experiment that integrates spatial audio into a real-time 3D world. (Headphones recommended.)",
       compareTitle: 'More on the Technical Side',
@@ -120,10 +126,10 @@ const Technology: React.FC = () => {
       maBody:
         '專輯《Piano Distance》的標題，是對武滿徹 1961 年鋼琴獨奏曲的回應。武滿在單一樂器、單一室內，安放了音與音之間的「距離」與靜默。我們則把這個距離立起為真實的三維空間。\n取自鋼琴內部的每一個音都擁有固有的音色身分，在空間中作為獨立的「物件」定位。日語的「間(ma)」——音與音之間的靜默與距離——不是裝飾，而是被寫入空間設計本身的結構原理。這是我們的出發點。',
       formsTitle: '聲音空間的幾種形式',
-      formsLead: '支撐這一切的，是我們在 TouchDesigner 上自行打造的單一 Ambisonics 引擎——不使用市售空間音訊工具或外掛。同一個核心，隨作品與場地改變形態。',
+      formsLead: '支撐這一切的，是我們在 TouchDesigner 上建構的單一 Ambisonics 引擎，並結合市售工具、憑自己的耳朵調校而成。同一個核心，隨作品與場地改變形態。',
       forms: [
         { name: 'Binaural / 2ch', body: '透過耳機或一般的立體聲喇叭，描繪前後、上下與距離——最貼近日常的入口。' },
-        { name: 'Ambisonics + Head Tracking', body: '自製的 Ambisonics 引擎。從追隨單一聆聽者頭部轉向的雙耳構成(Piano Distance；於 DEEP FAKE 中現場運行)，到以 iPad 巡遊空間、最高三階、最多 30 個物件同時定位的展覽構成(TSAP)——同一個核心，兩種形態。' },
+        { name: 'Ambisonics + Head Tracking', body: '在 TouchDesigner 上建構的 Ambisonics 引擎。從追隨單一聆聽者頭部轉向的雙耳構成(Piano Distance；於 DEEP FAKE 中現場運行)，到以 iPad 巡遊空間、最高三階、最多 30 個物件同時定位的展覽構成(TSAP)——同一個核心，兩種形態。' },
         { name: 'VR / Realtime 3D', body: '在聲音之中巡遊——將立體音響整合進即時生成的三維空間。' },
         { name: 'Game Engines', body: '以 Unity 與 Unreal Engine，把體驗做成可以帶回家的形式——在瀏覽器中，任何人、任何時候。' },
       ],
@@ -134,8 +140,11 @@ const Technology: React.FC = () => {
       gameBody: '在土浦街頭封存的聲音，成了一款 Unity 遊戲。操縱帆曳船，在聲音之間前行——誕生於「土浦聲音檔案展 2026」的空間音響體驗，如今只需一個瀏覽器分頁，隨處可及。',
       gamePlayButton: '在瀏覽器中遊玩',
       gameWorkButton: '查看展覽記錄',
+      fwTitle: "可以自己製作的煙火 ― 《Make Fireworks(製作煙火)》",
+      fwBody: '選擇煙火的大小、顏色、形狀、聲音與名字，製作屬於自己的煙火並施放到夜空。於土浦 Welcome Festival 2026 展出，現在可於手機或電腦的瀏覽器遊玩。',
+      fwWorkButton: '查看作品頁',
       worksTitle: '技術成為必然的作品',
-      works1Body: '我們首張完整運用獨家技術的鋼琴專輯。無論透過耳機，或僅憑兩支喇叭，聲音都會從背後、從頭頂浮現。英國 Fluid Audio 手工、簽名編號限量發行——現正於 Spotify、Apple Music 等各串流平台上架。',
+      works1Body: '我們首張完整運用自身技術的鋼琴專輯。無論透過耳機，或僅憑兩支喇叭，聲音都會從背後、從頭頂浮現。英國 Fluid Audio 手工、簽名編號限量發行——現正於 Spotify、Apple Music 等各串流平台上架。',
       works2Title: '走進聲音之中 ― Piano Distance 立體音響 VR',
       works2Body: '將專輯《Piano Distance》從「聆聽」延伸為「走進其中體驗」的立體音響作品。鋼琴的每一個音都化為在黑暗中呼吸的光，當聆聽者轉動視角，聲音便環繞於頭部四周。這是一個將立體音響整合進即時生成三維空間的實驗中試作。（建議使用耳機）',
       compareTitle: '關於技術，再多說一點',
@@ -609,6 +618,80 @@ const Technology: React.FC = () => {
             </motion.div>
           </div>
         </motion.div>
+
+        {/* Make Fireworks Game Section */}
+        {(
+          <motion.div
+            className="border-t border-[#C9A66B]/20 pt-20 md:pt-32 mb-32 md:mb-48"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-white">
+                  {t.fwTitle}
+                </h2>
+                <p className="text-white/70 font-serif leading-loose text-base md:text-lg">
+                  {t.fwBody}
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <a
+                    href="https://tsuchiura-fireworks-welcomefestival.com/game/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block py-4 px-10 border border-[#C9A66B] text-[#C9A66B] hover:bg-[#C9A66B] hover:text-black text-xs font-bold tracking-[0.3em] uppercase transition-all"
+                  >
+                    {t.gamePlayButton}
+                  </a>
+                  <button
+                    onClick={() => navigate('/works/make-fireworks-game-2026')}
+                    className="inline-block py-4 px-10 border border-white/30 text-white/80 hover:border-[#C9A66B] hover:text-[#C9A66B] text-xs font-bold tracking-[0.3em] uppercase transition-all"
+                  >
+                    {t.fwWorkButton}
+                  </button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+              >
+                <a
+                  href="https://tsuchiura-fireworks-welcomefestival.com/game/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <motion.div
+                    className="relative aspect-video bg-black/50 border-2 border-[#C9A66B]/30 overflow-hidden backdrop-blur-sm"
+                    whileHover={{
+                      borderColor: 'rgba(201, 166, 107, 0.7)',
+                      boxShadow: '0 0 100px rgba(201, 166, 107, 0.5)'
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src="/images/make-fireworks-game.jpg"
+                      alt="Make Fireworks — title screen"
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                </a>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Game Section */}
         {tsuchiuraGame && (

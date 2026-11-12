@@ -16,7 +16,7 @@ const WorkDetail: React.FC = () => {
       <div className="pb-16 md:pb-24">
         <Section className="py-0">
           <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-gray-300 mb-8">Not Found</p>
-          <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tighter mb-8">Work not found.</h1>
+          <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tighter mb-8" style={{ wordBreak: 'keep-all', overflowWrap: 'anywhere' }}>Work not found.</h1>
           <Link to="/works" className="text-[11px] font-bold tracking-[0.3em] uppercase hover:text-[#C9A66B] transition-colors">Back to Works →</Link>
         </Section>
       </div>
@@ -39,6 +39,7 @@ const WorkDetail: React.FC = () => {
     role: { JP: '役割', EN: 'Role', TW: '角色' },
     logic: { JP: '音響的論理', EN: 'Acoustic Logic', TW: '音響邏輯' },
     tech: { JP: '技術', EN: 'Technology', TW: '技術' },
+    press: { JP: '掲載・上映', EN: 'Press & Screenings', TW: '報導・放映' },
   };
 
   return (
@@ -190,6 +191,25 @@ const WorkDetail: React.FC = () => {
                 </div>
               )}
             </section>
+            {!!work.press?.length && (
+              <section>
+                <h2 className="text-[10px] font-bold tracking-[0.6em] text-black/20 uppercase mb-6 border-b border-black/5 pb-4">{labels.press[lang]}</h2>
+                <ul className="divide-y divide-black/5">
+                  {work.press.map(p => (
+                    <li key={p.label} className="py-4">
+                      {p.url ? (
+                        <a href={p.url} target="_blank" rel="noopener noreferrer"
+                          className="text-[11px] font-bold tracking-[0.2em] uppercase hover:text-[#C9A66B] transition-colors break-words">{p.label} →</a>
+                      ) : (
+                        <span className="text-[11px] font-bold tracking-[0.2em] uppercase">{p.label}</span>
+                      )}
+                      {p.quote && <p className="mt-2 text-base font-serif italic text-gray-800">“{p.quote}”</p>}
+                      {p.text && <p className="mt-1 text-sm font-serif font-light leading-relaxed text-gray-600">{p.text[lang]}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
         </div>
       </Section>

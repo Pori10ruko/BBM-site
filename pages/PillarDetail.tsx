@@ -87,6 +87,7 @@ const PillarDetail: React.FC<PillarDetailProps> = ({ type }) => {
   const getWork = (id: string) => works.find((w) => w.id === id);
   const tsuchiuraWorks: Work[] = [
     getWork('tsap-exhibition-2026'),
+    getWork('tsuchiura-furusato-ambassador'),
     getWork('tsuchiura-archive'),
     getWork('moonlight-concert'),
     getWork('oiwata-elementary-special-class')
